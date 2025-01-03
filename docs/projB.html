@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-04-18">
+
+<title>Project B – 432-2025</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">432-2025</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./calendar.html"> 
+<span class="menu-text">Calendar</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tocome.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://thomaselove.github.io/432-notes/"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./software.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/THOMASELOVE/432-data"> 
+<span class="menu-text">Get Data</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Labs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-labs">    
+        <li>
+    <a class="dropdown-item" href="./lab1.html">
+ <span class="dropdown-text">Lab 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab2.html">
+ <span class="dropdown-text">Lab 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab3.html">
+ <span class="dropdown-text">Lab 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab4.html">
+ <span class="dropdown-text">Lab 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab5.html">
+ <span class="dropdown-text">Lab 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab6.html">
+ <span class="dropdown-text">Lab 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab7.html">
+ <span class="dropdown-text">Lab 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab8.html">
+ <span class="dropdown-text">Lab 8</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Projects</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
+        <li>
+    <a class="dropdown-item" href="./projA.html">
+ <span class="dropdown-text">Project A</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projB.html">
+ <span class="dropdown-text">Project B</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quizzes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quizzes</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quizzes">    
+        <li>
+    <a class="dropdown-item" href="./quiz1.html">
+ <span class="dropdown-text">Quiz 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quiz2.html">
+ <span class="dropdown-text">Quiz 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/THOMASELOVE/432-sources"> 
+<span class="menu-text">Sources</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-key-links" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Key Links</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-key-links">    
+        <li>
+    <a class="dropdown-item" href="https://campuswire.com/">
+ <span class="dropdown-text">Campuswire discussion board</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://canvas.case.edu/">
+ <span class="dropdown-text">Canvas (submissions &amp; recordings)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tocome.html">
+ <span class="dropdown-text">Shared Google Drive</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tocome.html">
+ <span class="dropdown-text">Minute Papers (Github)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tocome.html">
+ <span class="dropdown-text">Class READMEs (Github)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact Us</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-schedule" id="toc-the-schedule" class="nav-link active" data-scroll-target="#the-schedule">The Schedule</a></li>
+  <li><a href="#project-b-overview" id="toc-project-b-overview" class="nav-link" data-scroll-target="#project-b-overview">Project B Overview</a>
+  <ul class="collapse">
+  <li><a href="#deliverables" id="toc-deliverables" class="nav-link" data-scroll-target="#deliverables">Deliverables</a>
+  <ul class="collapse">
+  <li><a href="#working-with-a-partner" id="toc-working-with-a-partner" class="nav-link" data-scroll-target="#working-with-a-partner">Working with a Partner?</a></li>
+  </ul></li>
+  <li><a href="#use-of-ai" id="toc-use-of-ai" class="nav-link" data-scroll-target="#use-of-ai">Use of AI</a></li>
+  </ul></li>
+  <li><a href="#need-help" id="toc-need-help" class="nav-link" data-scroll-target="#need-help">Need Help?</a></li>
+  <li><a href="#general-advice" id="toc-general-advice" class="nav-link" data-scroll-target="#general-advice">General Advice</a>
+  <ul class="collapse">
+  <li><a href="#on-research-questions" id="toc-on-research-questions" class="nav-link" data-scroll-target="#on-research-questions">On Research Questions</a></li>
+  <li><a href="#on-selecting-data" id="toc-on-selecting-data" class="nav-link" data-scroll-target="#on-selecting-data">On Selecting Data</a>
+  <ul class="collapse">
+  <li><a href="#there-are-only-a-few-restrictions-on-your-choice-of-data." id="toc-there-are-only-a-few-restrictions-on-your-choice-of-data." class="nav-link" data-scroll-target="#there-are-only-a-few-restrictions-on-your-choice-of-data.">There are only a few restrictions on your choice of data.</a></li>
+  <li><a href="#no-multi-level-hierarchical-data" id="toc-no-multi-level-hierarchical-data" class="nav-link" data-scroll-target="#no-multi-level-hierarchical-data">No multi-level (hierarchical) data</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#the-proposal-form" id="toc-the-proposal-form" class="nav-link" data-scroll-target="#the-proposal-form">The Proposal Form</a>
+  <ul class="collapse">
+  <li><a href="#what-information-does-the-form-require" id="toc-what-information-does-the-form-require" class="nav-link" data-scroll-target="#what-information-does-the-form-require">What information does the form require?</a></li>
+  <li><a href="#signing-up-for-presentation-times" id="toc-signing-up-for-presentation-times" class="nav-link" data-scroll-target="#signing-up-for-presentation-times">Signing Up for Presentation Times</a></li>
+  <li><a href="#how-will-we-respond-to-the-form" id="toc-how-will-we-respond-to-the-form" class="nav-link" data-scroll-target="#how-will-we-respond-to-the-form">How will we respond to the form?</a></li>
+  <li><a href="#making-changes-to-your-proposal" id="toc-making-changes-to-your-proposal" class="nav-link" data-scroll-target="#making-changes-to-your-proposal">Making Changes to your Proposal</a></li>
+  </ul></li>
+  <li><a href="#the-presentation" id="toc-the-presentation" class="nav-link" data-scroll-target="#the-presentation">The Presentation</a>
+  <ul class="collapse">
+  <li><a href="#p-values-and-statistical-significance" id="toc-p-values-and-statistical-significance" class="nav-link" data-scroll-target="#p-values-and-statistical-significance">P values and “statistical significance”</a></li>
+  </ul></li>
+  <li><a href="#the-project-portfolio" id="toc-the-project-portfolio" class="nav-link" data-scroll-target="#the-project-portfolio">The Project Portfolio</a>
+  <ul class="collapse">
+  <li><a href="#template-for-the-portfolio" id="toc-template-for-the-portfolio" class="nav-link" data-scroll-target="#template-for-the-portfolio">Template for the Portfolio</a></li>
+  <li><a href="#what-are-the-main-section-headings-in-the-portfolio" id="toc-what-are-the-main-section-headings-in-the-portfolio" class="nav-link" data-scroll-target="#what-are-the-main-section-headings-in-the-portfolio">What are the main section headings in the Portfolio?</a></li>
+  <li><a href="#our-best-advice" id="toc-our-best-advice" class="nav-link" data-scroll-target="#our-best-advice">Our Best Advice</a></li>
+  <li><a href="#submitting-your-data" id="toc-submitting-your-data" class="nav-link" data-scroll-target="#submitting-your-data">Submitting Your Data</a></li>
+  </ul></li>
+  <li><a href="#constraints-for-project-b" id="toc-constraints-for-project-b" class="nav-link" data-scroll-target="#constraints-for-project-b">Constraints for Project B</a>
+  <ul class="collapse">
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data">Missing Data</a></li>
+  <li><a href="#model-size" id="toc-model-size" class="nav-link" data-scroll-target="#model-size">Model Size</a></li>
+  <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations">Transformations</a></li>
+  <li><a href="#advice-on-predictors" id="toc-advice-on-predictors" class="nav-link" data-scroll-target="#advice-on-predictors">Advice on Predictors</a></li>
+  <li><a href="#on-validation" id="toc-on-validation" class="nav-link" data-scroll-target="#on-validation">On Validation</a></li>
+  </ul></li>
+  <li><a href="#questions-and-answers" id="toc-questions-and-answers" class="nav-link" data-scroll-target="#questions-and-answers">Questions and Answers</a></li>
+  <li><a href="#things-we-want-to-see-in-your-work" id="toc-things-we-want-to-see-in-your-work" class="nav-link" data-scroll-target="#things-we-want-to-see-in-your-work">Things We Want To See in Your Work</a></li>
+  <li><a href="#new-eight-questions" id="toc-new-eight-questions" class="nav-link" data-scroll-target="#new-eight-questions"><strong>NEW!!</strong> Eight Questions</a>
+  <ul class="collapse">
+  <li><a href="#questions-about-your-project-b-work-in-general" id="toc-questions-about-your-project-b-work-in-general" class="nav-link" data-scroll-target="#questions-about-your-project-b-work-in-general">8 questions about your Project B work in general</a></li>
+  <li><a href="#questions-about-a-model-for-a-time-to-event-outcome-with-censoring" id="toc-questions-about-a-model-for-a-time-to-event-outcome-with-censoring" class="nav-link" data-scroll-target="#questions-about-a-model-for-a-time-to-event-outcome-with-censoring">8 questions about a model for a time-to-event outcome with censoring</a></li>
+  <li><a href="#questions-about-a-model-for-a-count-outcome" id="toc-questions-about-a-model-for-a-count-outcome" class="nav-link" data-scroll-target="#questions-about-a-model-for-a-count-outcome">8 questions about a model for a count outcome</a></li>
+  <li><a href="#questions-about-a-model-for-a-multi-categorical-outcome-with-3-7-levels" id="toc-questions-about-a-model-for-a-multi-categorical-outcome-with-3-7-levels" class="nav-link" data-scroll-target="#questions-about-a-model-for-a-multi-categorical-outcome-with-3-7-levels">8 questions about a model for a multi-categorical outcome with 3-7 levels</a></li>
+  <li><a href="#questions-about-a-model-for-a-quantitative-outcome" id="toc-questions-about-a-model-for-a-quantitative-outcome" class="nav-link" data-scroll-target="#questions-about-a-model-for-a-quantitative-outcome">8 questions about a model for a quantitative outcome</a></li>
+  <li><a href="#questions-about-a-model-for-a-binary-outcome" id="toc-questions-about-a-model-for-a-binary-outcome" class="nav-link" data-scroll-target="#questions-about-a-model-for-a-binary-outcome">8 questions about a model for a binary outcome</a></li>
+  </ul></li>
+  <li><a href="#need-help-1" id="toc-need-help-1" class="nav-link" data-scroll-target="#need-help-1">Need Help?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Project B</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-04-18</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-schedule" class="level1">
+<h1>The Schedule</h1>
+<p>The Schedule for Project B presentations is available at <a href="https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md" class="uri">https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md</a>.</p>
+</section>
+<section id="project-b-overview" class="level1">
+<h1>Project B Overview</h1>
+<p>In project B, you will create two research questions that can be addressed with data you can conveniently obtain that can be used to address each of your questions, with models that you learned in the 431-432 sequence.</p>
+<p>You will fit one regression model for each research question.</p>
+<ul>
+<li>Each of your models must include 2-8 predictors.</li>
+<li>Each model must include at least one predictor that is not included in the other model.</li>
+<li>Each model will need to describe observations from the same pool of “subjects”, so that a single tibble services the whole Project.</li>
+</ul>
+<p>The model for your first outcome must be either:</p>
+<ul>
+<li>A model for a multi-categorical outcome (with 3-7 levels)</li>
+<li>A model for a count outcome, or</li>
+<li>A Cox model for a time-to-event outcome with censoring</li>
+</ul>
+<p>The model for your second outcome must use a different approach than you used for Outcome 1. For this model, you can use any of the three options above, or you may use:</p>
+<ul>
+<li>A linear or binary logistic model fit using a Bayesian engine via the <code>tidymodels</code> package, or</li>
+<li>A linear model fit by selecting candidate predictors using the lasso, or</li>
+<li>A linear regression model that uses survey weights, or</li>
+<li>A quantile regression model fit to a quantitative outcome where a particular percentile (perhaps the median) is of interest, or</li>
+<li>A robust linear model that uses robust standard errors.</li>
+</ul>
+<p>Note: Use at least 3 predictors (and still no more than 8) if you are fitting a linear, binary logistic or quantile regression model for your second outcome, please.</p>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<p>There are three deliverables in Project B: a Proposal Form, an in-person or Zoom Presentation, a Portfolio developed with Quarto (<a href="#submitting-your-data">along with your Data</a>).</p>
+<ol type="1">
+<li><p><strong>Proposal Form</strong> By the deadline on the <a href="./calendar.html">Calendar</a> in early April, you will submit the Google Form found at <a href="https://bit.ly/432-2024-projectB-proposal-form" class="uri">https://bit.ly/432-2024-projectB-proposal-form</a>.</p>
+<ul>
+<li>In this form, you will specify your title, your research questions, and your data source, and whether or not you are working with a partner.</li>
+<li>You will also provide a brief description of each of your outcomes, and the type of models you plan to fit.</li>
+<li>Finally, you will also specify the times that work for you (and your partner) to give your Project B presentation to Professor Love from a set of times he is available in early May.</li>
+<li>We will need to approve your Google Form before you proceed further, and this may require some revisions to your plan.</li>
+</ul></li>
+<li><p><strong>Presentation</strong> After receiving our approval of your submitted form, you will prepare a portfolio of your results with Quarto (<a href="#template-for-the-portfolio">a template is available</a> for this), and then give an in-person or Zoom presentation of your work to Professor Love in early May. The schedule for these presentations will be determined after completion of the Project B Proposal Form.</p></li>
+<li><p><strong>Portfolio and Data</strong> You will then make changes (as needed) to your Quarto document (portfolio) in response to Professor Love’s comments during your presentation, and submit the final version of the portfolio along with a version of your data (<a href="#submitting-your-data">as described here</a>) to <a href="https:://canvas.case.edu">Canvas</a> by the deadline in the <a href="./calendar.html">Calendar</a>.</p></li>
+</ol>
+<section id="working-with-a-partner" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-a-partner">Working with a Partner?</h3>
+<p>You can choose either to work alone, or with one other person, to complete Project B, unless Professor Love has specifically requested that you work alone. He will make those requests after Project A’s grading is complete.</p>
+<p>If you are working with a partner…</p>
+<ul>
+<li><strong>exactly one</strong> of you needs to complete the Project B Proposal Form (the other student should <strong>send an email to Dr.&nbsp;Love with the subject line 432 Project B Partnership</strong> confirming that you are working in a partnership and telling me the name of your partner), then</li>
+<li>you will each participate in the Project B Presentation and the development of the Portfolio, and</li>
+</ul>
+<p>Your final Portfolio and Data will be submitted by exactly one of the two partners to <a href="https::/canvas.case.edu">Canvas</a> while the non-reporting partner will submit a one-page note to <a href="https::/canvas.case.edu">Canvas</a> indicating the members of the partnership and that the partner will submit the work.</p>
+</section>
+</section>
+<section id="use-of-ai" class="level2">
+<h2 class="anchored" data-anchor-id="use-of-ai">Use of AI</h2>
+<p>If you decide to use some sort of AI to help you with any part of the Project, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called “Use of AI”. This should appear just <em>before</em> your section containing the Session Information. Thank you.</p>
+</section>
+</section>
+<section id="need-help" class="level1">
+<h1>Need Help?</h1>
+<p>Questions about Project B may be directed to the TAs and to Professor Love at any time <strong>after</strong> your submission of the Project A portfolio in March. If you’re asking a question <a href="https://campuswire.com/">on Campuswire</a>, please use the <code>Project B</code> label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.</p>
+</section>
+<section id="general-advice" class="level1">
+<h1>General Advice</h1>
+<section id="on-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="on-research-questions">On Research Questions</h2>
+<p>Project B requires you to answer two research questions with data you obtain. You can study any question you like, although I’d steer clear of anything that you think Professor Love might find inappropriate. All of the <a href="./projA.html#my-first-research-question">advice from Project A</a> on this subject still holds. Each of your research questions needs to lead clearly to a modeling strategy, where you’ll fit an appropriate regression model.</p>
+</section>
+<section id="on-selecting-data" class="level2">
+<h2 class="anchored" data-anchor-id="on-selecting-data">On Selecting Data</h2>
+<p>We hope that most people will find datasets of interest to them and use those. If you do not have any strong ideas for data to use, then we encourage you to consider the <a href="./projA.html#good-data-sets-to-use">suggestions from 432 Project A</a>. The best projects from my perspective use interesting and appropriate data that we have never seen before.</p>
+<ol type="1">
+<li>You must completely identify the source(s) of the data, so that Professor Love understands what data you are using very well, but you will not be required to share the data with him, or anyone else, if the data you use are not already available to the public. You must ensure that you have all necessary permission(s) to use the data for this course project.</li>
+<li>Each of your models must work with data drawn from the same tibble, and describe observations from the same pool of “subjects”.</li>
+<li>We prefer that data sets contain between 200 and 2000 complete observations on each outcome, but you can use more than 2000 or as few as 150, if it’s important to do so. Projects with less than 150 subjects with complete data on all variables are not acceptable for Project B.</li>
+<li>Your tibble will need a subject identifying code, and each model must have a separate outcome, and at least one predictor not used in the other model and each model must have 2-8 predictors, we anticipate that your clean, tidied tibble will include between 6 and 19 variables.</li>
+<li>We suggest that you collapse multiple categories as necessary to ensure that you have at least 25 observations in every category you plan to use for every predictor or outcome studied in Project B.</li>
+</ol>
+<p>Unlike 432 Project A, NHANES data are a completely acceptable choice for Project B, although we do require you to use the demographics file and at least two other NHANES files in developing your data set. See the <a href="https://thomaselove.github.io/431-projectB-2023/data2.html">Fall 2023 431 Project B instructions on Using NHANES data</a> for more information on NHANES. If you use NHANES data or other large (weighted) survey data, you are welcome to do any or all of Project B without incorporating sampling weights.</p>
+<p><strong>Note</strong>: We have had some difficulty identifying data set suggestions (outside of educational repositories like the <a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a>) that are both messy enough to be interesting for this project and which also provide time-to-event outcomes with right censoring that are suitable for the survival analysis work we discuss in 432. If you have suggestions along these lines, we would be eager to hear them.</p>
+<section id="there-are-only-a-few-restrictions-on-your-choice-of-data." class="level3">
+<h3 class="anchored" data-anchor-id="there-are-only-a-few-restrictions-on-your-choice-of-data.">There are only a few restrictions on your choice of data.</h3>
+<ul>
+<li>You are not allowed to use data stored as a data set in any R package other than NHANES or Tidy Tuesday data.</li>
+<li>You are not allowed to use data Professor Love or anyone else has provided to you for teaching purposes.</li>
+<li>You cannot reuse the data you used in Project A for 432, although you can use a different data set to answer related questions. You are welcome to reuse data you used in your 431 project work if it is suitable and you haven’t used it in Project A for 432.</li>
+</ul>
+</section>
+<section id="no-multi-level-hierarchical-data" class="level3">
+<h3 class="anchored" data-anchor-id="no-multi-level-hierarchical-data">No multi-level (hierarchical) data</h3>
+<p>We want to powerfully discourage you from working with nested data that really require the use of multi-level models. The same rules <a href="./projA.html#no-hierarchical-data">set forward in Project A</a> apply here, as well.</p>
+</section>
+</section>
+</section>
+<section id="the-proposal-form" class="level1">
+<h1>The Proposal Form</h1>
+<p>The Project B Proposal Form is a Google Form found at <a href="https://bit.ly/432-2024-projectB-proposal-form" class="uri">https://bit.ly/432-2024-projectB-proposal-form</a>. The form allows you to:</p>
+<ul>
+<li>register a brief description of your project for our approval, <em>and</em></li>
+<li>specify presentation times when you (and your partner if applicable) are available.</li>
+</ul>
+<p>Before you complete the form, please <strong>read this entire document</strong>, settle on your research questions and obtain and ingest your data into R, although you needn’t complete all data management activities prior to filling out the form.</p>
+<section id="what-information-does-the-form-require" class="level2">
+<h2 class="anchored" data-anchor-id="what-information-does-the-form-require">What information does the form require?</h2>
+<ul>
+<li>You’ll need to assert that you have already successfully ingested the data into R.</li>
+<li>You’ll need to tell us the two types of models you plan to fit.</li>
+<li>You’ll need to describe the variables you intend to use as outcomes in your models.
+<ul>
+<li>These two outcomes need to be clearly linked to your research questions, and you’ll need to tell us something about each of their distributions.</li>
+</ul></li>
+<li>You’ll need to specify how many cases are in your data with complete data on each of your study’s two outcomes.</li>
+<li>You’ll need to specify the title of your project.</li>
+<li>You’ll need to specify your research questions.</li>
+<li>You’ll need to specify who your partner is, if you have one.</li>
+</ul>
+</section>
+<section id="signing-up-for-presentation-times" class="level2">
+<h2 class="anchored" data-anchor-id="signing-up-for-presentation-times">Signing Up for Presentation Times</h2>
+<p>Professor Love intends to hear projects for this course:</p>
+<p>Project B Presentations will be held on…</p>
+<ul>
+<li>Tuesday 2024-04-30 (CWRU Reading Day) between 8 AM and Noon and between 1 and 6 PM, either in person or via Zoom</li>
+<li>Wednesday 2024-05-01 (CWRU Reading Day) between Noon and 7 PM via Zoom</li>
+<li>Thursday 2024-05-02 (Final Exams Begin) between 1 and 6 PM via Zoom</li>
+</ul>
+<p>You will specify at least five one-hour time slots within these windows (using at least two different days) as times when you (and your partner, if any) are available to give your project.</p>
+<p>Some people will have special circumstances that make it difficult for them to meet during some of these times. There will be an opportunity on the form for you to provide those details to Professor Love.</p>
+</section>
+<section id="how-will-we-respond-to-the-form" class="level2">
+<h2 class="anchored" data-anchor-id="how-will-we-respond-to-the-form">How will we respond to the form?</h2>
+<p>On the basis of your responses to the form, we will either approve or reject your Project B plan, and once it is approved, you can proceed.</p>
+<ul>
+<li>If we cannot approve your project, we’ll tell you why, and tell you how to try again. You’ll need to iterate until we approve your project, but we hope this won’t require more than two tries for anyone.</li>
+<li>The main reason why we doesn’t approve projects is that we don’t understand the description of your data set or its outcomes, your planned modeling approaches, or how the research questions link to the available data, so focus on making those connections as clear as possible.</li>
+<li>TAs are available during their office hours to review your planned research questions, data set and planned variables with you to make suggestions.</li>
+</ul>
+<p>Once all forms are in, Professor Love will also schedule the presentations, and this information will be announced in class and posted as quickly as possible.</p>
+</section>
+<section id="making-changes-to-your-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="making-changes-to-your-proposal">Making Changes to your Proposal</h2>
+<p>No plan survives first contact with the data unscathed. You will wind up making changes as your work on the Project progresses. Once we approve your proposed research questions, you should feel to free to make any change you like, so long as you are not materially changing the general topic of your work. If you feel that you need to change the title or one of the outcomes in your project, that’s the time to run the changes past Professor Love in an email, but if the original title and outcomes still work, you’ll be fine.</p>
+<ul>
+<li>If you do need to change a title, request a re-approval via email by submitting both the initial title and research questions as well as the new ones you now propose, accompanied by a brief description of what needs to change and why you need to make the change.</li>
+<li>Professor Love will consider changes of this sort via email he receives more than 72 hours prior to your scheduled project presentation. After that, your title is locked in.</li>
+<li>You do not need permission to adjust your choice of variables, or your strategy for including subjects or anything else that wouldn’t change the main goals of your project or your title.</li>
+</ul>
+</section>
+</section>
+<section id="the-presentation" class="level1">
+<h1>The Presentation</h1>
+<p>After you register your project and obtain a presentation time, your remaining job is to build a very well-designed and well-analyzed study then present it to Professor Love (orally and in your Portfolio document) beautifully.</p>
+<p>Some presentations will be given in person and others via Zoom. In either case, your presentation is based on results contained in your portfolio, hitting on these four key points:</p>
+<ol type="1">
+<li>What your research questions were and why they are important.</li>
+<li>What data you used and why it was relevant to addressing your questions.
+<ul>
+<li>You should present at least two effective visualizations of your data that help Professor Love understand what can be said about your research questions, at least one of which should help Professor Love explore your data, and at least one of which should help Professor Love evaluate the success of a particular model. Build the presentation around the figures!</li>
+</ul></li>
+<li>What statistical methods you used to analyze and model the data and why they were appropriate.
+<ul>
+<li>In particular, you are required to present at least one result that is derived from one of your regression models. Your model(s) should be clearly linked to your eventual conclusions about your research questions.</li>
+</ul></li>
+<li>What the results say about your research questions - what you have learned by doing this project?
+<ul>
+<li>Be as clear as possible in your speaking about how you address each of the four main issues specified above.</li>
+</ul></li>
+</ol>
+<p>Jeff Leek’s best piece of advice in my opinion is to make the <strong>FIGURES</strong> the focus of your writing and your presentation.</p>
+<ul>
+<li>Another good piece of advice is to acknowledge the work of others appropriately (especially in highlighting where the data come from.) Be gracious.</li>
+</ul>
+<p>Your presentation should be focused on your demonstration of your understanding of key ideas from the course. Do not spend more than the minimum possible time discussing the background of your data or your data cleaning. Focus on your research questions, your analytic work, and your discussion of conclusions, effect sizes and limitations.</p>
+<p>You should think of this as no more than a 15 minute presentation if no one asked any questions, but the time slots are 20 minutes each because Professor Love will ask questions of you, during and after your presentation. Professor Love will ask all kinds of things in an effort to allow you to show your best thinking and to make sure you understand and can explain the things you’re presenting.</p>
+<ul>
+<li>Your ability to address those questions effectively, using the results from your portfolio of work, is the thing that will separate mediocre grades from excellent ones, in most cases.</li>
+<li>You will need to be agile in responding to me. Anticipate tough questions. Professor Love will be looking for clear answers, motivated by your results.</li>
+<li>Rehearse your presentation so that it takes 12-15 minutes if no one asks you any questions.</li>
+</ul>
+<p>If you work as a team, Professor Love will pick one of you at random, on the spot, to deliver the first half of the presentation, and the other will do the second half. Professor Love will address questions to each of you.</p>
+<ul>
+<li>Pre-plan a place where whoever Professor Love chooses to speak first will switch off to the second person so that the time is about even, and you’ll both need to be prepared to give either half of the presentation.</li>
+<li>If you’re on Zoom, one of you should plan to be the one who will share their screen for both halves of the presentation, so we don’t have to switch back and forth.</li>
+</ul>
+<p>You can give your presentation using just your knitted HTML results from Quarto, or a set of slides you’ve prepared or any other tools that allow you to show your mastery of 432 material most effectively in the available time.</p>
+<ul>
+<li>Do not plan to run R code during the session. Your HTML file, for example, must be completely knitted.</li>
+<li>Structure your presentation so you can find things very easily. Useful names in the headers help, certainly, but thoughtful construction of an argument and good NAMES for things in your code, and in the headings of your presentation is really the most important thing.</li>
+</ul>
+<section id="p-values-and-statistical-significance" class="level2">
+<h2 class="anchored" data-anchor-id="p-values-and-statistical-significance">P values and “statistical significance”</h2>
+<p>As in Project A, you are welcome to include p values in your analyses in either the portfolio or the presentation, but you should demonstrate good statistical practice by not comparing them to <span class="math inline">\(\alpha\)</span> levels to declare things to be important, meaningful, or significant.</p>
+<p><strong>You should not use the words “statistically significant” or any synonyms (like statistically detectable) in any of your materials or in your presentation.</strong></p>
+</section>
+</section>
+<section id="the-project-portfolio" class="level1">
+<h1>The Project Portfolio</h1>
+<p>You will build a <strong>written portfolio</strong> created using Quarto of Project B materials. Your portfolio should present your work in a way that allows you to demonstrate to Professor Love your mastery of several important ideas you learned during the 432 class.</p>
+<ul>
+<li>Your portfolio will include some background, leading into your research question or questions, your data management work and codebook, and then your analytic work, data descriptions, results and conclusions.</li>
+<li>Your portfolio should demonstrate your commitment to replicable research by presenting a description of your work that allows you (or anyone else with access to the raw data) to review and repeat and (potentially) modify all of your important work by following your presentation.</li>
+<li>Your goal in the portfolio should be to ensure that you, two years from now, can use your portfolio and the data to replicate your work and make changes in light of new information easily.</li>
+</ul>
+<section id="template-for-the-portfolio" class="level2">
+<h2 class="anchored" data-anchor-id="template-for-the-portfolio">Template for the Portfolio</h2>
+<p>Professor Love built a sample template for the Project B Portfolio, and we strongly encourage you to use it. This template is posted to our <a href="https://github.com/THOMASELOVE/432-data">432-data site</a>.</p>
+<p>Any alternate template or formatting style is acceptable if it is built using Quarto and contains all of the section headings in Professor Love’s template. The list of HTML “themes” that are available in Quarto by changing the “theme” option in the start of your document <a href="https://quarto.org/docs/output-formats/html-themes.html">can be found here</a> and we encourage you to pick something you think looks nice.</p>
+</section>
+<section id="what-are-the-main-section-headings-in-the-portfolio" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-the-main-section-headings-in-the-portfolio">What are the main section headings in the Portfolio?</h2>
+<p>The Template begins with an unnumbered section for R Packages and Setup. The numbered sections we want you to use are:</p>
+<ol type="1">
+<li>Background</li>
+<li>Research Questions</li>
+<li>Data Ingest and Management</li>
+<li>Code Book and Description</li>
+<li>Analyses</li>
+<li>Conclusions and Discussion</li>
+<li>References and Acknowledgments</li>
+<li>Session Information</li>
+</ol>
+<p>Make your portfolio gorgeous, thoughtful and incredibly easy for Professor Love to use in evaluating your work.</p>
+<ul>
+<li>Jeff Leek’s material in <a href="https://leanpub.com/modernscientist">How To Be a Modern Scientist</a> is very useful here, in particular the material on Scientific Talks and on Paper Writing. We especially like the advice to write clearly and simply.</li>
+<li>Include all R code and output that you need to help Professor Love understand the important issues in your study.
+<ul>
+<li>Adding <strong>more</strong> material, just for the sake of demonstrating that you can, is a good way for me to be <strong>unimpressed</strong> with your project. If you cannot think of anything to say about a piece of output easily, why are you including it?</li>
+</ul></li>
+<li>Cleaning the data is a vitally important step. Professor Love will assume that you have done it perfectly. The TAs can help you, but this is your responsibility.</li>
+<li>Your cleaning should use tools from the tidyverse when possible, and you should do all analytic work on tibbles, whenever possible.</li>
+<li>Don’t include warnings or messages from R that we don’t need to know about. Use and trust your judgment.</li>
+<li>Never show long versions of output when short ones will do. A particularly good idea is to print a tibble rather than showing an entire data set.</li>
+</ul>
+</section>
+<section id="our-best-advice" class="level2">
+<h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
+<p>Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.</p>
+</section>
+<section id="submitting-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-your-data">Submitting Your Data</h2>
+<p>If your data are <strong>available to the public</strong>, including Professor Love, then submit (along with your final portfolio):</p>
+<ul>
+<li>whatever Professor Love needs to provide to the Quarto file to ingest your data (this is most commonly a .csv file or series of them, but you might instead pull directly from the internet, which is also fine.)</li>
+<li>a tidied version of the data set, saved as .Rds, and matching precisely what you describe in your codebook.</li>
+<li>if the data are available online, you must provide within your HTML file a working URL with instructions to access the data.</li>
+</ul>
+<p>If your data are <strong>not available to the public</strong>, then submit (again, with your Portfolio):</p>
+<ul>
+<li>an .Rds or .csv file consisting of five rows of your data, with all variables included in your codebook provided, and with different values of each of the variables displayed.</li>
+<li>The five rows can be five actual rows from your data set, or each row can take parts of several different actual rows in your data to hide details and prevent re-identification.</li>
+<li>No protected health information may be included in the five rows of data you submit, nor can any protected information be contained in the actual analytic data set(s) you use in your work.</li>
+</ul>
+</section>
+</section>
+<section id="constraints-for-project-b" class="level1">
+<h1>Constraints for Project B</h1>
+<p>The purpose of providing these constraints is to reduce your stress and <strong>reduce the scope of the project</strong> a bit. Take these as useful suggestions that will help you avoid some common problems. Most students attempt to take on too much in doing the project. These constraints are meant to stop you from doing that.</p>
+<p>If you decide that one or more of the constraints in this section shouldn’t apply in your project, you have our permission to do something else, as long as you <strong>identify the issue, and describe and defend your decision</strong> in <strong>both</strong> your portfolio and presentation.</p>
+<section id="missing-data" class="level2">
+<h2 class="anchored" data-anchor-id="missing-data">Missing Data</h2>
+<ol type="1">
+<li>Drop all cases without complete outcome data, but otherwise, your goal should be to preserve as much of the data collection effort as possible.</li>
+<li>Use multiple imputation to deal with missing values in presenting a final model for either a linear or logistic regression whenever possible.</li>
+<li>Be sure to explicitly state the assumptions you make about the missing data mechanism.</li>
+<li>You may use single imputation in the process of developing your models, in presenting residual plots for linear models, or in presenting final models for regression approaches for count, multi-categorical or time-to-event with censoring outcomes.</li>
+<li>Do not use a complete-case analysis or sampling strategy except to ensure that all of your cases have complete outcome data.</li>
+</ol>
+</section>
+<section id="model-size" class="level2">
+<h2 class="anchored" data-anchor-id="model-size">Model Size</h2>
+<ol type="1">
+<li>While you can fit a larger model, we strongly recommend you restrain yourself to <strong>no more than 8 predictors</strong> in a final model regardless of your sample size. Anything more than that will be difficult to interpret at best.</li>
+<li>If your number of main effects (predictors) that you want to include in your final model exceeds the number of degrees of freedom specified below, then don’t add any non-linear terms. If you do decide to include non-linear terms as determined based on a Spearman rho-squared plot, then adhere closely to the maximum degrees of freedom specified in the table below. These df limits include the intercept term(s).</li>
+</ol>
+<ul>
+<li>If you are fitting a regression to a <strong>quantitative or count</strong> outcome, let <em>n</em> = sample size. For this count and all of the counts here, do not include any data points where the outcome is missing.</li>
+<li>If you are fitting a regression to a <strong>categorical</strong> outcome, let <em>n</em> = # of observations in the category with the smallest sample size.</li>
+<li>If you are fitting a regression to a <strong>time-to-event</strong> outcome, let <em>n</em> = # of observations where the event occurred (was not censored).</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Value of <em>n</em></th>
+<th style="text-align: right;">20-100</th>
+<th style="text-align: right;">101-250</th>
+<th style="text-align: right;">251-500</th>
+<th style="text-align: right;">501-999</th>
+<th style="text-align: right;">1000+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">Maximum <em>df</em></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">20</td>
+</tr>
+</tbody>
+</table>
+<p>For Project B, don’t worry about penalizing yourself for “peeking” at the data by running automated selection procedures (although we don’t generally recommend these) or scatterplot matrices.</p>
+</section>
+<section id="transformations" class="level2">
+<h2 class="anchored" data-anchor-id="transformations">Transformations</h2>
+<p>In Project B, for outcome transformations, follow our advice <a href="./projA.html#transformations">from Project A</a>.</p>
+</section>
+<section id="advice-on-predictors" class="level2">
+<h2 class="anchored" data-anchor-id="advice-on-predictors">Advice on Predictors</h2>
+<ol type="1">
+<li><p>Collapse multi-categorical predictors sufficiently that you don’t have problems fitting or interpreting the model. In most cases, it is very difficult to describe what’s happening with predictors containing more than five levels.</p></li>
+<li><p>If you choose to use a spline or polynomial function with a quantitative predictor and want also to use an interaction term for that predictor, be sure to restrict the interaction to a linear term only with <code>%ia%</code>.</p></li>
+<li><p>Make sure that the coefficients and standard errors in your models don’t explode, which can happen when a predictor overwhelms the regression model. It’s your job to identify that there is a problem and do something to address it appropriately, rather than presenting a clearly inappropriate model.</p></li>
+</ol>
+</section>
+<section id="on-validation" class="level2">
+<h2 class="anchored" data-anchor-id="on-validation">On Validation</h2>
+<ol type="1">
+<li>We expect a validation, properly executed, to be an important part of every Project B.</li>
+<li>This will most commonly include a split into training and testing samples, and an evaluation of key results in a held-out sample.</li>
+<li>Bootstrap validation of summary statistics via the tools available in the <code>rms</code> package is also welcome, if you are fitting models that use those tools.</li>
+</ol>
+</section>
+</section>
+<section id="questions-and-answers" class="level1">
+<h1>Questions and Answers</h1>
+<blockquote class="blockquote">
+<p>Does Project B have to include everything that we did in Project A?</p>
+</blockquote>
+<p>No.&nbsp;You’ll want to have some of that information at your fingertips in a presentation, so think carefully about what to keep and what to drop. Clearly, there is meaningful overlap (you need to describe your research questions, your data, provide a codebook, etc.)</p>
+<blockquote class="blockquote">
+<p>What should we name models, and variables?</p>
+</blockquote>
+<p>Something memorable and consistent. If you want to avoid creativity, then call things <code>model_01</code> and <code>model_02</code>, by all means, but do that in both the text descriptions and in your code. Don’t call the same thing Model 1 (or my first model) in your text, but <code>mod_1</code> in your code, as an example.</p>
+<blockquote class="blockquote">
+<p>Is there an advantage to choosing a public (open, sharable) data set over a private one for this Project?</p>
+</blockquote>
+<p>You are permitted to do either. A substantial advantage of public data is that you can share the details with us (including the data) if you encounter a coding problem. This improves the chances that we can be helpful.</p>
+<blockquote class="blockquote">
+<p>Should we consider larger data sets with substantially more than 2,000 observations?</p>
+</blockquote>
+<p>If you want to work with a huge data set, then we encourage you to sample it down to at most 2,000 observations in a model development sample first (and perhaps as many as another 2,000 observations in a model testing sample.) There are three main reasons for this:</p>
+<ol type="1">
+<li>this is a project about what you learned in (431 and) 432, which is most definitely NOT a course in analyzing data with tens of thousands of observations,<br>
+</li>
+<li>avoid long waits while your data are processed in R, and 2000 is a good limit from this perspective.</li>
+<li>be sure that things like a scatterplot are still of some value in terms of letting you understand your data. Scatterplots of more than about 1000 observations tend to be very difficult to interpret, even if they are quite large.</li>
+</ol>
+<p>It’s not worth boiling the ocean in this project. Of course, after the course is over, you can always ramp back up to a bigger version of the data set to expand the project.</p>
+<blockquote class="blockquote">
+<p>What is the best way to select an appropriate set of predictors?</p>
+</blockquote>
+<p>It depends in part on the kind of question you are trying to answer. For most projects, we recommend a question that is explicitly about prediction, rather than either (a) trying to explain a phenomenon in existing data without reference to external prediction or (b) trying to make some sort of causal inference, which requires methods beyond the scope of this class.</p>
+<p>We suggest you start with a question to answer, which should motivate specific predictors. A combination of logic, theory and prior empirical evidence is always preferable. A scan of the literature is always useful. A conceptual model of the relationship which makes predictions about what “should” happen under current understanding can be very helpful. We urge you to pick a project where you have some prior understanding of how the data will behave and where you can express that pre-modeling belief as part of your presentation of your work.</p>
+<p>Don’t scan a list of correlations in the current data to see which ones look promising, and then forget that you did that when it comes time to evaluate the models. It’s fine to go on a fishing expedition in Project B, but then you have to severely temper your claims, an in particular you have to give up on drawing any substantial conclusions about causation or explanation and focus instead on a question about prediction, and (of course) validation of your model becomes essential.</p>
+<blockquote class="blockquote">
+<p>Prior to analyses, should we specify our expected directions of relationships between outcomes and predictors?</p>
+</blockquote>
+<p>Sure, especially for any key predictors.</p>
+<blockquote class="blockquote">
+<p>Does Professor Love have a strong working understanding of genomics data?</p>
+</blockquote>
+<p>No.</p>
+<blockquote class="blockquote">
+<p>Can we use <code>echo=FALSE</code> in Project B?</p>
+</blockquote>
+<p>The use of <code>echo = FALSE</code> is prohibited in Project B. Use the template.</p>
+</section>
+<section id="things-we-want-to-see-in-your-work" class="level1">
+<h1>Things We Want To See in Your Work</h1>
+<ol type="1">
+<li>a clear statement of each of your research questions, preceded by an appropriate (but not at all lengthy) background section motivating those questions</li>
+<li>a clear description of the data to be used, with careful attention to cleaning the data to make the follow-up analyses as straightforward as possible</li>
+<li>the use of techniques from the 431-432 sequence for every stage of the data science process, from data ingest and tidying through the cycle of transformation, visualization and modeling, and then finally a careful communication of the end result</li>
+<li>the use of regression methods that are directly applicable to the research questions you pose</li>
+<li>the use of appropriate tools for diagnosing the quality of those models, including useful and well-presented visualizations and summary statistics</li>
+<li>identification and comparison of candidate models to address your research questions if there are real choices to be made (if you have a clear model in mind at the start, there’s no need to artificially create a competitor)</li>
+<li>validation of your model’s predictions and/or model summary statistics in an appropriate way</li>
+<li>clear evidence that you have thought hard, and well, about what output to present. In particular, we want you to think in terms of creating meaningful annotations for every single scrap of output that you generate and present: if you cannot think of anything to say about a piece of output easily, why are you including it?</li>
+<li>a clear re-statement of the research questions you asked at the start, now with conclusions that answer those questions</li>
+<li>a clear statement of the limitations of your approach, and</li>
+<li>a clear statement about useful next steps that you would like to try on the data, moving forward, as well as</li>
+<li>a clear statement about what you learned as a result of doing the project.</li>
+</ol>
+<p>All of this should appear in an extremely well-organized presentation and portfolio that work together well. Evidence of strong organization includes the use of effective labels, useful annotations for your code, and (in particular) meaningful headings and a helpful table of contents which make good use of the available technology.</p>
+</section>
+<section id="new-eight-questions" class="level1">
+<h1><strong>NEW!!</strong> Eight Questions</h1>
+<p>What 8 Questions would Dr.&nbsp;Love be likely to ask (either himself or you) during your Presentation, and as he reviews your Final Portfolio …</p>
+<section id="questions-about-your-project-b-work-in-general" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-your-project-b-work-in-general">8 questions about your Project B work in general</h2>
+<ol type="1">
+<li>Does the background motivate your research questions?</li>
+<li>Are you research questions clear and appropriately linked to the regression analyses you are doing?</li>
+<li>How much data do you have, and what is the source of that data?</li>
+<li>How did you deal with missing data, and what assumptions about missingness did you make?</li>
+<li>Is your portfolio well-labeled and easy to find things in?</li>
+<li>Does your presentation focus on important issues? <a href="https://thomaselove.github.io/432-2024/projB.html#the-presentation">See the list in the instructions</a>.</li>
+<li>Have you avoided discussing statistical significance or any synonyms for that problematic term?</li>
+<li>Can you answer questions effectively about the work you’re presenting?</li>
+</ol>
+<p>Of course, I’ll also want to know if you have questions for me about things related to the Project.</p>
+</section>
+<section id="questions-about-a-model-for-a-time-to-event-outcome-with-censoring" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-a-model-for-a-time-to-event-outcome-with-censoring">8 questions about a model for a time-to-event outcome with censoring</h2>
+<ol type="1">
+<li>What is the outcome of interest, and what is the variable describing the time, and the variable describing the “event”?</li>
+<li>How many subjects are in your data, and how many of them have the actual “event”?</li>
+<li>What does it mean for someone to be censored in your data?</li>
+<li>What does a Kaplan-Meier curve describing survival across all of your outcomes, or perhaps comparing two or three key groups, tell us about your research question?</li>
+<li>Why did you select the combination of predictors that you did for this model?</li>
+<li>Have you provided an appropriate summary of the effects in your Cox model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?</li>
+<li>Overall, how well does your model fit, as judged by the unvalidated concordance, C statistic, and Cox-Snell R-square measure?</li>
+<li>What does your assessment of the proportional hazards assumption suggest about your model?</li>
+</ol>
+</section>
+<section id="questions-about-a-model-for-a-count-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-a-model-for-a-count-outcome">8 questions about a model for a count outcome</h2>
+<ol type="1">
+<li>What is the outcome of interest, and is this in fact a count outcome?</li>
+<li>How many subjects are in your data, and what does the distribution of your count outcome look like in those subjects?</li>
+<li>How did you split the data into testing and training samples, which you should do with a count outcome, following Slides Set 15.</li>
+<li>Why did you select the combination of predictors that you did for this model?</li>
+<li>Which model(s) did you fit to your data? You should plan to fit at least two of a Poisson, a Negative Binomial and/or a zero-inflated model or hurdle model.</li>
+<li>Why did you settle on the choice of count model you did? A comparison of rootograms is the most desirable way to show me how you made this choice.</li>
+<li>Have you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?</li>
+<li>How well does your model fit, as judged by training then test sample summaries of R-square and the root mean squared error? Note: I don’t care about Vuong’s test.</li>
+</ol>
+</section>
+<section id="questions-about-a-model-for-a-multi-categorical-outcome-with-3-7-levels" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-a-model-for-a-multi-categorical-outcome-with-3-7-levels">8 questions about a model for a multi-categorical outcome with 3-7 levels</h2>
+<ol type="1">
+<li>What is the outcome of interest, and is it an ordinal or nominal multi-categorical outcome? Did you do any collapsing of levels? Why? How many subjects are in your data overall, and within each level of your outcome?</li>
+<li>Why did you select the combination of predictors that you did for this model?</li>
+<li>What do the predictions from your model look like, when tabulated (in the rows) against the true results from your outcome (in the columns)? What does that table tell us about the accuracy of your predictions?</li>
+<li>Use your model to make predictions for two new subjects, and use those predictions to discuss the impact of an interesting change in one of your more important predictors.</li>
+</ol>
+<p>and four additional questions, depending on whether you have an ordinal or nominal outcome…</p>
+<p><strong>If you have an ordinal outcome</strong>, then I’d additionally ask:</p>
+<ol start="5" type="1">
+<li>How are you making certain that R recognizes your outcome as an ordered factor?</li>
+<li>Can you display and explain the <code>ggplot(Predict(yourmodel))</code> result from your POLR model (i.e.&nbsp;a lrm() model for a proportional outcome)?</li>
+<li>How well does the POLR model fit, as judged by validated R-square and C statistics obtained through fitting with lrm()?</li>
+<li>Which model did you wind up preferring for your data (POLR or multinomial) and why? (A likelihood ratio test along with AIC and BIC comparisons is a good option here.)</li>
+</ol>
+<p><strong>If you have a nominal outcome</strong>, then I would additionally ask:</p>
+<ol start="5" type="1">
+<li>How do you know that your multinomial model converged?</li>
+<li>How many intercepts and how many coefficients (slopes) are in your model? Do these values make sense in light of your outcome and predictors?</li>
+<li>Can you display and explain the meaning of a plot of response probabilities describing the relationship between your outcome and one of your interesting categorical predictors, like the one I show in Slides Set 19, slide #23 entitled <code>try1</code> Response Probabilities? Or, if you have two interesting categorical predictors, like the plot I shod in Slides Set 19, slide #62 called <code>fit_LS</code> Response Probabilities?</li>
+<li>Can you compare your model (which should have at least 2 predictors) to another model for your outcome that includes only one of your predictors (it’s up to you to decide what one predictor would be most interesting to study) using AIC, BIC and effective degrees of freedom, so that you can then tell us which of those two models looks best by both AIC and BIC?</li>
+</ol>
+</section>
+<section id="questions-about-a-model-for-a-quantitative-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-a-model-for-a-quantitative-outcome">8 questions about a model for a quantitative outcome</h2>
+<ol type="1">
+<li>Have you made a reasonable choice of strategy here? (Bayesian model, Bayesian model with tidymodels, Selecting Candidates via the LASSO, using survey weights, quantile regression or robust linear model?) Why did you select this approach - how does it tie in with your research question?</li>
+<li>Can you demonstrate that you have selected a transformation (or not) for the outcome wisely?</li>
+<li>Can you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class?</li>
+<li>Can you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you’re developing?</li>
+<li>Have you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?</li>
+<li>Can you make predictions for new data using your model?</li>
+<li>Can you compare the performance of your model in a sensible way to an ordinary least squares linear model?</li>
+<li>Can you evaluate the assumptions that are relevant to your model?</li>
+</ol>
+</section>
+<section id="questions-about-a-model-for-a-binary-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="questions-about-a-model-for-a-binary-outcome">8 questions about a model for a binary outcome</h2>
+<ol type="1">
+<li>Have you made a reasonable choice of strategy here? (Bayesian model or Bayesian model with tidymodels?) Why did you select this approach, and how does it tie in with your research question?</li>
+<li>How did you make certain that your binary outcome was being modeled in the direction you intend it to be modeled (i.e.&nbsp;the Probability of A happening, rather than the Probability of A not happening?)</li>
+<li>Can you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class?</li>
+<li>Can you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you’re developing?</li>
+<li>Have you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?</li>
+<li>Can you make predictions for new data using your model?</li>
+<li>Can you compare the performance of your model in a sensible way to an ordinary logistic regression model?</li>
+<li>Can you evaluate the assumptions that are relevant to your model?</li>
+</ol>
+</section>
+</section>
+<section id="need-help-1" class="level1">
+<h1>Need Help?</h1>
+<p>Repeating what we wrote earlier, questions about Project B may be directed to the TAs and to Professor Love at any time <strong>after</strong> your submission of the Project A portfolio in March. If you’re asking a question <a href="https://campuswire.com/">on Campuswire</a>, please use the <code>Project B</code> label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

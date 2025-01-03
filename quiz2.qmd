@@ -1,0 +1,13 @@
+---
+title: "Quiz 2"
+---
+
+By the time specified on the [Calendar](calendar.qmd), several elements related to Quiz 2 will be provided to you.
+
+1. The main document (pdf) for Quiz 2, which will include both instructions and all of the questions.
+2. A link to the Google Form Answer Sheet for Quiz 2, where you will submit your responses.
+3. Download information for the Data Sets we will provide for Quiz 2.
+
+Quiz 2 will be due when the [Calendar](calendar.qmd) says it is.
+
+If you have a question prior to the release of Quiz 2 about the Quiz, send it by email to Dr. Love at `thomas dot love at case dot edu`.

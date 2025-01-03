@@ -1,0 +1,78 @@
+---
+title: "Lab 7"
+date: last-modified
+format: 
+  html:
+    code-overflow: wrap
+---
+
+# General Instructions
+
+- Submit your work via [Canvas](https://canvas.case.edu/). 
+- The deadline for this Lab is specified on the [Calendar](calendar.qmd).
+  - Work submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.
+  - Work submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.
+  - Work submitted more than 24 hours after the deadline will not be graded.
+
+Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for [Lab 2](lab2.qmd#template).
+
+# Question 1 (25 points)
+
+This question uses the `oh22` data we built back in [Lab 1](lab1.qmd), and used more recently in [Lab 6](lab6.qmd).
+
+Divide the 86 counties in your development sample (see [Lab 6](lab6.qmd) for details) into three groups (low, middle and high) in a rational way in terms of the `years_lost_rate` outcome. Make that new grouping your outcome for an ordinal logistic regression model. Annotate all of your code with text that explains clearly what you are doing.
+
+a. Fit a model (using a carefully selected group of 4-5 predictor variables from the `oh22` data) and assess its performance carefully. Do not include the `age65plus` variable as a predictor, as the `years_lost_rate` data are age-adjusted already.
+
+b. In complete sentences, demonstrate how well the model fits as well as the conclusions you draw from the model carefully. 
+c. Then use the model to predict Cuyahoga County and Monroe County results, and assess the quality of those predictions, probably using a well-built table and a couple of complete English sentences.
+
+Note that even though we've divided Question 1 into three parts here, we'll grade the whole thing together out of 25 points, rather than assigning weights to each part separately.
+
+## Hint for Question 1
+
+All of the issues mentioned in the [Hint for Question 2 in Lab 6](lab6.qmd#hint-for-question-2) apply here, too, perhaps even more so. `polr`, in particular, can be quite fussy.
+
+For example, some people in the past have tried to use `median_income` in their models along with other variables that have much smaller scales (ranges). we would try rescaling those predictors with large ranges to have similar magnitudes to the other predictors, perhaps simply by expressing the median income in thousands of dollars (by dividing the raw data by 1000) rather than on its original scale, or perhaps by normalizing all of the coefficients by subtracting their means and dividing by their standard deviations.
+
+As another example, some people in the past tried using age-adjusted mortality to predict years lost rate, but if you divide the years lost rate into several ordinal categories, it's not hard to wind up in a situation where age-adjusted mortality is perfectly separated, so that if you know the mortality, it automatically specifies the years lost rate category in these data.
+
+# Question 2. (25 points)
+
+The `lab7q2.csv` file available on the 432-data site contains information on 1000 animal subjects who took part in an observational study, and includes information on:
+
+- `alive` = the subject's vital status at the end of the study (`alive` = 1 if alive at the end of the study, 0 otherwise)
+- `treated` = 1 if the subject received the treatment of interest and 0 if the subject received usual care
+- `age`, in years, at the start of the study
+- `female` = 1 if the subject is female, biologically
+- `comor` = a count of comorbid conditions (maximum = 7)
+
+a. (5 points) Create a tibble called `lab7q2` in R containing the data in `lab7q2.csv`, annotating your code with text to ensure everything you are doing is clear. How many rows in your `lab7q2` data contain at least one missing value?
+
+b. (10 points) Now fit a logistic regression model to predict vital status (`alive`) on the basis of main effects of `treated`, `age`, `female` and `comor`, using multiple imputation to deal with missing values, and setting a seed of `4322023` for the imputation work. In your imputation process, you should include all variables in the `lab7q2` data other than the subject identifying code, run 20 imputations, and use `nk = c(0, 3), tlinear = TRUE, B = 10` and `pr= FALSE`. Again, annotate your code with text to ensure that everything you do is clear.
+
+c. (10 points) Using the model you built in Question 2b, estimate the effect of treatment (vs. control) on the odds of being alive at the end of the study. Your odds ratio estimate should compare `treated` to `control`, while adjusting for the effects of `age`, `female` and `comor`. Provide both a point estimate and a 95% confidence interval. Use the format 1.23 (0.78, 1.89) for your response, rounding your estimates to two decimal places. Then interpret your point estimate concisely and correctly in complete English sentences. Be sure to specify the direction of effects correctly in your modeling and your conclusions.
+
+# Our Best Advice
+
+Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
+
+# Use of AI
+
+If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI", after your answers to our questions, and just *before* your presentation of the Session Information. Thank you.
+
+# Session Information
+
+Please display your session information at the end of your submission, as shown below.
+
+```{r}
+xfun::session_info()
+```
+
+## After the Lab
+
+We will post an answer sketch 24 hours after the Lab is due.
+
+We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
+
+See the [Lab Appeal Policy in our Syllabus](https://thomaselove.github.io/432-syllabus-2024/08-grading.html#lab-appeal-policy---request-a-review-via-google-form) if you are interested in having your Lab grade reviewed, and use [the Lab Regrade Request form specified there](https://bit.ly/432-2024-lab-regrades) to complete the task. Thank you.

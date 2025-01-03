@@ -1,0 +1,73 @@
+---
+title: "Lab 8"
+date: last-modified
+format: 
+  html:
+    code-overflow: wrap
+---
+
+# Lab 8 Approvals
+
+People with approved work on Lab 8 will find that acknowledged at <https://github.com/THOMASELOVE/432-classes-2024/tree/main/lab8>.
+
+# General Instructions
+
+- If you already have a professional website (for instance, if you built one in 431) you'll choose option B below. 
+- If you don't already have a website, then you'll choose option A.
+
+## Option A
+
+If you do not already have a professional website describing your work life to the world, then build one, ideally using Quarto. For help, refer to the instructions from this past fall's 431 at https://thomaselove.github.io/431-labX/.
+
+We want you to build a professional looking website that will be useful to you. The content is up to you, and what you’d like to share but it’s worth considering using this opportunity to craft your online presence. This is also an opportunity to learn how to use Quarto for the purpose.
+
+- The most common tool people who've completed this have mentioned to me is the tutorial by Marvin Schmitt at https://www.marvinschmitt.com/blog/website-tutorial-quarto/.
+- The Quarto website shows you how to create a blog website within R Studio [in some detail here](https://quarto.org/docs/websites/website-blog.html).
+-   Quarto’s general guide to [Creating a Website](https://quarto.org/docs/websites/) may also be helpful.
+-   Beatriz Milz’ [Creating a blog with Quarto in 10 Steps](https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/)
+-   Albert Rapp’s [The Ultimate Guide to Starting a Quarto    Blog](https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html)
+-   CrumpLab gives us [Blogging with Quarto: A 10 minute getting started     tutorial](https://www.youtube.com/watch?v=YoKjBcuUP0s) (about 10 minutes)
+-   Isabella Velásquez at RStudio has a YouTube video called [Building a     Blog with Quarto](https://www.youtube.com/watch?v=CVcvXfRyfE0) (just over an hour)
+-   Thomas Mock shows you how to [Create & Publish a Quarto Blog on Quarto Pub in 100     Seconds](https://www.youtube.com/watch?v=t8qtcDyCRFA)
+
+The key thing is to commit to making this a part of your life going forward, however you most effectively do that.
+
+Sample websites built by [both past](https://github.com/THOMASELOVE/431-labs-2022/blob/main/labXwebsites.md) and [present students](https://github.com/THOMASELOVE/431-classes-2023/tree/main/labX) in this class are available to help you get an idea of what you can do.
+
+Once you've built a site you're proud of, post a Public Note to the **Lab 8** folder in Campuswire celebrating your achievement and containing a link to your page for your fellow students to be inspired by.
+
+## Option B
+
+If you already have a personal website that you built for 431 or for some other reason, then improve it by adding a blog post dated in 2024 that discusses in a meaningful way something important that you learned, either from reading *How To Be A Modern Scientist* by Jeff Leek, or from reading some part of the supplement entitled [Statistical Inference in the 21st Century: A World Beyond *p* < 0.05](https://amstat.tandfonline.com/toc/utas20/73/sup1) from 2019 in *The American Statistician*. A substantial discussion of something useful or meaningful to you is what we're looking for.
+
+Then post a Public Note to the **Lab 8** folder in Campuswire celebrating your achievement and containing a link to your page for your fellow students to be inspired by, and a link to the specific blog post you've built now, and also adding a short description of anything else (besides adding the blog post) that you have improved about your site in 2024.
+
+## Deadline
+
+To receive full credit, you must complete the lab (by making your post to Campuswire as described above) no later than the late April deadline on the [Course Calendar](calendar.qmd) 
+
+- You can complete Lab 8 at any time prior to that date. 
+
+## Why do this?
+
+Timely completion of Lab 8 will improve your course grade at the end of the term to a meaningful degree, and will earn you some of Dr. Love's respect. Also, no one under the age of 50 exists these days in a professional capacity without a website. 
+
+- If you're looking for Dr. Love to write a letter of recommendation for you in the fullness of time, he's going to want to see your website.
+
+## Impact of Lab 8 on your grade
+
+Lab 8 is due Monday 2024-04-29 at noon.
+
+- If you submit a successful Lab 8 by that time, you will receive 30 points for the Lab 8 assignment.
+- If you don't make that deadline, but do submit a successful Lab 8 by noon on Tuesday 2024-05-07, you will receive 15 points for the Lab 8 assignment.
+- If you fail to complete Lab 8 successfully by noon on Tuesday 2024-05-07, you will receive 0 points for the Lab 8 assignment.
+
+Your homework (labs) grade is made up of the top 6 scores you had on the first 7 labs, which is out of a total possible score of 300 points (each lab is worth 50), PLUS your score on Lab 8, all divided by 3.15. There are slight adjustments for people who were excused from labs between 1 and 7.
+
+- This means that the best possible score you can get on the labs is 300 (for Labs 1-7 combined) + 30 = 330, which will then be divided by 3.15 to yield a score of 104.8
+- If you do Lab 8 late but still complete it by Tuesday the 7th at noon, your maximum Lab score would be 300 + 15 = 315, which divided by 3.15 is 100.
+- If you don't do Lab 8 at all, then your maximum Lab score would be 300 / 3.15, which is 95.2
+
+## Spring 2024 Submissions
+
+can be found at this link: [Approved Lab 8 submissions](https://github.com/THOMASELOVE/432-classes-2024/blob/main/lab8/README.md)

@@ -1,0 +1,730 @@
+[
+  {
+    "objectID": "tocome.html",
+    "href": "tocome.html",
+    "title": "Coming Soon",
+    "section": "",
+    "text": "The item you are looking for will appear soon on this website.\nThe full website will go live on 2024-01-12.\nThank you for your patience."
+  },
+  {
+    "objectID": "quiz2.html",
+    "href": "quiz2.html",
+    "title": "Quiz 2",
+    "section": "",
+    "text": "By the time specified on the Calendar, several elements related to Quiz 2 will be provided to you.\n\nThe main document (pdf) for Quiz 2, which will include both instructions and all of the questions.\nA link to the Google Form Answer Sheet for Quiz 2, where you will submit your responses.\nDownload information for the Data Sets we will provide for Quiz 2.\n\nQuiz 2 will be due when the Calendar says it is.\nIf you have a question prior to the release of Quiz 2 about the Quiz, send it by email to Dr. Love at thomas dot love at case dot edu."
+  },
+  {
+    "objectID": "projB.html",
+    "href": "projB.html",
+    "title": "Project B",
+    "section": "",
+    "text": "The Schedule for Project B presentations is available at https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md."
+  },
+  {
+    "objectID": "projB.html#deliverables",
+    "href": "projB.html#deliverables",
+    "title": "Project B",
+    "section": "Deliverables",
+    "text": "Deliverables\nThere are three deliverables in Project B: a Proposal Form, an in-person or Zoom Presentation, a Portfolio developed with Quarto (along with your Data).\n\nProposal Form By the deadline on the Calendar in early April, you will submit the Google Form found at https://bit.ly/432-2024-projectB-proposal-form.\n\nIn this form, you will specify your title, your research questions, and your data source, and whether or not you are working with a partner.\nYou will also provide a brief description of each of your outcomes, and the type of models you plan to fit.\nFinally, you will also specify the times that work for you (and your partner) to give your Project B presentation to Professor Love from a set of times he is available in early May.\nWe will need to approve your Google Form before you proceed further, and this may require some revisions to your plan.\n\nPresentation After receiving our approval of your submitted form, you will prepare a portfolio of your results with Quarto (a template is available for this), and then give an in-person or Zoom presentation of your work to Professor Love in early May. The schedule for these presentations will be determined after completion of the Project B Proposal Form.\nPortfolio and Data You will then make changes (as needed) to your Quarto document (portfolio) in response to Professor Love’s comments during your presentation, and submit the final version of the portfolio along with a version of your data (as described here) to Canvas by the deadline in the Calendar.\n\n\nWorking with a Partner?\nYou can choose either to work alone, or with one other person, to complete Project B, unless Professor Love has specifically requested that you work alone. He will make those requests after Project A’s grading is complete.\nIf you are working with a partner…\n\nexactly one of you needs to complete the Project B Proposal Form (the other student should send an email to Dr. Love with the subject line 432 Project B Partnership confirming that you are working in a partnership and telling me the name of your partner), then\nyou will each participate in the Project B Presentation and the development of the Portfolio, and\n\nYour final Portfolio and Data will be submitted by exactly one of the two partners to Canvas while the non-reporting partner will submit a one-page note to Canvas indicating the members of the partnership and that the partner will submit the work."
+  },
+  {
+    "objectID": "projB.html#use-of-ai",
+    "href": "projB.html#use-of-ai",
+    "title": "Project B",
+    "section": "Use of AI",
+    "text": "Use of AI\nIf you decide to use some sort of AI to help you with any part of the Project, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called “Use of AI”. This should appear just before your section containing the Session Information. Thank you."
+  },
+  {
+    "objectID": "projB.html#on-research-questions",
+    "href": "projB.html#on-research-questions",
+    "title": "Project B",
+    "section": "On Research Questions",
+    "text": "On Research Questions\nProject B requires you to answer two research questions with data you obtain. You can study any question you like, although I’d steer clear of anything that you think Professor Love might find inappropriate. All of the advice from Project A on this subject still holds. Each of your research questions needs to lead clearly to a modeling strategy, where you’ll fit an appropriate regression model."
+  },
+  {
+    "objectID": "projB.html#on-selecting-data",
+    "href": "projB.html#on-selecting-data",
+    "title": "Project B",
+    "section": "On Selecting Data",
+    "text": "On Selecting Data\nWe hope that most people will find datasets of interest to them and use those. If you do not have any strong ideas for data to use, then we encourage you to consider the suggestions from 432 Project A. The best projects from my perspective use interesting and appropriate data that we have never seen before.\n\nYou must completely identify the source(s) of the data, so that Professor Love understands what data you are using very well, but you will not be required to share the data with him, or anyone else, if the data you use are not already available to the public. You must ensure that you have all necessary permission(s) to use the data for this course project.\nEach of your models must work with data drawn from the same tibble, and describe observations from the same pool of “subjects”.\nWe prefer that data sets contain between 200 and 2000 complete observations on each outcome, but you can use more than 2000 or as few as 150, if it’s important to do so. Projects with less than 150 subjects with complete data on all variables are not acceptable for Project B.\nYour tibble will need a subject identifying code, and each model must have a separate outcome, and at least one predictor not used in the other model and each model must have 2-8 predictors, we anticipate that your clean, tidied tibble will include between 6 and 19 variables.\nWe suggest that you collapse multiple categories as necessary to ensure that you have at least 25 observations in every category you plan to use for every predictor or outcome studied in Project B.\n\nUnlike 432 Project A, NHANES data are a completely acceptable choice for Project B, although we do require you to use the demographics file and at least two other NHANES files in developing your data set. See the Fall 2023 431 Project B instructions on Using NHANES data for more information on NHANES. If you use NHANES data or other large (weighted) survey data, you are welcome to do any or all of Project B without incorporating sampling weights.\nNote: We have had some difficulty identifying data set suggestions (outside of educational repositories like the UCI Machine Learning Repository) that are both messy enough to be interesting for this project and which also provide time-to-event outcomes with right censoring that are suitable for the survival analysis work we discuss in 432. If you have suggestions along these lines, we would be eager to hear them.\n\nThere are only a few restrictions on your choice of data.\n\nYou are not allowed to use data stored as a data set in any R package other than NHANES or Tidy Tuesday data.\nYou are not allowed to use data Professor Love or anyone else has provided to you for teaching purposes.\nYou cannot reuse the data you used in Project A for 432, although you can use a different data set to answer related questions. You are welcome to reuse data you used in your 431 project work if it is suitable and you haven’t used it in Project A for 432.\n\n\n\nNo multi-level (hierarchical) data\nWe want to powerfully discourage you from working with nested data that really require the use of multi-level models. The same rules set forward in Project A apply here, as well."
+  },
+  {
+    "objectID": "projB.html#what-information-does-the-form-require",
+    "href": "projB.html#what-information-does-the-form-require",
+    "title": "Project B",
+    "section": "What information does the form require?",
+    "text": "What information does the form require?\n\nYou’ll need to assert that you have already successfully ingested the data into R.\nYou’ll need to tell us the two types of models you plan to fit.\nYou’ll need to describe the variables you intend to use as outcomes in your models.\n\nThese two outcomes need to be clearly linked to your research questions, and you’ll need to tell us something about each of their distributions.\n\nYou’ll need to specify how many cases are in your data with complete data on each of your study’s two outcomes.\nYou’ll need to specify the title of your project.\nYou’ll need to specify your research questions.\nYou’ll need to specify who your partner is, if you have one."
+  },
+  {
+    "objectID": "projB.html#signing-up-for-presentation-times",
+    "href": "projB.html#signing-up-for-presentation-times",
+    "title": "Project B",
+    "section": "Signing Up for Presentation Times",
+    "text": "Signing Up for Presentation Times\nProfessor Love intends to hear projects for this course:\nProject B Presentations will be held on…\n\nTuesday 2024-04-30 (CWRU Reading Day) between 8 AM and Noon and between 1 and 6 PM, either in person or via Zoom\nWednesday 2024-05-01 (CWRU Reading Day) between Noon and 7 PM via Zoom\nThursday 2024-05-02 (Final Exams Begin) between 1 and 6 PM via Zoom\n\nYou will specify at least five one-hour time slots within these windows (using at least two different days) as times when you (and your partner, if any) are available to give your project.\nSome people will have special circumstances that make it difficult for them to meet during some of these times. There will be an opportunity on the form for you to provide those details to Professor Love."
+  },
+  {
+    "objectID": "projB.html#how-will-we-respond-to-the-form",
+    "href": "projB.html#how-will-we-respond-to-the-form",
+    "title": "Project B",
+    "section": "How will we respond to the form?",
+    "text": "How will we respond to the form?\nOn the basis of your responses to the form, we will either approve or reject your Project B plan, and once it is approved, you can proceed.\n\nIf we cannot approve your project, we’ll tell you why, and tell you how to try again. You’ll need to iterate until we approve your project, but we hope this won’t require more than two tries for anyone.\nThe main reason why we doesn’t approve projects is that we don’t understand the description of your data set or its outcomes, your planned modeling approaches, or how the research questions link to the available data, so focus on making those connections as clear as possible.\nTAs are available during their office hours to review your planned research questions, data set and planned variables with you to make suggestions.\n\nOnce all forms are in, Professor Love will also schedule the presentations, and this information will be announced in class and posted as quickly as possible."
+  },
+  {
+    "objectID": "projB.html#making-changes-to-your-proposal",
+    "href": "projB.html#making-changes-to-your-proposal",
+    "title": "Project B",
+    "section": "Making Changes to your Proposal",
+    "text": "Making Changes to your Proposal\nNo plan survives first contact with the data unscathed. You will wind up making changes as your work on the Project progresses. Once we approve your proposed research questions, you should feel to free to make any change you like, so long as you are not materially changing the general topic of your work. If you feel that you need to change the title or one of the outcomes in your project, that’s the time to run the changes past Professor Love in an email, but if the original title and outcomes still work, you’ll be fine.\n\nIf you do need to change a title, request a re-approval via email by submitting both the initial title and research questions as well as the new ones you now propose, accompanied by a brief description of what needs to change and why you need to make the change.\nProfessor Love will consider changes of this sort via email he receives more than 72 hours prior to your scheduled project presentation. After that, your title is locked in.\nYou do not need permission to adjust your choice of variables, or your strategy for including subjects or anything else that wouldn’t change the main goals of your project or your title."
+  },
+  {
+    "objectID": "projB.html#p-values-and-statistical-significance",
+    "href": "projB.html#p-values-and-statistical-significance",
+    "title": "Project B",
+    "section": "P values and “statistical significance”",
+    "text": "P values and “statistical significance”\nAs in Project A, you are welcome to include p values in your analyses in either the portfolio or the presentation, but you should demonstrate good statistical practice by not comparing them to \\(\\alpha\\) levels to declare things to be important, meaningful, or significant.\nYou should not use the words “statistically significant” or any synonyms (like statistically detectable) in any of your materials or in your presentation."
+  },
+  {
+    "objectID": "projB.html#template-for-the-portfolio",
+    "href": "projB.html#template-for-the-portfolio",
+    "title": "Project B",
+    "section": "Template for the Portfolio",
+    "text": "Template for the Portfolio\nProfessor Love built a sample template for the Project B Portfolio, and we strongly encourage you to use it. This template is posted to our 432-data site.\nAny alternate template or formatting style is acceptable if it is built using Quarto and contains all of the section headings in Professor Love’s template. The list of HTML “themes” that are available in Quarto by changing the “theme” option in the start of your document can be found here and we encourage you to pick something you think looks nice."
+  },
+  {
+    "objectID": "projB.html#what-are-the-main-section-headings-in-the-portfolio",
+    "href": "projB.html#what-are-the-main-section-headings-in-the-portfolio",
+    "title": "Project B",
+    "section": "What are the main section headings in the Portfolio?",
+    "text": "What are the main section headings in the Portfolio?\nThe Template begins with an unnumbered section for R Packages and Setup. The numbered sections we want you to use are:\n\nBackground\nResearch Questions\nData Ingest and Management\nCode Book and Description\nAnalyses\nConclusions and Discussion\nReferences and Acknowledgments\nSession Information\n\nMake your portfolio gorgeous, thoughtful and incredibly easy for Professor Love to use in evaluating your work.\n\nJeff Leek’s material in How To Be a Modern Scientist is very useful here, in particular the material on Scientific Talks and on Paper Writing. We especially like the advice to write clearly and simply.\nInclude all R code and output that you need to help Professor Love understand the important issues in your study.\n\nAdding more material, just for the sake of demonstrating that you can, is a good way for me to be unimpressed with your project. If you cannot think of anything to say about a piece of output easily, why are you including it?\n\nCleaning the data is a vitally important step. Professor Love will assume that you have done it perfectly. The TAs can help you, but this is your responsibility.\nYour cleaning should use tools from the tidyverse when possible, and you should do all analytic work on tibbles, whenever possible.\nDon’t include warnings or messages from R that we don’t need to know about. Use and trust your judgment.\nNever show long versions of output when short ones will do. A particularly good idea is to print a tibble rather than showing an entire data set."
+  },
+  {
+    "objectID": "projB.html#our-best-advice",
+    "href": "projB.html#our-best-advice",
+    "title": "Project B",
+    "section": "Our Best Advice",
+    "text": "Our Best Advice\nReview your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output."
+  },
+  {
+    "objectID": "projB.html#submitting-your-data",
+    "href": "projB.html#submitting-your-data",
+    "title": "Project B",
+    "section": "Submitting Your Data",
+    "text": "Submitting Your Data\nIf your data are available to the public, including Professor Love, then submit (along with your final portfolio):\n\nwhatever Professor Love needs to provide to the Quarto file to ingest your data (this is most commonly a .csv file or series of them, but you might instead pull directly from the internet, which is also fine.)\na tidied version of the data set, saved as .Rds, and matching precisely what you describe in your codebook.\nif the data are available online, you must provide within your HTML file a working URL with instructions to access the data.\n\nIf your data are not available to the public, then submit (again, with your Portfolio):\n\nan .Rds or .csv file consisting of five rows of your data, with all variables included in your codebook provided, and with different values of each of the variables displayed.\nThe five rows can be five actual rows from your data set, or each row can take parts of several different actual rows in your data to hide details and prevent re-identification.\nNo protected health information may be included in the five rows of data you submit, nor can any protected information be contained in the actual analytic data set(s) you use in your work."
+  },
+  {
+    "objectID": "projB.html#missing-data",
+    "href": "projB.html#missing-data",
+    "title": "Project B",
+    "section": "Missing Data",
+    "text": "Missing Data\n\nDrop all cases without complete outcome data, but otherwise, your goal should be to preserve as much of the data collection effort as possible.\nUse multiple imputation to deal with missing values in presenting a final model for either a linear or logistic regression whenever possible.\nBe sure to explicitly state the assumptions you make about the missing data mechanism.\nYou may use single imputation in the process of developing your models, in presenting residual plots for linear models, or in presenting final models for regression approaches for count, multi-categorical or time-to-event with censoring outcomes.\nDo not use a complete-case analysis or sampling strategy except to ensure that all of your cases have complete outcome data."
+  },
+  {
+    "objectID": "projB.html#model-size",
+    "href": "projB.html#model-size",
+    "title": "Project B",
+    "section": "Model Size",
+    "text": "Model Size\n\nWhile you can fit a larger model, we strongly recommend you restrain yourself to no more than 8 predictors in a final model regardless of your sample size. Anything more than that will be difficult to interpret at best.\nIf your number of main effects (predictors) that you want to include in your final model exceeds the number of degrees of freedom specified below, then don’t add any non-linear terms. If you do decide to include non-linear terms as determined based on a Spearman rho-squared plot, then adhere closely to the maximum degrees of freedom specified in the table below. These df limits include the intercept term(s).\n\n\nIf you are fitting a regression to a quantitative or count outcome, let n = sample size. For this count and all of the counts here, do not include any data points where the outcome is missing.\nIf you are fitting a regression to a categorical outcome, let n = # of observations in the category with the smallest sample size.\nIf you are fitting a regression to a time-to-event outcome, let n = # of observations where the event occurred (was not censored).\n\n\n\n\nValue of n\n20-100\n101-250\n251-500\n501-999\n1000+\n\n\n\n\nMaximum df\n6\n9\n12\n16\n20\n\n\n\nFor Project B, don’t worry about penalizing yourself for “peeking” at the data by running automated selection procedures (although we don’t generally recommend these) or scatterplot matrices."
+  },
+  {
+    "objectID": "projB.html#transformations",
+    "href": "projB.html#transformations",
+    "title": "Project B",
+    "section": "Transformations",
+    "text": "Transformations\nIn Project B, for outcome transformations, follow our advice from Project A."
+  },
+  {
+    "objectID": "projB.html#advice-on-predictors",
+    "href": "projB.html#advice-on-predictors",
+    "title": "Project B",
+    "section": "Advice on Predictors",
+    "text": "Advice on Predictors\n\nCollapse multi-categorical predictors sufficiently that you don’t have problems fitting or interpreting the model. In most cases, it is very difficult to describe what’s happening with predictors containing more than five levels.\nIf you choose to use a spline or polynomial function with a quantitative predictor and want also to use an interaction term for that predictor, be sure to restrict the interaction to a linear term only with %ia%.\nMake sure that the coefficients and standard errors in your models don’t explode, which can happen when a predictor overwhelms the regression model. It’s your job to identify that there is a problem and do something to address it appropriately, rather than presenting a clearly inappropriate model."
+  },
+  {
+    "objectID": "projB.html#on-validation",
+    "href": "projB.html#on-validation",
+    "title": "Project B",
+    "section": "On Validation",
+    "text": "On Validation\n\nWe expect a validation, properly executed, to be an important part of every Project B.\nThis will most commonly include a split into training and testing samples, and an evaluation of key results in a held-out sample.\nBootstrap validation of summary statistics via the tools available in the rms package is also welcome, if you are fitting models that use those tools."
+  },
+  {
+    "objectID": "projB.html#questions-about-your-project-b-work-in-general",
+    "href": "projB.html#questions-about-your-project-b-work-in-general",
+    "title": "Project B",
+    "section": "8 questions about your Project B work in general",
+    "text": "8 questions about your Project B work in general\n\nDoes the background motivate your research questions?\nAre you research questions clear and appropriately linked to the regression analyses you are doing?\nHow much data do you have, and what is the source of that data?\nHow did you deal with missing data, and what assumptions about missingness did you make?\nIs your portfolio well-labeled and easy to find things in?\nDoes your presentation focus on important issues? See the list in the instructions.\nHave you avoided discussing statistical significance or any synonyms for that problematic term?\nCan you answer questions effectively about the work you’re presenting?\n\nOf course, I’ll also want to know if you have questions for me about things related to the Project."
+  },
+  {
+    "objectID": "projB.html#questions-about-a-model-for-a-time-to-event-outcome-with-censoring",
+    "href": "projB.html#questions-about-a-model-for-a-time-to-event-outcome-with-censoring",
+    "title": "Project B",
+    "section": "8 questions about a model for a time-to-event outcome with censoring",
+    "text": "8 questions about a model for a time-to-event outcome with censoring\n\nWhat is the outcome of interest, and what is the variable describing the time, and the variable describing the “event”?\nHow many subjects are in your data, and how many of them have the actual “event”?\nWhat does it mean for someone to be censored in your data?\nWhat does a Kaplan-Meier curve describing survival across all of your outcomes, or perhaps comparing two or three key groups, tell us about your research question?\nWhy did you select the combination of predictors that you did for this model?\nHave you provided an appropriate summary of the effects in your Cox model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?\nOverall, how well does your model fit, as judged by the unvalidated concordance, C statistic, and Cox-Snell R-square measure?\nWhat does your assessment of the proportional hazards assumption suggest about your model?"
+  },
+  {
+    "objectID": "projB.html#questions-about-a-model-for-a-count-outcome",
+    "href": "projB.html#questions-about-a-model-for-a-count-outcome",
+    "title": "Project B",
+    "section": "8 questions about a model for a count outcome",
+    "text": "8 questions about a model for a count outcome\n\nWhat is the outcome of interest, and is this in fact a count outcome?\nHow many subjects are in your data, and what does the distribution of your count outcome look like in those subjects?\nHow did you split the data into testing and training samples, which you should do with a count outcome, following Slides Set 15.\nWhy did you select the combination of predictors that you did for this model?\nWhich model(s) did you fit to your data? You should plan to fit at least two of a Poisson, a Negative Binomial and/or a zero-inflated model or hurdle model.\nWhy did you settle on the choice of count model you did? A comparison of rootograms is the most desirable way to show me how you made this choice.\nHave you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?\nHow well does your model fit, as judged by training then test sample summaries of R-square and the root mean squared error? Note: I don’t care about Vuong’s test."
+  },
+  {
+    "objectID": "projB.html#questions-about-a-model-for-a-multi-categorical-outcome-with-3-7-levels",
+    "href": "projB.html#questions-about-a-model-for-a-multi-categorical-outcome-with-3-7-levels",
+    "title": "Project B",
+    "section": "8 questions about a model for a multi-categorical outcome with 3-7 levels",
+    "text": "8 questions about a model for a multi-categorical outcome with 3-7 levels\n\nWhat is the outcome of interest, and is it an ordinal or nominal multi-categorical outcome? Did you do any collapsing of levels? Why? How many subjects are in your data overall, and within each level of your outcome?\nWhy did you select the combination of predictors that you did for this model?\nWhat do the predictions from your model look like, when tabulated (in the rows) against the true results from your outcome (in the columns)? What does that table tell us about the accuracy of your predictions?\nUse your model to make predictions for two new subjects, and use those predictions to discuss the impact of an interesting change in one of your more important predictors.\n\nand four additional questions, depending on whether you have an ordinal or nominal outcome…\nIf you have an ordinal outcome, then I’d additionally ask:\n\nHow are you making certain that R recognizes your outcome as an ordered factor?\nCan you display and explain the ggplot(Predict(yourmodel)) result from your POLR model (i.e. a lrm() model for a proportional outcome)?\nHow well does the POLR model fit, as judged by validated R-square and C statistics obtained through fitting with lrm()?\nWhich model did you wind up preferring for your data (POLR or multinomial) and why? (A likelihood ratio test along with AIC and BIC comparisons is a good option here.)\n\nIf you have a nominal outcome, then I would additionally ask:\n\nHow do you know that your multinomial model converged?\nHow many intercepts and how many coefficients (slopes) are in your model? Do these values make sense in light of your outcome and predictors?\nCan you display and explain the meaning of a plot of response probabilities describing the relationship between your outcome and one of your interesting categorical predictors, like the one I show in Slides Set 19, slide #23 entitled try1 Response Probabilities? Or, if you have two interesting categorical predictors, like the plot I shod in Slides Set 19, slide #62 called fit_LS Response Probabilities?\nCan you compare your model (which should have at least 2 predictors) to another model for your outcome that includes only one of your predictors (it’s up to you to decide what one predictor would be most interesting to study) using AIC, BIC and effective degrees of freedom, so that you can then tell us which of those two models looks best by both AIC and BIC?"
+  },
+  {
+    "objectID": "projB.html#questions-about-a-model-for-a-quantitative-outcome",
+    "href": "projB.html#questions-about-a-model-for-a-quantitative-outcome",
+    "title": "Project B",
+    "section": "8 questions about a model for a quantitative outcome",
+    "text": "8 questions about a model for a quantitative outcome\n\nHave you made a reasonable choice of strategy here? (Bayesian model, Bayesian model with tidymodels, Selecting Candidates via the LASSO, using survey weights, quantile regression or robust linear model?) Why did you select this approach - how does it tie in with your research question?\nCan you demonstrate that you have selected a transformation (or not) for the outcome wisely?\nCan you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class?\nCan you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you’re developing?\nHave you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?\nCan you make predictions for new data using your model?\nCan you compare the performance of your model in a sensible way to an ordinary least squares linear model?\nCan you evaluate the assumptions that are relevant to your model?"
+  },
+  {
+    "objectID": "projB.html#questions-about-a-model-for-a-binary-outcome",
+    "href": "projB.html#questions-about-a-model-for-a-binary-outcome",
+    "title": "Project B",
+    "section": "8 questions about a model for a binary outcome",
+    "text": "8 questions about a model for a binary outcome\n\nHave you made a reasonable choice of strategy here? (Bayesian model or Bayesian model with tidymodels?) Why did you select this approach, and how does it tie in with your research question?\nHow did you make certain that your binary outcome was being modeled in the direction you intend it to be modeled (i.e. the Probability of A happening, rather than the Probability of A not happening?)\nCan you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class?\nCan you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you’re developing?\nHave you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?\nCan you make predictions for new data using your model?\nCan you compare the performance of your model in a sensible way to an ordinary logistic regression model?\nCan you evaluate the assumptions that are relevant to your model?"
+  },
+  {
+    "objectID": "lab8.html",
+    "href": "lab8.html",
+    "title": "Lab 8",
+    "section": "",
+    "text": "People with approved work on Lab 8 will find that acknowledged at https://github.com/THOMASELOVE/432-classes-2024/tree/main/lab8."
+  },
+  {
+    "objectID": "lab8.html#option-a",
+    "href": "lab8.html#option-a",
+    "title": "Lab 8",
+    "section": "Option A",
+    "text": "Option A\nIf you do not already have a professional website describing your work life to the world, then build one, ideally using Quarto. For help, refer to the instructions from this past fall’s 431 at https://thomaselove.github.io/431-labX/.\nWe want you to build a professional looking website that will be useful to you. The content is up to you, and what you’d like to share but it’s worth considering using this opportunity to craft your online presence. This is also an opportunity to learn how to use Quarto for the purpose.\n\nThe most common tool people who’ve completed this have mentioned to me is the tutorial by Marvin Schmitt at https://www.marvinschmitt.com/blog/website-tutorial-quarto/.\nThe Quarto website shows you how to create a blog website within R Studio in some detail here.\nQuarto’s general guide to Creating a Website may also be helpful.\nBeatriz Milz’ Creating a blog with Quarto in 10 Steps\nAlbert Rapp’s The Ultimate Guide to Starting a Quarto Blog\nCrumpLab gives us Blogging with Quarto: A 10 minute getting started tutorial (about 10 minutes)\nIsabella Velásquez at RStudio has a YouTube video called Building a Blog with Quarto (just over an hour)\nThomas Mock shows you how to Create & Publish a Quarto Blog on Quarto Pub in 100 Seconds\n\nThe key thing is to commit to making this a part of your life going forward, however you most effectively do that.\nSample websites built by both past and present students in this class are available to help you get an idea of what you can do.\nOnce you’ve built a site you’re proud of, post a Public Note to the Lab 8 folder in Campuswire celebrating your achievement and containing a link to your page for your fellow students to be inspired by."
+  },
+  {
+    "objectID": "lab8.html#option-b",
+    "href": "lab8.html#option-b",
+    "title": "Lab 8",
+    "section": "Option B",
+    "text": "Option B\nIf you already have a personal website that you built for 431 or for some other reason, then improve it by adding a blog post dated in 2024 that discusses in a meaningful way something important that you learned, either from reading How To Be A Modern Scientist by Jeff Leek, or from reading some part of the supplement entitled Statistical Inference in the 21st Century: A World Beyond p &lt; 0.05 from 2019 in The American Statistician. A substantial discussion of something useful or meaningful to you is what we’re looking for.\nThen post a Public Note to the Lab 8 folder in Campuswire celebrating your achievement and containing a link to your page for your fellow students to be inspired by, and a link to the specific blog post you’ve built now, and also adding a short description of anything else (besides adding the blog post) that you have improved about your site in 2024."
+  },
+  {
+    "objectID": "lab8.html#deadline",
+    "href": "lab8.html#deadline",
+    "title": "Lab 8",
+    "section": "Deadline",
+    "text": "Deadline\nTo receive full credit, you must complete the lab (by making your post to Campuswire as described above) no later than the late April deadline on the Course Calendar\n\nYou can complete Lab 8 at any time prior to that date."
+  },
+  {
+    "objectID": "lab8.html#why-do-this",
+    "href": "lab8.html#why-do-this",
+    "title": "Lab 8",
+    "section": "Why do this?",
+    "text": "Why do this?\nTimely completion of Lab 8 will improve your course grade at the end of the term to a meaningful degree, and will earn you some of Dr. Love’s respect. Also, no one under the age of 50 exists these days in a professional capacity without a website.\n\nIf you’re looking for Dr. Love to write a letter of recommendation for you in the fullness of time, he’s going to want to see your website."
+  },
+  {
+    "objectID": "lab8.html#impact-of-lab-8-on-your-grade",
+    "href": "lab8.html#impact-of-lab-8-on-your-grade",
+    "title": "Lab 8",
+    "section": "Impact of Lab 8 on your grade",
+    "text": "Impact of Lab 8 on your grade\nLab 8 is due Monday 2024-04-29 at noon.\n\nIf you submit a successful Lab 8 by that time, you will receive 30 points for the Lab 8 assignment.\nIf you don’t make that deadline, but do submit a successful Lab 8 by noon on Tuesday 2024-05-07, you will receive 15 points for the Lab 8 assignment.\nIf you fail to complete Lab 8 successfully by noon on Tuesday 2024-05-07, you will receive 0 points for the Lab 8 assignment.\n\nYour homework (labs) grade is made up of the top 6 scores you had on the first 7 labs, which is out of a total possible score of 300 points (each lab is worth 50), PLUS your score on Lab 8, all divided by 3.15. There are slight adjustments for people who were excused from labs between 1 and 7.\n\nThis means that the best possible score you can get on the labs is 300 (for Labs 1-7 combined) + 30 = 330, which will then be divided by 3.15 to yield a score of 104.8\nIf you do Lab 8 late but still complete it by Tuesday the 7th at noon, your maximum Lab score would be 300 + 15 = 315, which divided by 3.15 is 100.\nIf you don’t do Lab 8 at all, then your maximum Lab score would be 300 / 3.15, which is 95.2"
+  },
+  {
+    "objectID": "lab8.html#spring-2024-submissions",
+    "href": "lab8.html#spring-2024-submissions",
+    "title": "Lab 8",
+    "section": "Spring 2024 Submissions",
+    "text": "Spring 2024 Submissions\ncan be found at this link: Approved Lab 8 submissions"
+  },
+  {
+    "objectID": "lab6.html",
+    "href": "lab6.html",
+    "title": "Lab 6",
+    "section": "",
+    "text": "Submit your work via Canvas.\nThe deadline for this Lab is specified on the Calendar.\n\nWork submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.\nWork submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.\nWork submitted more than 24 hours after the deadline will not be graded.\n\n\nYour response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for Lab 2."
+  },
+  {
+    "objectID": "lab6.html#hint-for-question-2",
+    "href": "lab6.html#hint-for-question-2",
+    "title": "Lab 6",
+    "section": "Hint for Question 2",
+    "text": "Hint for Question 2\nThe modeling approaches we’ve worked on for count outcomes can be finicky, at least in comparison to OLS. Sometimes, you’ll get to the point where it seems like the model won’t run, or won’t summarize properly, or you have some extremely large or extremely small coefficient estimates or standard errors. Should this happen to you, the first thing we would do is try to identify which of your predictors is causing this problem, by running the model first with one predictor, then two, etc. until you figure out which predictors cause problems. Reasons why you could be having a problem include:\n\na predictor has values that completely identify the category of your outcome variable, perfectly (e.g., one category’s predictor values are inevitably lower than all of another category’s predictor values, with no overlap)\nthe scales of the predictors are wildly different, for instance one predictor has extremely large or extremely small values, causing the estimated standard errors to explode, which should cause you to think about reducing the impact of that, perhaps by changing the units, say from $s to $1000s or by normalizing the predictors\nintense collinearity between two or more of your predictors\ncoding issues in setting up one or more of the variables."
+  },
+  {
+    "objectID": "lab6.html#after-the-lab",
+    "href": "lab6.html#after-the-lab",
+    "title": "Lab 6",
+    "section": "After the Lab",
+    "text": "After the Lab\nWe will post an answer sketch 24 hours after the Lab is due.\nWe will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.\nSee the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you."
+  },
+  {
+    "objectID": "lab4.html",
+    "href": "lab4.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "Submit your work via Canvas.\nThe deadline for this Lab is specified on the Calendar.\n\nWork submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.\nWork submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.\nWork submitted more than 24 hours after the deadline will not be graded.\n\n\nYour response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for Lab 2."
+  },
+  {
+    "objectID": "lab4.html#after-the-lab",
+    "href": "lab4.html#after-the-lab",
+    "title": "Lab 4",
+    "section": "After the Lab",
+    "text": "After the Lab\nWe will post an answer sketch 24 hours after the Lab is due.\nWe will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.\nSee the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you."
+  },
+  {
+    "objectID": "lab2.html",
+    "href": "lab2.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "Submit your work via Canvas.\nThe deadline for this Lab is specified on the Course Calendar.\n\nWork submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.\nWork submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.\nWork submitted more than 24 hours after the deadline will not be graded.\n\n\nYour response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided.\n\n\nThere is a Lab 2 Quarto template available on our 432-data page. Please use the template to prepare your response to Lab 2, as it will make things easier for you and for the people grading your work. The template is quite generic, and can also be used for other work, including Labs 3-8.\n\n\n\nReview your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output."
+  },
+  {
+    "objectID": "lab2.html#template",
+    "href": "lab2.html#template",
+    "title": "Lab 2",
+    "section": "",
+    "text": "There is a Lab 2 Quarto template available on our 432-data page. Please use the template to prepare your response to Lab 2, as it will make things easier for you and for the people grading your work. The template is quite generic, and can also be used for other work, including Labs 3-8."
+  },
+  {
+    "objectID": "lab2.html#our-best-advice",
+    "href": "lab2.html#our-best-advice",
+    "title": "Lab 2",
+    "section": "",
+    "text": "Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output."
+  },
+  {
+    "objectID": "lab2.html#data-for-question-1",
+    "href": "lab2.html#data-for-question-1",
+    "title": "Lab 2",
+    "section": "Data for Question 1",
+    "text": "Data for Question 1\nDr. Love created these data from NHANES 2017-18 Demographics and Questionnaire data, using the code below.\nSpecifically, he used the DEMO_J (Demographics) and HSQ_J (Current Health Status) files, which are described at this link.\n\nlibrary(nhanesA)\nlibrary(janitor)\nlibrary(tidyverse)\n\ntemp1 &lt;- nhanes('DEMO_J')\ntemp2 &lt;- nhanes('HSQ_J')\ntemp3 &lt;- nhanes('PAQ_J')\n\ntemp12 &lt;- inner_join(temp1, temp2, by = \"SEQN\")\ntemp123 &lt;- inner_join(temp12, temp3, by = \"SEQN\")\n\nlab2q1 &lt;- temp123 |&gt;\n  select(SEQN, WTINT2YR, RIDAGEYR, HSD010, PAQ665) |&gt; \n  filter(RIDAGEYR &gt; 20 & RIDAGEYR &lt; 50) |&gt;\n  filter(PAQ665 &lt; 3) |&gt;\n  mutate(HSD010 = factor(HSD010),\n         PAQ665 = factor(PAQ665),\n         SEQN = as.character(SEQN)) |&gt;\n  clean_names() |&gt;\n  tibble()\n\nrm(temp1, temp12, temp2, temp3, temp123)\n\nsaveRDS(lab2q1, file = \"data/lab2q1.Rds\")"
+  },
+  {
+    "objectID": "lab2.html#variables-studied-in-question-1",
+    "href": "lab2.html#variables-studied-in-question-1",
+    "title": "Lab 2",
+    "section": "Variables Studied in Question 1",
+    "text": "Variables Studied in Question 1\nThe resulting variables are listed below.\n\n\n\n\n\n\n\n\nItem\nDescription\nPossible Responses\n\n\n\n\nseqn\nSubject id code\n93717 through 102956\n\n\nwtint2yr\nFull sample 2 year interview weight\nmin = 4363, max = 387879\n\n\nridageyr\nAge in years at screening\nmin = 21, max = 49\n\n\nhsd010\nGeneral Health Condition\nsee below\n\n\npaq665\nModerate Recreational Activities\nsee below\n\n\n\n\nhsd010 Would you say your health in general is\n\n1 = Excellent,\n2 = Very Good,\n3 = Good,\n4 = Fair, or\n5 = Poor?\n(Note that 7 = Refused, 9 = Don’t know in this variable, which we will treat as missing.)\n\npaq665 Do you do any moderate-intensity sports, fitness, or recreational activities that cause a small increase in breathing or heart rate such as brisk walking, bicycling, swimming, or golf for at least 10 minutes continuously?\n\n1 = Yes, 2 = No"
+  },
+  {
+    "objectID": "lab2.html#loading-the-question-1-data",
+    "href": "lab2.html#loading-the-question-1-data",
+    "title": "Lab 2",
+    "section": "Loading the Question 1 Data",
+    "text": "Loading the Question 1 Data\nI have provided the saved lab2q1.Rds file to you on the 432-data page. I encourage you to load it using the code below.\n\nlibrary(janitor)\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(comment = NA)\n\nlab2q1 &lt;- read_rds(\"https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/lab2q1.Rds\")\n\nlab2q1\n\n# A tibble: 2,295 × 5\n   seqn  wtint2yr ridageyr hsd010 paq665\n   &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;  &lt;fct&gt; \n 1 93717   53249.       22 2      2     \n 2 93718   20257.       45 3      1     \n 3 93729   11760.       42 4      2     \n 4 93738   59333.       26 3      2     \n 5 93746   27135.       25 2      2     \n 6 93755   30922.       26 2      1     \n 7 93761   18939.       44 3      2     \n 8 93763  103670.       40 3      1     \n 9 93766   16414.       36 4      2     \n10 93774  232377.       41 &lt;NA&gt;   1     \n# ℹ 2,285 more rows"
+  },
+  {
+    "objectID": "lab2.html#question-2-hints",
+    "href": "lab2.html#question-2-hints",
+    "title": "Lab 2",
+    "section": "Question 2 Hints",
+    "text": "Question 2 Hints\n\nOne graph you might use would be one to assess the need for an interaction term, probably via a plot of means.\nAnother graph (or perhaps table) to consider for insight would look at the relationship between insurance and beta-blocker status in these subjects.\nPlease explicitly state in your response that you assume that the missingness you observe in these data are MCAR, and that a complete case analysis is thus appropriate for this Question."
+  },
+  {
+    "objectID": "lab2.html#data-for-question-2-hbp3456-data",
+    "href": "lab2.html#data-for-question-2-hbp3456-data",
+    "title": "Lab 2",
+    "section": "Data for Question 2 (hbp3456 data)",
+    "text": "Data for Question 2 (hbp3456 data)\nThe (simulated) data in the hbp3456.csv file describe a total of 3456 people living with hypertension (high blood pressure) diagnoses who receive primary care in one of eight practices.\n\nIn each of the eight practices, 432 (different) individuals (who I’ll call subjects in what follows) were sampled at random from all eligible subjects.\nThe data are based on real electronic health record (EHR) data, but with some noise added.\n\nThe practices are named after streets that appear in The Simpsons.\nThere are 62 (fictional) providers identified across the eight practices, and each provider cares for subjects within a single practice.\n\n\n\nEligibility Criteria\nThe data are cross-sectional and describe results from a one-year reporting window. To be eligible for the study, a subject had to meet all of the following criteria:\n\nhave an EHR-documented hypertension diagnosis which applied during the one-year reporting window,\ncared for at one of the eight practices in this study, and by one of the 62 participating providers in this study\nage 25 or older at the start of the one-year reporting period (note that all subjects with ages 80 and higher are listed as age 80 in the data)\nbetween 1 and 12 primary care office visits in the one-year reporting period\nbetween 2 and 24 primary care office visits combined across the reporting period and the previous year\nfall into one of two biological sex categories (female or male)\nfall into one of four primary insurance categories, specifically Medicare, Commercial, Medicaid or Uninsured.\nhave a most recent systolic BP between 80 and 220 mm Hg and most recent diastolic BP between 40 and 140 mm Hg, where the systolic BP is at least 15 and no more than 130 mm Hg larger than the diastolic BP.\n\n\n\nCodebook\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nrecord\nunique code for each subject (six digits, first digit is 9, last indicates practice)\n\n\npractice\nprimary care practice, of which there are eight in the data\n\n\nprovider\nprimary care provider (each practice has multiple providers)\n\n\nage\nsubject’s age as of the start of the reporting period\n\n\nrace\nsubject’s race (4 levels: Asian, AA_Black, White, Other)\n\n\neth_hisp\nis subject of Hispanic/Latino ethnicity? Yes or No\n\n\nsex\nsubject’s sex (F or M)\n\n\ninsurance\nsubject’s primary insurance (Medicare, Commercial, Medicaid, Uninsured)\n\n\nincome\nestimated median income of subject’s home neighborhood (via American Community Survey, to nearest $100)\n\n\nhsgrad\nestimated percentage of adults living in the subject’s home neighborhood who have graduated from high school (via American Community Survey, to the nearest tenth of a percent)\n\n\ntobacco\ntobacco use status (Current, Former, or Never)\n\n\ndepr_diag\ndoes subject have depression diagnosis? Yes or No\n\n\nheight\nsubject’s height in meters, rounded to two decimal places\n\n\nweight\nsubject’s weight in kilograms, rounded to one decimal place\n\n\nldl\nsubject’s LDL cholesterol level, in mg/dl\n\n\nstatin\ndoes subject have a current prescription for a statin medication? Yes or No\n\n\nbp_med\ndoes subject have a current prescription for a blood pressure control medication? Yes or No\n\n\nsbp\nsubject’s most recently obtained systolic blood pressure, in mm Hg\n\n\ndbp\nsubject’s most recently obtained diastolic blood pressure, in mm Hg\n\n\nvisits_1\nsubject’s number of visits for primary care in reporting period (one year)\n\n\nvisits_2\nsubject’s visits for primary care in the past two years\n\n\nacearb\ndoes subject have a current prescription for an ACE-inhibitor or ARB? Yes or No\n\n\nbetab\ndoes subject have a current prescription for a beta-blocker? Yes or No\n\n\n\n\n\nNotes on Specific Variables\n\nThe list of medications included in bp_med is: ACE-inhibitor, ARB, Diuretic, Calcium-Channel Blocker, Beta-Blocker, Alpha-1 Blocker, Centrally acting Alpha-2 Agonist, Vasodilator or other antihypertensive agents. A subject with a current prescription for any of these will have a Yes in bp_med.\nFor the acearb, betab, bpmed, statin and depr_diag variables, a No response includes all subjects where there’s no evidence in the EHR of meeting the Yes criterion, so that there are no missing values (a missing value is interpreted there as No.)\nFor the height, weight and ldl results, implausible values were treated as missing in preparing the data for you.\nThe race and eth_hisp values are self-reported, and some subjects refused to answer one or both of the relevant questions.\nThe income and hsgrad values are imputed from the subject’s home address, usually at the census block level, but occasionally at the level of the zip code.\n\nWhen a subject’s home address could not be geocoded, these values are noted as missing.\nGeocoded estimates of income below 6500 are reported as 6500, and estimates above 130000 are reported as 130000.\nFor hsgrad, geocoded estimates below 40 are reported as 40, and estimates above 99.9 are reported as 99.9."
+  },
+  {
+    "objectID": "lab2.html#loading-the-data-for-question-2",
+    "href": "lab2.html#loading-the-data-for-question-2",
+    "title": "Lab 2",
+    "section": "Loading the Data for Question 2",
+    "text": "Loading the Data for Question 2\nHere’s the approach I took to load and view the hbp3456 data.\n\nlibrary(janitor)\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(comment = NA)\n\nhbp3456 &lt;- read_csv(\"https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/hbp3456.csv\", show_col_types = FALSE) |&gt;\n  clean_names() |&gt;\n  mutate(record = as.character(record))\n\nhbp3456\n\n# A tibble: 3,456 × 23\n   record practice provider   age race    eth_hisp sex   insurance income hsgrad\n   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;\n 1 900018 Walnut   W_05        64 &lt;NA&gt;    &lt;NA&gt;     F     Medicare   15600   83  \n 2 900024 King     K_07        74 AA_Bla… No       F     Medicare   16200   92.8\n 3 900037 Sycamore S_06        60 AA_Bla… No       F     Commerci…  21400   79  \n 4 900043 Highland H_07        46 White   Yes      F     Medicaid   38300   83.5\n 5 900057 Sycamore S_04        59 AA_Bla… No       M     Commerci…  23200   78.7\n 6 900062 Elm      E_03        54 AA_Bla… No       M     Commerci…  48600   85.5\n 7 900076 Plympton P_03        74 White   No       M     Commerci…  64200   92.9\n 8 900082 Elm      E_06        73 White   No       M     Medicare   48600   85.5\n 9 900097 Sycamore S_10        58 AA_Bla… No       F     Commerci…  29900   86.2\n10 900101 Center   C_01        46 AA_Bla… No       M     Uninsured  63600   97.5\n# ℹ 3,446 more rows\n# ℹ 13 more variables: tobacco &lt;chr&gt;, depr_diag &lt;chr&gt;, height &lt;dbl&gt;,\n#   weight &lt;dbl&gt;, ldl &lt;dbl&gt;, statin &lt;chr&gt;, bp_med &lt;chr&gt;, sbp &lt;dbl&gt;, dbp &lt;dbl&gt;,\n#   visits_1 &lt;dbl&gt;, visits_2 &lt;dbl&gt;, acearb &lt;chr&gt;, betab &lt;chr&gt;"
+  },
+  {
+    "objectID": "lab2.html#after-the-lab",
+    "href": "lab2.html#after-the-lab",
+    "title": "Lab 2",
+    "section": "After the Lab",
+    "text": "After the Lab\nWe will post an answer sketch 24 hours after the Lab is due.\nWe will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.\nSee the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "432 Main Page for Spring 2025",
+    "section": "",
+    "text": "PQHS/CRSP/MPHP 432 is the second half (431 is the first half) of a two-semester course taught by Professor Thomas Love in the Department of Population and Quantitative Health Sciences at Case Western Reserve University.\nIf you have any questions before class begins, contact Dr. Love at Thomas dot Love at case dot edu. Once the class starts, visit the Contact Us page to learn more about how to get help from us."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "432 Main Page for Spring 2025",
+    "section": "",
+    "text": "PQHS/CRSP/MPHP 432 is the second half (431 is the first half) of a two-semester course taught by Professor Thomas Love in the Department of Population and Quantitative Health Sciences at Case Western Reserve University.\nIf you have any questions before class begins, contact Dr. Love at Thomas dot Love at case dot edu. Once the class starts, visit the Contact Us page to learn more about how to get help from us."
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "432 Main Page for Spring 2025",
+    "section": "Getting Started",
+    "text": "Getting Started\nYour first six steps in this course are to:\n\nRegister and enroll via the CWRU Student Information System (SIS).\n\nSection 1 of PQHS 432, CRSP 432 and MPHP 432 are identical.\n\nReview this course website, and be sure to visit the Course Calendar, and skim through the Course Syllabus.\nYou need to buy Jeff Leek’s How to be a Modern Scientist, available electronically through https://leanpub.com/modernscientist. The suggested cost is $10, but you can pay what you want.\nPlease fill out the Welcome to 432 Survey at https://bit.ly/432-2024-welcome-survey to help us get to know you a little better. Note that you must log into Google via your CWRU account in order to access the survey, which should take about 10 minutes to complete.\nGet started installing the software you’ll need for the course.\nAttend our first class session in E321-323 in the Robbins building within the CWRU School of Medicine, on Tuesday 2024-01-16 at 1:00 PM."
+  },
+  {
+    "objectID": "index.html#everything-will-appear-here.",
+    "href": "index.html#everything-will-appear-here.",
+    "title": "432 Main Page for Spring 2025",
+    "section": "Everything will appear here.",
+    "text": "Everything will appear here.\nEverything that Professor Love will provide to help you with the course will be linked through this website. The menu bar links to just about everything you’ll need this semester, and its elements will go live as they become available. Things you’ll find here include…\n\nThe Course Calendar, which includes links to class materials, assignments and other information, and which is the final word on all deadlines for the course.\nThe Course Syllabus for 432.\nProfessor Love’s Course Notes for 432.\nDetails on Assignments, including Projects, Quizzes, Labs and Minute Papers\nInformation on installing R and RStudio software, installing key R packages, and downloading data, code and templates you’ll need for this class\nKey Links to other systems that will help us deliver 432, including:\n\nthe Canvas system (CWRU log-in required) we use to communicate information about class recordings, and for turning in assignments\nour Shared Google Drive (CWRU log-in required) where we provide answer sketches for class assignments, an in-semester grading roster, and feedback on Minute Papers\nthe Campuswire discussion board for the 432 course\n\nInformation on places where you can get help and contact us once the course begins.\nAdditional Sources and references are here, including things to read or watch to supplement our main work"
+  },
+  {
+    "objectID": "index.html#accessing-the-431-materials",
+    "href": "index.html#accessing-the-431-materials",
+    "title": "432 Main Page for Spring 2025",
+    "section": "Accessing the 431 Materials",
+    "text": "Accessing the 431 Materials\nNote that the 431 class materials from Fall 2024 are here, and will remain there until 2025-06-01."
+  },
+  {
+    "objectID": "calendar.html",
+    "href": "calendar.html",
+    "title": "Calendar for 432: Spring 2024",
+    "section": "",
+    "text": "Please see the end-of-semester page for more details.\n\n\n\nLink\nDate\nDetails\n\n\n\n\nProj B\nWED  05-01\n6 Project B presentations between 11:55 AM and 3:20 PM via Zoom  4 Project B presentations between 5:05 and 6:50 PM via Zoom.\n\n\nProj B\nTHU  05-02\n6 Project B presentations between 1:00 PM and 3:45 PM via Zoom  5 Project B presentations between 5:05 and 6:10 PM via Zoom.\n\n\nProj B\nTUE  05-07\nProject B Portfolio and Data due to Canvas at noon  (optional) Lab 1-7 Regrade Request Form due at noon  Late Deadline for Lab 8\n\n\n\nCourse Evaluations Please visit https://webapps.case.edu/courseevals/ after you present your project, and complete the course evaluations before they close on 2024-05-09. Thanks."
+  },
+  {
+    "objectID": "calendar.html#end-of-semester",
+    "href": "calendar.html#end-of-semester",
+    "title": "Calendar for 432: Spring 2024",
+    "section": "",
+    "text": "Please see the end-of-semester page for more details.\n\n\n\nLink\nDate\nDetails\n\n\n\n\nProj B\nWED  05-01\n6 Project B presentations between 11:55 AM and 3:20 PM via Zoom  4 Project B presentations between 5:05 and 6:50 PM via Zoom.\n\n\nProj B\nTHU  05-02\n6 Project B presentations between 1:00 PM and 3:45 PM via Zoom  5 Project B presentations between 5:05 and 6:10 PM via Zoom.\n\n\nProj B\nTUE  05-07\nProject B Portfolio and Data due to Canvas at noon  (optional) Lab 1-7 Regrade Request Form due at noon  Late Deadline for Lab 8\n\n\n\nCourse Evaluations Please visit https://webapps.case.edu/courseevals/ after you present your project, and complete the course evaluations before they close on 2024-05-09. Thanks."
+  },
+  {
+    "objectID": "calendar.html#ta-office-hours",
+    "href": "calendar.html#ta-office-hours",
+    "title": "Calendar for 432: Spring 2024",
+    "section": "TA Office Hours",
+    "text": "TA Office Hours\nAttend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin on Friday 2024-01-19, and continue through Wednesday 2024-05-01 except for Spring Break (no office hours March 9-15) and April 8 (Eclipse).\nThe complete schedule for TA office hours follows. All times Eastern.\n\n\n\nDate\nTime(s)\n\n\n\n\nSundays\n7:00 PM to 8:30 PM\n\n\nMondays\n11:40 AM to 12:50 PM, 5:00 PM to 6:30 PM, 8:00 - 9:30 PM\n\n\nTuesdays\n8:00 PM to 9:30 PM\n\n\nWednesdays\n6:00 PM to 7:30 PM\n\n\nThursdays\n6:00 PM to 7:30 PM, 8:00 PM to 9:30 PM\n\n\nFridays\n11:40 AM to 12:50 PM and 7:00 PM to 8:30 PM\n\n\nSaturdays\n10:30 AM to Noon\n\n\n\nZoom information to join these sessions will be posted to our Shared Google Drive before the first session on Friday 2024-01-19."
+  },
+  {
+    "objectID": "calendar.html#january-2024",
+    "href": "calendar.html#january-2024",
+    "title": "Calendar for 432: Spring 2024",
+    "section": "January 2024",
+    "text": "January 2024\n\n\n\nLink\nDate\nDetails\n\n\n\n\nClass 01\nTUE  01-16\nGetting Started, Using Quarto, Validation of Prediction Models\n\n\n–\nWED  01-17\nWelcome to 432 Survey and join the 432 course at Campuswire by Noon.\n\n\nClass 02\nTHU  01-18\nBuilding a Detailed Project with NHANES Data (reviewing 431 ideas)\n\n\nLab 1\nTUE  01-23\nLab 1 due at Noon.\n\n\nClass 03\nTUE  01-23\nDeveloping Inferences using Survey Weights\n\n\n–\nWED  01-24\nMinute Paper after Class 03 due at Noon.\n\n\nClass 04\nTHU  01-25\nLinear Regression and ANOVA/ANCOVA models\n\n\nLab 2\nTUE  01-30\nLab 2 due at Noon.\n\n\nClass 05\nTUE  01-30\nLinear Regression using Non-linear terms and ols\n\n\n–\nWED  01-31\nMinute Paper after Class 05 due at Noon.\n\n\n\nNote: By the end of January, you should read Jeff Leek’s How to Be a Modern Scientist, which should take about 4 hours."
+  },
+  {
+    "objectID": "calendar.html#february-2024",
+    "href": "calendar.html#february-2024",
+    "title": "Calendar for 432: Spring 2024",
+    "section": "February 2024",
+    "text": "February 2024\n\n\n\nLink\nDate\nDetails\n\n\n\n\nClass 06\nTHU  02-01\nBuilding Linear Models Effectively, Troubleshooting\n\n\nLab 3\nTUE  02-06\nLab 3 due at Noon.\n\n\nClass 07\nTUE  02-06\nLogistic Regression for Binary Outcomes\n\n\n–\nWED  02-07\nMinute Paper after Class 07 due at Noon.\n\n\nClass 08\nTHU  02-08\nLogistic Regression with More Predictors\n\n\n–\nMON  02-12\nProject A plan due at Noon.\n\n\nClass 09\nTUE  02-13\nLogistic Regression using Non-linear terms and lrm\n\n\n–\nWED  02-14\nMinute Paper after Class 09 due at Noon.\n\n\nClass 10\nTHU  02-15\nBuilding Logistic Models Effectively, Troubleshooting\n\n\nLab 4\nTUE  02-20\nLab 4 due at Noon.\n\n\nClass 11\nTUE  02-20\nVariable Selection for Linear and Logistic Regression with bestglm.\n\n\n–\nWED  02-21\nMinute Paper after Class 11 due at Noon.\n\n\nClass 12\nTHU  02-22\nK-fold Cross-Validation, Building Table 1  Quiz 1 instructions made available by 5 PM.\n\n\nQuiz 1\nTUE  02-27\nQuiz 1 due at Noon.\n\n\nClass 13\nTUE  02-27\nThinking About Power: Retrospective Design, Robust Linear Models.\n\n\nClass 14\nTHU  02-29\nQuiz 1 discussion, Time-to-event (survival) data and Kaplan-Meier Curves"
+  },
+  {
+    "objectID": "calendar.html#march-2024",
+    "href": "calendar.html#march-2024",
+    "title": "Calendar for 432: Spring 2024",
+    "section": "March 2024",
+    "text": "March 2024\n\n\n\nLink\nDate\nDetails\n\n\n\n\nLab 5\nTUE  03-05\nLab 5 due at Noon.\n\n\nClass 15\nTUE  03-05\nRegression on Count Outcomes\n\n\n–\nWED  03-06\nMinute Paper after Class 15 due at Noon.\n\n\nClass 16\nTHU  03-07\nMiscellaneous Useful Things and Loose Ends\n\n\nBreak\nTUE 03-12\nSpring Break (03-11 through 03-15) - No class.  Now is a great time to work on Lab 8 in addition to Project A\n\n\nBreak\nTHU 03-14\nSpring Break (03-11 through 03-15) - No class.\n\n\nProject A\nTUE  03-19\nProject A Portfolio due at Noon. Note this change!\n\n\nClass 17\nTUE  03-19\nRegression on Ordinal Multi-Categorical Outcomes, 1\n\n\n–\nWED  03-20\nMinute Paper after Class 17 due at Noon.\n\n\nClass 18\nTHU  03-21\nRegression on Ordinal Multi-Categorical Outcomes, 2  Project B Proposal Form will open\n\n\nLab 6\nTUE  03-26\nLab 6 due at Noon.\n\n\nClass 19\nTUE  03-26\nRegression on Nominal Multi-Categorical Outcomes\n\n\n–\nWED  03-27\nMinute Paper after Class 19 due at Noon.\n\n\nClass 20\nTHU  03-28\nIntroducing Hierarchical Models"
+  },
+  {
+    "objectID": "calendar.html#april-2024",
+    "href": "calendar.html#april-2024",
+    "title": "Calendar for 432: Spring 2024",
+    "section": "April 2024",
+    "text": "April 2024\n\n\n\nLink\nDate\nDetails\n\n\n\n\nLab 7\nTUE  04-02\nLab 7 due at Noon.\n\n\nClass 21\nTUE  04-02\nComparing Survival Curves, Fitting Cox Models\n\n\n–\nWED  04-03\nMinute Paper after Class 21 due at Noon.\n\n\nClass 22\nTHU  04-04\nFitting Cox Models with cpm  Statistical Significance and its problems\n\n\n-\nTUE  04-09\nNo class. (Eclipse is April 8)\n\n\nProject B\nWED  04-10\nProject B Proposal Form due at Noon.\n\n\nClass 23\nTHU  04-11\nBayesian linear models  Using tidymodels approaches to build linear models\n\n\nClass 24\nTUE  04-16\nBayesian regression models; Using tidymodels.\n\n\n–\nWED  04-17\nMinute Paper after Class 24 due at Noon.\n\n\n–\nTHU  04-18\nClass cancelled for multiple reasons.\n\n\n–\nTUE  04-23\nQuiz 2 due at Noon.  Google Form will close at 12:15 PM\n\n\nClass 25\nTUE  04-23\nK-Means Clustering and Principal Components Analysis\n\n\nClass 26\nTHU  04-25\nDiscussion of Quiz 2, Maintaining and Enhancing What You’ve Learned  Building and Assessing Statistical Work in 2024\n\n\nLab 8\nMON  04-29\nLab 8 due at Noon.  Work is to be submitted via note on Campuswire.  We’ll accept late work on Lab 8 through to TUE 05-07 at noon.\n\n\nProj B\nTUE  04-30\n6 Project B presentations between 8:30 and 11:20 AM via Zoom  6 Project B presentations between 1:10 and 3:50 PM in person and via Zoom."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Us",
+    "section": "",
+    "text": "If you have a question before class begins, send it by email to Dr. Love at thomas dot love at case dot edu."
+  },
+  {
+    "objectID": "contact.html#before-class-begins",
+    "href": "contact.html#before-class-begins",
+    "title": "Contact Us",
+    "section": "",
+    "text": "If you have a question before class begins, send it by email to Dr. Love at thomas dot love at case dot edu."
+  },
+  {
+    "objectID": "lab1.html",
+    "href": "lab1.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Submit your work via Canvas.\nThe deadline for this Lab is specified on the Course Calendar.\n\nWork submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.\nWork submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.\nWork submitted more than 24 hours after the deadline will not be graded.\n\n\nYour response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided.\n\n\nThere is a Lab 1 Quarto template available on our 432-data page. Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work.\n\n\n\nReview your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.\n\n\n\nThe oh_counties_2022.csv data set I have provided describes a series of variables, pulled from the data for the 88 counties of the the State of Ohio from the County Health Rankings report for 2022.\n\nThe oh_counties_2022.csv file is available for download on the 432 data page.\nSeveral detailed County Health Rankings files augment these 2022 Ohio Rankings Data. Find those items here if you’re interested. Remember to use the 2022 files.\n\n\n\n\nThe available variables are listed below. Each variable describes data at the COUNTY level.\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nfips\nFederal Information Processing Standard code\n\n\ncounty\nname of County\n\n\nyears_lost_rate\nage-adjusted years of potential life lost rate (per 100,000 population)\n\n\nsroh_fairpoor\n% of adults reporting fair or poor health (via BRFSS)\n\n\nphys_days\nmean number of reported physically unhealthy days per month\n\n\nment_days\nmean number of reported mentally unhealthy days per mo\n\n\nlbw_pct\n% of births with low birth weight (&lt; 2500 grams)\n\n\nsmoker_pct\n% of adults that report currently smoking\n\n\nobese_pct\n% of adults that report body mass index of 30 or higher\n\n\nfood_env\nindicator of access to healthy foods, in points (0 is worst, 10 is best)\n\n\ninactive_pct\n% of adults that report no leisure-time physical activity\n\n\nexer_access\n% of the population with access to places for physical activity\n\n\nexc_drink\n% of adults that report excessive drinking\n\n\nalc_drive\n% of driving deaths with alcohol involvement\n\n\nsti_rate\nChlamydia cases / Population x 100,000\n\n\nteen_births\nTeen births / females ages 15-19 x 1,000\n\n\nuninsured\n% of people under age 65 without insurance\n\n\npcp_ratio\nPopulation to Primary Care Physicians ratio\n\n\nprev_hosp\nRate of hospital stays for ambulatory-care sensitive conditions per 100,000 Medicare enrollees.\n\n\nhsgrads\nHigh School graduation rate\n\n\nunemployed\n% of population age 16+ who are unemployed and looking for work\n\n\npoor_kids\n% of children (under age 18) living in poverty\n\n\nincome_ratio\nRatio of household income at the 80th percentile to income at the 20th percentile\n\n\nassociations\n# of social associations / population x 10,000\n\n\npm2.5\nAverage daily amount of fine particulate matter in micrograms per cubic meter\n\n\nh2oviol\nPresence of a water violation: Yes or No\n\n\nsev_housing\n% of households with at least 1 of 4 housing problems: overcrowding, high housing costs, or lack of kitchen or plumbing facilities\n\n\ndrive_alone\n% of workers who drive alone to work\n\n\nage_adj_mortality\npremature age-adjusted mortality\n\n\ndm_prev\n% of adults with a diabetes diagnosis\n\n\nfreq_phys_distress\n% in frequent physical distress\n\n\nfreq_mental_distress\n% in frequent mental distress\n\n\nfood_insecure\n% who are food insecure\n\n\ninsuff_sleep\n% who get insufficient sleep\n\n\nmedian_income\nestimated median income\n\n\npopulation\npopulation size\n\n\nage65plus\n% of population who are 65 and over\n\n\nafrican_am\n% of population who are African-American\n\n\nhispanic\n% of population who are of Hispanic/Latino ethnicity\n\n\nwhite\n% of population who are White\n\n\nfemale\n% of population who are Female\n\n\nrural\n% of people in the county who live in rural areas\n\n\n\n\n\n\nApplying the clean_names() function from the janitor package as part of the initial oh22 creation process, as I’ve done in my code below, is a sensible strategy. We hope you’ll adopt it when ingesting almost any data you ever try to pull into R.\n\nlibrary(janitor)\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(comment = NA)\n\noh22 &lt;- read_csv(\"https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/oh_counties_2022.csv\", show_col_types = FALSE) |&gt;\n  clean_names() |&gt;\n  mutate(fips = as.character(fips))\n\noh22\n\n# A tibble: 88 × 43\n   fips  state county  years_lost_rate sroh_fairpoor phys_days ment_days lbw_pct\n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n 1 39001 Ohio  Adams             11037          25.5      5.41      6.1      9.3\n 2 39003 Ohio  Allen              8518          20.1      4.53      5.35     9.7\n 3 39005 Ohio  Ashland            7769          19.9      4.49      5.44     6  \n 4 39007 Ohio  Ashtab…            9749          24.7      5.07      5.73     8  \n 5 39009 Ohio  Athens             7619          22.4      5.02      5.71     8.3\n 6 39011 Ohio  Auglai…            6498          17.3      4.16      5.2      6.7\n 7 39013 Ohio  Belmont            8782          20.5      4.48      5.38     8.4\n 8 39015 Ohio  Brown             10510          21.2      4.68      5.6      7.7\n 9 39017 Ohio  Butler             9053          18.7      4.16      5.05     7.8\n10 39019 Ohio  Carroll            8066          19.8      4.54      5.5      8.3\n# ℹ 78 more rows\n# ℹ 35 more variables: smoker_pct &lt;dbl&gt;, obese_pct &lt;dbl&gt;, food_env &lt;dbl&gt;,\n#   inactive_pct &lt;dbl&gt;, exer_access &lt;dbl&gt;, exc_drink &lt;dbl&gt;, alc_drive &lt;dbl&gt;,\n#   sti_rate &lt;dbl&gt;, teen_births &lt;dbl&gt;, uninsured &lt;dbl&gt;, pcp_ratio &lt;dbl&gt;,\n#   prev_hosp &lt;dbl&gt;, hsgrads &lt;dbl&gt;, unemployed &lt;dbl&gt;, poor_kids &lt;dbl&gt;,\n#   income_ratio &lt;dbl&gt;, associations &lt;dbl&gt;, pm2_5 &lt;dbl&gt;, h2oviol &lt;chr&gt;,\n#   sev_housing &lt;dbl&gt;, drive_alone &lt;dbl&gt;, age_adj_mortality &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lab1.html#template",
+    "href": "lab1.html#template",
+    "title": "Lab 1",
+    "section": "",
+    "text": "There is a Lab 1 Quarto template available on our 432-data page. Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work."
+  },
+  {
+    "objectID": "lab1.html#our-best-advice",
+    "href": "lab1.html#our-best-advice",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output."
+  },
+  {
+    "objectID": "lab1.html#the-data",
+    "href": "lab1.html#the-data",
+    "title": "Lab 1",
+    "section": "",
+    "text": "The oh_counties_2022.csv data set I have provided describes a series of variables, pulled from the data for the 88 counties of the the State of Ohio from the County Health Rankings report for 2022.\n\nThe oh_counties_2022.csv file is available for download on the 432 data page.\nSeveral detailed County Health Rankings files augment these 2022 Ohio Rankings Data. Find those items here if you’re interested. Remember to use the 2022 files."
+  },
+  {
+    "objectID": "lab1.html#the-variables",
+    "href": "lab1.html#the-variables",
+    "title": "Lab 1",
+    "section": "",
+    "text": "The available variables are listed below. Each variable describes data at the COUNTY level.\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nfips\nFederal Information Processing Standard code\n\n\ncounty\nname of County\n\n\nyears_lost_rate\nage-adjusted years of potential life lost rate (per 100,000 population)\n\n\nsroh_fairpoor\n% of adults reporting fair or poor health (via BRFSS)\n\n\nphys_days\nmean number of reported physically unhealthy days per month\n\n\nment_days\nmean number of reported mentally unhealthy days per mo\n\n\nlbw_pct\n% of births with low birth weight (&lt; 2500 grams)\n\n\nsmoker_pct\n% of adults that report currently smoking\n\n\nobese_pct\n% of adults that report body mass index of 30 or higher\n\n\nfood_env\nindicator of access to healthy foods, in points (0 is worst, 10 is best)\n\n\ninactive_pct\n% of adults that report no leisure-time physical activity\n\n\nexer_access\n% of the population with access to places for physical activity\n\n\nexc_drink\n% of adults that report excessive drinking\n\n\nalc_drive\n% of driving deaths with alcohol involvement\n\n\nsti_rate\nChlamydia cases / Population x 100,000\n\n\nteen_births\nTeen births / females ages 15-19 x 1,000\n\n\nuninsured\n% of people under age 65 without insurance\n\n\npcp_ratio\nPopulation to Primary Care Physicians ratio\n\n\nprev_hosp\nRate of hospital stays for ambulatory-care sensitive conditions per 100,000 Medicare enrollees.\n\n\nhsgrads\nHigh School graduation rate\n\n\nunemployed\n% of population age 16+ who are unemployed and looking for work\n\n\npoor_kids\n% of children (under age 18) living in poverty\n\n\nincome_ratio\nRatio of household income at the 80th percentile to income at the 20th percentile\n\n\nassociations\n# of social associations / population x 10,000\n\n\npm2.5\nAverage daily amount of fine particulate matter in micrograms per cubic meter\n\n\nh2oviol\nPresence of a water violation: Yes or No\n\n\nsev_housing\n% of households with at least 1 of 4 housing problems: overcrowding, high housing costs, or lack of kitchen or plumbing facilities\n\n\ndrive_alone\n% of workers who drive alone to work\n\n\nage_adj_mortality\npremature age-adjusted mortality\n\n\ndm_prev\n% of adults with a diabetes diagnosis\n\n\nfreq_phys_distress\n% in frequent physical distress\n\n\nfreq_mental_distress\n% in frequent mental distress\n\n\nfood_insecure\n% who are food insecure\n\n\ninsuff_sleep\n% who get insufficient sleep\n\n\nmedian_income\nestimated median income\n\n\npopulation\npopulation size\n\n\nage65plus\n% of population who are 65 and over\n\n\nafrican_am\n% of population who are African-American\n\n\nhispanic\n% of population who are of Hispanic/Latino ethnicity\n\n\nwhite\n% of population who are White\n\n\nfemale\n% of population who are Female\n\n\nrural\n% of people in the county who live in rural areas"
+  },
+  {
+    "objectID": "lab1.html#loading-the-data",
+    "href": "lab1.html#loading-the-data",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Applying the clean_names() function from the janitor package as part of the initial oh22 creation process, as I’ve done in my code below, is a sensible strategy. We hope you’ll adopt it when ingesting almost any data you ever try to pull into R.\n\nlibrary(janitor)\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(comment = NA)\n\noh22 &lt;- read_csv(\"https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/oh_counties_2022.csv\", show_col_types = FALSE) |&gt;\n  clean_names() |&gt;\n  mutate(fips = as.character(fips))\n\noh22\n\n# A tibble: 88 × 43\n   fips  state county  years_lost_rate sroh_fairpoor phys_days ment_days lbw_pct\n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n 1 39001 Ohio  Adams             11037          25.5      5.41      6.1      9.3\n 2 39003 Ohio  Allen              8518          20.1      4.53      5.35     9.7\n 3 39005 Ohio  Ashland            7769          19.9      4.49      5.44     6  \n 4 39007 Ohio  Ashtab…            9749          24.7      5.07      5.73     8  \n 5 39009 Ohio  Athens             7619          22.4      5.02      5.71     8.3\n 6 39011 Ohio  Auglai…            6498          17.3      4.16      5.2      6.7\n 7 39013 Ohio  Belmont            8782          20.5      4.48      5.38     8.4\n 8 39015 Ohio  Brown             10510          21.2      4.68      5.6      7.7\n 9 39017 Ohio  Butler             9053          18.7      4.16      5.05     7.8\n10 39019 Ohio  Carroll            8066          19.8      4.54      5.5      8.3\n# ℹ 78 more rows\n# ℹ 35 more variables: smoker_pct &lt;dbl&gt;, obese_pct &lt;dbl&gt;, food_env &lt;dbl&gt;,\n#   inactive_pct &lt;dbl&gt;, exer_access &lt;dbl&gt;, exc_drink &lt;dbl&gt;, alc_drive &lt;dbl&gt;,\n#   sti_rate &lt;dbl&gt;, teen_births &lt;dbl&gt;, uninsured &lt;dbl&gt;, pcp_ratio &lt;dbl&gt;,\n#   prev_hosp &lt;dbl&gt;, hsgrads &lt;dbl&gt;, unemployed &lt;dbl&gt;, poor_kids &lt;dbl&gt;,\n#   income_ratio &lt;dbl&gt;, associations &lt;dbl&gt;, pm2_5 &lt;dbl&gt;, h2oviol &lt;chr&gt;,\n#   sev_housing &lt;dbl&gt;, drive_alone &lt;dbl&gt;, age_adj_mortality &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lab1.html#be-sure-to-include-session-information",
+    "href": "lab1.html#be-sure-to-include-session-information",
+    "title": "Lab 1",
+    "section": "Be sure to include Session Information",
+    "text": "Be sure to include Session Information\nPlease display your session information at the end of your submission, as shown below.\n\nxfun::session_info()\n\nR version 4.4.2 (2024-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nLocale:\n  LC_COLLATE=English_United States.utf8 \n  LC_CTYPE=English_United States.utf8   \n  LC_MONETARY=English_United States.utf8\n  LC_NUMERIC=C                          \n  LC_TIME=English_United States.utf8    \n\nPackage version:\n  askpass_1.2.1       backports_1.5.0     base64enc_0.1.3    \n  bit_4.5.0.1         bit64_4.5.2         blob_1.2.4         \n  broom_1.0.7         bslib_0.8.0         cachem_1.1.0       \n  callr_3.7.6         cellranger_1.1.0    cli_3.6.3          \n  clipr_0.8.0         colorspace_2.1-1    compiler_4.4.2     \n  conflicted_1.2.0    cpp11_0.5.1         crayon_1.5.3       \n  curl_6.0.1          data.table_1.16.4   DBI_1.2.3          \n  dbplyr_2.5.0        digest_0.6.37       dplyr_1.1.4        \n  dtplyr_1.3.1        evaluate_1.0.1      fansi_1.0.6        \n  farver_2.1.2        fastmap_1.2.0       fontawesome_0.5.3  \n  forcats_1.0.0       fs_1.6.5            gargle_1.5.2       \n  generics_0.1.3      ggplot2_3.5.1       glue_1.8.0         \n  googledrive_2.1.1   googlesheets4_1.1.1 graphics_4.4.2     \n  grDevices_4.4.2     grid_4.4.2          gtable_0.3.6       \n  haven_2.5.4         highr_0.11          hms_1.1.3          \n  htmltools_0.5.8.1   htmlwidgets_1.6.4   httr_1.4.7         \n  ids_1.0.1           isoband_0.2.7       janitor_2.2.1      \n  jquerylib_0.1.4     jsonlite_1.8.9      knitr_1.49         \n  labeling_0.4.3      lattice_0.22.6      lifecycle_1.0.4    \n  lubridate_1.9.4     magrittr_2.0.3      MASS_7.3.61        \n  Matrix_1.7.1        memoise_2.0.1       methods_4.4.2      \n  mgcv_1.9.1          mime_0.12           modelr_0.1.11      \n  munsell_0.5.1       nlme_3.1.166        openssl_2.3.0      \n  parallel_4.4.2      pillar_1.10.0       pkgconfig_2.0.3    \n  prettyunits_1.2.0   processx_3.8.4      progress_1.2.3     \n  ps_1.8.1            purrr_1.0.2         R6_2.5.1           \n  ragg_1.3.3          rappdirs_0.3.3      RColorBrewer_1.1.3 \n  readr_2.1.5         readxl_1.4.3        rematch_2.0.0      \n  rematch2_2.1.2      reprex_2.1.1        rlang_1.1.4        \n  rmarkdown_2.29      rstudioapi_0.17.1   rvest_1.0.4        \n  sass_0.4.9          scales_1.3.0        selectr_0.4.2      \n  snakecase_0.11.1    splines_4.4.2       stats_4.4.2        \n  stringi_1.8.4       stringr_1.5.1       sys_3.4.3          \n  systemfonts_1.1.0   textshaping_0.4.1   tibble_3.2.1       \n  tidyr_1.3.1         tidyselect_1.2.1    tidyverse_2.0.0    \n  timechange_0.3.0    tinytex_0.54        tools_4.4.2        \n  tzdb_0.4.0          utf8_1.2.4          utils_4.4.2        \n  uuid_1.2.1          vctrs_0.6.5         viridisLite_0.4.2  \n  vroom_1.6.5         withr_3.0.2         xfun_0.49          \n  xml2_1.3.6          yaml_2.3.10"
+  },
+  {
+    "objectID": "lab1.html#after-the-lab",
+    "href": "lab1.html#after-the-lab",
+    "title": "Lab 1",
+    "section": "After the Lab",
+    "text": "After the Lab\nWe will post an answer sketch 24 hours after the Lab is due.\nWe will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.\nSee the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you."
+  },
+  {
+    "objectID": "lab3.html",
+    "href": "lab3.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "Submit your work via Canvas.\nThe deadline for this Lab is specified on the Calendar.\n\nWork submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.\nWork submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.\nWork submitted more than 24 hours after the deadline will not be graded.\n\n\nYour response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for Lab 2.\n\n\nThis Lab uses the hbp3456 data developed in Lab 2. See the Lab 2 instructions for details on the data set. Back in Lab 2, we loaded the data with this code.\n\nlibrary(janitor)\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(comment = NA)\n\nhbp3456 &lt;- read_csv(\"https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/hbp3456.csv\", \n                    show_col_types = FALSE) |&gt;\n  clean_names() |&gt;\n  mutate(record = as.character(record))\n\nHere, we will walk through the process of fitting and evaluating linear regression fits to predict a subject’s estimated (neighborhood) median income (the income variable) on the basis of the following five predictors:\n\nthe subject’s neighborhood high school graduation rate, collected in the hsgrad variable\nthe subject’s race category, from the race variable\nthe subject’s Hispanic/Latinx ethnicity category, as shown in eth_hisp,\nthe subject’s age (in the age variable), and\nthe subject’s current tobacco status, available in the tobacco variable.\n\n\n\n\nStart your work by completing the following tasks to create a tibble that we’ll call hbp_b in the answer sketch:\n\nExclude the 25 subjects in hbp3456 who have missing values of either hsgrad or income.\nRestrict your data to the variables we’ll use in our models (the five predictors listed above, the estimated neighborhood income, and the subject identifying code (the record)).\nEnsure that all character variables (other than record) in your tibble are recognized as factors.\nCreate a new variable called sqrtinc which will serve as your response (outcome) for your regression modeling, within your tibble.\nUse set.seed(432) and slice_sample() to select a random sample of 1000 subjects from the tibble.\n\nYour resulting hbp_b tibble should look like this:\n\nhbp_b\n\n# A tibble: 1,000 × 8\n   record income hsgrad race     eth_hisp   age tobacco sqrtinc\n   &lt;chr&gt;   &lt;int&gt;  &lt;dbl&gt; &lt;fct&gt;    &lt;fct&gt;    &lt;int&gt; &lt;fct&gt;     &lt;dbl&gt;\n 1 903574  34800   94.9 White    No          48 Current    187.\n 2 926837  24700   74.2 AA_Black No          55 Current    157.\n 3 929198  14700   40   AA_Black No          35 Never      121.\n 4 932367  24700   74.2 AA_Black No          41 Never      157.\n 5 925592  65600   92.2 &lt;NA&gt;     &lt;NA&gt;        61 Never      256.\n 6 932404  18500   67.8 AA_Black No          67 Never      136.\n 7 933953  21500   84.4 White    No          72 Never      147.\n 8 911527  23000   83.6 White    No          62 Never      152.\n 9 918228  13400   70.3 AA_Black No          52 Current    116.\n10 930262  48300   90   &lt;NA&gt;     &lt;NA&gt;        73 Never      220.\n# ℹ 990 more rows\n\n\nNote If your tibble looks different, it’s not immediately clear to me why. In the answer sketch, I do the following things, in this order:\n\nread in the data (note that whether you then clean_names() or not has no real effect in this particular case)\nfilter to complete cases on hsgrad and income\nselect the seven variables we’ll use\nconvert all character variables to factors\nensure record remains a character variable\nadd the sqrtinc variable to the tibble\nset a seed of 432\ncreate the random sample"
+  },
+  {
+    "objectID": "lab3.html#the-data",
+    "href": "lab3.html#the-data",
+    "title": "Lab 3",
+    "section": "",
+    "text": "This Lab uses the hbp3456 data developed in Lab 2. See the Lab 2 instructions for details on the data set. Back in Lab 2, we loaded the data with this code.\n\nlibrary(janitor)\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(comment = NA)\n\nhbp3456 &lt;- read_csv(\"https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/hbp3456.csv\", \n                    show_col_types = FALSE) |&gt;\n  clean_names() |&gt;\n  mutate(record = as.character(record))\n\nHere, we will walk through the process of fitting and evaluating linear regression fits to predict a subject’s estimated (neighborhood) median income (the income variable) on the basis of the following five predictors:\n\nthe subject’s neighborhood high school graduation rate, collected in the hsgrad variable\nthe subject’s race category, from the race variable\nthe subject’s Hispanic/Latinx ethnicity category, as shown in eth_hisp,\nthe subject’s age (in the age variable), and\nthe subject’s current tobacco status, available in the tobacco variable."
+  },
+  {
+    "objectID": "lab3.html#preliminary-data-work-for-lab-3",
+    "href": "lab3.html#preliminary-data-work-for-lab-3",
+    "title": "Lab 3",
+    "section": "",
+    "text": "Start your work by completing the following tasks to create a tibble that we’ll call hbp_b in the answer sketch:\n\nExclude the 25 subjects in hbp3456 who have missing values of either hsgrad or income.\nRestrict your data to the variables we’ll use in our models (the five predictors listed above, the estimated neighborhood income, and the subject identifying code (the record)).\nEnsure that all character variables (other than record) in your tibble are recognized as factors.\nCreate a new variable called sqrtinc which will serve as your response (outcome) for your regression modeling, within your tibble.\nUse set.seed(432) and slice_sample() to select a random sample of 1000 subjects from the tibble.\n\nYour resulting hbp_b tibble should look like this:\n\nhbp_b\n\n# A tibble: 1,000 × 8\n   record income hsgrad race     eth_hisp   age tobacco sqrtinc\n   &lt;chr&gt;   &lt;int&gt;  &lt;dbl&gt; &lt;fct&gt;    &lt;fct&gt;    &lt;int&gt; &lt;fct&gt;     &lt;dbl&gt;\n 1 903574  34800   94.9 White    No          48 Current    187.\n 2 926837  24700   74.2 AA_Black No          55 Current    157.\n 3 929198  14700   40   AA_Black No          35 Never      121.\n 4 932367  24700   74.2 AA_Black No          41 Never      157.\n 5 925592  65600   92.2 &lt;NA&gt;     &lt;NA&gt;        61 Never      256.\n 6 932404  18500   67.8 AA_Black No          67 Never      136.\n 7 933953  21500   84.4 White    No          72 Never      147.\n 8 911527  23000   83.6 White    No          62 Never      152.\n 9 918228  13400   70.3 AA_Black No          52 Current    116.\n10 930262  48300   90   &lt;NA&gt;     &lt;NA&gt;        73 Never      220.\n# ℹ 990 more rows\n\n\nNote If your tibble looks different, it’s not immediately clear to me why. In the answer sketch, I do the following things, in this order:\n\nread in the data (note that whether you then clean_names() or not has no real effect in this particular case)\nfilter to complete cases on hsgrad and income\nselect the seven variables we’ll use\nconvert all character variables to factors\nensure record remains a character variable\nadd the sqrtinc variable to the tibble\nset a seed of 432\ncreate the random sample"
+  },
+  {
+    "objectID": "lab3.html#after-the-lab",
+    "href": "lab3.html#after-the-lab",
+    "title": "Lab 3",
+    "section": "After the Lab",
+    "text": "After the Lab\nWe will post an answer sketch 24 hours after the Lab is due.\nWe will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.\nSee the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you."
+  },
+  {
+    "objectID": "lab5.html",
+    "href": "lab5.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "Submit your work via Canvas.\nThe deadline for this Lab is specified on the Calendar.\n\nWork submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.\nWork submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.\nWork submitted more than 24 hours after the deadline will not be graded.\n\n\nYour response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for Lab 2."
+  },
+  {
+    "objectID": "lab5.html#hints-for-question-1",
+    "href": "lab5.html#hints-for-question-1",
+    "title": "Lab 5",
+    "section": "Hints for Question 1",
+    "text": "Hints for Question 1\n\nBe sure that your table specifies the number of subjects in each practice. Note that you’ll have to do something so that your work focuses on the comparison of Highland to Sycamore, leaving out (for this question only) the other practices.\nYou’ll have to deal with some missing values in the data. All missing values are indicated in the .csv file with NA. It’s not usually appropriate to report results that include imputation in a Table 1, so build a note specifying the amount of missing data in a footnote to the table. An appropriate approach would be to produce a list just below your Table. Do not impute for Question 1.\nSome variables will present as characters in the data, but you’d instead prefer them to appear as factors. Be sure to include code in your response to make these changes (the forcats package is your friend here) and then (perhaps using the fct_relevel function in the forcats package) be sure to move the levels of those factors into an order that facilitates interpretation.\nBe sure, too, to make reasoned choices about whether means and standard deviations or instead medians and quartiles are more appropriate displays for the quantitative variables. Include your reasons in a list displayed at the end of your table. Note that the record information is just a code (even though it is numerical) and should be treated as a character variable in using these data, as I did above.\nNote that body mass index (BMI) and BMI category are not supplied in the data, although you do have height and weight. So, you’ll have to calculate the BMI and add it to the data set. If you don’t know the formula for BMI, you have Google to help you figure it out.\nFor BMI categories, use the four groups specified in the How is BMI interpreted for Adults section of this description of Adult BMI by the Centers for Disease Control. Again, you’ll need to use your calculated BMI values and then create the categories in your data set, and you’ll need to figure out a way to accurately get each subject into the correct category.\nDo not include R output without complete sentences describing what you are doing in each step, and what you conclude from that work."
+  },
+  {
+    "objectID": "lab5.html#after-the-lab",
+    "href": "lab5.html#after-the-lab",
+    "title": "Lab 5",
+    "section": "After the Lab",
+    "text": "After the Lab\nWe will post an answer sketch 24 hours after the Lab is due.\nWe will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.\nSee the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you."
+  },
+  {
+    "objectID": "lab7.html",
+    "href": "lab7.html",
+    "title": "Lab 7",
+    "section": "",
+    "text": "Submit your work via Canvas.\nThe deadline for this Lab is specified on the Calendar.\n\nWork submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.\nWork submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.\nWork submitted more than 24 hours after the deadline will not be graded.\n\n\nYour response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for Lab 2."
+  },
+  {
+    "objectID": "lab7.html#hint-for-question-1",
+    "href": "lab7.html#hint-for-question-1",
+    "title": "Lab 7",
+    "section": "Hint for Question 1",
+    "text": "Hint for Question 1\nAll of the issues mentioned in the Hint for Question 2 in Lab 6 apply here, too, perhaps even more so. polr, in particular, can be quite fussy.\nFor example, some people in the past have tried to use median_income in their models along with other variables that have much smaller scales (ranges). we would try rescaling those predictors with large ranges to have similar magnitudes to the other predictors, perhaps simply by expressing the median income in thousands of dollars (by dividing the raw data by 1000) rather than on its original scale, or perhaps by normalizing all of the coefficients by subtracting their means and dividing by their standard deviations.\nAs another example, some people in the past tried using age-adjusted mortality to predict years lost rate, but if you divide the years lost rate into several ordinal categories, it’s not hard to wind up in a situation where age-adjusted mortality is perfectly separated, so that if you know the mortality, it automatically specifies the years lost rate category in these data."
+  },
+  {
+    "objectID": "lab7.html#after-the-lab",
+    "href": "lab7.html#after-the-lab",
+    "title": "Lab 7",
+    "section": "After the Lab",
+    "text": "After the Lab\nWe will post an answer sketch 24 hours after the Lab is due.\nWe will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.\nSee the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you."
+  },
+  {
+    "objectID": "projA.html",
+    "href": "projA.html",
+    "title": "Project A",
+    "section": "",
+    "text": "In Project A, you will be analyzing, presenting and discussing a pair of regression models, specifically a linear regression and a logistic regression, describing a data set (available to the public) that you identify.\nThere are two main deliverables:\n\nThe Project A Plan, due in mid-February when the Calendar says it is.\nThe Project A Portfolio and Presentation, due right after Spring Break, as the Calendar indicates.\n\nAll Project A work is submitted via Canvas.\n\n\nIf you decide to use some sort of AI to help you with any part of the Project, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called “Use of AI”. This should appear just before your section containing the Session Information. Thank you.\n\n\n\nOn our 432-data page, you will find (in the templates subfolder) a pair of Quarto templates: one for the Project A Plan, and another for the Project A Portfolio. Please use these templates in preparing your work. They will make completing and grading Project A much easier.\n\n\n\nYou can choose either to work alone, or with one other person, to complete Project A. If you work in a group for Project A, you may be asked to work alone for Project B later in the term.\n\nYou will need to identify your Project A partner prior to the submission of your Project A Plan.\nIf you are working with a partner, all work must be submitted by exactly one of you to Canvas while the non-reporting partner submits a one-page note to Canvas indicating the members of the partnership and that the partner will submit the work.\n\n\n\n\nSanity checks are an important part of your programming, but they don’t belong in your final plan, portfolio or presentation. Neither do false starts, and explorations that don’t lead anywhere.\n\n\n\nDr. Love posted .qmd and .html files for a demonstration project to our Shared Google Drive. Please take a look.\n\n\n\nThe deadline to receive full credit for the 432 Project A portfolio (including HTML, qmd, Rds and video files) is now specified in the Calendar as Noon on Tuesday 2024-03-19. I’d like to avoid getting a lot of emails pleading for extensions. So, we have established two additional deadlines:\n\nIf all four elements of your work are not submitted by Tuesday 2024-03-19 at Noon, you can instead submit them by Wednesday 2024-03-20 at NOON while taking a penalty of 5 points (out of 100).\nIf your work is not submitted by Wednesday at noon, you can instead submit it by Friday 2024-03-22 at 11:59 PM while taking a total penalty of 10 points (out of 100).\n\nThat’s it. We won’t accept work after Friday March 22nd at 11:59 PM."
+  },
+  {
+    "objectID": "projA.html#use-of-ai",
+    "href": "projA.html#use-of-ai",
+    "title": "Project A",
+    "section": "",
+    "text": "If you decide to use some sort of AI to help you with any part of the Project, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called “Use of AI”. This should appear just before your section containing the Session Information. Thank you."
+  },
+  {
+    "objectID": "projA.html#templates",
+    "href": "projA.html#templates",
+    "title": "Project A",
+    "section": "",
+    "text": "On our 432-data page, you will find (in the templates subfolder) a pair of Quarto templates: one for the Project A Plan, and another for the Project A Portfolio. Please use these templates in preparing your work. They will make completing and grading Project A much easier."
+  },
+  {
+    "objectID": "projA.html#working-with-a-partner",
+    "href": "projA.html#working-with-a-partner",
+    "title": "Project A",
+    "section": "",
+    "text": "You can choose either to work alone, or with one other person, to complete Project A. If you work in a group for Project A, you may be asked to work alone for Project B later in the term.\n\nYou will need to identify your Project A partner prior to the submission of your Project A Plan.\nIf you are working with a partner, all work must be submitted by exactly one of you to Canvas while the non-reporting partner submits a one-page note to Canvas indicating the members of the partnership and that the partner will submit the work."
+  },
+  {
+    "objectID": "projA.html#sanity-checks-and-false-starts",
+    "href": "projA.html#sanity-checks-and-false-starts",
+    "title": "Project A",
+    "section": "",
+    "text": "Sanity checks are an important part of your programming, but they don’t belong in your final plan, portfolio or presentation. Neither do false starts, and explorations that don’t lead anywhere."
+  },
+  {
+    "objectID": "projA.html#demonstration-project",
+    "href": "projA.html#demonstration-project",
+    "title": "Project A",
+    "section": "",
+    "text": "Dr. Love posted .qmd and .html files for a demonstration project to our Shared Google Drive. Please take a look."
+  },
+  {
+    "objectID": "projA.html#deadlines",
+    "href": "projA.html#deadlines",
+    "title": "Project A",
+    "section": "",
+    "text": "The deadline to receive full credit for the 432 Project A portfolio (including HTML, qmd, Rds and video files) is now specified in the Calendar as Noon on Tuesday 2024-03-19. I’d like to avoid getting a lot of emails pleading for extensions. So, we have established two additional deadlines:\n\nIf all four elements of your work are not submitted by Tuesday 2024-03-19 at Noon, you can instead submit them by Wednesday 2024-03-20 at NOON while taking a penalty of 5 points (out of 100).\nIf your work is not submitted by Wednesday at noon, you can instead submit it by Friday 2024-03-22 at 11:59 PM while taking a total penalty of 10 points (out of 100).\n\nThat’s it. We won’t accept work after Friday March 22nd at 11:59 PM."
+  },
+  {
+    "objectID": "projA.html#what-makes-a-data-set-acceptable",
+    "href": "projA.html#what-makes-a-data-set-acceptable",
+    "title": "Project A",
+    "section": "What Makes a Data Set Acceptable?",
+    "text": "What Makes a Data Set Acceptable?\n\nShared with the World. The data must be available to you, and shared with me and everyone else in the world (without any identifying information) as a well-tidied file by the time you submit your Project A Plan. If the data is from another source, the source (web or other) must be completely identified to me. Ongoing projects that require anyone’s approval to share data are not appropriate for Project A.\n\nYou should have the data in R by February 1, so that you will have sufficient time to complete the other elements of this Plan. Any data you cannot have by that time is a bad choice.\nFor Project A, you may not use any data set used in the 431 or 432 teaching materials.\nYou must use meaningfully different data sets in 432 Projects A and B.\nIn submitting your Project A Plan, you will need to be able to write “I am certain that it is completely appropriate for these data to be shared with anyone, without any conditions. There are no concerns about privacy or security.” So be sure that’s true before you pick a data set.\n\nSize.\n\nA minimum of 100 complete observations are required on each variable. It is fine if there are some missing values, as well, so long as there are at least 100 rows with complete observations on all variables you intend to use in each model.\nThe maximum data set size is 1200 observations, so if you have something larger than that, you’ll need to select a random subset of the available information as part of your data tidying process.\n\nOutcomes. The columns must include one quantitative outcome and one binary categorical outcome.\n\nWe prefer distinct outcomes, but if necessary, the binary outcome can be generated from the quantitative outcome (as an example, your quantitative outcome could be resting heart rate in beats per minute, and your binary outcome could be whether the resting heart rate is below 70 beats per minute.)\n\nInputs. You will need at least four regression inputs (predictors) for each of your two models.\n\nAt least one of the four must be quantitative (a variable is not quantitative for this purpose unless it has at least 10 different, ordered, observed values), and at least one must be multi-categorical (with between 3 and 6 categories, each containing a minimum of 30 subjects) for each model.\nYour other inputs can represent binary, multi-categorical or quantitative data.\nYou can examine different candidate predictors for each outcome, or use the same ones in both your linear and logistic regression models.\nDepending on your sample size, you can study more than the minimum number of regression inputs. See specifications below for your linear and logistic models.\n\n\nYour data need not be related to health, or medicine, or biology.\n\nNo hierarchical data\nIn each project this semester, we will require you to study cross-sectional data, where rows indicate subjects and columns indicate variables gathered to describe those subjects at a particular moment in time or space. Do not use “nested” data in Project A.\n\nOne example of hierarchical (nested) data would be a model of patient results that contains measures not just for individual patients but also measures for the providers within which patients are grouped, and also for health systems in which providers are grouped. That wouldn’t work for this project.\nAnother example of hierarchical (nested) data would be a model of individual people’s outcomes where the covariates are gathered at the state or county level, as well as at the level of individuals, and again, that doesn’t work for this project.\nThe singular exception to the “no hierarchical data” rule is that it will usually be acceptable for all inputs to be collected at a single (baseline) time point and both outcomes to be collected at a single future point in time. For example, you could predict systolic blood pressure in 2022 (or whether or not a subject’s systolic blood pressure in 2022 was below 140), based on a set of input variables (likely including systolic blood pressure) all gathered in 2021.\n\n\n\nJoining multiple data sets\nDr. Love will be especially impressed with a data collection effort that appropriately puts together at least two different data bases, should that be appropriate.\nWhat we have in mind are the following scenarios:\n\nMultiple data sets describing different variables for the same subjects that can be linked, so that you can build a combined data set with the same subjects but pulling together multiple sources of data, as, for example, the County Health Rankings do each year.\nMultiple data sets describing different subjects but the same variables, such as different years of a survey, combining, for instance, multiple iterations of NHANES so as to increase the available sample size.\n\nIf your project research questions and available data lead to one of these approaches, great. If not, don’t force it.\nThis may require you to learn something about the various joining commands, like left_join and inner_join that are highlighted in the Combine Data Sets section on the Data Transformation Cheat Sheet from Posit.\n\nWe heartily recommend Garret Grolemund’s YouTube materials on Data Wrangling, for instance this Introduction to Data Manipulation which is about combining multiple data sets.\nAnother great resource for combining data sets (and most of your other R questions) is the second edition of R for Data Science, by Wickham and Grolemund."
+  },
+  {
+    "objectID": "projA.html#good-data-sets-to-use",
+    "href": "projA.html#good-data-sets-to-use",
+    "title": "Project A",
+    "section": "Good Data Sets To Use",
+    "text": "Good Data Sets To Use\nSome sources of data we’d like to see people use include:\n\nCDC WONDER data, which could (at the county level) be combined with data from County Health Rankings 2022 to do something interesting.\nThe data sets described in the American Statistical Association’s Data Challenge Expo for 2022, which include five very interesting data sets selected from the Urban Institute Data Catalog\nA data set from the Tidy Tuesday archive or from the Data is Plural archive might be a good candidate.\nThe Health and Retirement Study\nThe General Social Survey although the problem there is a lack of quantitative variables.\nThe many many public use data sets available at ICSPR\nThe 500 Cities and PLACES data portal, most probably focusing on the County-level data and potentially combining it with County Health Rankings 2022.\nNational Center on Health Statistics which includes NHANES (not a good choice for this project) but also other data sets.\nBehavioral Risk Factor Surveillance System\n\n\nFor examples of using public microdata from surveys, I recommend the book “Analyze Survey Data for Free” which has, for example, information on MEPS, the Health and Retirement Study, the General Social Survey, NHANES, the National Immunization Survey and many others.\nWhile data on COVID-19 would be permitted for 432 projects, most of the available data is longitudinal and thus unsuitable for Project A.\nWe are not interested in people using NHANES data in Project A, or County Health Rankings data, unless (as indicated above) those County Health Rankings are combined with meaningful additional data sets.\nKaggle Public Datasets may be permitted, but we discourage this. We will only accept those with really useful variables, no hierarchical structure and strong descriptions of how the data were gathered (which is at best 5% of what’s available on Kaggle). Don’t select a Kaggle data set without running it by us on Campuswire (see below) to see if we’re willing to let you use it.\nYou will not be permitted to use data from a textbook or other educational resource for learning statistics, data science or related methods (online or otherwise).\n\nExamples of such repositories (that are sadly out-of-bounds for this project and for 432 Project B) include the Cleveland Clinic Statistical Education dataset repository, the Vanderbilt University Biostatistics Datasets, or the UCI Machine Learning Repository.\n\nIt’s not a great idea to type “regression data sets” into Google - rarely does that lead to an interesting project."
+  },
+  {
+    "objectID": "projA.html#running-a-data-set-past-us-for-project-a",
+    "href": "projA.html#running-a-data-set-past-us-for-project-a",
+    "title": "Project A",
+    "section": "Running a Data Set Past Us for Project A",
+    "text": "Running a Data Set Past Us for Project A\nTo get Professor Love and the TAs to “sign off” on a data set as appropriate for your Project A Plan, you need to tell us the following four things in a (private or public - your choice) note on Campuswire in the Project A folder. Please do this if you’re not sure your data set is appropriate.\n\nthe data source, as described here, along with a URL so we can access the data\na description of who the subjects are and how they were selected, as described here - it helps if you also tell us how many subjects are in the data.\nwhat quantitative outcome you plan to use in your linear regression model, including its units of measurement and the minimum, mean and maximum values available in your data\nwhat binary outcome you plan to use in your logistic regression model, specifying both of the mutually exclusive and collectively exhaustive categories and how many subjects fall into each of those two categories.\n\nAlso, we ask that you not ask us to pick between two “options” - submit the one you’d rather do. If it’s a problem, we’ll let you know, and you can then change to another option if necessary."
+  },
+  {
+    "objectID": "projA.html#project-a-plan-contents",
+    "href": "projA.html#project-a-plan-contents",
+    "title": "Project A",
+    "section": "Project A Plan Contents",
+    "text": "Project A Plan Contents\nPlease use the Quarto template we provided for the Project A Plan in preparing your work. The list of HTML “themes” that are available in Quarto by changing the “theme” option in the start of your document can be found here and we encourage you to pick something you think looks nice.\n\nTitle and Authors\nYour project should have a meaningful title (not containing the words “432” or “Project” or “Proposal” or “Plan”) but rather something describing your actual data and plans.\nPlease keep the main title to no more than 80 characters, including spaces. You can add a subtitle if you like, but the main title should stand on its own. Feel free to focus on one of your two research questions (rather than both) if that’s what’s needed to keep to the 80-character limit.\n\n\nR Packages and Setup\nYou’ll load necessary packages at the start in an unnumbered section of your work, following the template.\n\nDo not use source(\"Love-boost.R\") or any other R script or package unless you actually need something it provides.\nDo not load core elements of tidyverse or tidymodels separately. instead just load the meta-packages, and do so last.\nUse #| message: false as part of your Quarto code chunk where the packages are listed (as we have done in the template) to eliminate HTML messages about when packages were built or how objects were masked.\n\n\n\n1. Data Source\nProvide complete information on the source of the data: how did you get it, how was it gathered, by whom, in what setting, for what purpose, and using what sampling strategy.\nThis small section should include a clear link (with all necessary details) to the URL which we can use to obtain the raw data freely.\n\n\n2. The Subjects\nA description (one or two sentences should be sufficient) of who or what the subjects (rows) are in your data set, and how they were sampled from the population of interest.\n\n\n3. Loading and Tidying the Data\n\n3.1 Loading the Raw Data\nProvide code to ingest the raw data. Ideally, this should use tidyverse-friendly code and a direct link to the URL where the data are housed online.\n\n\n3.2 Cleaning the Data (involves several subsections)\nTidy and clean up the data to meet all necessary requirements for your modeling work. This will require multiple sub-sections as you tackle different tasks for different sets of variables. Use the tidyverse for data management whenever possible. Some of things you need to do here…\n\nEliminate all variables that are not going to be used (either as identifiers, outcomes or inputs) in your planned analyses.\nChange variable names to more meaningful ones, although it’s helpful to keep them at 10 characters or less. Use clean_names() from the janitor package to clean up and standardize the presentation of variable names.\nSample the data as needed to ensure that you meet the data set size specifications (no more than 1200 rows, for instance.)\nConvert all variables to appropriate types (factors, etc.) as needed, and complete appropriate checks of the values for all variables.\nIf you have prospective inputs (predictors) that are multi-categorical with more than 6 categories, collapse them to six or fewer categories in a rational way at this stage.\nEnsure that all categorical variables have at least 30 observations at each level, collapsing or removing levels as needed to accomplish this end.\nYour tidied data set should be arranged with a row (subject) identifier at the far left. That identifier should have a unique value for each row, and should be saved as a character variable in R.\nWe expect your final tibble to have some missing values. Do not impute or delete these, but do be sure they are correctly identified as missing values by R.\nDo not list the entire tibble or print out large strands of R output (like summaries of the entire tibble) anywhere in your document, except where you are required by these instructions to do so.\n\n\n\n\n4. The Tidy Tibble\n\n4.1 Listing the Tibble\nIn this section, you should start by listing the tibble you created in Section 3, with all variables correctly imported (via your code) as the types of variables (factor/integer/numeric, etc.) that you need for modeling.\n\nThis should be a listing, not a glimpse or anything else. Just type in the name of your tibble.\nThe resulting list should be limited to the first 10 rows of your data.\n\n\n\n4.2 Size and Identifiers\nWrite a sentence specifying the number of rows and the number of columns in your tibble, and this should match the R output.\nThen identify the name of the variable that provides the identifier for each row in your tidy tibble, and demonstrate that each row has a unique value for that variable, and that the variable is represented as a character in R.\n\nOne way to do this is to run the n_distinct function from the dplyr package on this particular variable.\nDo not present summary or descriptive results on every variable in the whole tibble here - you’ll do that in Section 5.\n\n\n\n4.3 Save the tidied Tibble as an .Rds file\nNow, save the tidied data set as an .Rds file (using write_rds or the equivalent), which you’ll need to submit to us. The tibble should have the same name as the data file you submit to Canvas.\n\n\n\n5. The Code Book\n\n5.1 Defining the Variables\nIn this section, provide a beautiful codebook which tells us (at a minimum) the following information for each variable in the tibble you printed and saved in Section 4.\n\nThe name of the variable in your tibble.\nThe role of the variable in your planned analyses (options include identifier, outcome, or input)\nThe type of variable for each outcome or input (options are categorical, in which case tell us how many categories, or quantitative)\nA short description of the meaning of the variable.\n\nThis should include the units of measurement if the variable is quantitative, and a list of the possible values if the variable is categorical.\n\n\nAs an example, here’s a part of a simple table:\n\n\n\n\n\n\n\n\n\nVariable\nRole\nType\nDescription\n\n\n\n\nsubjectID\nidentifier\n-\ncharacter code for subjects\n\n\nsysbp\noutcome\nquant\nMost Recent Systolic Blood Pressure, in mm Hg\n\n\nstatin\ninput\n2-cat\nHas a current statin prescription? (Yes or No)\n\n\n\n\n\n5.2 Numerical Description\nHere, run the describe command from the Hmisc package on your entire tibble. Be sure that the results match up with what you’ve described in defining the variables, and that the same variables appear, in the same order, in the codebook and in these results.\n\n\n\n6. Linear Regression Plans\n\n6.1 My First Research Question\nBegin this section by specifying a question that you hope to answer with the linear model you are proposing. A research question relates clearly to the data you have and your modeling plans, and, like all questions, it ends with a question mark. Eventually, you will need to answer this question in your portfolio.\nJeff Leek in his book “How to be a Modern Scientist” has some excellent advice in his section on “How Do You Start a Paper.” In particular, you want to identify research questions that:\n\nare concrete, (and for which you can find useful data), and that\nsolve a real problem, and that\ngive you an opportunity to do something new,\nthat you will feel ownership of, and\nthat you want to work on.\n\nWe recommend you use the FINER criteria (or, if relevant, the PICOT criteria) to help you refine a vague notion of a research question into something appropriate for this project.\n\nFINER = Feasible, Interesting, Novel, Ethical and Relevant.\nPICOT is often used in medical studies assessing or evaluating patients and includes Patient (or Problem), Intervention (or Indicator), Comparison group, Outcomes and Time.\n\nThe Wikipedia entry on research questions provides some helpful links to these ideas.\n\n\n6.2 My Quantitative Outcome\nThis subsection tells us what you will use your linear regression model to explain or predict.\n\nTell us the name in the tibble of the linear regression outcome you will use (this should the quantitative outcome you identified in your Codebook) and state why you are interested in predicting this variable.\nProvide a count of the number of rows in your data with complete information on this outcome.\nProvide a nicely labeled graphical summary of the distribution of your outcome to supplement the numerical description you provided in Section 5.2.\nComment briefly on the characteristics of the outcome’s distribution. Is your outcome skewed or symmetric, is it discrete or fairly continuous, is there a natural transformation to consider?\nDemonstrate that the variable you have selected meets the standard for a quantitative variable used in this Project, specifically that it has at least 10 different, ordered, observed values.\n\n\n\n6.3 My Planned Predictors (Linear Model)\nNow, tell us precisely which four (or more) candidate predictors (inputs) you intend to use for your linear regression model.\n\nPlease use the variable names that appear in your code book and tibble.\nDemonstrate to us that you have at least one input which is quantitative, specifically that it has at least 10 different, ordered, observed values.\nDemonstrate to us that you have at least one categorical input which has between 3 and 6 categories, that will be used as a factor in your modeling, and that has at least 30 observations in each level of the factor. If necessary, you can create such a predictor from a quantitative one, but if you are doing this, remember that only the multi-categorical version of the predictor should be included in your models.\nDemonstrate that the total number of candidate predictors you suggest is no more than \\(4 + (N_1 - 100)/100\\), rounding down, where \\(N_1\\) is the number of rows with complete outcome data in your tibble.\n\nYou should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.\n\n\n\n7 Logistic Regression Plans\n\n7.1 My Second Research Question\nBegin this section by specifying a question that you hope to answer with the logistic model you are proposing. A research question relates clearly to the data you have and your modeling plans, and, like all questions, it ends with a question mark. Eventually, you will need to answer this question in your portfolio.\nSee section 6.1 for some more suggestions about improving your research questions.\n\n\n7.2 My Binary Outcome\nThis subsection tells us what you will use your logistic regression model to explain or predict.\n\nTell us the name in the tibble of the logistic regression outcome you will use (this should be the binary (2-category) outcome you identified in your codebook) and state why you are interested in predicting this variable.\nProvide a count of the number of rows in your data with each of the two possible values of this outcome. Indicate whether you have any missing values.\n\n\n\n7.3 My Planned Predictors (Logistic Model)\nNow, tell us precisely which four (or more) candidate predictors you intend to use for your logistic regression model.\n\nIf you are using some of the same predictors as in your linear regression model, there’s no need to repeat yourself. Simply tell us which variables you’ll use again, and then provide descriptions for any new predictors that did not appear in your plans for the linear model.\nDemonstrate that the total number of candidate predictors you suggest for your logistic regression model is no more than \\(4 + (N_2 - 100)/100\\) predictors, rounded down, where \\(N_2\\) is the number of subjects in the smaller of your two outcome groups.\n\nYou should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.\n\n\n\n8 Affirmation\nNext you need to affirm that the data set meets all of the project requirements, especially that the data can be shared freely over the internet, and that there is no protected information of any kind involved.\nThe text we want to see here is\n\nI am certain that it is completely appropriate for these data to be shared with anyone, without any conditions. There are no concerns about privacy or security.\n\nIf you are unsure as to whether this is true, select a different data set.\n\n\n9 References\nReferences (you’ll need one to describe the source of your data, at least) go here.\n\n\n10 Session Information\nPlease provide session information by running xfun::session_info().\n\nxfun::session_info()\n\nR version 4.4.2 (2024-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nLocale:\n  LC_COLLATE=English_United States.utf8 \n  LC_CTYPE=English_United States.utf8   \n  LC_MONETARY=English_United States.utf8\n  LC_NUMERIC=C                          \n  LC_TIME=English_United States.utf8    \n\nPackage version:\n  base64enc_0.1.3   bslib_0.8.0       cachem_1.1.0      cli_3.6.3        \n  compiler_4.4.2    digest_0.6.37     evaluate_1.0.1    fastmap_1.2.0    \n  fontawesome_0.5.3 fs_1.6.5          glue_1.8.0        graphics_4.4.2   \n  grDevices_4.4.2   highr_0.11        htmltools_0.5.8.1 htmlwidgets_1.6.4\n  jquerylib_0.1.4   jsonlite_1.8.9    knitr_1.49        lifecycle_1.0.4  \n  memoise_2.0.1     methods_4.4.2     mime_0.12         R6_2.5.1         \n  rappdirs_0.3.3    rlang_1.1.4       rmarkdown_2.29    rstudioapi_0.17.1\n  sass_0.4.9        stats_4.4.2       tinytex_0.54      tools_4.4.2      \n  utils_4.4.2       xfun_0.49         yaml_2.3.10"
+  },
+  {
+    "objectID": "projA.html#my-best-piece-of-advice",
+    "href": "projA.html#my-best-piece-of-advice",
+    "title": "Project A",
+    "section": "My Best Piece of Advice",
+    "text": "My Best Piece of Advice\nReview your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look at the resulting HTML output, closely."
+  },
+  {
+    "objectID": "projA.html#most-important-piece-of-advice",
+    "href": "projA.html#most-important-piece-of-advice",
+    "title": "Project A",
+    "section": "Most Important Piece of Advice",
+    "text": "Most Important Piece of Advice\nAs mentioned above, it is crucial to review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look at the resulting HTML output, closely."
+  },
+  {
+    "objectID": "projA.html#your-audience",
+    "href": "projA.html#your-audience",
+    "title": "Project A",
+    "section": "Your Audience",
+    "text": "Your Audience\nYour audience for this presentation includes Professor Love, the TAs and your fellow students. Prepare your presentation with that audience in mind. What will they need to know to understand what you’ve done, and get excited about it?"
+  },
+  {
+    "objectID": "projA.html#outline-of-the-presentation",
+    "href": "projA.html#outline-of-the-presentation",
+    "title": "Project A",
+    "section": "Outline of the Presentation",
+    "text": "Outline of the Presentation\nYour presentation should include fewer than 10 slides.\nYour “most important finding” is just going to be one of many potentially interesting findings in your Project. Your job in the presentation is not to prove to me that you did a lot of work - I’ll see that in the portfolio.\nInstead, your job in the presentation is to interest your audience in something you found that is (at least relatively) important. You are expected to help us understand the following things related to your most important finding, based on either a linear or logistic model.\nYou will not be developing any new material for the slides (just restating and rearranging things you’ve already done and perhaps constructing a short narrative to help us retain your key findings) once you have the portfolio. As a result, we encourage you to complete the portfolio first.\nWe suggest you develop about 8 slides. This should include…\n\nA title slide\nA couple of slides to describe the Subjects, Outcome and Predictors\n\nMake sure we understand who the subjects are, how they were selected, what the outcome is and why we should care about it, and what predictors are involved in the model you’ll show.\n\nSeveral slides showing meaningful statistical findings (What should we learn from your model?)\n\nWhat does the model (don’t show us details of multiple models in the presentation) say about the relationship between the outcome and the predictors?\nYou’re only showing us one model (of models A, B, Y and Z) in the presentation.\nHow well does this model fit the data you have, and how well might it fit in new data?\n\nA couple of slides discussing next steps\n\nIt is unlikely that you’ll have a model that is truly satisfactory all on its own, so what could be done to improve it that you cannot already do with the data you have? What other data could be collected, how could the measures be refined, could you design a study to get to a more convincing answer?\n\n\nMake sure that you introduce yourself when you start to speak, over your title slide if you are working alone. We’re happy to see your face during the presentation, but this isn’t mandatory. If you are working with a partner, each of you should introduce yourself at the beginning, and let me know who’s speaking first.\n(Essentially) every word and every image/table/chart in your slides can and should come directly from the materials contained in your HTML portfolio.\n\nThe development of the presentation is mostly about selecting useful information to present and then arranging it in a way that sticks for your audience.\nYour presentation should include no R code but instead will provide nicely formatted figures and tables along with text. Some figures don’t work well on slides, like nomograms, without a lot of work. Pick something that is both useful and easy to see.\nEach slide should have a title, indicating the message you want us to get from the slide (don’t use generic titles like “Results” or “Table 1”).\nYou’ll have to cut out around 95% of your portfolio to create your slides, and you should follow your instincts regarding your audience (Professor Love, the TAs and your fellow students are your audience.)\nDeveloping the presentation is where you have to make decisions about what’s most important to show an audience to get them interested in your work. That’s a critically important skill."
+  },
+  {
+    "objectID": "projA.html#using-splines-and-other-complex-predictors",
+    "href": "projA.html#using-splines-and-other-complex-predictors",
+    "title": "Project A",
+    "section": "Using Splines and other Complex Predictors",
+    "text": "Using Splines and other Complex Predictors\n\nHow should I describe a restricted cubic spline that I’ve fit in a model? Do I write out that equation with the variablename’ and variablename’’ in it, or … ?\n\nTell us how many knots were involved and show a graph that depicts the impact of the spline.\n\nNo one explains splines without a graph.\n\nMake a graph and use it is excellent advice for many aspects of your presentation. Sensible graphs to accomplish this task in a multivariate regression model include the ggplot with Predict combination, the plot(summary()) approach, and/or a nomogram."
+  },
+  {
+    "objectID": "projA.html#variable-selection",
+    "href": "projA.html#variable-selection",
+    "title": "Project A",
+    "section": "Variable Selection",
+    "text": "Variable Selection\n\nWhat is the best way to select an appropriate set of predictors?\n\nIt depends in part on the kind of question you are trying to answer. For most projects, I recommend a question that is explicitly about prediction, rather than either (a) trying to explain a phenomenon in existing data without reference to external prediction or (b) trying to make some sort of causal inference, which requires methods beyond the scope of this class.\nWhat I would always try to do is start with a question I want to answer, which should motivate specific predictors. A combination of logic, theory and prior empirical evidence is always preferable. A scan of the literature is always useful. A conceptual model of the relationship which makes predictions about what “should” happen under current understanding can be very helpful. I strongly urge you to pick a project where you have some prior understanding of how the data will behave and where you can express that pre-modeling belief as part of your presentation of your work.\nWhat I would definitely not do is scan a list of correlations in the current data to see which ones look promising, and then forget that I did that when it came time to evaluate the models I developed. It’s fine to go on a fishing expedition here, but then you have to severely temper your claims, and in particular you have to give up on drawing any substantial conclusions about causation or explanation and focus instead on a question about prediction, and (of course) validation of your model becomes essential."
+  },
+  {
+    "objectID": "quiz1.html",
+    "href": "quiz1.html",
+    "title": "Quiz 1",
+    "section": "",
+    "text": "By the time specified on the Calendar, several elements related to Quiz 1 will be provided to you.\n\nThe main document (pdf) for Quiz 1, which will include both instructions and all of the questions.\nA link to the Google Form Answer Sheet for Quiz 1, where you will submit your responses.\nDownload information for the Data Sets we will provide for Quiz 1.\n\nQuiz 1 will be due when the Calendar says it is.\nIf you have a question prior to the release of Quiz 1 about the Quiz, send it by email to Dr. Love at thomas dot love at case dot edu."
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software for 432",
+    "section": "",
+    "text": "The course makes heavy use of the R statistical programming language, and several related tools, most especially the RStudio development environment. Every bit of this software is free to use, and open-source.\nYou will need access to a computer to do your work for this class, not just an iPad or other tablet, but an actual computer. You do not need a state of the art machine, nor should you need any special hardware to run things for this course."
+  },
+  {
+    "objectID": "software.html#updating-your-r-packages",
+    "href": "software.html#updating-your-r-packages",
+    "title": "Software for 432",
+    "section": "Updating Your R Packages",
+    "text": "Updating Your R Packages\nAbout twice a month, it’s a good idea to update your R packages. To do so, follow steps 3 and 4 above."
+  },
+  {
+    "objectID": "software.html#the-meta-packages",
+    "href": "software.html#the-meta-packages",
+    "title": "Software for 432",
+    "section": "The Meta-Packages",
+    "text": "The Meta-Packages\n\nInstalling the tidyverse meta-package installs the packages listed at https://www.tidyverse.org/.\nInstalling the tidymodels meta-package installs the packages listed at https://www.tidymodels.org/packages/."
+  },
+  {
+    "objectID": "software.html#note-a-windows-issue-with-rtools",
+    "href": "software.html#note-a-windows-issue-with-rtools",
+    "title": "Software for 432",
+    "section": "Note: A Windows Issue with RTools",
+    "text": "Note: A Windows Issue with RTools\nIf you are using Windows, and get messages during installation that the latest version of RTools needs to be installed, you can usually just ignore them. If you don’t want to ignore them, go here to download and install RTools for Windows."
+  },
+  {
+    "objectID": "software.html#installing-a-single-package",
+    "href": "software.html#installing-a-single-package",
+    "title": "Software for 432",
+    "section": "Installing a Single Package",
+    "text": "Installing a Single Package\nIf you want to install a single package, you can do so by finding the word Packages on the right side of your RStudio screen.\n\nClick on the Packages tab to start installing the packages you’ll need.\nClick Install, which will bring up a dialog box, where you can type in the names of the packages that you need. These should be separated by a space or comma. Be sure to leave the Install dependencies box checked.\n\n\nA popup box may appear, asking “Do you want to install from sources the packages which need compilation?” to which I usually answer No. A Yes response leads to a slower installation, but can solve problems if you still have them after updating.\nThis may take a few minutes. As long as you’re seeing activity in the Console window, things are progressing.\nEventually, you’ll get a message that “The downloaded source packages are in …” with a directory name. That’s the sign that the updating is done."
+  }
+]

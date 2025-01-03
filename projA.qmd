@@ -1,0 +1,687 @@
+---
+title: "Project A"
+date: last-modified
+---
+
+# Project A Overview
+
+In Project A, you will be analyzing, presenting and discussing a pair of regression models, specifically a linear regression and a logistic regression, describing a data set (available to the public) that you identify.
+
+There are two main deliverables:
+
+- The Project A Plan, due in mid-February when the [Calendar](calendar.qmd) says it is.
+- The Project A Portfolio and Presentation, due right after Spring Break, as the [Calendar](calendar.qmd) indicates.
+
+All Project A work is submitted [via Canvas](https://canvas.case.edu/).
+
+## Use of AI
+
+If you decide to use some sort of AI to help you with any part of the Project, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI". This should appear just *before* your section containing the Session Information. Thank you.
+
+## Templates
+
+On our [432-data page](https://github.com/THOMASELOVE/432-data), you will find (in the templates subfolder) a pair of Quarto templates: [one for the Project A Plan](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAplan_template.qmd), and [another for the Project A Portfolio](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAportfolio_template.qmd). Please use these templates in preparing your work. They will make completing and grading Project A much easier.
+
+## Working with a Partner?
+
+You can choose either to work alone, or with one other person, to complete Project A. If you work in a group for Project A, you may be asked to work alone for Project B later in the term.
+
+- You will need to identify your Project A partner prior to the submission of your Project A Plan.
+- If you are working with a partner, all work must be submitted by exactly one of you to [Canvas](https::/canvas.case.edu) while the non-reporting partner submits a one-page note to Canvas indicating the members of the partnership and that the partner will submit the work.
+
+## Sanity Checks and False Starts
+
+Sanity checks are an important part of your programming, but they don't belong in your final plan, portfolio or presentation. Neither do false starts, and explorations that don't lead anywhere.
+
+## Demonstration Project
+
+Dr. Love posted .qmd and .html files for a demonstration project to our **Shared Google Drive**. Please take a look.
+
+## Deadlines
+
+The deadline to receive full credit for the 432 Project A portfolio (including HTML, qmd, Rds and video files) is now specified in the [Calendar](calendar.qmd) as Noon on Tuesday 2024-03-19. I'd like to avoid getting a lot of emails pleading for extensions. So, we have established two additional deadlines:
+
+1. If all four elements of your work are not submitted by Tuesday 2024-03-19 at Noon, you can instead submit them by Wednesday 2024-03-20 at NOON while taking a penalty of 5 points (out of 100).
+2. If your work is not submitted by Wednesday at noon, you can instead submit it by Friday 2024-03-22 at 11:59 PM while taking a total penalty of 10 points (out of 100).
+
+That's it. We won't accept work after Friday March 22nd at 11:59 PM.
+
+# Need Help?
+
+Questions about Project A may be directed to the TAs and to Professor Love at any time after the start of the course. If you're asking a question [on Campuswire](https://campuswire.com/), please use the `Project A` label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.
+
+# Choosing Your Data
+
+## What Makes a Data Set Acceptable?
+
+1.  **Shared with the World**. The data must be available to you, and shared with me and everyone else in the world (without any identifying information) as a well-tidied file by the time you submit your Project A Plan. If the data is from another source, the source (web or other) must be completely identified to me. Ongoing projects that require anyone’s approval to share data are not appropriate for Project A.
+    -   You should have the data in R by February 1, so that you will
+        have sufficient time to complete the other elements of this
+        Plan. Any data you cannot have by that time is a bad choice.
+    -   For Project A, you may not use any data set used in the 431 or
+        432 teaching materials. 
+    -   You must use meaningfully different data sets in 432 Projects A
+        and B.
+    -   In submitting your Project A Plan, you will need to be able to write
+        “I am certain that it is completely appropriate for these data
+        to be shared with anyone, without any conditions. There are no
+        concerns about privacy or security.” So be sure that’s true
+        before you pick a data set.
+2.  **Size**.
+    -   A **minimum** of 100 complete observations are required on each
+        variable. It is fine if there are some missing values, as well,
+        so long as there are at least 100 rows with complete
+        observations on all variables you intend to use in each model.
+    -   The **maximum** data set size is 1200 observations, so if you
+        have something larger than that, you’ll need to select a random
+        subset of the available information as part of your data tidying
+        process.
+3.  **Outcomes**. The columns must include one quantitative
+    outcome and one binary categorical outcome.
+    -   We prefer distinct outcomes, but if necessary, the binary
+        outcome can be generated from the quantitative outcome (as an
+        example, your quantitative outcome could be resting heart rate
+        in beats per minute, and your binary outcome could be whether
+        the resting heart rate is below 70 beats per minute.)
+4.  **Inputs**. You will need at least four regression inputs
+    (predictors) for each of your two models.
+    -   At least one of the four must be quantitative (a variable is
+        **not** quantitative for this purpose unless it has at least 10
+        different, ordered, observed values), *and* at least one must be
+        multi-categorical (with between 3 and 6 categories, each
+        containing a minimum of 30 subjects) for each model.
+    -   Your other inputs can represent binary, multi-categorical or
+        quantitative data.
+    -   You can examine different candidate predictors for each outcome,
+        or use the same ones in both your linear and logistic regression
+        models.
+    -   Depending on your sample size, you can study more than the minimum number of regression inputs. See specifications below for your [linear](#my-planned-predictors-linear-model) and [logistic](#my-planned-predictors-logistic-model) models.
+
+Your data need not be related to health, or medicine, or biology.
+
+### No hierarchical data
+
+In each project this semester, we will require you to study cross-sectional data, where rows indicate subjects and columns indicate variables gathered to describe those subjects at a particular moment in time or space. Do not use "nested" data in Project A.
+
+- One example of hierarchical (nested) data would be a model of patient results that contains measures not just for individual patients but also measures for the providers within which patients are grouped, and also for health systems in which providers are grouped. That wouldn't work for this project.
+- Another example of hierarchical (nested) data would be a model of individual people's outcomes where the covariates are gathered at the state or county level, as well as at the level of individuals, and again, that doesn't work for this project.
+- The singular exception to the "no hierarchical data" rule is that it will usually be acceptable for all inputs to be collected at a single (baseline) time point and both outcomes to be collected at a single future point in time. For example, you could predict systolic blood pressure in 2022 (or whether or not a subject’s systolic blood pressure in 2022 was below 140), based on a set of input variables (likely including systolic blood pressure) all gathered in 2021.
+
+### Joining multiple data sets
+
+Dr. Love will be especially impressed with a data collection effort that *appropriately* puts together at least two different data bases, should that be appropriate.
+
+What we have in mind are the following scenarios:
+
+1. Multiple data sets describing different variables for the same subjects that can be linked, so that you can build a combined data set with the same subjects but pulling together multiple sources of data, as, for example, the County Health Rankings do each year.
+
+2. Multiple data sets describing different subjects but the same variables, such as different years of a survey, combining, for instance, multiple iterations of NHANES so as to increase the available sample size.
+
+If your project research questions and available data lead to one of these approaches, great. If not, don't force it.
+
+This may require you to learn something about the various joining commands, like `left_join` and `inner_join` that are highlighted in the Combine Data Sets section on the [Data Transformation Cheat Sheet](https://posit.co/wp-content/uploads/2022/10/data-transformation-1.pdf) from [Posit](https://posit.co/resources/cheatsheets/). 
+
+- We heartily recommend Garret Grolemund's YouTube materials on Data Wrangling, for instance [this Introduction to Data Manipulation](https://www.youtube.com/watch?v=AuBgYDCg1Cg) which is about combining multiple data sets.
+- Another great resource for combining data sets (and most of your other R questions) is the second edition of [R for Data Science](https://r4ds.hadley.nz/), by Wickham and Grolemund.
+
+## Good Data Sets To Use
+
+Some sources of data we’d like to see people use include:
+
+1.  [CDC WONDER](https://wonder.cdc.gov/) data, which could (at the county level) be combined with data from [County Health Rankings 2022](https://www.countyhealthrankings.org/) to do something interesting.
+2.  The data sets described in the American Statistical Association's [Data Challenge Expo](https://community.amstat.org/dataexpo/events/datachallengeexpo2022) for 2022, which include five very interesting data sets selected from the Urban Institute Data Catalog
+3.  A data set from the [Tidy Tuesday archive](https://github.com/rfordatascience/tidytuesday) or from the
+    [Data is Plural archive](https://dataset-finder.netlify.app/) might be a good candidate.
+4.  The [Health and Retirement Study](https://hrsdata.isr.umich.edu/data-products/public-survey-data?_ga=2.79574685.849210420.1612760982-241136149.1612760982)
+5.  The [General Social Survey](https://gssdataexplorer.norc.org/) although the problem there is a lack of quantitative variables.
+6.  The many many public use data sets available at [ICSPR](https://www.icpsr.umich.edu/icpsrweb/ICPSR/)
+7.  The [500 Cities and PLACES data portal](https://chronicdata.cdc.gov/browse?category=500+Cities+%26+Places&sortBy=newest&utf8), most probably focusing on the [County-level data](https://chronicdata.cdc.gov/500-Cities-Places/PLACES-Local-Data-for-Better-Health-County-Data-20/swc5-untb) and potentially combining it with [County Health Rankings 2022](https://www.countyhealthrankings.org/).
+8.  [National Center on Health Statistics](https://www.cdc.gov/nchs/data_access/ftp_data.htm) which includes NHANES (not a good choice for this project) but also other data sets.
+9.  [Behavioral Risk Factor Surveillance System](https://www.cdc.gov/brfss/data_documentation/index.htm)
+
+- For examples of using public microdata from surveys, I recommend the book "[Analyze Survey Data for Free](http://asdfree.com/)" which has, for example, information on MEPS, the Health and Retirement Study, the General Social Survey, NHANES, the National Immunization Survey and many others.
+-   While data on COVID-19 would be permitted for 432 projects, most of the available data is longitudinal and thus unsuitable for Project A.
+-   We are not interested in people using NHANES data in Project A, or County Health Rankings data, unless (as indicated above) those County Health Rankings are combined with meaningful additional data sets.
+- [Kaggle Public Datasets](https://www.kaggle.com/datasets) may be permitted, but we discourage this. We will only accept those with really useful variables, no hierarchical structure and strong descriptions of how the data were gathered (which is at best 5% of what’s available on Kaggle). Don’t select a Kaggle data set without running it by us on Campuswire ([see below](#running-a-data-set-past-us-for-project-a)) to see if we’re willing to let you use it.
+- You will not be permitted to use data from a textbook or other educational resource for learning statistics, data science or related methods (online or otherwise). 
+    - Examples of such repositories (that are sadly out-of-bounds for this project and for 432 Project B) include the [Cleveland Clinic Statistical Education dataset repository](https://www.lerner.ccf.org/qhs/datasets/), the [Vanderbilt University Biostatistics Datasets](https://hbiostat.org/data/), or the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php).
+- It's not a great idea to type “regression data sets” into Google - rarely does that lead to an interesting project. 
+
+## Running a Data Set Past Us for Project A
+
+To get Professor Love and the TAs to "sign off" on a data set as appropriate for your Project A Plan, you need to tell us the following four things in a (private or public - your choice) note on [Campuswire](https://campuswire.com/) in the `Project A` folder. Please do this if you’re not sure your data set is appropriate.
+
+1.  the data source, as [described here](#data-source), along with a URL so we can access the data
+2.  a description of who the subjects are and how they were selected, as [described here](#the-subjects) - it helps if you also tell us how many subjects are in the data.
+3.  what quantitative outcome you plan to use in your linear regression model, including its units of measurement and the minimum, mean and maximum values available in your data
+4.  what binary outcome you plan to use in your logistic regression model, specifying both of the mutually exclusive and collectively exhaustive categories and how many subjects fall into each of those two categories.
+
+Also, we ask that you not ask us to pick between two “options” - submit the one you’d rather do. If it’s a problem, we’ll let you know, and you can then change to another option if necessary.
+
+# The Project A Plan
+
+The Project A plan consists of:
+
+- a Quarto (`.qmd`) file containing one unnumbered, and 10 numbered sections 
+- an HTML result of applying the Quarto "plan" file to your data
+- a copy of your (tidied) data (see Section 4.3 of the Project A Plan) in an `.Rds` file.
+
+## Project A Plan Contents
+
+**Please** use the [Quarto template](#templates) we provided for the Project A Plan in preparing your work. The list of HTML "themes" that are available in Quarto by changing the "theme" option in the start of your document [can be found here](https://quarto.org/docs/output-formats/html-themes.html) and we encourage you to pick something you think looks nice.
+
+### Title and Authors
+
+Your project should have a meaningful title (not containing the words "432" or "Project" or "Proposal" or "Plan") but rather something describing your actual data and plans.
+
+Please keep the main title to no more than 80 characters, including spaces. You can add a subtitle if you like, but the main title should stand on its own. Feel free to focus on one of your two research questions (rather than both) if that's what's needed to keep to the 80-character limit.
+
+### R Packages and Setup
+
+You’ll load necessary packages at the start in an unnumbered section of your work, following the [template](#templates).
+
+- Do not use `source("Love-boost.R")` or any other R script or package unless you actually need something it provides.
+- Do not load core elements of `tidyverse` or `tidymodels` separately. instead just load the meta-packages, and do so last.
+- Use `#| message: false` as part of your Quarto code chunk where the packages are listed (as we have done in the [template](#templates)) to eliminate HTML messages about when packages were built or how objects were masked.
+
+### 1. Data Source
+
+Provide complete information on the source of the data: how did you get it, how was it gathered, by whom, in what setting, for what purpose, and using what sampling strategy.
+
+This small section should include a clear link (with all necessary details) to the URL which we can use to obtain the raw data freely.
+
+### 2. The Subjects
+
+A description (one or two sentences should be sufficient) of who or what the subjects (rows) are in your data set, and how they were sampled from the population of interest.
+
+### 3. Loading and Tidying the Data
+
+#### 3.1 Loading the Raw Data
+
+Provide code to ingest the raw data. Ideally, this should use tidyverse-friendly code and a direct link to the URL where the data are housed online.
+
+#### 3.2 Cleaning the Data (involves several subsections)
+
+Tidy and clean up the data to meet all necessary requirements for your modeling work. This will require multiple sub-sections as you tackle different tasks for different sets of variables. Use the tidyverse for data management whenever possible. Some of things you need to do here…
+
+- Eliminate all variables that are not going to be used (either as identifiers, outcomes or inputs) in your planned analyses.
+- Change variable names to more meaningful ones, although it’s helpful to keep them at 10 characters or less. Use `clean_names()` from the `janitor` package to clean up and standardize the presentation of variable names.
+- Sample the data as needed to ensure that you meet the data set size specifications (no more than 1200 rows, for instance.)
+- Convert all variables to appropriate types (factors, etc.) as needed, and complete appropriate checks of the values for all variables.
+- If you have prospective inputs (predictors) that are multi-categorical with more than 6 categories, collapse them to six or fewer categories in a rational way at this stage.
+- Ensure that all categorical variables have at least 30 observations at each level, collapsing or removing levels as needed to accomplish this end.
+- Your tidied data set should be arranged with a row (subject) identifier at the far left. That identifier should have a unique value for each row, and should be saved as a character variable in R.
+- We expect your final tibble to have some missing values. Do not impute or delete these, but do be sure they are correctly identified as missing values by R.
+- Do not list the entire tibble or print out large strands of R output (like summaries of the entire tibble) anywhere in your document, except where you are required by these instructions to do so.
+
+### 4. The Tidy Tibble
+
+#### 4.1 Listing the Tibble
+
+In this section, you should start by listing the tibble you created in Section 3, with all variables correctly imported (via your code) as the types of variables (factor/integer/numeric, etc.) that you need for modeling.
+
+- This should be a listing, not a glimpse or anything else. Just type in the name of your tibble.
+- The resulting list should be limited to the first 10 rows of your data.
+
+#### 4.2 Size and Identifiers
+
+Write a sentence specifying the number of rows and the number of columns in your tibble, and this should match the R output.
+
+Then identify the name of the variable that provides the identifier for each row in your tidy tibble, and demonstrate that each row has a unique value for that variable, and that the variable is represented as a character in R.
+
+- One way to do this is to run the `n_distinct` function from the dplyr package on this particular variable.
+- Do not present summary or descriptive results on every variable in the whole tibble here - you’ll do that in Section 5.
+
+#### 4.3 Save the tidied Tibble as an .Rds file
+
+Now, save the tidied data set as an .Rds file (using `write_rds` or the equivalent), which you’ll need to submit to us. The tibble should have the same name as the data file you submit to [Canvas](https://canvas.case.edu/).
+
+### 5. The Code Book
+
+#### 5.1 Defining the Variables
+
+In this section, provide a beautiful codebook which tells us (at a minimum) the following information for each variable in the tibble you printed and saved in Section 4.
+
+- The name of the variable in your tibble.
+- The role of the variable in your planned analyses (options include identifier, outcome, or input)
+- The type of variable for each outcome or input (options are categorical, in which case tell us how many categories, or quantitative)
+- A short description of the meaning of the variable.
+    - This should include the units of measurement if the variable is quantitative, and a list of the possible values if the variable is categorical.
+
+As an example, here’s a part of a simple table:
+
+| Variable    | Role       | Type  | Description                                    |
+|-------------|------------|-------|------------------------------------------------|
+| `subjectID` | identifier | \-    | character code for subjects                    |
+| `sysbp`     | outcome    | quant | Most Recent Systolic Blood Pressure, in mm Hg  |
+| `statin`    | input      | 2-cat | Has a current statin prescription? (Yes or No) |
+
+#### 5.2 Numerical Description
+
+Here, run the `describe` command from the `Hmisc` package on your entire tibble. Be sure that the results match up with what you’ve described in defining the variables, and that the same variables appear, in the same order, in the codebook and in these results.
+
+### 6. Linear Regression Plans
+
+#### 6.1 My First Research Question
+
+Begin this section by specifying a question that you hope to answer with the linear model you are proposing. A research question relates clearly to the data you have and your modeling plans, and, like all questions, it ends with a question mark. Eventually, you will need to answer this question in your portfolio.
+
+Jeff Leek in his book "[How to be a Modern Scientist](https://leanpub.com/modernscientist)" has some excellent advice in his section on “How Do You Start a Paper.” In particular, you want to identify research questions that:
+  
+- are concrete, (and for which you can find useful data), and that
+- solve a real problem, and that
+- give you an opportunity to do something new,
+- that you will feel ownership of, and
+- that you want to work on.
+
+We recommend you use the FINER criteria (or, if relevant, the PICOT criteria) to help you refine a vague notion of a research question into something appropriate for this project.
+
+- FINER = Feasible, Interesting, Novel, Ethical and Relevant.
+- PICOT is often used in medical studies assessing or evaluating patients and includes Patient (or Problem), Intervention (or Indicator), Comparison group, Outcomes and Time.
+
+The [Wikipedia entry on research questions](https://en.wikipedia.org/wiki/Research_question) provides some helpful links to these ideas.
+
+#### 6.2 My Quantitative Outcome
+
+This subsection tells us what you will use your linear regression model to explain or predict.
+
+- Tell us the name in the tibble of the linear regression outcome you will use (this should the quantitative outcome you identified in your Codebook) and state why you are interested in predicting this variable.
+- Provide a count of the number of rows in your data with complete information on this outcome.
+- Provide a nicely labeled graphical summary of the distribution of your outcome to supplement the numerical description you provided in Section 5.2.
+- Comment briefly on the characteristics of the outcome’s distribution. Is your outcome skewed or symmetric, is it discrete or fairly continuous, is there a natural transformation to consider? 
+- Demonstrate that the variable you have selected meets the standard for a quantitative variable used in this Project, specifically that it has at least 10 different, ordered, observed values.
+
+#### 6.3 My Planned Predictors (Linear Model)
+
+Now, tell us precisely which four (or more) candidate predictors (inputs) you intend to use for your linear regression model.
+
+- Please use the variable names that appear in your code book and tibble.
+- Demonstrate to us that you have at least one input which is quantitative, specifically that it has at least 10 different, ordered, observed values.
+- Demonstrate to us that you have at least one categorical input which has between 3 and 6 categories, that will be used as a factor in your modeling, and that has at least 30 observations in each level of the factor. If necessary, you can create such a predictor from a quantitative one, but if you are doing this, remember that only the multi-categorical version of the predictor should be included in your models.
+- Demonstrate that the total number of candidate predictors you suggest is no more than $4 + (N_1 - 100)/100$, rounding down, where $N_1$ is the number of rows with complete outcome data in your tibble.
+
+You should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.
+
+### 7 Logistic Regression Plans
+
+#### 7.1 My Second Research Question
+
+Begin this section by specifying a question that you hope to answer with the logistic model you are proposing. A research question relates clearly to the data you have and your modeling plans, and, like all questions, it ends with a question mark. Eventually, you will need to answer this question in your portfolio. 
+
+See section 6.1 for some more suggestions about improving your research questions.
+
+#### 7.2 My Binary Outcome
+
+This subsection tells us what you will use your logistic regression model to explain or predict.
+
+- Tell us the name in the tibble of the logistic regression outcome you will use (this should be the binary (2-category) outcome you identified in your codebook) and state why you are interested in predicting this variable.
+- Provide a count of the number of rows in your data with each of the two possible values of this outcome. Indicate whether you have any missing values.
+
+#### 7.3 My Planned Predictors (Logistic Model)
+
+Now, tell us precisely which four (or more) candidate predictors you intend to use for your logistic regression model.
+
+- If you are using some of the same predictors as in your linear regression model, there’s no need to repeat yourself. Simply tell us which variables you’ll use again, and then provide descriptions for any new predictors that did not appear in your plans for the linear model.
+- Demonstrate that the total number of candidate predictors you suggest for your logistic regression model is no more than $4 + (N_2 - 100)/100$ predictors, rounded down, where $N_2$ is the number of subjects in the **smaller** of your two outcome groups.
+
+You should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.
+
+### 8 Affirmation
+
+Next you need to affirm that the data set meets all of the project requirements, especially that the data can be shared freely over the internet, and that there is no protected information of any kind involved.
+
+The text we want to see here is 
+
+> I am certain that it is completely appropriate for these data to be shared with anyone, without any conditions. There are no concerns about privacy or security.
+
+If you are unsure as to whether this is true, select a different data set.
+
+### 9 References
+
+References (you’ll need one to describe the source of your data, at least) go here.
+
+### 10 Session Information
+
+Please provide session information by running `xfun::session_info()`.
+
+```{r}
+xfun::session_info()
+```
+
+## My Best Piece of Advice
+
+Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look at the resulting HTML output, closely.
+
+# The Project A Portfolio
+
+The Project A portfolio consists of:
+
+- a Quarto (`.qmd`) file containing containing one unnumbered, and 13 numbered sections (10 of which come from the Plan.)
+- an HTML result of applying the Quarto "portfolio" file to your data
+- a copy of your data and link to where Professor Love can obtain it freely
+- a video (not to exceed 5 minutes) presenting **one** of your key project results (see the Presentation materials below)
+
+### Changes from the Plan to the Portfolio
+
+The portfolio submission for Project A consists of 13 sections, 10 of which come straight from the Project A Plan. Specifically,
+
+- Everything through Section 7 of the Portfolio is essentially the same as what you prepared for the Plan. 
+  - You should nail down any details that were not yet specified in your accepted Plan. 
+  - Sections 6-7, in particular, should now be adjusted as necessary to reflect the actual analyses you wound up doing, and if you had to do some additional cleaning or create new variables, those elements should be developed in sections 3-5.
+- A new Section 8 should be labeled “Linear Regression Analyses” and is dedicated to that work.
+- A new Section 9 should be labeled “Logistic Regression Analyses” and is dedicated to that work.
+- A new Section 10 should be labeled “Discussion” and is a roughly 200 word discussion of your thoughts on the process of producing this project.
+- Sections 8-10 in the Plan become Sections 11-13 in the Portfolio, without substantial change from your accepted Project A Plan.
+  - Section 11 is now the Affirmation, Section 12 becomes the References section, and Section 13 gives the Session Information. 
+
+**Please** use the [Quarto template](#templates) we provided for the Project A Portfolio in preparing your work.
+
+### New Section 8. Linear Regression Analyses
+
+In Section 8, we expect you to present all relevant code used to produce
+your final results. No output should be presented in this section (or in
+Section 9) without commentary. This should describe the fitting and
+evaluation of two models: a “main effects” model (model A), and an
+“augmented” model (model B). We’re primarily interested in a clear
+presentation. The following eight elements should be presented, in properly
+labeled subsections of section 8, using the labels in bold below.
+
+1.  **Missingness** your approach to dealing with missing data, if applicable
+    - we prefer imputation (simple or multiple) to complete case analysis
+    - if you have a sample with no missing data, specify that (again) here
+2.  **Outcome Transformation** your approach to transforming the outcome variable, including an appropriate Box-Cox assessment
+3.  **Scatterplot Matrix and Collinearity** a scatterplot matrix including the (possibly transformed) outcome and all predictors that make it into your “main effects” model
+    - be sure to evaluate collinearity between predictors, either through perusing and discussing the correlations in the scatterplot matrix, or with variance inflation factors
+4.  **Model A**: your initial “main effects” model
+    - remember that your model must include at least four predictors, of which at least one must be quantitative and one must be multi-categorical
+    - we discourage the use of stepwise or other model selection strategies, instead please use your problem-based understanding to select variables and use them all.
+    - in presenting your main effects model you should show: 
+        - a tidied table of regression coefficients
+        - key fit summary statistics like R-square, AIC and BIC, and 
+        - the four key diagnostic plots of residuals, with an appropriate interpretation of what you see
+5.  **Non-Linearity** your process for making decisions about how to capture potential non-linearity
+    - what did the Spearman $\rho^2$ plot suggest and how did you spend your degrees of freedom?
+        - If the (apparently strongest - furthest to the right) predictor in the $\rho^2$ plot is quantitative, you should be thinking first about a restricted cubic spline with 4 or 5 knots,
+        - If the largest $\rho^2$ is associated with a binary or a multi-categorical predictor, create an interaction term with the second-largest $\rho^2$ predictor.
+        - If you still have degrees of freedom you’re willing to spend after this, proceed down to the second largest predictor in terms of $\rho^2$, and proceed similarly to the third largest after that.
+    - Regardless of your sample size, please use about 6 additional degrees of freedom beyond the main effects model to account for non-linearity, and add at most 3 non-linear terms to your model.
+6. **Model B**: fitting your “augmented model” incorporating non-linear terms
+    - unless you’re doing multiple imputation you’ll want to be sure you demonstrate that you can fit this using either `ols` or `lm`, since you might need either approach for a complete assessment of the model (if you’re doing multiple imputation, you can stick with `ols`)
+    - you’ll need to present a plot of the effects from `plot(summary(modelname))` for this augmented model, using `ols`
+    - you’ll also need to present the residual plots for the model you’ve fit, which is easiest to do if you fit the model with `lm`. If you’ve used multiple imputation, prepare a residuals vs. fitted values plot and evaluate it using `ols`.
+7.  **Validating the Models** the results of a validation comparison of the “augmented model” B to the “main effects” model A which should help you select a “final model” from the two possibilities. You should produce validated $R^2$ statistics for Models A and B within `ols` through the `validate` function. In addition, you might consider
+    - an initial partition into training and test samples,
+    - or a k-fold cross-validation strategy, should you deem that useful.
+8.  **Final Model** This section should end with a clear statement of the model you prefer (the “main effects model A” or the “augmented model B”) based on your overall assessment of fit quality, adherence to assumptions as seen in residuals, and whether adding the terms in the augmented model yields an improvement that is worth the complication of adding the non-linear terms. No output should be provided in this section without text annotation and commentary to clarify your results.
+    - You should land on a single, final model, using both statistical and non-statistical considerations to make a decision between model A and model B.
+    - An appropriate summary of the final model you landed on should start with a listing of the model parameters for a model fit to the entire data set (after imputation as needed) with appropriate confidence intervals, and a table or (better) plot of the effect sizes.
+    - Specify the effect sizes for all elements of your final model numerically (with both a point estimate and a confidence interval), and graphically (with a plot of those effects (probably through `plot(summary(yourmodel)`).
+    - Then write a detailed and correct description of the effect of **at least one** predictor on your outcome for your linear regression model, providing all necessary elements of such a description, and link this directly to what the plot is telling you.
+    - We prefer you discuss a scientifically meaningful effect, should one exist. Pick an effect to describe that is interesting to you.
+    - You should display an appropriate (corrected through validation) estimate of R-square for your final model
+    - The final part of your summary of the final model should be a nomogram with a demonstration of a prediction (and appropriate prediction interval) for a new subject of interest.
+    - Your prediction (and its prediction interval) should be back transformed to the original scale of your outcome, if you transformed your outcome before building your model.
+
+### New Section 9. Logistic Regression Analyses
+
+In Section 9, we expect you to present all relevant code used to produce your final results. As in Section 8, no output should be presented in this section without commentary. Also as in Section 8, this section will describe the fitting and evaluation of two models: a "main effects" model (model Y), and an “augmented” model (model Z). We’re primarily interested in a clear presentation. The following 6 elements should be presented, in properly labeled subsections of section 9, using the
+labels in bold below. 
+
+1.  **Missingness** your approach to dealing with missing data, if applicable
+    -   we prefer imputation (simple or multiple) to complete case
+        analysis, but it’s not mandatory
+    -   if you have a sample with no missing data, specify that (again)
+        here
+    -   you can use the same approach as in Section 8, or a different
+        one, if you prefer
+2.  **Model Y**: your initial “main effects” model
+    -   remember that your model must include at least four predictors,
+        of which at least one must be quantitative and one must be
+        multi-categorical.
+    -   we discourage the use of stepwise or other model selection
+        strategies here, instead please use your problem-based
+        understanding to select variables and use them all.
+    -   in presenting your main effects model you should show:
+        -   a tidied table of regression coefficients
+        -   a plot of the effects (on the odds ratio scale) for the model using `plot(summary(modelname))` from the `lrm` fit.
+        -   key fit summary statistics (Nagelkerke R-square and the area under the ROC curve) as they are presented in the `lrm` output
+        -   a confusion matrix based on an explicitly specified prediction rule (perhaps `.fitted` >= 0.5, but something else if you prefer) and you’ll need to specify the specificity, sensitivity and positive predictive value for this model.
+3.  **Non-Linearity** your process for making decisions about how to
+    capture potential non-linearity
+    -   what did the Spearman rho-squared plot suggest and how did you
+        spend your degrees of freedom
+        -   If the (apparently strongest - furthest to the right)
+            predictor in the rho-square plot is quantitative, you should
+            be thinking first about a restricted cubic spline with 4
+            knots, maybe 5,
+        -   If the largest rho-square is associated with a binary or a
+            multi-categorical predictor, create an interaction term with
+            the second-largest rho-squared predictor.
+        -   If you still have degrees of freedom you’re willing to spend
+            after this, proceed down to the second largest predictor in
+            terms of rho-squared, and proceed similarly to the third
+            largest after that.
+    -   Regardless of your sample size, please use between 3 and 6
+        additional degrees of freedom beyond the main effects model to
+        account for non-linearity, and add no more than 3 non-linear
+        terms to your model.
+4.  **Model Z**: fitting your “augmented model” incorporating non-linear
+    terms
+    -   most of you will choose to use `lrm` to do most of this work,
+        I’d expect, and that’s fine, but you’ll want to fit the model
+        with `glm`, too, to help with building the confusion matrix.
+    -   you’ll need at a minimum to present a plot of the
+        effects from `plot(summary(modelname))` for this augmented
+        model, using `lrm`.
+    -   you’ll also need to show the Nagelkerke R-square and C statistic
+        from the `lrm` output.
+    -   again, we’ll want you to produce an appropriate confusion matrix
+        using the same prediction rule that you used in Model Y, and
+        you’ll need to provide the specificity, sensitivity and PPV for Model Z using that prediction rule.
+5.  **Validating the Models** the results of a validation comparison of
+    the Nagelkerke R-square and the C statistic for the “augmented
+    model” Z to the “main effects” model Y through the `validate`
+    function in `lrm` fits.
+6.  **Final Model** This section should end with a clear statement of
+    the model you prefer (the “main effects” model Y or the “augmented”
+    model Z) based on your overall assessment of fit quality, and
+    whether adding the terms in the augmented model yields an
+    improvement that is worth the complication of adding the non-linear
+    terms.
+    -   You should land on a single, final model, using both statistical
+        and non-statistical considerations to make a decision between
+        models Y and Z.
+    -   An appropriate summary of the final model you landed on should
+        start with a listing of the model parameters for a model fit to
+        the entire data set (after imputation as needed) in terms of
+        odds ratios, with appropriate confidence intervals, and a table
+        or (better) plot of the effect sizes.
+        -   Specify the effect sizes for all elements of your final
+            model numerically (with both an odds ratio point estimate
+            and a confidence interval), and graphically (with a plot of
+            those effects (probably through `plot(summary(yourmodel)`),
+            properly interpreted.
+        -   Then write a detailed and correct description of the effect
+            of **at least one** predictor on your outcome for your
+            chosen logistic regression model, providing all necessary
+            elements of such a description, and link this directly to
+            what the plot is telling you.
+        -   We prefer you discuss a meaningful effect, should one exist.
+            Pick an effect to describe that is interesting to you.
+    -   Next, we want you to provide a plot of the ROC curve for the
+        “final model” in the entire data set.
+    -   You should display an appropriate (corrected through validation)
+        estimate of Nagelkerke R-square and the C statistic for your
+        final model, using the entire data set.
+    -   The final part of your summary of the final model should be a
+        nomogram with a demonstration of a predicted probability
+        associated with two new subjects of interest that differ in
+        terms of some of the parameters in your model.
+        -   Your predictions in Section 9 should describe two different
+            subjects. You don’t have to call them Harry and Sally, but
+            it is helpful to give them actual names.
+
+### New Section 10. Discussion
+
+Begin the discussion section by clearly stating the two questions you posed at the start of Sections 6 and 7, and then answering them based on the results of your modeling in Sections 8 and 9.
+
+Next, provide a short (somewhere in the neighborhood of 200 words) discussion of your thoughts on the entire Project A process. Be sure that your response here explicitly addresses at least two of the following four questions:
+
+- What was substantially harder or easier than you expected, and why?
+- What do you wish you’d known at the start of this process that you know now, and why?
+- What was the most confusing part of doing the project, and how did you get past it?
+- What was the most useful thing you learned while doing the project, and why?
+
+Write the Discussion section using complete English sentences and paragraphs, not bullet points.
+
+## Most Important Piece of Advice
+
+As mentioned above, it is crucial to review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look at the resulting HTML output, closely.
+
+# The Presentation
+
+You (with your partner, if you have one) will build and record a single
+slide presentation (not to exceed 5 minutes) of what you feel is **the
+single most** important finding from your Project A.
+
+-   If you have a partner, you should record a single presentation with
+    both of your voices included for about an equal amount of time, and
+    the total time should not exceed 5 minutes.
+
+## Your Audience
+
+Your audience for this presentation includes Professor Love, the TAs and your
+fellow students. Prepare your presentation with that audience in mind.
+What will they need to know to understand what you’ve done, and get
+excited about it?
+
+## Outline of the Presentation
+
+Your presentation should include fewer than 10 slides.
+
+Your “most important finding” is just going to be one of many
+potentially interesting findings in your Project. Your job in the
+presentation is **not** to prove to me that you did a lot of work - I’ll
+see that in the portfolio.
+
+Instead, your job in the presentation is to interest your audience in
+something you found that is (at least relatively) important. You are
+expected to help us understand the following things related to your most
+important finding, based on either a linear or logistic model.
+
+You will not be developing any new material for the slides (just
+restating and rearranging things you’ve already done and perhaps
+constructing a short narrative to help us retain your key findings) once
+you have the portfolio. As a result, we encourage you to complete the
+portfolio first.
+
+We suggest you develop about 8 slides. This should include…
+
+1.  A title slide
+2.  A couple of slides to describe the Subjects, Outcome and Predictors
+    -   Make sure we understand who the subjects are, how they were
+        selected, what the outcome is and why we should care about it,
+        and what predictors are involved in the model you’ll show.
+3.  Several slides showing meaningful statistical findings (What should
+    we learn from your model?)
+    -   What does the model (don’t show us details of multiple models in
+        the presentation) say about the relationship between the outcome
+        and the predictors?
+    -   You’re only showing us one model (of models A, B, Y and Z) in
+        the presentation.
+    -   How well does this model fit the data you have, and how well
+        might it fit in new data?
+4.  A couple of slides discussing next steps
+    -   It is unlikely that you’ll have a model that is truly
+        satisfactory all on its own, so what could be done to improve it
+        that you cannot already do with the data you have? What other
+        data could be collected, how could the measures be refined,
+        could you design a study to get to a more convincing answer?
+
+Make sure that you introduce yourself when you start to speak, over your
+title slide if you are working alone. We're happy to see your face during
+the presentation, but this isn’t mandatory. If you are working with a
+partner, each of you should introduce yourself at the beginning, and let
+me know who’s speaking first.
+
+(Essentially) **every word and every image/table/chart** in your slides
+can and should come directly from the materials contained in your HTML
+portfolio.
+
+-   The development of the presentation is mostly about selecting useful
+    information to present and then arranging it in a way that sticks
+    for your audience.
+-   Your presentation should include no R code but instead will provide
+    nicely formatted figures and tables along with text. Some figures
+    don’t work well on slides, like nomograms, without a lot of work.
+    Pick something that is both useful and easy to see.
+-   Each slide should have a title, indicating the message you want us
+    to get from the slide (don’t use generic titles like “Results” or
+    “Table 1”).
+-   You’ll have to cut out around 95% of your portfolio to create your
+    slides, and you should follow your instincts regarding your audience
+    (Professor Love, the TAs and your fellow students are your audience.)
+-   Developing the presentation is where **you** have to make decisions
+    about what’s most important to show an audience to get them
+    interested in your work. That’s a critically important skill.
+
+# On P values and "statistical significance"
+
+You are welcome to include p values in your analyses in either the portfolio or the presentation, but you should demonstrate good statistical practice by not comparing them to $\alpha$ levels to declare things to be important, meaningful, or significant. 
+
+**You should not use the words "statistically significant" or any synonyms (like statistically detectable) in any of your Plan or Portfolio materials nor in your presentation.** 
+    
+# On Missing Data
+
+For Project A, we generally regard the use of imputation as:
+
+-   **essential** if you have missing predictor values for more than 10% of your subjects, *and* more than 50 subjects
+-   **unnecessary** if you have missing predictor values for less than 1% of your subjects, *and* fewer than 10 subjects
+-   probably worth doing if your data don’t meet either of those standards
+
+It is **very** important to us that people use imputation in their Project A if that is appropriate. It is **not at all** important to us whether people choose single imputation or multiple imputation for that task in Project A.
+
+The five key questions we’ll be asking ourselves when evaluating your Project A regarding how you deal with missing data are:
+
+1.  For Project A, we encourage you to exclude subjects with missing outcome data, and to do this separately for your linear modeling and your logistic modeling, all working off the same initial data, but with different “cuts”. Have you successfully done this, so that each model is fit with as much data as are available?
+2.  Now that you’ve removed the missing outcomes, do you have a very small number and proportion of subjects with missing predictors for the models you’re fitting, so that simply dropping cases with missing data is not a substantial concern?
+    -   For example, suppose your study has 1000 observations with complete data on your outcome, and 990 of those (or 99%) have complete data on all predictors. So you have 10 observations with missing data, and that’s 1% of your total observations. If you are willing to assume MAR, whether you do complete cases, single imputation or multiple imputation, you’ll get very similar results.
+3.  What are you assuming about the missing data mechanism and why is that assumption reasonable?
+    -   You’re all going to wind up assuming either MCAR (in which case a complete cases analysis is appropriate) or MAR (in which case single or multiple imputation is required). You should be providing an argument for your choice (which includes why MNAR isn’t the most suitable assumption.)
+4.  Does your code (complete cases, single imputation or multiple imputation) work to produce the results you need?
+5.  Can you interpret the coefficients produced by your model appropriately?
+
+You’ve probably figured out already that questions 4-5 are the most important ones.
+
+# On Transformations
+
+In Project A, restrict yourself to understandable outcome transformations, and don't be a slave to the Box-Cox approach, which after all is only designed to help with some very particular issues. The reasonable transformations to consider are $1/y$, a logarithm of $y$, the square root of $y$, or $y^2$. 
+
+- Anything more complicated than that should suggest that you consider a different modeling approach or revision to your outcome.
+- There is no point in demonstrating all possible transformations in your final work. Describe the transformation you make and your reason for it, then move on. 
+- If you use a transformation of an outcome, please back-transform out of that in presenting final prediction results where possible, perhaps in a nomogram or a demonstration of what the model predicts for a pair of fictional subjects like "Harry and Sally." 
+
+## Using Splines and other Complex Predictors
+
+> How should I describe a restricted cubic spline that I've fit in a model? Do I write out that equation with the variablename' and variablename'' in it, or ... ?
+
+Tell us how many knots were involved and show a graph that depicts the impact of the spline. 
+
+- No one explains splines without a graph. 
+
+Make a graph and use it is excellent advice for many aspects of your presentation. Sensible graphs to accomplish this task in a multivariate regression model include the `ggplot` with `Predict` combination, the `plot(summary())` approach, and/or a nomogram.
+
+## Variable Selection
+
+> What is the best way to select an appropriate set of predictors?
+
+It depends in part on the kind of question you are trying to answer. For most projects, I recommend a question that is explicitly about prediction, rather than either (a) trying to explain a phenomenon in existing data without reference to external prediction or (b) trying to make some sort of causal inference, which requires methods beyond the scope of this class.
+
+What I would always try to do is start with a question I want to answer, which should motivate specific predictors. A combination of logic, theory and prior empirical evidence is always preferable. A scan of the literature is always useful. A conceptual model of the relationship which makes predictions about what "should" happen under current understanding can be very helpful. I strongly urge you to pick a project where you have some prior understanding of how the data will behave and where you can express that pre-modeling belief as part of your presentation of your work.
+
+What I would definitely not do is scan a list of correlations in the current data to see which ones look promising, and then forget that I did that when it came time to evaluate the models I developed. It's fine to go on a fishing expedition here, but then you have to severely temper your claims, and in particular you have to give up on drawing any substantial conclusions about causation or explanation and focus instead on a question about prediction, and (of course) validation of your model becomes essential.
+
+# Need Help?
+
+Repeating, Questions about Project A may be directed to the TAs and to Professor Love at any time after the start of the course. If you're asking a question [on Campuswire](https://campuswire.com/), please use the `Project A` label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.
+

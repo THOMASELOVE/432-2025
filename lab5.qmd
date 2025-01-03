@@ -1,0 +1,100 @@
+---
+title: "Lab 5"
+date: last-modified
+format: 
+  html:
+    code-overflow: wrap
+---
+
+# General Instructions
+
+- Submit your work via [Canvas](https://canvas.case.edu/). 
+- The deadline for this Lab is specified on the [Calendar](calendar.qmd).
+  - Work submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.
+  - Work submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.
+  - Work submitted more than 24 hours after the deadline will not be graded.
+
+Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for [Lab 2](lab2.qmd#template).
+
+# Question 1. (30 points)
+
+Begin with the `hbp3456` data we developed in [Lab 2](lab2.qmd).
+
+Build a Table 1 to compare the subjects in the **Highland** practice to the subjects in the **Sycamore** practice on the following nine variables: 
+
+- age, 
+- race, 
+- Hispanic ethnicity, 
+- sex, 
+- primary insurance, 
+- body mass index, 
+- BMI category, 
+- systolic blood pressure, and
+- diastolic blood pressure. 
+
+Make the Table as well as you can within Quarto, and display the result as part of your HTML file. All code must be visible to us. **Include a description of the important results from your Table 1 that does not exceed 100 words, using complete English sentences**.
+
+## Hints for Question 1
+
+1. Be sure that your table specifies the number of subjects in each practice. **Note that you'll have to do something so that your work focuses on the comparison of Highland to Sycamore, leaving out (for this question only) the other practices.**
+2. You'll have to deal with some missing values in the data. All missing values are indicated in the .csv file with NA. It's not usually appropriate to report results that include imputation in a Table 1, so build a note specifying the amount of missing data in a footnote to the table. An appropriate approach would be to produce a list just below your Table. Do not impute for Question 1.
+3. Some variables will present as characters in the data, but you'd instead prefer them to appear as **factors**. Be sure to include code in your response to make these changes (the `forcats` package is your friend here) and then (perhaps using the `fct_relevel` function in the `forcats` package) be sure to move the levels of those factors into an order that facilitates interpretation.
+4. Be sure, too, to make reasoned choices about whether means and standard deviations or instead medians and quartiles are more appropriate displays for the quantitative variables. Include your reasons in a list displayed at the end of your table. Note that the `record` information is just a code (even though it is numerical) and should be treated as a character variable in using these data, as I did above.
+5. Note that body mass index (BMI) and BMI category are not supplied in the data, although you do have height and weight. **So, you'll have to calculate the BMI and add it to the data set.** If you don't know the formula for BMI, you have Google to help you figure it out.
+6. For BMI categories, use the four groups specified in the [How is BMI interpreted for Adults section of this description](https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html) of Adult BMI by the Centers for Disease Control. **Again, you'll need to use your calculated BMI values and then create the categories in your data set, and you'll need to figure out a way to accurately get each subject into the correct category.**
+7. Do not include R output without complete sentences describing what you are doing in each step, and what you conclude from that work.
+
+# Question 2. (20 points)
+
+Consider the LASSO plot shown below, which describes a situation with five candidate predictors, called Variables 1, 2, 3, 4, and 5. 
+
+a. If the $|\beta| / max|\beta|$ value at which the cross-validated mean square error was minimized in this situation was 0.6, then which predictors does the plot suggest should be included in the model? In a sentence or two, how do you know?
+b. At what values of $|\beta| / max|\beta|$ would the LASSO plot suggest a model which leaves out exactly one of the five predictors? And which predictor does this model leave out? Explain your reasoning in a sentence or two.
+
+```{r}
+#| echo: false
+#| fig.height: 6
+#| fig.asp: 1
+#| message: false
+
+library(lars)
+
+set.seed(432)
+a <- log(rnorm(n = 500, mean = 7000, sd = 1000))-8.25
+b <- rnorm(n = 500, mean = 50, sd = 5) + 100*a
+c <- sample(1:10, 500, TRUE)
+d <- sample(1:0, 500, TRUE)
+e <- -sqrt(rnorm(n = 500, mean = 100, sd = 20)) + d
+f <- sample(1:0, 500, TRUE)
+g <- -2*rnorm(n = 500, mean = 100, sd = 5) + 5*f
+outcome <- 50 + rnorm(n = 500, mean = a + .6*c - d - d*e + f, sd = 5)
+dat22 <- data.frame(a, b, c, d, e, f, g, outcome)
+set.seed(432); i <- log(rnorm(n = 500, mean = 100, sd = 20))
+predsnew <- with(dat22, cbind(-c, d, g, e, f))
+lasso22 <- lars(predsnew, dat22$outcome, type="lasso")
+plot(lasso22, col=c("royalblue", "red", "black", "navy", "magenta", "brown"), lwd=2, lty=c(2,1,2,1,1))
+```
+
+# Our Best Advice
+
+Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
+
+# Use of AI
+
+If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI", after your answers to our questions, and just *before* your presentation of the Session Information. Thank you.
+
+# Session Information
+
+Please display your session information at the end of your submission, as shown below.
+
+```{r}
+xfun::session_info()
+```
+
+## After the Lab
+
+We will post an answer sketch 24 hours after the Lab is due.
+
+We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
+
+See the [Lab Appeal Policy in our Syllabus](https://thomaselove.github.io/432-syllabus-2024/08-grading.html#lab-appeal-policy---request-a-review-via-google-form) if you are interested in having your Lab grade reviewed, and use [the Lab Regrade Request form specified there](https://bit.ly/432-2024-lab-regrades) to complete the task. Thank you.

@@ -1,0 +1,100 @@
+---
+title: "Lab 4"
+date: last-modified
+format: 
+  html:
+    code-overflow: wrap
+---
+
+# General Instructions
+
+- Submit your work via [Canvas](https://canvas.case.edu/). 
+- The deadline for this Lab is specified on the [Calendar](calendar.qmd).
+  - Work submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.
+  - Work submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.
+  - Work submitted more than 24 hours after the deadline will not be graded.
+
+Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided. While we have not provided a specific template for this Lab, we encourage you to adapt the one provided for [Lab 2](lab2.qmd#template).
+
+# Question 1. (10 points)
+
+This question uses the `oh22` data developed in [Lab 1](lab1.qmd). See the [Lab 1 instructions](lab1.qmd) for details on the data set. Back in Lab 1, recall that we loaded the data with this code.
+
+```{r}
+#| message: false
+#| warning: false
+
+library(janitor)
+library(tidyverse)
+
+knitr::opts_chunk$set(comment = NA)
+
+oh22 <- read_csv("https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/oh_counties_2022.csv", show_col_types = FALSE) |>
+  clean_names() |>
+  mutate(fips = as.character(fips))
+```
+
+Use the `oh22` data to create a logistic regression model to predict the presence of a water violation (as contained in `h2oviol`) on the basis of `sev_housing` and `pm2.5`. Use a model with main effects only, and annotate your code with text so that it's extremely clear what you are doing. Specify and then carefully interpret the estimated odds ratio associated with the `sev_housing` effect and a 90% confidence interval around that estimate in context using complete English sentences. Be sure to get the direction of the effect right in your modeling and description.
+
+# Question 2. (10 points)
+
+Begin with the `hbp3456` data we developed in [Lab 2](lab2.qmd), but now restricted to the following **four practices**: Center, Elm, Plympton and Walnut, and to subjects with **complete data** on the `ldl` and `statin` variables. We will use these data (which should now include 1446 rows of data) for Questions 2-5 in this Lab.
+
+Build a logistic regression model to predict whether a subject seen in one of those four practices has a `statin` prescription based on:
+
+- the subject's current LDL cholesterol level 
+- which of the four practices they receive care from, along with
+- the subject's age. 
+
+Fit two models: one with and one without an interaction term between the practice and the LDL level. Include the `age` variable in each model using a restricted cubic spline with four knots, but without any interaction with the other predictors. Display the coefficients of your two models.
+
+# Question 3. (10 points)
+
+For the "no interaction" model from Question 2, interpret the odds ratio associated with the `ldl` main effect carefully, specifying a 90% confidence interval and what we can conclude from the results.
+
+- To obtain a 90% confidence interval with a fit using one of the `rms` fitting functions rather than the default 95% interval, the appropriate code would be `summary(modelname, conf.int = 0.9)`.
+- Hint: We assume you will describe the `ldl` main effect by considering the case of Harry and Sally. Harry has an `ldl` value of 142, equal to the 75th percentile `ldl` value in the data. Sally has an `ldl` value of 85, equal to the 25th percentile `ldl` value in the data. Assume Harry and Sally are the same `age` and receive care at the same `practice`. So the odds ratio of interest here compares the odds of `statin` prescription for Harry to the odds of `statin` prescription for Sally.
+
+# Question 4. (10 points)
+
+Now using the "interaction" model from Question 2, please interpret the effect of `ldl` on the odds of a statin prescription appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.
+
+- Here, we want you to describe the `ldl` main effect by considering the case of Harry and Sally. Harry has an `ldl` value of 142, equal to the 75th percentile `ldl` value in the data. Sally has an `ldl` value of 85, equal to the 25th percentile `ldl` value in the data. Assume Harry and Sally are the same `age` and receive care at the same `practice`. So the odds ratio of interest here compares the odds of `statin` prescription for Harry to the odds of `statin` prescription for Sally. But now, you need to be able to do this separately for each individual level of `practice`, since `practice` interacts with `ldl`. There are at least two ways to accomplish this.
+    - In one approach, you would create predicted odds values for Harry and Sally, assuming a common age (40 would be a reasonable choice, and it's the one used in the answer sketch) with `ldl` set to 142 for Harry and 85 for Sally, but creating four different versions of Harry and Sally (one for each practice.) Then use those predicted odds within each practice to obtain practice-specific odds ratios.
+    - In the other approach, you could convince the `rms` package to use a different practice as the choice for which adjustments are made. By default, `datadist` chooses the modal practice. To change this, you'd need to convince `datadist` instead to choose its practice based on which practice is the first one, and relevel the practice factor accordingly. So, if you'd releveled the practice data so that Elm was first and placed that into a tibble called `dataelm`, you could use the following adjustment to the `datadist` call to ensure that the adjustments made by `datadist` used Elm instead of the modal practice.
+    
+```{r}
+#| eval: false
+d_elm <- datadist(dataelm, adjto.cat = "first")
+options(datadist = "d_elm")
+```
+
+# Question 5. (10 points)
+
+Now, compare the effectiveness of your two fitted models (the "interaction" and "no interaction" models) from Question 2 and draw a reasoned conclusion about which of those two models is more effective in describing the available set of observations (after those without `statin` data are removed) from these four practices. An appropriate response will make use of at least two different validated assessments of fit quality. Be sure to justify your eventual selection (between the "interaction" or "no interaction" model) with complete sentences.
+
+- The natural choices for validated assessments of fit quality in Question 5 are a bootstrap-validated C statistic and a bootstrap-validated Nagelkerke $R^2$. In the answer sketch, we will use `2023` as our random seed for this work, and we'll use the default amount of bootstrap replications.
+
+# Our Best Advice
+
+Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
+
+# Use of AI
+
+If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI", after your answers to our questions, and just *before* your presentation of the Session Information. Thank you.
+
+# Session Information
+
+Please display your session information at the end of your submission, as shown below.
+
+```{r}
+xfun::session_info()
+```
+
+## After the Lab
+
+We will post an answer sketch 24 hours after the Lab is due.
+
+We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
+
+See the [Lab Appeal Policy in our Syllabus](https://thomaselove.github.io/432-syllabus-2024/08-grading.html#lab-appeal-policy---request-a-review-via-google-form) if you are interested in having your Lab grade reviewed, and use [the Lab Regrade Request form specified there](https://bit.ly/432-2024-lab-regrades) to complete the task. Thank you.

@@ -1,0 +1,443 @@
+---
+title: "Project B"
+date: last-modified
+---
+
+# The Schedule
+
+The Schedule for Project B presentations is available at <https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md>.
+
+# Project B Overview
+
+In project B, you will create two research questions that can be addressed with data you can conveniently obtain that can be used to address each of your questions, with models that you learned in the 431-432 sequence. 
+
+You will fit one regression model for each research question. 
+
+- Each of your models must include 2-8 predictors.
+- Each model must include at least one predictor that is not included in the other model. 
+- Each model will need to describe observations from the same pool of "subjects", so that a single tibble services the whole Project.
+
+The model for your first outcome must be either:
+
+- A model for a multi-categorical outcome (with 3-7 levels)
+- A model for a count outcome, or
+- A Cox model for a time-to-event outcome with censoring
+
+The model for your second outcome must use a different approach than you used for Outcome 1. For this model, you can use any of the three options above, or you may use:
+
+- A linear or binary logistic model fit using a Bayesian engine via the `tidymodels` package, or
+- A linear model fit by selecting candidate predictors using the lasso, or
+- A linear regression model that uses survey weights, or
+- A quantile regression model fit to a quantitative outcome where a particular percentile (perhaps the median) is of interest, or
+- A robust linear model that uses robust standard errors.
+
+Note: Use at least 3 predictors (and still no more than 8) if you are fitting a linear, binary logistic or quantile regression model for your second outcome, please.
+
+## Deliverables
+
+There are three deliverables in Project B: a Proposal Form, an in-person or Zoom Presentation, a Portfolio developed with Quarto ([along with your Data](#submitting-your-data)).
+
+1. **Proposal Form** By the deadline on the [Calendar](calendar.qmd) in early April, you will submit the Google Form found at <https://bit.ly/432-2024-projectB-proposal-form>. 
+    - In this form, you will specify your title, your research questions, and your data source, and whether or not you are working with a partner.
+    - You will also provide a brief description of each of your outcomes, and the type of models you plan to fit. 
+    - Finally, you will also specify the times that work for you (and your partner) to give your Project B presentation to Professor Love from a set of times he is available in early May.
+    - We will need to approve your Google Form before you proceed further, and this may require some revisions to your plan.
+
+2. **Presentation** After receiving our approval of your submitted form, you will prepare a portfolio of your results with Quarto ([a template is available](#template-for-the-portfolio) for this), and then give an in-person or Zoom presentation of your work to Professor Love in early May. The schedule for these presentations will be determined after completion of the Project B Proposal Form.
+
+3. **Portfolio and Data** You will then make changes (as needed) to your Quarto document (portfolio) in response to Professor Love's comments during your presentation, and submit the final version of the portfolio along with a version of your data ([as described here](#submitting-your-data)) to [Canvas](https:://canvas.case.edu) by the deadline in the [Calendar](calendar.qmd).
+
+### Working with a Partner?
+
+You can choose either to work alone, or with one other person, to complete Project B, unless Professor Love has specifically requested that you work alone. He will make those requests after Project A's grading is complete.
+
+If you are working with a partner...
+
+  - **exactly one** of you needs to complete the Project B Proposal Form (the other student should **send an email to Dr. Love with the subject line 432 Project B Partnership** confirming that you are working in a partnership and telling me the name of your partner), then
+  - you will each participate in the Project B Presentation and the development of the Portfolio, and
+
+Your final Portfolio and Data will be submitted by exactly one of the two partners to [Canvas](https::/canvas.case.edu) while the non-reporting partner will submit a one-page note to [Canvas](https::/canvas.case.edu) indicating the members of the partnership and that the partner will submit the work.
+
+## Use of AI
+
+If you decide to use some sort of AI to help you with any part of the Project, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI". This should appear just *before* your section containing the Session Information. Thank you.
+
+# Need Help?
+
+Questions about Project B may be directed to the TAs and to Professor Love at any time **after** your submission of the Project A portfolio in March. If you're asking a question [on Campuswire](https://campuswire.com/), please use the `Project B` label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.
+
+# General Advice
+
+## On Research Questions
+
+Project B requires you to answer two research questions with data you obtain. You can study any question you like, although I'd steer clear of anything that you think Professor Love might find inappropriate. All of the [advice from Project A](projA.qmd#my-first-research-question) on this subject still holds. Each of your research questions needs to lead clearly to a modeling strategy, where you'll fit an appropriate regression model. 
+
+## On Selecting Data
+
+We hope that most people will find datasets of interest to them and use those. If you do not have any strong ideas for data to use, then we encourage you to consider the [suggestions from 432 Project A](projA.qmd#good-data-sets-to-use). The best projects from my perspective use interesting and appropriate data that we have never seen before.
+
+1. You must completely identify the source(s) of the data, so that Professor Love understands what data you are using very well, but you will not be required to share the data with him, or anyone else, if the data you use are not already available to the public. You must ensure that you have all necessary permission(s) to use the data for this course project.
+2. Each of your models must work with data drawn from the same tibble, and describe observations from the same pool of "subjects".
+3. We prefer that data sets contain between 200 and 2000 complete observations on each outcome, but you can use more than 2000 or as few as 150, if it's important to do so. Projects with less than 150 subjects with complete data on all variables are not acceptable for Project B.
+4. Your tibble will need a subject identifying code, and each model must have a separate outcome, and at least one predictor not used in the other model and each model must have 2-8 predictors, we anticipate that your clean, tidied tibble will include between 6 and 19 variables.
+5. We suggest that you collapse multiple categories as necessary to ensure that you have at least 25 observations in every category you plan to use for every predictor or outcome studied in Project B.
+
+Unlike 432 Project A, NHANES data are a completely acceptable choice for Project B, although we do require you to use the demographics file and at least two other NHANES files in developing your data set. See the [Fall 2023 431 Project B instructions on Using NHANES data](https://thomaselove.github.io/431-projectB-2023/data2.html) for more information on NHANES. If you use NHANES data or other large (weighted) survey data, you are welcome to do any or all of Project B without incorporating sampling weights.
+
+**Note**: We have had some difficulty identifying data set suggestions (outside of educational repositories like the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)) that are both messy enough to be interesting for this project and which also provide time-to-event outcomes with right censoring that are suitable for the survival analysis work we discuss in 432. If you have suggestions along these lines, we would be eager to hear them.
+
+### There are only a few restrictions on your choice of data.
+
+- You are not allowed to use data stored as a data set in any R package other than NHANES or Tidy Tuesday data.
+- You are not allowed to use data Professor Love or anyone else has provided to you for teaching purposes.
+- You cannot reuse the data you used in Project A for 432, although you can use a different data set to answer related questions. You are welcome to reuse data you used in your 431 project work if it is suitable and you haven't used it in Project A for 432.
+
+### No multi-level (hierarchical) data
+
+We want to powerfully discourage you from working with nested data that really require the use of multi-level models. The same rules [set forward in Project A](projA.qmd#no-hierarchical-data) apply here, as well.
+
+# The Proposal Form
+
+The Project B Proposal Form is a Google Form found at <https://bit.ly/432-2024-projectB-proposal-form>. The form allows you to:
+
+- register a brief description of your project for our approval, *and* 
+- specify presentation times when you (and your partner if applicable) are available.
+
+Before you complete the form, please **read this entire document**, settle on your research questions and obtain and ingest your data into R, although you needn't complete all data management activities prior to filling out the form.
+
+## What information does the form require?
+
+- You'll need to assert that you have already successfully ingested the data into R.
+- You'll need to tell us the two types of models you plan to fit.
+- You'll need to describe the variables you intend to use as outcomes in your models.
+    - These two outcomes need to be clearly linked to your research questions, and you'll need to tell us something about each of their distributions.
+- You'll need to specify how many cases are in your data with complete data on each of your study's two outcomes.
+- You'll need to specify the title of your project.
+- You'll need to specify your research questions.
+- You'll need to specify who your partner is, if you have one.
+
+## Signing Up for Presentation Times
+
+Professor Love intends to hear projects for this course:
+
+Project B Presentations will be held on...
+
+- Tuesday 2024-04-30 (CWRU Reading Day) between 8 AM and Noon and between 1 and 6 PM, either in person or via Zoom
+- Wednesday 2024-05-01 (CWRU Reading Day) between Noon and 7 PM via Zoom
+- Thursday 2024-05-02 (Final Exams Begin) between 1 and 6 PM via Zoom
+
+You will specify at least five one-hour time slots within these windows (using at least two different days) as times when you (and your partner, if any) are available to give your project.
+
+Some people will have special circumstances that make it difficult for them to meet during some of these times. There will be an opportunity on the form for you to provide those details to Professor Love.
+
+## How will we respond to the form?
+
+On the basis of your responses to the form, we will either approve or reject your Project B plan, and once it is approved, you can proceed.
+
+- If we cannot approve your project, we'll tell you why, and tell you how to try again. You'll need to iterate until we approve your project, but we hope this won't require more than two tries for anyone.
+- The main reason why we doesn't approve projects is that we don't understand the description of your data set or its outcomes, your planned modeling approaches, or how the research questions link to the available data, so focus on making those connections as clear as possible.
+- TAs are available during their office hours to review your planned research questions, data set and planned variables with you to make suggestions.
+
+Once all forms are in, Professor Love will also schedule the presentations, and this information will be announced in class and posted as quickly as possible.
+
+## Making Changes to your Proposal
+
+No plan survives first contact with the data unscathed. You will wind up making changes as your work on the Project progresses. Once we approve your proposed research questions, you should feel to free to make any change you like, so long as you are not materially changing the general topic of your work. If you feel that you need to change the title or one of the outcomes in your project, that's the time to run the changes past Professor Love in an email, but if the original title and outcomes still work, you'll be fine. 
+
+- If you do need to change a title, request a re-approval via email by submitting both the initial title and research questions as well as the new ones you now propose, accompanied by a brief description of what needs to change and why you need to make the change. 
+- Professor Love will consider changes of this sort via email he receives more than 72 hours prior to your scheduled project presentation. After that, your title is locked in.
+- You do not need permission to adjust your choice of variables, or your strategy for including subjects or anything else that wouldn't change the main goals of your project or your title.
+
+# The Presentation
+
+After you register your project and obtain a presentation time, your remaining job is to build a very well-designed and well-analyzed study then present it to Professor Love (orally and in your Portfolio document) beautifully. 
+
+Some presentations will be given in person and others via Zoom. In either case, your presentation is based on results contained in your portfolio, hitting on these four key points:
+
+1. What your research questions were and why they are important.
+2. What data you used and why it was relevant to addressing your questions.
+    + You should present at least two effective visualizations of your data that help Professor Love understand what can be said about your research questions, at least one of which should help Professor Love explore your data, and at least one of which should help Professor Love evaluate the success of a particular model. Build the presentation around the figures!
+3. What statistical methods you used to analyze and model the data and why they were appropriate.
+    + In particular, you are required to present at least one result that is derived from one of your regression models. Your model(s) should be clearly linked to your eventual conclusions about your research questions.
+4. What the results say about your research questions - what you have learned by doing this project?
+    - Be as clear as possible in your speaking about how you address each of the four main issues specified above.
+
+Jeff Leek's best piece of advice in my opinion is to make the **FIGURES** the focus of your writing and your presentation. 
+
+- Another good piece of advice is to acknowledge the work of others appropriately (especially in highlighting where the data come from.) Be gracious.  
+
+Your presentation should be focused on your demonstration of your understanding of key ideas from the course. Do not spend more than the minimum possible time discussing the background of your data or your data cleaning. Focus on your research questions, your analytic work, and your discussion of conclusions, effect sizes and limitations.
+
+You should think of this as no more than a 15 minute presentation if no one asked any questions, but the time slots are 20 minutes each because Professor Love will ask questions of you, during and after your presentation. Professor Love will ask all kinds of things in an effort to allow you to show your best thinking and to make sure you understand and can explain the things you're presenting.
+
+- Your ability to address those questions effectively, using the results from your portfolio of work, is the thing that will separate mediocre grades from excellent ones, in most cases. 
+- You will need to be agile in responding to me. Anticipate tough questions. Professor Love will be looking for clear answers, motivated by your results. 
+- Rehearse your presentation so that it takes 12-15 minutes if no one asks you any questions.
+
+If you work as a team, Professor Love will pick one of you at random, on the spot, to deliver the first half of the presentation, and the other will do the second half. Professor Love will address questions to each of you.
+
+- Pre-plan a place where whoever Professor Love chooses to speak first will switch off to the second person so that the time is about even, and you'll both need to be prepared to give either half of the presentation.
+- If you're on Zoom, one of you should plan to be the one who will share their screen for both halves of the presentation, so we don't have to switch back and forth.
+
+You can give your presentation using just your knitted HTML results from Quarto, or a set of slides you've prepared or any other tools that allow you to show your mastery of 432 material most effectively in the available time. 
+  
+- Do not plan to run R code during the session. Your HTML file, for example, must be completely knitted. 
+- Structure your presentation so you can find things very easily. Useful names in the headers help, certainly, but thoughtful construction of an argument and good NAMES for things in your code, and in the headings of your presentation is really the most important thing.
+
+## P values and "statistical significance"
+
+As in Project A, you are welcome to include p values in your analyses in either the portfolio or the presentation, but you should demonstrate good statistical practice by not comparing them to $\alpha$ levels to declare things to be important, meaningful, or significant. 
+
+**You should not use the words "statistically significant" or any synonyms (like statistically detectable) in any of your materials or in your presentation.** 
+
+# The Project Portfolio
+
+You will build a **written portfolio** created using Quarto of Project B materials. Your portfolio should present your work in a way that allows you to demonstrate to Professor Love your mastery of several important ideas you learned during the 432 class.
+
+- Your portfolio will include some background, leading into your research question or questions, your data management work and codebook, and then your analytic work, data descriptions, results and conclusions.
+- Your portfolio should demonstrate your commitment to replicable research by presenting a description of your work that allows you (or anyone else with access to the raw data) to review and repeat and (potentially) modify all of your important work by following your presentation. 
+- Your goal in the portfolio should be to ensure that you, two years from now, can use your portfolio and the data to replicate your work and make changes in light of new information easily.
+
+## Template for the Portfolio
+
+Professor Love built a sample template for the Project B Portfolio, and we strongly encourage you to use it. This template is posted to our [432-data site](https://github.com/THOMASELOVE/432-data).
+
+Any alternate template or formatting style is acceptable if it is built using Quarto and contains all of the section headings in Professor Love's template. The list of HTML "themes" that are available in Quarto by changing the "theme" option in the start of your document [can be found here](https://quarto.org/docs/output-formats/html-themes.html) and we encourage you to pick something you think looks nice.
+
+## What are the main section headings in the Portfolio?
+
+The Template begins with an unnumbered section for R Packages and Setup. The numbered sections we want you to use are:
+
+1. Background
+2. Research Questions
+3. Data Ingest and Management
+4. Code Book and Description
+5. Analyses
+6. Conclusions and Discussion
+7. References and Acknowledgments
+8. Session Information
+
+Make your portfolio gorgeous, thoughtful and incredibly easy for Professor Love to use in evaluating your work.
+
+- Jeff Leek's material in [How To Be a Modern Scientist](https://leanpub.com/modernscientist) is very useful here, in particular the material on Scientific Talks and on Paper Writing. We especially like the advice to write clearly and simply.
+- Include all R code and output that you need to help Professor Love understand the important issues in your study.
+    - Adding **more** material, just for the sake of demonstrating that you can, is a good way for me to be **unimpressed** with your project. If you cannot think of anything to say about a piece of output easily, why are you including it?
+- Cleaning the data is a vitally important step. Professor Love will assume that you have done it perfectly. The TAs can help you, but this is your responsibility. 
+- Your cleaning should use tools from the tidyverse when possible, and you should do all analytic work on tibbles, whenever possible.
+- Don't include warnings or messages from R that we don't need to know about. Use and trust your judgment.
+- Never show long versions of output when short ones will do. A particularly good idea is to print a tibble rather than showing an entire data set.
+
+## Our Best Advice
+
+Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
+
+## Submitting Your Data
+
+If your data are **available to the public**, including Professor Love, then submit (along with your final portfolio):
+
+- whatever Professor Love needs to provide to the Quarto file to ingest your data (this is most commonly a .csv file or series of them, but you might instead pull directly from the internet, which is also fine.)
+- a tidied version of the data set, saved as .Rds, and matching precisely what you describe in your codebook.
+- if the data are available online, you must provide within your HTML file a working URL with instructions to access the data.
+
+If your data are **not available to the public**, then submit (again, with your Portfolio):
+
+- an .Rds or .csv file consisting of five rows of your data, with all variables included in your codebook provided, and with different values of each of the variables displayed.
+- The five rows can be five actual rows from your data set, or each row can take parts of several different actual rows in your data to hide details and prevent re-identification.
+- No protected health information may be included in the five rows of data you submit, nor can any protected information be contained in the actual analytic data set(s) you use in your work.
+
+# Constraints for Project B
+
+The purpose of providing these constraints is to reduce your stress and **reduce the scope of the project** a bit. Take these as useful suggestions that will help you avoid some common problems. Most students attempt to take on too much in doing the project. These constraints are meant to stop you from doing that.
+
+If you decide that one or more of the constraints in this section shouldn't apply in your project, you have our permission to do something else, as long as you **identify the issue, and describe and defend your decision** in **both** your portfolio and presentation.
+
+## Missing Data
+
+1. Drop all cases without complete outcome data, but otherwise, your goal should be to preserve as much of the data collection effort as possible.
+2. Use multiple imputation to deal with missing values in presenting a final model for either a linear or logistic regression whenever possible. 
+3. Be sure to explicitly state the assumptions you make about the missing data mechanism.
+4. You may use single imputation in the process of developing your models, in presenting residual plots for linear models, or in presenting final models for regression approaches for count, multi-categorical or time-to-event with censoring outcomes.
+5. Do not use a complete-case analysis or sampling strategy except to ensure that all of your cases have complete outcome data.
+
+## Model Size
+
+1. While you can fit a larger model, we strongly recommend you restrain yourself to **no more than 8 predictors** in a final model regardless of your sample size. Anything more than that will be difficult to interpret at best.
+2. If your number of main effects (predictors) that you want to include in your final model exceeds the number of degrees of freedom specified below, then don't add any non-linear terms. If you do decide to include non-linear terms as determined based on a Spearman rho-squared plot, then adhere closely to the maximum degrees of freedom specified in the table below. These df limits include the intercept term(s).
+
+- If you are fitting a regression to a **quantitative or count** outcome, let *n* = sample size. For this count and all of the counts here, do not include any data points where the outcome is missing.
+- If you are fitting a regression to a **categorical** outcome, let *n* = # of observations in the category with the smallest sample size.
+- If you are fitting a regression to a **time-to-event** outcome, let *n* = # of observations where the event occurred (was not censored).
+
+Value of *n* | 20-100 | 101-250 | 251-500 | 501-999 | 1000+
+-----------: | -----: | ------: | ------: | ------: | --------:
+Maximum *df* | 6 | 9 | 12 | 16 | 20
+
+For Project B, don't worry about penalizing yourself for "peeking" at the data by running automated selection procedures (although we don't generally recommend these) or scatterplot matrices. 
+
+## Transformations
+
+In Project B, for outcome transformations, follow our advice [from Project A](projA.qmd#transformations).
+
+## Advice on Predictors
+
+1. Collapse multi-categorical predictors sufficiently that you don't have problems fitting or interpreting the model. In most cases, it is very difficult to describe what's happening with predictors containing more than five levels.
+
+2. If you choose to use a spline or polynomial function with a quantitative predictor and want also to use an interaction term for that predictor, be sure to restrict the interaction to a linear term only with `%ia%`.
+
+3. Make sure that the coefficients and standard errors in your models don't explode, which can happen when a predictor overwhelms the regression model. It's your job to identify that there is a problem and do something to address it appropriately, rather than presenting a clearly inappropriate model.
+
+## On Validation
+
+1. We expect a validation, properly executed, to be an important part of every Project B.
+2. This will most commonly include a split into training and testing samples, and an evaluation of key results in a held-out sample.
+3. Bootstrap validation of summary statistics via the tools available in the `rms` package is also welcome, if you are fitting models that use those tools.
+
+# Questions and Answers
+
+> Does Project B have to include everything that we did in Project A?
+
+No. You'll want to have some of that information at your fingertips in a presentation, so think carefully about what to keep and what to drop. Clearly, there is meaningful overlap (you need to describe your research questions, your data, provide a codebook, etc.) 
+
+> What should we name models, and variables?
+
+Something memorable and consistent. If you want to avoid creativity, then call things `model_01` and `model_02`, by all means, but do that in both the text descriptions and in your code. Don't call the same thing Model 1 (or my first model) in your text, but `mod_1` in your code, as an example.
+
+> Is there an advantage to choosing a public (open, sharable) data set over a private one for this Project?
+
+You are permitted to do either. A substantial advantage of public data is that you can share the details with us (including the data) if you encounter a coding problem. This improves the chances that we can be helpful.
+
+> Should we consider larger data sets with substantially more than 2,000 observations?
+
+If you want to work with a huge data set, then we encourage you to sample it down to at most 2,000 observations in a model development sample first (and perhaps as many as another 2,000 observations in a model testing sample.) There are three main reasons for this:
+
+1. this is a project about what you learned in (431 and) 432, which is most definitely NOT a course in analyzing data with tens of thousands of observations,  
+2. avoid long waits while your data are processed in R, and 2000 is a good limit from this perspective.
+3. be sure that things like a scatterplot are still of some value in terms of letting you understand your data. Scatterplots of more than about 1000 observations tend to be very difficult to interpret, even if they are quite large.
+
+It's not worth boiling the ocean in this project. Of course, after the course is over, you can always ramp back up to a bigger version of the data set to expand the project.
+
+> What is the best way to select an appropriate set of predictors?
+
+It depends in part on the kind of question you are trying to answer. For most projects, we recommend a question that is explicitly about prediction, rather than either (a) trying to explain a phenomenon in existing data without reference to external prediction or (b) trying to make some sort of causal inference, which requires methods beyond the scope of this class.
+
+We suggest you start with a question to answer, which should motivate specific predictors. A combination of logic, theory and prior empirical evidence is always preferable. A scan of the literature is always useful. A conceptual model of the relationship which makes predictions about what "should" happen under current understanding can be very helpful. We urge you to pick a project where you have some prior understanding of how the data will behave and where you can express that pre-modeling belief as part of your presentation of your work.
+
+Don't scan a list of correlations in the current data to see which ones look promising, and then forget that you did that when it comes time to evaluate the models. It's fine to go on a fishing expedition in Project B, but then you have to severely temper your claims, an in particular you have to give up on drawing any substantial conclusions about causation or explanation and focus instead on a question about prediction, and (of course) validation of your model becomes essential.
+
+> Prior to analyses, should we specify our expected directions of relationships between outcomes and predictors?
+
+Sure, especially for any key predictors. 
+
+> Does Professor Love have a strong working understanding of genomics data?
+
+No.
+
+> Can we use `echo=FALSE` in Project B?
+
+The use of `echo = FALSE` is prohibited in Project B. Use the template.
+
+# Things We Want To See in Your Work
+
+1. a clear statement of each of your research questions, preceded by an appropriate (but not at all lengthy) background section motivating those questions
+2. a clear description of the data to be used, with careful attention to cleaning the data to make the follow-up analyses as straightforward as possible
+3. the use of techniques from the 431-432 sequence for every stage of the data science process, from data ingest and tidying through the cycle of transformation, visualization and modeling, and then finally a careful communication of the end result
+4. the use of regression methods that are directly applicable to the research questions you pose
+5. the use of appropriate tools for diagnosing the quality of those models, including useful and well-presented visualizations and summary statistics
+6. identification and comparison of candidate models to address your research questions if there are real choices to be made (if you have a clear model in mind at the start, there's no need to artificially create a competitor)
+7. validation of your model's predictions and/or model summary statistics in an appropriate way
+8. clear evidence that you have thought hard, and well, about what output to present. In particular, we want you to think in terms of creating meaningful annotations for every single scrap of output that you generate and present: if you cannot think of anything to say about a piece of output easily, why are you including it?
+9. a clear re-statement of the research questions you asked at the start, now with conclusions that answer those questions
+10. a clear statement of the limitations of your approach, and 
+11. a clear statement about useful next steps that you would like to try on the data, moving forward, as well as
+12. a clear statement about what you learned as a result of doing the project.
+
+All of this should appear in an extremely well-organized presentation and portfolio that work together well. Evidence of strong organization includes the use of effective labels, useful annotations for your code, and (in particular) meaningful headings and a helpful table of contents which make good use of the available technology. 
+
+# **NEW!!** Eight Questions
+
+What 8 Questions would Dr. Love be likely to ask (either himself or you) during your Presentation, and as he reviews your Final Portfolio ...
+
+## 8 questions about your Project B work in general
+
+1. Does the background motivate your research questions?
+2. Are you research questions clear and appropriately linked to the regression analyses you are doing?
+3. How much data do you have, and what is the source of that data?
+4. How did you deal with missing data, and what assumptions about missingness did you make?
+5. Is your portfolio well-labeled and easy to find things in?
+6. Does your presentation focus on important issues? [See the list in the instructions](https://thomaselove.github.io/432-2024/projB.html#the-presentation).
+7. Have you avoided discussing statistical significance or any synonyms for that problematic term?
+8. Can you answer questions effectively about the work you're presenting?
+
+Of course, I'll also want to know if you have questions for me about things related to the Project.
+
+## 8 questions about a model for a time-to-event outcome with censoring
+
+1. What is the outcome of interest, and what is the variable describing the time, and the variable describing the "event"?
+2. How many subjects are in your data, and how many of them have the actual "event"?
+3. What does it mean for someone to be censored in your data? 
+4. What does a Kaplan-Meier curve describing survival across all of your outcomes, or perhaps comparing two or three key groups, tell us about your research question?
+5. Why did you select the combination of predictors that you did for this model?
+6. Have you provided an appropriate summary of the effects in your Cox model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?
+7. Overall, how well does your model fit, as judged by the unvalidated concordance, C statistic, and Cox-Snell R-square measure?
+8. What does your assessment of the proportional hazards assumption suggest about your model?
+
+## 8 questions about a model for a count outcome
+
+1. What is the outcome of interest, and is this in fact a count outcome?
+2. How many subjects are in your data, and what does the distribution of your count outcome look like in those subjects?
+3. How did you split the data into testing and training samples, which you should do with a count outcome, following Slides Set 15.
+4. Why did you select the combination of predictors that you did for this model?
+5. Which model(s) did you fit to your data? You should plan to fit at least two of a Poisson, a Negative Binomial and/or a zero-inflated model or hurdle model.
+6. Why did you settle on the choice of count model you did? A comparison of rootograms is the most desirable way to show me how you made this choice.
+7. Have you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?
+8. How well does your model fit, as judged by training then test sample summaries of R-square and the root mean squared error? Note: I don't care about Vuong's test.
+
+## 8 questions about a model for a multi-categorical outcome with 3-7 levels
+
+1. What is the outcome of interest, and is it an ordinal or nominal multi-categorical outcome? Did you do any collapsing of levels? Why? How many subjects are in your data overall, and within each level of your outcome?
+2. Why did you select the combination of predictors that you did for this model?
+3. What do the predictions from your model look like, when tabulated (in the rows) against the true results from your outcome (in the columns)? What does that table tell us about the accuracy of your predictions?
+4. Use your model to make predictions for two new subjects, and use those predictions to discuss the impact of an interesting change in one of your more important predictors.
+
+and four additional questions, depending on whether you have an ordinal or nominal outcome...
+
+**If you have an ordinal outcome**, then I'd additionally ask:
+
+5. How are you making certain that R recognizes your outcome as an ordered factor?
+6. Can you display and explain the `ggplot(Predict(yourmodel))` result from your POLR model (i.e. a lrm() model for a proportional outcome)?
+7. How well does the POLR model fit, as judged by validated R-square and C statistics obtained through fitting with lrm()?
+8. Which model did you wind up preferring for your data (POLR or multinomial) and why? (A likelihood ratio test along with AIC and BIC comparisons is a good option here.)
+
+**If you have a nominal outcome**, then I would additionally ask:
+
+5. How do you know that your multinomial model converged?
+6. How many intercepts and how many coefficients (slopes) are in your model? Do these values make sense in light of your outcome and predictors?
+7. Can you display and explain the meaning of a plot of response probabilities describing the relationship between your outcome and one of your interesting categorical predictors, like the one I show in Slides Set 19, slide #23 entitled `try1` Response Probabilities? Or, if you have two interesting categorical predictors, like the plot I shod in Slides Set 19, slide #62 called `fit_LS` Response Probabilities?
+8. Can you compare your model (which should have at least 2 predictors) to another model for your outcome that includes only one of your predictors (it's up to you to decide what one predictor would be most interesting to study) using AIC, BIC and effective degrees of freedom, so that you can then tell us which of those two models looks best by both AIC and BIC?
+
+## 8 questions about a model for a quantitative outcome
+
+1. Have you made a reasonable choice of strategy here? (Bayesian model, Bayesian model with tidymodels, Selecting Candidates via the LASSO, using survey weights, quantile regression or robust linear model?) Why did you select this approach - how does it tie in with your research question?
+2. Can you demonstrate that you have selected a transformation (or not) for the outcome wisely?
+3. Can you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class?
+4. Can you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you're developing?
+5. Have you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?
+6. Can you make predictions for new data using your model?
+7. Can you compare the performance of your model in a sensible way to an ordinary least squares linear model?
+8. Can you evaluate the assumptions that are relevant to your model?
+
+## 8 questions about a model for a binary outcome
+
+1. Have you made a reasonable choice of strategy here? (Bayesian model or Bayesian model with tidymodels?) Why did you select this approach, and how does it tie in with your research question?
+2. How did you make certain that your binary outcome was being modeled in the direction you intend it to be modeled (i.e. the Probability of A happening, rather than the Probability of A not happening?)
+3. Can you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class? 
+4. Can you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you're developing?
+5. Have you provided an appropriate summary of the effects in your model, and can you explain an effect to me that I select at random from your model appropriately without talking about statistical significance?
+6. Can you make predictions for new data using your model?
+7. Can you compare the performance of your model in a sensible way to an ordinary logistic regression model?
+8. Can you evaluate the assumptions that are relevant to your model?
+
+# Need Help?
+
+Repeating what we wrote earlier, questions about Project B may be directed to the TAs and to Professor Love at any time **after** your submission of the Project A portfolio in March. If you're asking a question [on Campuswire](https://campuswire.com/), please use the `Project B` label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.
+

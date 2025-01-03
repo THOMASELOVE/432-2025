@@ -1,0 +1,69 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "432-2025"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Calendar"
+        href: calendar.qmd
+      - text: "Syllabus"
+        href: tocome.qmd
+      - text: "Notes"
+        href: https://thomaselove.github.io/432-notes/
+      - text: "Software"
+        href: software.qmd
+      - text: "Get Data"
+        href: https://github.com/THOMASELOVE/432-data
+      - text: "Labs"
+        menu: 
+          - lab1.qmd
+          - lab2.qmd
+          - lab3.qmd
+          - lab4.qmd
+          - lab5.qmd
+          - lab6.qmd
+          - lab7.qmd
+          - lab8.qmd
+      - text: "Projects"
+        menu: 
+          - projA.qmd
+          - projB.qmd
+      - text: "Quizzes"
+        menu: 
+          - quiz1.qmd
+          - quiz2.qmd
+      - text: "Sources"
+        href: https://github.com/THOMASELOVE/432-sources
+    right:
+      - text: "Key Links"
+        menu: 
+        - text: "Campuswire discussion board"
+          href: https://campuswire.com/
+        - text: "Canvas (submissions & recordings)"
+          href: https://canvas.case.edu/
+        - text: "Shared Google Drive"
+          href: tocome.qmd
+        - text: "Minute Papers (Github)"
+          href: tocome.qmd
+        - text: "Class READMEs (Github)"
+          href: tocome.qmd
+      - text: "Contact Us"
+        href: contact.qmd
+
+format:
+  html:
+    theme: litera
+    css: styles.css
+    toc: true
+    date-format: iso
+    code-overflow: wrap
+    link-external-icon: true
+    link-external-newwindow: true
+
+editor: source
