@@ -1,0 +1,76 @@
+---
+title: "HBP 3024 Codebook"
+subtitle: "In support of Labs for 432"
+author: "Thomas E. Love, Ph.D."
+date: last-modified
+format: 
+  html:
+    embed-resources: true
+    toc: true
+    date-format: iso
+    code-overflow: wrap
+    code-tools: true
+---
+
+## The `hbp3024` data
+
+The `hbp3024.xlsx` file is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
+
+The (simulated) data in the `hbp3024.xlsx` file describe 3024 adults living with hypertension (high blood pressure) diagnoses who receive primary care in one of seven practices.
+
+- In each of the seven practices, 432 (different) individuals (who I'll call subjects in what follows) were sampled at random from all eligible subjects. 
+- The data are based on real electronic health record (EHR) data, but with some noise added. 
+    - The practices are named after streets that appear in *The Simpsons*.
+    
+### Eligibility Criteria
+
+The data are cross-sectional and describe results from a one-year reporting window. To be eligible for the study, a subject had to meet all of the following criteria:
+
+- have an EHR-documented hypertension diagnosis which applied during the one-year reporting window,
+- cared for at one of the seven practices in this study, and by one of the 55 participating providers in this study
+- age 25 or older at the start of the one-year reporting period (note that all subjects with ages 80 and higher are listed as age 80 in the data)
+- between 1 and 12 primary care office visits in the one-year reporting period
+- between 2 and 24 primary care office visits combined across the reporting period and the previous year
+- fall into one of two biological sex categories (female or male)
+- fall into one of four primary insurance categories, specifically Medicare, Commercial, Medicaid or Uninsured.
+- have a most recent systolic BP between 80 and 220 mm Hg and most recent diastolic BP between 40 and 140 mm Hg, where the systolic BP is at least 15 and no more than 130 mm Hg larger than the diastolic BP.
+
+### Codebook
+
+Variable    | Description
+----------: | --------------------------------------------------------------------------------------------------------
+`record`    | unique code for each subject (six digits, first digit is 9, last indicates practice)
+`practice`  | primary care practice, of which there are seven in the data
+`provider`  | primary care provider (each practice has multiple providers)
+`age`       | subject's age as of the start of the reporting period
+`race`      | subject's race (4 levels: Asian, AA_Black, White, Other)
+`eth_hisp`  | is subject of Hispanic/Latino ethnicity? Yes or No
+`sex`       | subject's sex (F or M)
+`insurance` | subject's primary insurance (Medicare, Commercial, Medicaid, Uninsured)
+`income`    | estimated median income of subject's home neighborhood (via American Community Survey, to nearest $100)
+`hsgrad`    | estimated percentage of adults living in the subject's home neighborhood who have graduated from high school (via American Community Survey, to the nearest tenth of a percent)
+`tobacco`   | tobacco use status (Current, Former, or Never)
+`depr_diag`   | does subject have depression diagnosis? Yes or No
+`height`    | subject's height in meters, rounded to two decimal places
+`weight`    | subject's weight in kilograms, rounded to one decimal place
+`ldl`       | subject's LDL cholesterol level, in mg/dl
+`statin`    | does subject have a current prescription for a statin medication? Yes or No
+`bp_med`     | does subject have a current prescription for a blood pressure control medication? Yes or No
+`sbp`       | subject's most recently obtained systolic blood pressure, in mm Hg
+`dbp`       | subject's most recently obtained diastolic blood pressure, in mm Hg
+`visits_1`  | subject's number of visits for primary care in reporting period (one year)
+`visits_2`  | subject's visits for primary care in the past two years
+`acearb`    | does subject have a current prescription for an ACE-inhibitor or ARB? Yes or No
+`betab`     | does subject have a current prescription for a beta-blocker? Yes or No
+
+### Notes on Specific Variables
+
+- The list of medications included in `bp_med` is: ACE-inhibitor, ARB, Diuretic, Calcium-Channel Blocker, Beta-Blocker, Alpha-1 Blocker, Centrally acting Alpha-2 Agonist, Vasodilator or other antihypertensive agents. A subject with a current prescription for any of these will have a Yes in `bp_med`. 
+- For the `acearb`, `betab`, `bpmed`, `statin` and `depr_diag` variables, a No response includes all subjects where there's no evidence in the EHR of meeting the Yes criterion, so that there are no missing values (a missing value is interpreted there as No.)
+- For the `height`, `weight` and `ldl` results, implausible values were treated as missing in preparing the data for you. 
+- The `race` and `eth_hisp` values are self-reported, and some subjects refused to answer one or both of the relevant questions. 
+- The `income` and `hsgrad` values are imputed from the subject's home address, usually at the census block level, but occasionally at the level of the zip code. 
+    - When a subject's home address could not be geocoded, these values are noted as missing.
+    - Geocoded estimates of `income` below 6500 are reported as 6500, and estimates above 130000 are reported as 130000. 
+    - For `hsgrad`, geocoded estimates below 40 are reported as 40, and estimates above 99.9 are reported as 99.9.
+    

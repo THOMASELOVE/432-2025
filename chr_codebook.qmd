@@ -1,0 +1,426 @@
+---
+title: "County Health Rankings Codebook"
+subtitle: "In support of Labs for 432"
+author: "Thomas E. Love, Ph.D."
+date: last-modified
+format: 
+  html:
+    embed-resources: true
+    toc: true
+    date-format: iso
+    code-overflow: wrap
+    code-tools: true
+---
+
+## R Packages and Data Ingest
+
+```{r}
+#| message: false
+
+library(gt)
+library(naniar)
+library(easystats)
+library(tidyverse)
+
+lovedist <- function(x) {
+  tibble::tibble(
+    n = length(x),
+    miss = sum(is.na(x)),
+    mean = mean(x, na.rm = TRUE),
+    sd = sd(x, na.rm = TRUE),
+    med = median(x, na.rm = TRUE),
+    mad = mad(x, na.rm = TRUE),
+    min = min(x, na.rm = TRUE),
+    q25 = quantile(x, 0.25, na.rm = TRUE),
+    q75 = quantile(x, 0.75, na.rm = TRUE),
+    max = max(x, na.rm = TRUE),
+  )
+}
+```
+
+```{r}
+chr2015 <- read_csv("https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/chr_2015.csv", show_col_types = FALSE)
+chr2024 <- read_csv("https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/chr_2024.csv", show_col_types = FALSE)
+```
+
+### Data Source
+
+The data come from [County Health Rankings](https://www.countyhealthrankings.org/health-data/methodology-and-sources/data-documentation), specifically the 2024 and 2015 reports.
+
+## Variable Descriptions
+
+Variable | NHANES | Summary | Definition | CHR 2024 describes | CHR 2015 describes
+:--------- | :--------: | :-------------------------: | :------------------------------------------------------------------------- | :----------: | :----------:
+`FIPS_code` | fipscode  with `C-` | five-digit FIPS code | unique five-digit FIPS code preceded by `C-` | 3054 values | 3054 values
+`state` | state | [USPS state abbreviation](https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations#Postal_codes) | 50 states + District of Columbia (DC) | 51 values | 51 values
+`county` | county | county name	| `chr_2024` and `chr_2015` contain the same counties | 3054 counties | 3054 counties
+`release` | year	| Release Year | Date for CHR Data Release | 2024 | 2015
+`prem_death` | v001_rawvalue  x 0.01 | Premature death	| [Years of potential life lost before age 75 per 1,000 population (age-adjusted)](https://www.countyhealthrankings.org/health-data/health-outcomes/length-of-life/premature-death?year=2024) | 2019-2021 | 2010-2012
+`pf_health`	| v002_rawvalue  x 100 | Poor or fair health	| [Percentage of adults reporting fair or poor health (age-adjusted)](https://www.countyhealthrankings.org/health-data/health-outcomes/quality-of-life/poor-or-fair-health?year=2024) | 2021 | 2006-2012
+`poor_phys`	| v036_rawvalue	| Poor physical health days	| [Average number of physically unhealthy days reported in past 30 days (age-adjusted).](https://www.countyhealthrankings.org/health-data/health-outcomes/quality-of-life/poor-physical-health-days?year=2024) | 2021 | 2006-2012
+`poor_ment` | v042_rawvalue | Poor mental health days | [Average number of mentally unhealthy days reported in past 30 days (age-adjusted).](https://www.countyhealthrankings.org/health-data/health-outcomes/quality-of-life/poor-mental-health-days?year=2024) | 2021 | 2006-2012
+`low_bwt` | v037_rawvalue  x 100 | Low birthweight | [Percentage of live births with low birthweight (< 2,500 grams)](https://www.countyhealthrankings.org/health-data/health-outcomes/quality-of-life/low-birthweight?year=2024) | 2016-2022 | 2006-2012
+`smoking` | v009_rawvalue  x 100 | Adult smoking | [Percentage of adults who are current smokers (age-adjusted)](https://www.countyhealthrankings.org/health-data/health-factors/health-behaviors/tobacco-use/adult-smoking?year=2024) | 2021 | 2006-2012
+`obesity` | v011_rawvalue | Adult obesity | [Percentage of the adult population (age 18 and older) that reports a body mass index (BMI) greater than or equal to 30 kg/m2 (age-adjusted)](https://www.countyhealthrankings.org/health-data/health-factors/health-behaviors/diet-and-exercise/adult-obesity?year=2024) | 2021 | 2011
+`food_env` | v133_rawvalue | Food environment index | [Index of factors that contribute to a healthy food environment, from 0 (worst) to 10 (best)](https://www.countyhealthrankings.org/health-data/health-factors/health-behaviors/diet-and-exercise/food-environment-index?year=2024) | 2019 & 2021 | 2012
+`drinking` | v049_rawvalue  x 100 | Excessive drinking | [Percentage of adults reporting binge or heavy drinking (age-adjusted)](https://www.countyhealthrankings.org/health-data/health-factors/health-behaviors/alcohol-and-drug-use/excessive-drinking?year=2024) | 2021 | 2006-2012
+`sti_rate` | v045_rawvalue | Sexually transmitted infections | [Number of newly diagnosed chlamydia cases per 100,000 population](https://www.countyhealthrankings.org/health-data/health-factors/health-behaviors/sexual-activity/sexually-transmitted-infections?year=2024) | 2021 | 2012
+`unins` | v085_rawvalue  x 100 | Uninsured | [Percentage of population under age 65 without health insurance](https://www.countyhealthrankings.org/health-data/health-factors/clinical-care/access-to-care/uninsured?year=2024) | 2021 | 2012
+`pcp_rate` | 1 / v004_rawvalue | Primary care physicians | [Ratio of population to primary care physicians](https://www.countyhealthrankings.org/health-data/health-factors/clinical-care/access-to-care/primary-care-physicians?year=2024) | 2021 | 2012
+`mammog` | v050_rawvalue  x 100 | Mammography screening | [Percentage of female Medicare enrollees ages 65-74 who received an annual mammography screening](https://www.countyhealthrankings.org/health-data/health-factors/clinical-care/quality-of-care/mammography-screening?year=2024) | 2021 | 2012
+`hsgrad` | v021_rawvalue  x 100 | High school graduation | [Percentage of ninth-grade cohort that graduates in four years](https://www.countyhealthrankings.org/health-data/health-factors/social-economic-factors/education/high-school-graduation?year=2024) | 2020-2021 | 2011-2012
+`unemp` | v023_rawvalue | Unemployment  x 100 | [Percentage of population ages 16 and older unemployed but seeking work](https://www.countyhealthrankings.org/health-data/health-factors/social-economic-factors/employment/unemployment?year=2024) | 2022 | 2013
+`inc_ineq` | v044_rawvalue | Income inequality | [Ratio of household income at the 80th percentile to income at the 20th percentile](https://www.countyhealthrankings.org/health-data/health-factors/social-economic-factors/income/income-inequality?year=2024) | 2018-2022 | 2009-2013
+`social` | v140_rawvalue | Social associations | [Number of membership associations per 10,000 population](https://www.countyhealthrankings.org/health-data/health-factors/social-economic-factors/family-and-social-support/social-associations?year=2024) | 2021 | 2012
+`med_inc` | v063_rawvalue  x 0.001 | Median household income | [The income (in thousands of dollars) where half of households in a county earn more and half of households earn less](https://www.countyhealthrankings.org/health-data/health-factors/social-economic-factors/income/median-household-income?year=2024) | 2018-2022 | 2013
+`sev_hous` | v136_rawvalue  x 100 | Severe housing problems | [Percentage of households with at least 1 of 4 housing problems: overcrowding, high housing costs, lack of kitchen facilities, or lack of plumbing facilities](https://www.countyhealthrankings.org/health-data/health-factors/physical-environment/housing-and-transit/severe-housing-problems?year=2024) | 2016-2020 | 2007-2011
+`commute` | v137_rawvalue  x 100 | Long commute - driving alone | [Among workers who commute in their car alone, percentage that commute more than 30 minutes](https://www.countyhealthrankings.org/health-data/health-factors/physical-environment/housing-and-transit/long-commute-driving-alone?year=2024) | 2018-2022 | 2009-2013
+`popn` | v051_rawvalue | Population | [Resident population (number of residents)](https://www.countyhealthrankings.org/health-data/demographics/population?year=2024) | 2022 | 2013
+`age65up` | v053_rawvalue  x 100 | Age 65 and older | [Percentage of population ages 65 and older](https://www.countyhealthrankings.org/health-data/demographics/65-and-older?year=2024) | 2022 | 2013
+`nh_white` | v126_rawvalue  x 100 | Non-Hispanic white | [Percentage of population identifying as non-Hispanic white](https://www.countyhealthrankings.org/health-data/demographics/non-hispanic-white?year=2024) | 2022 | 2013
+`non_eng` | v059_rawvalue  x 100 | Not proficient in English | [Percentage of population aged 5 and over who reported speaking English less than well](https://www.countyhealthrankings.org/health-data/demographics/not-proficient-in-english?year=2024) | 2018-2022 | 2009-2013
+`female` | v057_rawvalue  x 100 | Female | [Percentage of population identifying as female](https://www.countyhealthrankings.org/health-data/demographics/female?year=2024) | 2022 | 2013
+`rural` | v058_rawvalue  x 100 | Rural | [Percentage of population living in a census-defined rural area](https://www.countyhealthrankings.org/health-data/demographics/rural?year=2024) | 2020 | 2010
+
+## Numerical Summaries
+
+### Premature Death Rate
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(prem_death)),
+  chr2024 |>
+    reframe(lovedist(prem_death))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("prem_death", "prem_death")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Poor or Fair Health
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(pf_health)),
+  chr2024 |>
+    reframe(lovedist(pf_health))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("pf_health", "pf_health")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Poor physical health days
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(poor_phys)),
+  chr2024 |>
+    reframe(lovedist(poor_phys))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("poor_phys", "poor_phys")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+
+### Poor mental health days
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(poor_ment)),
+  chr2024 |>
+    reframe(lovedist(poor_ment))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("poor_ment", "poor_ment")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Low birthweight
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(low_bwt)),
+  chr2024 |>
+    reframe(lovedist(low_bwt))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("low_bwt", "low_bwt")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Adult smoking
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(smoking)),
+  chr2024 |>
+    reframe(lovedist(smoking))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("smoking", "smoking")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Adult obesity
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(obesity)),
+  chr2024 |>
+    reframe(lovedist(obesity))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("obesity", "obesity")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Food environment index
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(food_env)),
+  chr2024 |>
+    reframe(lovedist(food_env))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("food_env", "food_env")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+
+### Excessive drinking
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(drinking)),
+  chr2024 |>
+    reframe(lovedist(drinking))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("drinking", "drinking")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Sexually transmitted infections
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(sti_rate)),
+  chr2024 |>
+    reframe(lovedist(sti_rate))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("sti_rate", "sti_rate")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Uninsured
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(unins)),
+  chr2024 |>
+    reframe(lovedist(unins))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("unins", "unins")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Primary care physicians	
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(pcp_rate)),
+  chr2024 |>
+    reframe(lovedist(pcp_rate))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("pcp_rate", "pcp_rate")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Mammography screening	
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(mammog)),
+  chr2024 |>
+    reframe(lovedist(mammog))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("mammog", "mammog")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### High school graduation
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(hsgrad)),
+  chr2024 |>
+    reframe(lovedist(hsgrad))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("hsgrad", "hsgrad")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Unemployment
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(unemp)),
+  chr2024 |>
+    reframe(lovedist(unemp))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("unemp", "unemp")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Income inequality
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(inc_ineq)),
+  chr2024 |>
+    reframe(lovedist(inc_ineq))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("inc_ineq", "inc_ineq")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Social associations
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(social)),
+  chr2024 |>
+    reframe(lovedist(social))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("social", "social")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Median household income
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(med_inc)),
+  chr2024 |>
+    reframe(lovedist(med_inc))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("med_inc", "med_inc")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Severe housing problems
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(sev_hous)),
+  chr2024 |>
+    reframe(lovedist(sev_hous))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("sev_hous", "sev_hous")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Long commute - driving alone
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(commute)),
+  chr2024 |>
+    reframe(lovedist(commute))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("commute", "commute")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Population
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(popn)),
+  chr2024 |>
+    reframe(lovedist(popn))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("popn", "popn")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Age 65 and older	
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(age65up)),
+  chr2024 |>
+    reframe(lovedist(age65up))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("age65up", "age65up")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Non-Hispanic white
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(nh_white)),
+  chr2024 |>
+    reframe(lovedist(nh_white))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("nh_white", "nh_white")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Not proficient in English
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(non_eng)),
+  chr2024 |>
+    reframe(lovedist(non_eng))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("non_eng", "non_eng")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Female
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(female)),
+  chr2024 |>
+    reframe(lovedist(female))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("female", "female")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+
+### Rural
+
+```{r}
+bind_rows(
+  chr2015 |>
+    reframe(lovedist(rural)),
+  chr2024 |>
+    reframe(lovedist(rural))) |>
+  mutate(CHR = c(2015, 2024),
+         var = c("rural", "rural")) |>
+  relocate(CHR, var, everything()) |> gt()
+```
+

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-01-21">
+<meta name="dcterms.date" content="2025-01-06">
 
 <title>Lab 1 – 432-2025</title>
 <style>
@@ -103,7 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -159,30 +158,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./lab2.html">
  <span class="dropdown-text">Lab 2</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lab3.html">
- <span class="dropdown-text">Lab 3</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lab4.html">
- <span class="dropdown-text">Lab 4</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lab5.html">
- <span class="dropdown-text">Lab 5</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lab6.html">
- <span class="dropdown-text">Lab 6</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lab7.html">
- <span class="dropdown-text">Lab 7</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lab8.html">
- <span class="dropdown-text">Lab 8</span></a>
   </li>  
     </ul>
   </li>
@@ -274,8 +249,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#template" id="toc-template" class="nav-link" data-scroll-target="#template">Template</a></li>
   <li><a href="#our-best-advice" id="toc-our-best-advice" class="nav-link" data-scroll-target="#our-best-advice">Our Best Advice</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#the-variables" id="toc-the-variables" class="nav-link" data-scroll-target="#the-variables">The Variables</a></li>
-  <li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data">Loading the Data</a></li>
   </ul></li>
   <li><a href="#question-1-20-points" id="toc-question-1-20-points" class="nav-link" data-scroll-target="#question-1-20-points">Question 1 (20 points)</a></li>
   <li><a href="#question-2-30-points" id="toc-question-2-30-points" class="nav-link" data-scroll-target="#question-2-30-points">Question 2 (30 points)</a></li>
@@ -303,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024-01-21</p>
+      <p class="date">2025-01-06</p>
     </div>
   </div>
   
@@ -321,15 +294,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Submit your work via <a href="https://canvas.case.edu/">Canvas</a>.</li>
 <li>The deadline for this Lab is specified on the <a href="./calendar.html">Course Calendar</a>.
 <ul>
-<li>Work submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.</li>
-<li>Work submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.</li>
-<li>Work submitted more than 24 hours after the deadline will not be graded.</li>
+<li>We charge a 5 point penalty for a lab that is 1-48 hours late.</li>
+<li>We do not grade work that is more than 48 hours late.</li>
 </ul></li>
+<li>Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided.</li>
 </ul>
-<p>Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided.</p>
 <section id="template" class="level2">
 <h2 class="anchored" data-anchor-id="template">Template</h2>
-<p>There is a <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/lab1_template.qmd">Lab 1 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a>. Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work.</p>
+<p>There is a <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab1_template.qmd">Lab 1 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a>. Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work.</p>
 </section>
 <section id="our-best-advice" class="level2">
 <h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
@@ -337,263 +309,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
-<p>The <code>oh_counties_2022.csv</code> data set I have provided describes a series of variables, pulled from the data for the 88 counties of the the State of Ohio from the <a href="http://www.countyhealthrankings.org/rankings/data/oh">County Health Rankings</a> report for <strong>2022</strong>.</p>
+<p>The <code>chr_2024.csv</code> data set we have provided describes a series of 30 variables, pulled from the data for 3054 counties in the <a href="http://www.countyhealthrankings.org/rankings/data/oh">County Health Rankings</a> report for <strong>2024</strong>.</p>
 <ul>
-<li>The <code>oh_counties_2022.csv</code> file is available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>.</li>
-<li>Several detailed County Health Rankings files augment these 2022 Ohio Rankings Data. Find <a href="https://www.countyhealthrankings.org/app/ohio/2022/downloads">those items here</a> if you’re interested. Remember to use the <strong>2022</strong> files.</li>
+<li>The <code>chr_2024.csv</code> file is available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>.</li>
+<li>A detailed codebook for all of the data in the <code>chr_2024</code> file <a href="./chr_codebook.html">is available here</a>.</li>
 </ul>
-</section>
-<section id="the-variables" class="level2">
-<h2 class="anchored" data-anchor-id="the-variables">The Variables</h2>
-<p>The available variables are listed below. Each variable describes data at the <strong>COUNTY</strong> level.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 85%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Variable</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><code>fips</code></td>
-<td>Federal Information Processing Standard code</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>county</code></td>
-<td>name of County</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>years_lost_rate</code></td>
-<td>age-adjusted years of potential life lost rate (per 100,000 population)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>sroh_fairpoor</code></td>
-<td>% of adults reporting fair or poor health (via BRFSS)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>phys_days</code></td>
-<td>mean number of reported physically unhealthy days per month</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>ment_days</code></td>
-<td>mean number of reported mentally unhealthy days per mo</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>lbw_pct</code></td>
-<td>% of births with low birth weight (&lt; 2500 grams)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>smoker_pct</code></td>
-<td>% of adults that report currently smoking</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>obese_pct</code></td>
-<td>% of adults that report body mass index of 30 or higher</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>food_env</code></td>
-<td>indicator of access to healthy foods, in points (0 is worst, 10 is best)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>inactive_pct</code></td>
-<td>% of adults that report no leisure-time physical activity</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>exer_access</code></td>
-<td>% of the population with access to places for physical activity</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>exc_drink</code></td>
-<td>% of adults that report excessive drinking</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>alc_drive</code></td>
-<td>% of driving deaths with alcohol involvement</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>sti_rate</code></td>
-<td>Chlamydia cases / Population x 100,000</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>teen_births</code></td>
-<td>Teen births / females ages 15-19 x 1,000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>uninsured</code></td>
-<td>% of people under age 65 without insurance</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>pcp_ratio</code></td>
-<td>Population to Primary Care Physicians ratio</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>prev_hosp</code></td>
-<td>Rate of hospital stays for ambulatory-care sensitive conditions per 100,000 Medicare enrollees.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>hsgrads</code></td>
-<td>High School graduation rate</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>unemployed</code></td>
-<td>% of population age 16+ who are unemployed and looking for work</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>poor_kids</code></td>
-<td>% of children (under age 18) living in poverty</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>income_ratio</code></td>
-<td>Ratio of household income at the 80th percentile to income at the 20th percentile</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>associations</code></td>
-<td># of social associations / population x 10,000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>pm2.5</code></td>
-<td>Average daily amount of fine particulate matter in micrograms per cubic meter</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>h2oviol</code></td>
-<td>Presence of a water violation: Yes or No</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>sev_housing</code></td>
-<td>% of households with at least 1 of 4 housing problems: overcrowding, high housing costs, or lack of kitchen or plumbing facilities</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>drive_alone</code></td>
-<td>% of workers who drive alone to work</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>age_adj_mortality</code></td>
-<td>premature age-adjusted mortality</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>dm_prev</code></td>
-<td>% of adults with a diabetes diagnosis</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>freq_phys_distress</code></td>
-<td>% in frequent physical distress</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>freq_mental_distress</code></td>
-<td>% in frequent mental distress</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>food_insecure</code></td>
-<td>% who are food insecure</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>insuff_sleep</code></td>
-<td>% who get insufficient sleep</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>median_income</code></td>
-<td>estimated median income</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>population</code></td>
-<td>population size</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>age65plus</code></td>
-<td>% of population who are 65 and over</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>african_am</code></td>
-<td>% of population who are African-American</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>hispanic</code></td>
-<td>% of population who are of Hispanic/Latino ethnicity</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>white</code></td>
-<td>% of population who are White</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>female</code></td>
-<td>% of population who are Female</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>rural</code></td>
-<td>% of people in the county who live in rural areas</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="loading-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="loading-the-data">Loading the Data</h2>
-<p>Applying the <code>clean_names()</code> function from the <code>janitor</code> package as part of the initial <code>oh22</code> creation process, as I’ve done in my code below, is a sensible strategy. We hope you’ll adopt it when ingesting almost any data you ever try to pull into R.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">comment =</span> <span class="cn">NA</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>oh22 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/oh_counties_2022.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fips =</span> <span class="fu">as.character</span>(fips))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>oh22</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 88 × 43
-   fips  state county  years_lost_rate sroh_fairpoor phys_days ment_days lbw_pct
-   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
- 1 39001 Ohio  Adams             11037          25.5      5.41      6.1      9.3
- 2 39003 Ohio  Allen              8518          20.1      4.53      5.35     9.7
- 3 39005 Ohio  Ashland            7769          19.9      4.49      5.44     6  
- 4 39007 Ohio  Ashtab…            9749          24.7      5.07      5.73     8  
- 5 39009 Ohio  Athens             7619          22.4      5.02      5.71     8.3
- 6 39011 Ohio  Auglai…            6498          17.3      4.16      5.2      6.7
- 7 39013 Ohio  Belmont            8782          20.5      4.48      5.38     8.4
- 8 39015 Ohio  Brown             10510          21.2      4.68      5.6      7.7
- 9 39017 Ohio  Butler             9053          18.7      4.16      5.05     7.8
-10 39019 Ohio  Carroll            8066          19.8      4.54      5.5      8.3
-# ℹ 78 more rows
-# ℹ 35 more variables: smoker_pct &lt;dbl&gt;, obese_pct &lt;dbl&gt;, food_env &lt;dbl&gt;,
-#   inactive_pct &lt;dbl&gt;, exer_access &lt;dbl&gt;, exc_drink &lt;dbl&gt;, alc_drive &lt;dbl&gt;,
-#   sti_rate &lt;dbl&gt;, teen_births &lt;dbl&gt;, uninsured &lt;dbl&gt;, pcp_ratio &lt;dbl&gt;,
-#   prev_hosp &lt;dbl&gt;, hsgrads &lt;dbl&gt;, unemployed &lt;dbl&gt;, poor_kids &lt;dbl&gt;,
-#   income_ratio &lt;dbl&gt;, associations &lt;dbl&gt;, pm2_5 &lt;dbl&gt;, h2oviol &lt;chr&gt;,
-#   sev_housing &lt;dbl&gt;, drive_alone &lt;dbl&gt;, age_adj_mortality &lt;dbl&gt;, …</code></pre>
-</div>
-</div>
 </section>
 </section>
 <section id="question-1-20-points" class="level1">
 <h1>Question 1 (20 points)</h1>
-<p>Create a visualization (using R and Quarto) based on some part of the <code>oh_counties_2022.csv</code> data set we have provided, and share it (the visualization and <strong>all of</strong> the R code you used to build it) with us.</p>
+<p>Load the data from <code>chr_2024.csv</code> into R appropriately. You should see 30 variables and 3054 counties (rows) in your data. Now, filter your data to create a new data set called <code>ohio24</code> which should include only the 88 counties located in the state of Ohio.</p>
+<ol type="a">
+<li><p>(5 points) Use R code to demonstrate concisely that there are no missing values in the 88 Ohio counties for any of the 30 variables in the <code>ohio24</code> data.</p></li>
+<li><p>(15 points) Then create a visualization (using R and Quarto) based on your <code>ohio24</code> data to help describe the 88 Ohio counties and share it (the visualization and <strong>all of</strong> the R code you used to build it) with us.</p></li>
+</ol>
 <p>The visualization should:</p>
 <ul>
 <li>be of a professional quality,</li>
-<li>describe information from at least three different variables from those listed above
+<li>describe information from <strong>three</strong> different variables from this list of 15 below:
 <ul>
-<li>you are welcome to transform or re-express the variables if that is of interest to you</li>
-<li>please do not use the <code>obese_pct</code> variable, since we will look at that in Question 2, below.</li>
+<li><code>prem_death</code>, <code>pf_health</code>, <code>poor_phys</code>, <code>poor_ment</code>, <code>low_bwt</code></li>
+<li><code>smoking</code>, <code>drinking</code>, <code>sti_rate</code>, <code>unins</code>, <code>pcp_rate</code></li>
+<li><code>unins</code>, <code>hs_grad</code>, <code>sev_hous</code>, <code>commute</code>, <code>non_eng</code></li>
+</ul></li>
+<li>you are welcome to transform or re-express the variables if that is of interest to you
+<ul>
+<li>the main option we have in mind is an attractive faceted scatterplot showing the association of two of the variables divided into categories by a third variable</li>
 </ul></li>
 <li>include proper labels and a meaningful title,</li>
 <li>include a caption of no more than 75 words that highlights the key result. Your caption can be placed within the visualization, or in a note below.</li>
 <li>In developing your caption, I find it helpful to think about what question this visualization is meant to answer, and then provide a caption which makes it clear what the question (and answer) is.</li>
 </ul>
 <p>You are welcome to find useful tools for visualizing data in R that we have seen in either 431 or 432 or elsewhere.</p>
-<p>Although you may fit a model to help show patterns, your primary task is to show the data in a meaningful way, rather than to simply highlight the results of a model.</p>
-<p>We will evaluate Question 1 based on the quality of the visualization, its title and caption, in terms of being attractive, well-labeled and useful for representing the County Health Rankings data for Ohio, and how well it adheres to general principles for good visualizations we’ve seen in 431 and 432.</p>
+<p>Although you may fit a model to help show patterns if you like, your primary task is to show the data in a meaningful way, rather than to simply highlight the results of a model.</p>
+<p>We will evaluate Question 1 based on the quality of the visualization, its title and caption, in terms of being attractive, well-labeled and useful for representing the data reported in County Health Rankings 2024 for Ohio, and how well it adheres to general principles for good visualizations we’ve seen in 431 and 432.</p>
 </section>
 <section id="question-2-30-points" class="level1">
 <h1>Question 2 (30 points)</h1>
-<p>Create a linear regression model using the <code>oh22</code> data you developed in Question 1 to predict <code>obese_pct</code> as a function of <code>food_env</code> adjusting for <code>median_income</code>, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model <code>model1</code>.</p>
+<p>Create a linear regression model using the data for the state of Ohio that you developed in Question 1 to predict <code>obesity</code> as a function of <code>food_env</code> adjusting for <code>unemployment</code>, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model <code>model1</code>.</p>
 <ol type="a">
-<li><p>Provide R code which specifies the estimated coefficient of <code>food_env</code> and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences.</p></li>
-<li><p>Evaluate the quality of the model you fit in terms of adherence to regression modeling assumptions, through the specification and written evaluation of the four basic regression residual plots. Then reflect on your findings in a few complete sentences: what might be done to improve the fit of the model you’ve developed? Be sure to identify by name any outlying counties and explain why they are flagged as outliers.</p></li>
-<li><p>Use the <code>glance</code> function in the <code>broom</code> package to help you create an attractive table which compares <code>model1</code> to a simple linear model (called <code>model2</code>) for the same outcome (<code>obese_pct</code>) which uses only the <code>food_env</code> variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and residual standard error within the complete sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio 2022 data more effectively, and why?</p></li>
+<li>(10 points) Provide R code which specifies the estimated coefficient of <code>food_env</code> and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences.</li>
+<li>(10 points) Evaluate the quality of the model you fit in terms of adherence to regression modeling assumptions, through the specification and written evaluation of a set of regression residual plots. Then reflect on your findings in a few complete sentences: what might be done to improve the fit of the model you’ve developed? Be sure to identify by name any outlying counties and explain why they are flagged as outliers.</li>
+<li>(10 points) Create an attractive table which compares <code>model1</code> to a simple linear model (called <code>model2</code>) for the same outcome (<code>obesity</code>) which uses only the <code>food_env</code> variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio <code>obesity</code> data for 2021 (that were reported in CHR 2024) more effectively, and why?</li>
 </ol>
 </section>
 <section id="use-of-ai" class="level1">
@@ -603,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="be-sure-to-include-session-information">Be sure to include Session Information</h2>
 <p>Please display your session information at the end of your submission, as shown below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.2 (2024-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64
@@ -617,54 +374,25 @@ Locale:
   LC_TIME=English_United States.utf8    
 
 Package version:
-  askpass_1.2.1       backports_1.5.0     base64enc_0.1.3    
-  bit_4.5.0.1         bit64_4.5.2         blob_1.2.4         
-  broom_1.0.7         bslib_0.8.0         cachem_1.1.0       
-  callr_3.7.6         cellranger_1.1.0    cli_3.6.3          
-  clipr_0.8.0         colorspace_2.1-1    compiler_4.4.2     
-  conflicted_1.2.0    cpp11_0.5.1         crayon_1.5.3       
-  curl_6.0.1          data.table_1.16.4   DBI_1.2.3          
-  dbplyr_2.5.0        digest_0.6.37       dplyr_1.1.4        
-  dtplyr_1.3.1        evaluate_1.0.1      fansi_1.0.6        
-  farver_2.1.2        fastmap_1.2.0       fontawesome_0.5.3  
-  forcats_1.0.0       fs_1.6.5            gargle_1.5.2       
-  generics_0.1.3      ggplot2_3.5.1       glue_1.8.0         
-  googledrive_2.1.1   googlesheets4_1.1.1 graphics_4.4.2     
-  grDevices_4.4.2     grid_4.4.2          gtable_0.3.6       
-  haven_2.5.4         highr_0.11          hms_1.1.3          
-  htmltools_0.5.8.1   htmlwidgets_1.6.4   httr_1.4.7         
-  ids_1.0.1           isoband_0.2.7       janitor_2.2.1      
-  jquerylib_0.1.4     jsonlite_1.8.9      knitr_1.49         
-  labeling_0.4.3      lattice_0.22.6      lifecycle_1.0.4    
-  lubridate_1.9.4     magrittr_2.0.3      MASS_7.3.61        
-  Matrix_1.7.1        memoise_2.0.1       methods_4.4.2      
-  mgcv_1.9.1          mime_0.12           modelr_0.1.11      
-  munsell_0.5.1       nlme_3.1.166        openssl_2.3.0      
-  parallel_4.4.2      pillar_1.10.0       pkgconfig_2.0.3    
-  prettyunits_1.2.0   processx_3.8.4      progress_1.2.3     
-  ps_1.8.1            purrr_1.0.2         R6_2.5.1           
-  ragg_1.3.3          rappdirs_0.3.3      RColorBrewer_1.1.3 
-  readr_2.1.5         readxl_1.4.3        rematch_2.0.0      
-  rematch2_2.1.2      reprex_2.1.1        rlang_1.1.4        
-  rmarkdown_2.29      rstudioapi_0.17.1   rvest_1.0.4        
-  sass_0.4.9          scales_1.3.0        selectr_0.4.2      
-  snakecase_0.11.1    splines_4.4.2       stats_4.4.2        
-  stringi_1.8.4       stringr_1.5.1       sys_3.4.3          
-  systemfonts_1.1.0   textshaping_0.4.1   tibble_3.2.1       
-  tidyr_1.3.1         tidyselect_1.2.1    tidyverse_2.0.0    
-  timechange_0.3.0    tinytex_0.54        tools_4.4.2        
-  tzdb_0.4.0          utf8_1.2.4          utils_4.4.2        
-  uuid_1.2.1          vctrs_0.6.5         viridisLite_0.4.2  
-  vroom_1.6.5         withr_3.0.2         xfun_0.49          
-  xml2_1.3.6          yaml_2.3.10        </code></pre>
+  base64enc_0.1.3   bslib_0.8.0       cachem_1.1.0      cli_3.6.3        
+  compiler_4.4.2    digest_0.6.37     evaluate_1.0.1    fastmap_1.2.0    
+  fontawesome_0.5.3 fs_1.6.5          glue_1.8.0        graphics_4.4.2   
+  grDevices_4.4.2   highr_0.11        htmltools_0.5.8.1 htmlwidgets_1.6.4
+  jquerylib_0.1.4   jsonlite_1.8.9    knitr_1.49        lifecycle_1.0.4  
+  memoise_2.0.1     methods_4.4.2     mime_0.12         R6_2.5.1         
+  rappdirs_0.3.3    rlang_1.1.4       rmarkdown_2.29    rstudioapi_0.17.1
+  sass_0.4.9        stats_4.4.2       tinytex_0.54      tools_4.4.2      
+  utils_4.4.2       xfun_0.49         yaml_2.3.10      </code></pre>
 </div>
 </div>
 </section>
 <section id="after-the-lab" class="level2">
 <h2 class="anchored" data-anchor-id="after-the-lab">After the Lab</h2>
-<p>We will post an answer sketch 24 hours after the Lab is due.</p>
-<p>We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.</p>
-<p>See the <a href="https://thomaselove.github.io/432-syllabus-2024/08-grading.html#lab-appeal-policy---request-a-review-via-google-form">Lab Appeal Policy in our Syllabus</a> if you are interested in having your Lab grade reviewed, and use <a href="https://bit.ly/432-2024-lab-regrades">the Lab Regrade Request form specified there</a> to complete the task. Thank you.</p>
+<ul>
+<li>We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.</li>
+<li>We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.</li>
+<li>See the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you.</li>
+</ul>
 
 
 </section>

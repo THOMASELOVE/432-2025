@@ -9,210 +9,54 @@ format:
 # General Instructions
 
 - Submit your work via [Canvas](https://canvas.case.edu/). 
-- The deadline for this Lab is specified on the Course [Calendar](calendar.qmd).
-  - Work submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.
-  - Work submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.
-  - Work submitted more than 24 hours after the deadline will not be graded.
-
-Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
+- The deadline for this Lab is specified on the [Course Calendar](calendar.qmd).
+  - We charge a 5 point penalty for a lab that is 1-48 hours late.
+  - We do not grade work that is more than 48 hours late.
+- Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
 
 ## Template
 
-There is a [Lab 2 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/lab2_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data). Please use the template to prepare your response to Lab 2, as it will make things easier for you and for the people grading your work. The template is quite generic, and can also be used for other work, including Labs 3-8.
+There is a [Lab 2 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab2_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data). Please use the template to prepare your response to Lab 2, as it will make things easier for you and for the people grading your work. The template is quite generic, and can also be used for the remaining Labs.
 
 ## Our Best Advice
 
 Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
 
+## The Data
+
+- The `hbp3024.xlsx` file is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
+- A detailed description of each variable in the `hbp3024` data is [available here](hbp_codebook.qmd).
+
 # Question 1 (25 points)
 
-Question 1 uses the `lab2q1` data, based on NHANES 2017-18 results. You will use these data to generate two different responses to the question:
+Import the data from the `hbp_3024.xlsx` file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with `NA`. You should find 8 variables which have at least 1 missing value.
 
-> Estimate the percentage of the US non-institutionalized adult population within the ages of 21-49 who engage in moderate-activity sports that would describe their General Health as either "Excellent" or "Very Good".
+Please explicitly state in your response that you assume that the missingness you observe in these data are MCAR, and that a complete case analysis is thus appropriate for this Question.
 
-a. (10 points) What percentage of the subjects who responded "Yes" to the moderate-intensity sports question included in the `lab2q1` data have described their General Health as either "Excellent" or "Very Good", among those who provided an answer to the General Health question? Be sure to use a **complete-case** analysis to deal with missing data on the General Health variable, and provide all of the R code you use to obtain your result, annotated with detailed text that makes it clear what you are doing as you proceed. Please express your final response as a percentage between 0 and 100, including a single decimal place. 
+a. (10 points) Describe the impact of **insurance** status on a subject's **systolic blood pressure**, adjusting for whether or not they have a prescription for an  **ACE inhibitor**. To do this, build a linear model using the `lm` function, after first deciding whether your model should include an interaction term in a sensible way (providing a graph to help us understand your reasoning.) Display your resulting model's coefficients (along with 90% confidence intervals for the estimates) in an attractive way. Be sure to specify the number of observations your model uses.
 
-b. (15 points) Please answer the question asked in Question 1a, again, but this time accounting for the sampling weights used in `wtint2yr`, again using a **complete-case** analysis to deal with missing General Health values. As you did in Question 1a, provide all of the R code you use to obtain your result, annotated with text to make it clear what you are doing, and then express your final response to Question 1b as a percentage, again including a single decimal place.
+- One graph you might use would be one to assess the need for an interaction term, probably via a plot of means. 
+- Another graph (or perhaps table) to consider for insight would look at the relationship between **insurance** and **ace inhibitor** status in these subjects.
 
-## Data for Question 1
+b. (15 points) Provide a written explanation of your findings, in complete sentences. Your explanation should address all of the following:
 
-Dr. Love created these data from NHANES 2017-18 Demographics and Questionnaire data, using the code below. 
+- the overall quality of fit (at minimum, the $R^2$ and residual standard error, interpreted in context),
+- a careful interpretation of the meaning of each of the coefficients of your chosen model 
+- a detailed description as to how you used the output you generated in part a to decide whether or not to include an interaction term.
 
-Specifically, he used the `DEMO_J` (Demographics) and `HSQ_J` (Current Health Status) files, which are described at [this link](https://wwwn.cdc.gov/nchs/nhanes/ContinuousNhanes/Default.aspx?BeginYear=2017).
-
-```{r}
-#| eval: false
-#| warning: false
-#| message: false
-
-library(nhanesA)
-library(janitor)
-library(tidyverse)
-
-temp1 <- nhanes('DEMO_J')
-temp2 <- nhanes('HSQ_J')
-temp3 <- nhanes('PAQ_J')
-
-temp12 <- inner_join(temp1, temp2, by = "SEQN")
-temp123 <- inner_join(temp12, temp3, by = "SEQN")
-
-lab2q1 <- temp123 |>
-  select(SEQN, WTINT2YR, RIDAGEYR, HSD010, PAQ665) |> 
-  filter(RIDAGEYR > 20 & RIDAGEYR < 50) |>
-  filter(PAQ665 < 3) |>
-  mutate(HSD010 = factor(HSD010),
-         PAQ665 = factor(PAQ665),
-         SEQN = as.character(SEQN)) |>
-  clean_names() |>
-  tibble()
-
-rm(temp1, temp12, temp2, temp3, temp123)
-
-saveRDS(lab2q1, file = "data/lab2q1.Rds")
-```
-
-## Variables Studied in Question 1 
-
-The resulting variables are listed below.
-
-Item | Description | Possible Responses
-:----: | :---------: | -------------------------------------
-`seqn` | Subject id code | 93717 through 102956
-`wtint2yr` | Full sample 2 year interview weight | min = 4363, max = 387879
-`ridageyr` | Age in years at screening | min = 21, max = 49
-`hsd010` | General Health Condition | see below
-`paq665` | Moderate Recreational Activities | see below
-
-- `hsd010` Would you say your health in general is 
-  - 1 = Excellent, 
-  - 2 = Very Good, 
-  - 3 = Good,
-  - 4 = Fair, or 
-  - 5 = Poor? 
-  - (Note that 7 = Refused, 9 = Don't know in this variable, which we will treat as missing.)
-
-- `paq665` Do you do any moderate-intensity sports, fitness, or recreational activities that cause a small
-increase in breathing or heart rate such as brisk walking, bicycling, swimming, or golf for at least 10
-minutes continuously?
-  - 1 = Yes, 2 = No
-
-## Loading the Question 1 Data
-
-I have provided the saved `lab2q1.Rds` file to you on [the 432-data page](https://github.com/THOMASELOVE/432-data). I encourage you to load it using the code below.
-
-```{r}
-#| message: false
-#| warning: false
-
-library(janitor)
-library(tidyverse)
-
-knitr::opts_chunk$set(comment = NA)
-
-lab2q1 <- read_rds("https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/lab2q1.Rds")
-
-lab2q1
-```
 # Question 2 (25 points)
 
-Question 2 uses the `hbp3456` data.
+a. (5 points) Again using the data in `hbp_3024.xlsx`, which of the seven practices has the largest mean number of visits for primary care in the past two years? Show how you figured this out using R.
 
-a. (10 points) Does which **insurance** status a person has seem to have a meaningful impact on their **systolic blood pressure**, adjusting for whether or not they have a prescription for a **beta-blocker**? Decide whether your model should include an interaction term in a sensible way (providing a graph to help us understand your reasoning), and then fit your choice of model using the `lm` function in R. Display your results.
+b. (10 points) For the 432 subjects associated with the practice you identified in part a, predict the probability of a depression diagnosis on the basis of the subject's number of visits for primary care in the past two years using a logistic regression model. Obtain and then interpret the coefficient of your predictor as an odds ratio, with a 90% confidence interval.
 
-b. (15 points) Provide a written explanation of your findings, in complete sentences. Your explanation should address both the overall quality of fit and the interpretation of the coefficients of your chosen model, as well as provide a detailed description as to how you used the output you generated in part a to decide whether or not to include an interaction term.
-
-## Question 2 Hints
-
-1. One graph you might use would be one to assess the need for an interaction term, probably via a plot of means. 
-2. Another graph (or perhaps table) to consider for insight would look at the relationship between **insurance** and **beta-blocker** status in these subjects.
-3. Please explicitly state in your response that you assume that the missingness you observe in these data are MCAR, and that a complete case analysis is thus appropriate for this Question.
-
-## Data for Question 2 (`hbp3456` data)
-
-The (simulated) data in the `hbp3456.csv` file describe a total of 3456 people living with hypertension (high blood pressure) diagnoses who receive primary care in one of eight practices.
-
-- In each of the eight practices, 432 (different) individuals (who I'll call subjects in what follows) were sampled at random from all eligible subjects. 
-- The data are based on real electronic health record (EHR) data, but with some noise added. 
-    - The practices are named after streets that appear in *The Simpsons*. 
-    - There are 62 (fictional) providers identified across the eight practices, and each provider cares for subjects within a single practice.
-
-### Eligibility Criteria
-
-The data are cross-sectional and describe results from a one-year reporting window. To be eligible for the study, a subject had to meet all of the following criteria:
-
-- have an EHR-documented hypertension diagnosis which applied during the one-year reporting window,
-- cared for at one of the eight practices in this study, and by one of the 62 participating providers in this study
-- age 25 or older at the start of the one-year reporting period (note that all subjects with ages 80 and higher are listed as age 80 in the data)
-- between 1 and 12 primary care office visits in the one-year reporting period
-- between 2 and 24 primary care office visits combined across the reporting period and the previous year
-- fall into one of two biological sex categories (female or male)
-- fall into one of four primary insurance categories, specifically Medicare, Commercial, Medicaid or Uninsured.
-- have a most recent systolic BP between 80 and 220 mm Hg and most recent diastolic BP between 40 and 140 mm Hg, where the systolic BP is at least 15 and no more than 130 mm Hg larger than the diastolic BP.
-
-### Codebook
-
-Variable    | Description
-----------: | --------------------------------------------------------------------------------------------------------
-`record`    | unique code for each subject (six digits, first digit is 9, last indicates practice)
-`practice`  | primary care practice, of which there are eight in the data
-`provider`  | primary care provider (each practice has multiple providers)
-`age`       | subject's age as of the start of the reporting period
-`race`      | subject's race (4 levels: Asian, AA_Black, White, Other)
-`eth_hisp`  | is subject of Hispanic/Latino ethnicity? Yes or No
-`sex`       | subject's sex (F or M)
-`insurance` | subject's primary insurance (Medicare, Commercial, Medicaid, Uninsured)
-`income`    | estimated median income of subject's home neighborhood (via American Community Survey, to nearest $100)
-`hsgrad`    | estimated percentage of adults living in the subject's home neighborhood who have graduated from high school (via American Community Survey, to the nearest tenth of a percent)
-`tobacco`   | tobacco use status (Current, Former, or Never)
-`depr_diag`   | does subject have depression diagnosis? Yes or No
-`height`    | subject's height in meters, rounded to two decimal places
-`weight`    | subject's weight in kilograms, rounded to one decimal place
-`ldl`       | subject's LDL cholesterol level, in mg/dl
-`statin`    | does subject have a current prescription for a statin medication? Yes or No
-`bp_med`     | does subject have a current prescription for a blood pressure control medication? Yes or No
-`sbp`       | subject's most recently obtained systolic blood pressure, in mm Hg
-`dbp`       | subject's most recently obtained diastolic blood pressure, in mm Hg
-`visits_1`  | subject's number of visits for primary care in reporting period (one year)
-`visits_2`  | subject's visits for primary care in the past two years
-`acearb`    | does subject have a current prescription for an ACE-inhibitor or ARB? Yes or No
-`betab`     | does subject have a current prescription for a beta-blocker? Yes or No
-
-### Notes on Specific Variables
-
-- The list of medications included in `bp_med` is: ACE-inhibitor, ARB, Diuretic, Calcium-Channel Blocker, Beta-Blocker, Alpha-1 Blocker, Centrally acting Alpha-2 Agonist, Vasodilator or other antihypertensive agents. A subject with a current prescription for any of these will have a Yes in `bp_med`. 
-- For the `acearb`, `betab`, `bpmed`, `statin` and `depr_diag` variables, a No response includes all subjects where there's no evidence in the EHR of meeting the Yes criterion, so that there are no missing values (a missing value is interpreted there as No.)
-- For the `height`, `weight` and `ldl` results, implausible values were treated as missing in preparing the data for you. 
-- The `race` and `eth_hisp` values are self-reported, and some subjects refused to answer one or both of the relevant questions. 
-- The `income` and `hsgrad` values are imputed from the subject's home address, usually at the census block level, but occasionally at the level of the zip code. 
-    - When a subject's home address could not be geocoded, these values are noted as missing.
-    - Geocoded estimates of `income` below 6500 are reported as 6500, and estimates above 130000 are reported as 130000. 
-    - For `hsgrad`, geocoded estimates below 40 are reported as 40, and estimates above 99.9 are reported as 99.9.
-
-## Loading the Data for Question 2
-
-Here's the approach I took to load and view the `hbp3456` data.
-
-```{r}
-#| message: false
-#| warning: false
-
-library(janitor)
-library(tidyverse)
-
-knitr::opts_chunk$set(comment = NA)
-
-hbp3456 <- read_csv("https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/hbp3456.csv", show_col_types = FALSE) |>
-  clean_names() |>
-  mutate(record = as.character(record))
-
-hbp3456
-```
+c. (10 points) Use your model from part b. to make a prediction for the probability of a depression diagnosis for a "new" patient at the practice who had 4 primary care visits in the past two years, and state that prediction clearly. How does this prediction compare to the actual fraction of patients at this practice with 4 primary care visits in the past two years who have a depression diagnosis?
 
 # Use of AI
 
 If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI", after your answers to our questions, and just *before* your presentation of the Session Information. Thank you.
 
-# Include the Session Information
+## Be sure to include Session Information
 
 Please display your session information at the end of your submission, as shown below.
 
@@ -222,8 +66,6 @@ xfun::session_info()
 
 ## After the Lab
 
-We will post an answer sketch 24 hours after the Lab is due.
-
-We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
-
-See the [Lab Appeal Policy in our Syllabus](https://thomaselove.github.io/432-syllabus-2024/08-grading.html#lab-appeal-policy---request-a-review-via-google-form) if you are interested in having your Lab grade reviewed, and use [the Lab Regrade Request form specified there](https://bit.ly/432-2024-lab-regrades) to complete the task. Thank you.
+- We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.
+- We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
+- See the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you.

@@ -10,15 +10,13 @@ format:
 
 - Submit your work via [Canvas](https://canvas.case.edu/). 
 - The deadline for this Lab is specified on the [Course Calendar](calendar.qmd).
-  - Work submitted more than 59 minutes late, but within 12 hours of the deadline will lose 5 of the available 50 points.
-  - Work submitted 12 to 24 hours after the deadline will lose 10 of the available 50 points.
-  - Work submitted more than 24 hours after the deadline will not be graded.
-
-Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
+  - We charge a 5 point penalty for a lab that is 1-48 hours late.
+  - We do not grade work that is more than 48 hours late.
+- Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
 
 ## Template
 
-There is a [Lab 1 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/lab1_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data). Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work.
+There is a [Lab 1 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab1_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data). Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work.
 
 ## Our Best Advice
 
@@ -26,110 +24,46 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 ## The Data
 
-The `oh_counties_2022.csv` data set I have provided describes a series of variables, pulled from the data for the 88 counties of the the State of Ohio from the [County Health Rankings](http://www.countyhealthrankings.org/rankings/data/oh) report for **2022**. 
+The `chr_2024.csv` data set we have provided describes a series of 30 variables, pulled from the data for 3054 counties in the [County Health Rankings](http://www.countyhealthrankings.org/rankings/data/oh) report for **2024**. 
 
-- The `oh_counties_2022.csv` file is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
-- Several detailed County Health Rankings files augment these 2022 Ohio Rankings Data. Find [those items here](https://www.countyhealthrankings.org/app/ohio/2022/downloads) if you're interested. Remember to use the **2022** files.
-
-## The Variables
-
-The available variables are listed below.  Each variable describes data at the **COUNTY** level.
-
-Variable | Description
-:-----------: | ------------------------------------------------------------------------------
-`fips` | Federal Information Processing Standard code
-`county` | name of County
-`years_lost_rate` | age-adjusted years of potential life lost rate (per 100,000 population)
-`sroh_fairpoor` | % of adults reporting fair or poor health (via BRFSS)
-`phys_days` | mean number of reported physically unhealthy days per month
-`ment_days` | mean number of reported mentally unhealthy days per mo
-`lbw_pct` | % of births with low birth weight (< 2500 grams)
-`smoker_pct` | % of adults that report currently smoking
-`obese_pct` | % of adults that report body mass index of 30 or higher
-`food_env` | indicator of access to healthy foods, in points (0 is worst, 10 is best)
-`inactive_pct` | % of adults that report no leisure-time physical activity
-`exer_access` | % of the population with access to places for physical activity
-`exc_drink` | % of adults that report excessive drinking
-`alc_drive` | % of driving deaths with alcohol involvement
-`sti_rate` | Chlamydia cases / Population x 100,000
-`teen_births` | Teen births / females ages 15-19 x 1,000
-`uninsured` | % of people under age 65 without insurance
-`pcp_ratio` | Population to Primary Care Physicians ratio
-`prev_hosp` | Rate of hospital stays for ambulatory-care sensitive conditions per 100,000 Medicare enrollees.
-`hsgrads` | High School graduation rate
-`unemployed` | % of population age 16+ who are unemployed and looking for work
-`poor_kids` | % of children (under age 18) living in poverty
-`income_ratio` | Ratio of household income at the 80th percentile to income at the 20th percentile
-`associations` | # of social associations / population x 10,000
-`pm2.5` | Average daily amount of fine particulate matter in micrograms per cubic meter
-`h2oviol` | Presence of a water violation: Yes or No
-`sev_housing` | % of households with at least 1 of 4 housing problems: overcrowding, high housing costs, or lack of kitchen or plumbing facilities
-`drive_alone` | % of workers who drive alone to work
-`age_adj_mortality` | premature age-adjusted mortality
-`dm_prev` | % of adults with a diabetes diagnosis
-`freq_phys_distress` | % in frequent physical distress
-`freq_mental_distress` | % in frequent mental distress
-`food_insecure` | % who are food insecure
-`insuff_sleep` | % who get insufficient sleep
-`median_income` | estimated median income
-`population` | population size 
-`age65plus` | % of population who are 65 and over
-`african_am` | % of population who are African-American
-`hispanic` | % of population who are of Hispanic/Latino ethnicity
-`white` | % of population who are White
-`female` | % of population who are Female
-`rural` | % of people in the county who live in rural areas 
-
-## Loading the Data
-
-Applying the `clean_names()` function from the `janitor` package as part of the initial `oh22` creation process, as I've done in my code below, is a sensible strategy. We hope you'll adopt it when ingesting almost any data you ever try to pull into R.
-
-```{r}
-#| message: false
-#| warning: false
-
-library(janitor)
-library(tidyverse)
-
-knitr::opts_chunk$set(comment = NA)
-
-oh22 <- read_csv("https://raw.githubusercontent.com/THOMASELOVE/432-data/master/data/oh_counties_2022.csv", show_col_types = FALSE) |>
-  clean_names() |>
-  mutate(fips = as.character(fips))
-
-oh22
-```
+- The `chr_2024.csv` file is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
+- A detailed codebook for all of the data in the `chr_2024` file [is available here](chr_codebook.qmd).
 
 
 # Question 1 (20 points)
 
-Create a visualization (using R and Quarto) based on some part of the `oh_counties_2022.csv` data set we have provided, and share it (the visualization and **all of** the R code you used to build it) with us.
+Load the data from `chr_2024.csv` into R appropriately. You should see 30 variables and 3054 counties (rows) in your data. Now, filter your data to create a new data set called `ohio24` which should include only the 88 counties located in the state of Ohio. 
+
+a. (5 points) Use R code to demonstrate concisely that there are no missing values in the 88 Ohio counties for any of the 30 variables in the `ohio24` data.
+
+b. (15 points) Then create a visualization (using R and Quarto) based on your `ohio24` data to help describe the 88 Ohio counties and share it (the visualization and **all of** the R code you used to build it) with us.
 
 The visualization should:
 
 - be of a professional quality,
-- describe information from at least three different variables from those listed above 
-  - you are welcome to transform or re-express the variables if that is of interest to you
-  - please do not use the `obese_pct` variable, since we will look at that in Question 2, below.
+- describe information from **three** different variables from this list of 15 below:
+  - `prem_death`, `pf_health`, `poor_phys`, `poor_ment`, `low_bwt`
+  - `smoking`, `drinking`, `sti_rate`, `unins`, `pcp_rate`
+  - `unins`, `hs_grad`, `sev_hous`, `commute`, `non_eng`
+- you are welcome to transform or re-express the variables if that is of interest to you
+  - the main option we have in mind is an attractive faceted scatterplot showing the association of two of the variables divided into categories by a third variable
 - include proper labels and a meaningful title,
 - include a caption of no more than 75 words that highlights the key result. Your caption can be placed within the visualization, or in a note below.
 - In developing your caption, I find it helpful to think about what question this visualization is meant to answer, and then provide a caption which makes it clear what the question (and answer) is.
 
 You are welcome to find useful tools for visualizing data in R that we have seen in either 431 or 432 or elsewhere. 
 
-Although you may fit a model to help show patterns, your primary task is to show the data in a meaningful way, rather than to simply highlight the results of a model.
+Although you may fit a model to help show patterns if you like, your primary task is to show the data in a meaningful way, rather than to simply highlight the results of a model.
 
-We will evaluate Question 1 based on the quality of the visualization, its title and caption, in terms of being attractive, well-labeled and useful for representing the County Health Rankings data for Ohio, and how well it adheres to general principles for good visualizations we’ve seen in 431 and 432.
+We will evaluate Question 1 based on the quality of the visualization, its title and caption, in terms of being attractive, well-labeled and useful for representing the data reported in County Health Rankings 2024 for Ohio, and how well it adheres to general principles for good visualizations we’ve seen in 431 and 432.
 
 # Question 2 (30 points)
 
-Create a linear regression model using the `oh22` data you developed in Question 1 to predict `obese_pct` as a function of `food_env` adjusting for `median_income`, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model `model1`.
+Create a linear regression model using the data for the state of Ohio that you developed in Question 1 to predict `obesity` as a function of `food_env` adjusting for `unemployment`, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model `model1`.
 
-a. Provide R code which specifies the estimated coefficient of `food_env` and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences. 
-
-b. Evaluate the quality of the model you fit in terms of adherence to regression modeling assumptions, through the specification and written evaluation of the four basic regression residual plots. Then reflect on your findings in a few complete sentences: what might be done to improve the fit of the model you’ve developed? Be sure to identify by name any outlying counties and explain why they are flagged as outliers.
-
-c. Use the `glance` function in the `broom` package to help you create an attractive table which compares `model1` to a simple linear model (called `model2`) for the same outcome (`obese_pct`) which uses only the `food_env` variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and residual standard error within the complete sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio 2022 data more effectively, and why?
+a. (10 points) Provide R code which specifies the estimated coefficient of `food_env` and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences. 
+b. (10 points) Evaluate the quality of the model you fit in terms of adherence to regression modeling assumptions, through the specification and written evaluation of a set of regression residual plots. Then reflect on your findings in a few complete sentences: what might be done to improve the fit of the model you’ve developed? Be sure to identify by name any outlying counties and explain why they are flagged as outliers.
+c. (10 points) Create an attractive table which compares `model1` to a simple linear model (called `model2`) for the same outcome (`obesity`) which uses only the `food_env` variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio `obesity` data for 2021 (that were reported in CHR 2024) more effectively, and why?
 
 # Use of AI
 
@@ -145,8 +79,7 @@ xfun::session_info()
 
 ## After the Lab
 
-We will post an answer sketch 24 hours after the Lab is due.
+- We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.
+- We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
+- See the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you.
 
-We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
-
-See the [Lab Appeal Policy in our Syllabus](https://thomaselove.github.io/432-syllabus-2024/08-grading.html#lab-appeal-policy---request-a-review-via-google-form) if you are interested in having your Lab grade reviewed, and use [the Lab Regrade Request form specified there](https://bit.ly/432-2024-lab-regrades) to complete the task. Thank you.

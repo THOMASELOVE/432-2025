@@ -24,12 +24,12 @@ website:
         menu: 
           - lab1.qmd
           - lab2.qmd
-          - lab3.qmd
-          - lab4.qmd
-          - lab5.qmd
-          - lab6.qmd
-          - lab7.qmd
-          - lab8.qmd
+          #- lab3.qmd
+          #- lab4.qmd
+          #- lab5.qmd
+          #- lab6.qmd
+          #- lab7.qmd
+          #- lab8.qmd
       - text: "Projects"
         menu: 
           - projA.qmd
@@ -59,7 +59,6 @@ website:
 format:
   html:
     theme: litera
-    css: styles.css
     toc: true
     date-format: iso
     code-overflow: wrap
