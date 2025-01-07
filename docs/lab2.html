@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-06">
+<meta name="dcterms.date" content="2025-01-07">
 
 <title>Lab 2 – 432-2025</title>
 <style>
@@ -192,6 +192,22 @@ window.Quarto = {
     <a class="dropdown-item" href="./lab3.html">
  <span class="dropdown-text">Lab 3</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./lab4.html">
+ <span class="dropdown-text">Lab 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab5.html">
+ <span class="dropdown-text">Lab 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab6.html">
+ <span class="dropdown-text">Lab 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab7.html">
+ <span class="dropdown-text">Lab 7</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -244,7 +260,7 @@ window.Quarto = {
  <span class="dropdown-text">Canvas (submissions &amp; recordings)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tocome.html">
+    <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/0AJiAzE5flLrYUk9PVA">
  <span class="dropdown-text">Shared Google Drive</span></a>
   </li>  
         <li>
@@ -309,7 +325,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-06</p>
+      <p class="date">2025-01-07</p>
     </div>
   </div>
   
@@ -335,6 +351,9 @@ window.Quarto = {
 <section id="template" class="level2">
 <h2 class="anchored" data-anchor-id="template">Template</h2>
 <p>There is a <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab2_template.qmd">Lab 2 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a>. Please use the template to prepare your response to Lab 2, as it will make things easier for you and for the people grading your work.</p>
+<ul>
+<li>In the Lab 2 template, we use the <code>zephyr</code> theme. If you’d like to use a different theme, <a href="https://quarto.org/docs/output-formats/html-themes.html">the available list is here</a>.</li>
+</ul>
 </section>
 <section id="our-best-advice" class="level2">
 <h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
@@ -353,14 +372,14 @@ window.Quarto = {
 <p>Import the data from the <code>hbp_3024.xlsx</code> file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with <code>NA</code>. You should find 8 variables which have at least 1 missing value.</p>
 <p>Please explicitly state in your response that you assume that the missingness you observe in these data are MCAR, and that a complete case analysis is thus appropriate for this Question.</p>
 <ol type="a">
-<li>(10 points) Describe the impact of <strong>insurance</strong> status on a subject’s <strong>systolic blood pressure</strong>, adjusting for whether or not they have a prescription for an <strong>ACE inhibitor</strong>. To do this, build a linear model using the <code>lm</code> function, after first deciding whether your model should include an interaction term in a sensible way (providing a graph to help us understand your reasoning.) Display your resulting model’s coefficients (along with 90% confidence intervals for the estimates) in an attractive way. Be sure to specify the number of observations your model uses.</li>
+<li>{10 points} Describe the impact of <strong>insurance</strong> status on a subject’s <strong>systolic blood pressure</strong>, adjusting for whether or not they have a prescription for an <strong>ACE inhibitor</strong>. To do this, build a linear model using the <code>lm</code> function, after first deciding whether your model should include an interaction term in a sensible way (providing a graph to help us understand your reasoning.) Display your resulting model’s coefficients (along with 90% confidence intervals for the estimates) in an attractive way. Be sure to specify the number of observations your model uses.</li>
 </ol>
 <ul>
 <li>One graph you might use would be one to assess the need for an interaction term, probably via a plot of means.</li>
 <li>Another graph (or perhaps table) to consider for insight would look at the relationship between <strong>insurance</strong> and <strong>ace inhibitor</strong> status in these subjects.</li>
 </ul>
 <ol start="2" type="a">
-<li>(15 points) Provide a written explanation of your findings, in complete sentences. Your explanation should address all of the following:</li>
+<li>{15} Provide a written explanation of your findings, in complete sentences. Your explanation should address all of the following:</li>
 </ol>
 <ul>
 <li>the overall quality of fit (at minimum, the <span class="math inline">\(R^2\)</span> and residual standard error, interpreted in context),</li>
@@ -371,9 +390,9 @@ window.Quarto = {
 <section id="question-2-25-points" class="level1">
 <h1>Question 2 (25 points)</h1>
 <ol type="a">
-<li><p>(5 points) Again using the data in <code>hbp_3024.xlsx</code>, which of the seven practices has the largest mean number of visits for primary care in the past two years? Show how you figured this out using R.</p></li>
-<li><p>(10 points) For the 432 subjects associated with the practice you identified in part a, predict the probability of a depression diagnosis on the basis of the subject’s number of visits for primary care in the past two years using a logistic regression model. Obtain and then interpret the coefficient of your predictor as an odds ratio, with a 90% confidence interval.</p></li>
-<li><p>(10 points) Use your model from part b. to make a prediction for the probability of a depression diagnosis for a “new” patient at the practice who had 4 primary care visits in the past two years, and state that prediction clearly. How does this prediction compare to the actual fraction of patients at this practice with 4 primary care visits in the past two years who have a depression diagnosis?</p></li>
+<li><p>{5} Again using the data in <code>hbp_3024.xlsx</code>, which of the seven practices has the largest mean number of visits for primary care in the past two years? Show how you figured this out using R.</p></li>
+<li><p>{10} For the 432 subjects associated with the practice you identified in part a, predict the probability of a depression diagnosis on the basis of the subject’s number of visits for primary care in the past two years using a logistic regression model. Obtain and then interpret the coefficient of your predictor as an odds ratio, with a 90% confidence interval.</p></li>
+<li><p>{10} Use your model from part b. to make a prediction for the probability of a depression diagnosis for a “new” patient at the practice who had 4 primary care visits in the past two years, and state that prediction clearly. How does this prediction compare to the actual fraction of patients at this practice with 4 primary care visits in the past two years who have a depression diagnosis?</p></li>
 </ol>
 </section>
 <section id="use-of-ai" class="level1">

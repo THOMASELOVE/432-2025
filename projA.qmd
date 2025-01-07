@@ -9,8 +9,8 @@ In Project A, you will be analyzing, presenting and discussing a pair of regress
 
 There are two main deliverables:
 
-- The Project A Plan, due in mid-February when the [Calendar](calendar.qmd) says it is.
-- The Project A Portfolio and Presentation, due right after Spring Break, as the [Calendar](calendar.qmd) indicates.
+- The Project A Plan, due when the [Calendar](calendar.qmd) says it is.
+- The Project A Portfolio and Presentation, due when the [Calendar](calendar.qmd) indicates.
 
 All Project A work is submitted [via Canvas](https://canvas.case.edu/).
 
@@ -20,7 +20,12 @@ If you decide to use some sort of AI to help you with any part of the Project, w
 
 ## Templates
 
-On our [432-data page](https://github.com/THOMASELOVE/432-data), you will find (in the templates subfolder) a pair of Quarto templates: [one for the Project A Plan](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAplan_template.qmd), and [another for the Project A Portfolio](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAportfolio_template.qmd). Please use these templates in preparing your work. They will make completing and grading Project A much easier.
+On our [432-data page](https://github.com/THOMASELOVE/432-data), you will find a pair of Quarto templates: 
+
+- [this one is for the Project A Plan](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAplan_template.qmd), and 
+- [this one is for the Project A Portfolio](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAportfolio_template.qmd). 
+
+Please use these templates in preparing your work. They will make completing and grading Project A much easier.
 
 ## Working with a Partner?
 
@@ -35,16 +40,7 @@ Sanity checks are an important part of your programming, but they don't belong i
 
 ## Demonstration Project
 
-Dr. Love posted .qmd and .html files for a demonstration project to our **Shared Google Drive**. Please take a look.
-
-## Deadlines
-
-The deadline to receive full credit for the 432 Project A portfolio (including HTML, qmd, Rds and video files) is now specified in the [Calendar](calendar.qmd) as Noon on Tuesday 2024-03-19. I'd like to avoid getting a lot of emails pleading for extensions. So, we have established two additional deadlines:
-
-1. If all four elements of your work are not submitted by Tuesday 2024-03-19 at Noon, you can instead submit them by Wednesday 2024-03-20 at NOON while taking a penalty of 5 points (out of 100).
-2. If your work is not submitted by Wednesday at noon, you can instead submit it by Friday 2024-03-22 at 11:59 PM while taking a total penalty of 10 points (out of 100).
-
-That's it. We won't accept work after Friday March 22nd at 11:59 PM.
+Dr. Love will post .qmd and .html files for a demonstration project to our **Shared Google Drive** when he can.
 
 # Need Help?
 
@@ -60,7 +56,8 @@ Questions about Project A may be directed to the TAs and to Professor Love at an
         Plan. Any data you cannot have by that time is a bad choice.
     -   For Project A, you may not use any data set used in the 431 or
         432 teaching materials. 
-    -   You must use meaningfully different data sets in 432 Projects A
+    -   For Project A, do not use data from NHANES or from County Health Rankings.    
+    -   You will need to use meaningfully different data sets in 432 Projects A
         and B.
     -   In submitting your Project A Plan, you will need to be able to write
         “I am certain that it is completely appropriate for these data
@@ -68,11 +65,11 @@ Questions about Project A may be directed to the TAs and to Professor Love at an
         concerns about privacy or security.” So be sure that’s true
         before you pick a data set.
 2.  **Size**.
-    -   A **minimum** of 100 complete observations are required on each
+    -   A **minimum** of 150 complete observations are required on each
         variable. It is fine if there are some missing values, as well,
-        so long as there are at least 100 rows with complete
+        so long as there are at least 150 rows with complete
         observations on all variables you intend to use in each model.
-    -   The **maximum** data set size is 1200 observations, so if you
+    -   The **maximum** data set size is 2000 observations, so if you
         have something larger than that, you’ll need to select a random
         subset of the available information as part of your data tidying
         process.
@@ -86,10 +83,10 @@ Questions about Project A may be directed to the TAs and to Professor Love at an
 4.  **Inputs**. You will need at least four regression inputs
     (predictors) for each of your two models.
     -   At least one of the four must be quantitative (a variable is
-        **not** quantitative for this purpose unless it has at least 10
+        **not** quantitative for this purpose unless it has more than 10
         different, ordered, observed values), *and* at least one must be
         multi-categorical (with between 3 and 6 categories, each
-        containing a minimum of 30 subjects) for each model.
+        containing a minimum of **30** subjects) for each model.
     -   Your other inputs can represent binary, multi-categorical or
         quantitative data.
     -   You can examine different candidate predictors for each outcome,
@@ -109,7 +106,7 @@ In each project this semester, we will require you to study cross-sectional data
 
 ### Joining multiple data sets
 
-Dr. Love will be especially impressed with a data collection effort that *appropriately* puts together at least two different data bases, should that be appropriate.
+Dr. Love will be pleased with a data collection effort that *appropriately* puts together at least two different data bases, should that be appropriate.
 
 What we have in mind are the following scenarios:
 
@@ -119,7 +116,7 @@ What we have in mind are the following scenarios:
 
 If your project research questions and available data lead to one of these approaches, great. If not, don't force it.
 
-This may require you to learn something about the various joining commands, like `left_join` and `inner_join` that are highlighted in the Combine Data Sets section on the [Data Transformation Cheat Sheet](https://posit.co/wp-content/uploads/2022/10/data-transformation-1.pdf) from [Posit](https://posit.co/resources/cheatsheets/). 
+This may require you to learn something about the various joining commands, like `left_join` and `inner_join` that are highlighted in the Combine Data Sets section on the [Data Transformation Cheat Sheet](https://rstudio.github.io/cheatsheets/html/data-transformation.html) from [Posit](https://rstudio.github.io/cheatsheets/). 
 
 - We heartily recommend Garret Grolemund's YouTube materials on Data Wrangling, for instance [this Introduction to Data Manipulation](https://www.youtube.com/watch?v=AuBgYDCg1Cg) which is about combining multiple data sets.
 - Another great resource for combining data sets (and most of your other R questions) is the second edition of [R for Data Science](https://r4ds.hadley.nz/), by Wickham and Grolemund.
@@ -135,7 +132,7 @@ Some sources of data we’d like to see people use include:
 4.  The [Health and Retirement Study](https://hrsdata.isr.umich.edu/data-products/public-survey-data?_ga=2.79574685.849210420.1612760982-241136149.1612760982)
 5.  The [General Social Survey](https://gssdataexplorer.norc.org/) although the problem there is a lack of quantitative variables.
 6.  The many many public use data sets available at [ICSPR](https://www.icpsr.umich.edu/icpsrweb/ICPSR/)
-7.  The [500 Cities and PLACES data portal](https://chronicdata.cdc.gov/browse?category=500+Cities+%26+Places&sortBy=newest&utf8), most probably focusing on the [County-level data](https://chronicdata.cdc.gov/500-Cities-Places/PLACES-Local-Data-for-Better-Health-County-Data-20/swc5-untb) and potentially combining it with [County Health Rankings 2022](https://www.countyhealthrankings.org/).
+7.  The [500 Cities and PLACES data portal](https://chronicdata.cdc.gov/browse?category=500+Cities+%26+Places&sortBy=newest&utf8), most probably focusing on the [County-level data](https://chronicdata.cdc.gov/500-Cities-Places/PLACES-Local-Data-for-Better-Health-County-Data-20/swc5-untb).
 8.  [National Center on Health Statistics](https://www.cdc.gov/nchs/data_access/ftp_data.htm) which includes NHANES (not a good choice for this project) but also other data sets.
 9.  [Behavioral Risk Factor Surveillance System](https://www.cdc.gov/brfss/data_documentation/index.htm)
 
@@ -180,8 +177,8 @@ Please keep the main title to no more than 80 characters, including spaces. You 
 
 You’ll load necessary packages at the start in an unnumbered section of your work, following the [template](#templates).
 
-- Do not use `source("Love-boost.R")` or any other R script or package unless you actually need something it provides.
-- Do not load core elements of `tidyverse` or `tidymodels` separately. instead just load the meta-packages, and do so last.
+- Do not source in an R script or package unless you actually need something it provides.
+- Do not load core elements of `tidyverse` or `easystats` separately. instead just load the meta-packages, and do so last.
 - Use `#| message: false` as part of your Quarto code chunk where the packages are listed (as we have done in the [template](#templates)) to eliminate HTML messages about when packages were built or how objects were masked.
 
 ### 1. Data Source
@@ -206,7 +203,7 @@ Tidy and clean up the data to meet all necessary requirements for your modeling 
 
 - Eliminate all variables that are not going to be used (either as identifiers, outcomes or inputs) in your planned analyses.
 - Change variable names to more meaningful ones, although it’s helpful to keep them at 10 characters or less. Use `clean_names()` from the `janitor` package to clean up and standardize the presentation of variable names.
-- Sample the data as needed to ensure that you meet the data set size specifications (no more than 1200 rows, for instance.)
+- Sample the data as needed to ensure that you meet the data set size specifications (no more than 2000 rows, for instance.)
 - Convert all variables to appropriate types (factors, etc.) as needed, and complete appropriate checks of the values for all variables.
 - If you have prospective inputs (predictors) that are multi-categorical with more than 6 categories, collapse them to six or fewer categories in a rational way at this stage.
 - Ensure that all categorical variables have at least 30 observations at each level, collapsing or removing levels as needed to accomplish this end.
@@ -258,7 +255,7 @@ As an example, here’s a part of a simple table:
 
 #### 5.2 Numerical Description
 
-Here, run the `describe` command from the `Hmisc` package on your entire tibble. Be sure that the results match up with what you’ve described in defining the variables, and that the same variables appear, in the same order, in the codebook and in these results.
+Here, run the `data_codebook()` command on your entire tibble. Be sure that the results match up with what you’ve described in defining the variables, and that the same variables appear, in the same order, in the codebook and in these results.
 
 ### 6. Linear Regression Plans
 
@@ -289,14 +286,14 @@ This subsection tells us what you will use your linear regression model to expla
 - Provide a count of the number of rows in your data with complete information on this outcome.
 - Provide a nicely labeled graphical summary of the distribution of your outcome to supplement the numerical description you provided in Section 5.2.
 - Comment briefly on the characteristics of the outcome’s distribution. Is your outcome skewed or symmetric, is it discrete or fairly continuous, is there a natural transformation to consider? 
-- Demonstrate that the variable you have selected meets the standard for a quantitative variable used in this Project, specifically that it has at least 10 different, ordered, observed values.
+- Demonstrate that the variable you have selected meets the standard for a quantitative variable used in this Project, specifically that it has more than 10 different, ordered, observed values.
 
 #### 6.3 My Planned Predictors (Linear Model)
 
 Now, tell us precisely which four (or more) candidate predictors (inputs) you intend to use for your linear regression model.
 
 - Please use the variable names that appear in your code book and tibble.
-- Demonstrate to us that you have at least one input which is quantitative, specifically that it has at least 10 different, ordered, observed values.
+- Demonstrate to us that you have at least one input which is quantitative, specifically that it has more than 10 different, ordered, observed values.
 - Demonstrate to us that you have at least one categorical input which has between 3 and 6 categories, that will be used as a factor in your modeling, and that has at least 30 observations in each level of the factor. If necessary, you can create such a predictor from a quantitative one, but if you are doing this, remember that only the multi-categorical version of the predictor should be included in your models.
 - Demonstrate that the total number of candidate predictors you suggest is no more than $4 + (N_1 - 100)/100$, rounding down, where $N_1$ is the number of rows with complete outcome data in your tibble.
 
@@ -541,12 +538,12 @@ As mentioned above, it is crucial to review your HTML output file carefully befo
 # The Presentation
 
 You (with your partner, if you have one) will build and record a single
-slide presentation (not to exceed 5 minutes) of what you feel is **the
+slide presentation (not to exceed **four** minutes) of what you feel is **the
 single most** important finding from your Project A.
 
 -   If you have a partner, you should record a single presentation with
     both of your voices included for about an equal amount of time, and
-    the total time should not exceed 5 minutes.
+    the total time should not exceed **four** minutes.
 
 ## Your Audience
 
@@ -557,7 +554,7 @@ excited about it?
 
 ## Outline of the Presentation
 
-Your presentation should include fewer than 10 slides.
+Your presentation should include fewer than 10 slides, since you only have **four** minutes.
 
 Your “most important finding” is just going to be one of many
 potentially interesting findings in your Project. Your job in the

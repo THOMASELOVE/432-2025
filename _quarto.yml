@@ -25,6 +25,10 @@ website:
           - lab1.qmd
           - lab2.qmd
           - lab3.qmd
+          - lab4.qmd
+          - lab5.qmd
+          - lab6.qmd
+          - lab7.qmd
       - text: "Projects"
         menu: 
           - projA.qmd
@@ -43,7 +47,7 @@ website:
         - text: "Canvas (submissions & recordings)"
           href: https://canvas.case.edu/
         - text: "Shared Google Drive"
-          href: tocome.qmd
+          href: https://drive.google.com/drive/u/1/folders/0AJiAzE5flLrYUk9PVA
         - text: "Minute Papers (Github)"
           href: tocome.qmd
         - text: "Class READMEs (Github)"

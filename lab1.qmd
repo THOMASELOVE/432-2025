@@ -18,6 +18,8 @@ format:
 
 There is a [Lab 1 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab1_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data). Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work.
 
+- In the Lab 1 template, we use the `flatly` theme. If you'd like to use a different theme, [the available list is here](https://quarto.org/docs/output-formats/html-themes.html).
+
 ## Our Best Advice
 
 Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
@@ -34,9 +36,9 @@ The `chr_2024.csv` data set we have provided describes a series of 30 variables,
 
 Load the data from `chr_2024.csv` into R appropriately. You should see 30 variables and 3054 counties (rows) in your data. Now, filter your data to create a new data set called `ohio24` which should include only the 88 counties located in the state of Ohio. 
 
-a. (5 points) Use R code to demonstrate concisely that there are no missing values in the 88 Ohio counties for any of the 30 variables in the `ohio24` data.
+a. {5 points} Use R code to demonstrate concisely that there are no missing values in the 88 Ohio counties for any of the 30 variables in the `ohio24` data.
 
-b. (15 points) Then create a visualization (using R and Quarto) based on your `ohio24` data to help describe the 88 Ohio counties and share it (the visualization and **all of** the R code you used to build it) with us.
+b. {15} Then create a visualization (using R and Quarto) based on your `ohio24` data to help describe the 88 Ohio counties and share it (the visualization and **all of** the R code you used to build it) with us.
 
 The visualization should:
 
@@ -61,9 +63,9 @@ We will evaluate Question 1 based on the quality of the visualization, its title
 
 Create a linear regression model using the data for the state of Ohio that you developed in Question 1 to predict `obesity` as a function of `food_env` adjusting for `unemployment`, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model `model1`.
 
-a. (10 points) Provide R code which specifies the estimated coefficient of `food_env` and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences. 
-b. (10 points) Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using `check_model()`. Describe any problems you see with the residual plots in complete sentences.
-c. (10 points) Create an attractive table which compares `model1` to a simple linear model (called `model2`) for the same outcome (`obesity`) which uses only the `food_env` variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio `obesity` data for 2021 (that were reported in CHR 2024) more effectively, and why?
+a. {10 points} Provide R code which specifies the estimated coefficient of `food_env` and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences. 
+b. {10} Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using `check_model()`. Describe any problems you see with the residual plots in complete sentences.
+c. {10} Create an attractive table which compares `model1` to a simple linear model (called `model2`) for the same outcome (`obesity`) which uses only the `food_env` variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio `obesity` data for 2021 (that were reported in CHR 2024) more effectively, and why?
 
 # Use of AI
 

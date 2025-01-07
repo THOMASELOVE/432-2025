@@ -163,6 +163,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./lab3.html">
  <span class="dropdown-text">Lab 3</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./lab4.html">
+ <span class="dropdown-text">Lab 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab5.html">
+ <span class="dropdown-text">Lab 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab6.html">
+ <span class="dropdown-text">Lab 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab7.html">
+ <span class="dropdown-text">Lab 7</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -215,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Canvas (submissions &amp; recordings)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tocome.html">
+    <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/0AJiAzE5flLrYUk9PVA">
  <span class="dropdown-text">Shared Google Drive</span></a>
   </li>  
         <li>
@@ -306,6 +322,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="template" class="level2">
 <h2 class="anchored" data-anchor-id="template">Template</h2>
 <p>There is a <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab1_template.qmd">Lab 1 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a>. Please use the template to prepare your response to Lab 1, as it will make things easier for you and for the people grading your work.</p>
+<ul>
+<li>In the Lab 1 template, we use the <code>flatly</code> theme. If you’d like to use a different theme, <a href="https://quarto.org/docs/output-formats/html-themes.html">the available list is here</a>.</li>
+</ul>
 </section>
 <section id="our-best-advice" class="level2">
 <h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
@@ -324,8 +343,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Question 1 (20 points)</h1>
 <p>Load the data from <code>chr_2024.csv</code> into R appropriately. You should see 30 variables and 3054 counties (rows) in your data. Now, filter your data to create a new data set called <code>ohio24</code> which should include only the 88 counties located in the state of Ohio.</p>
 <ol type="a">
-<li><p>(5 points) Use R code to demonstrate concisely that there are no missing values in the 88 Ohio counties for any of the 30 variables in the <code>ohio24</code> data.</p></li>
-<li><p>(15 points) Then create a visualization (using R and Quarto) based on your <code>ohio24</code> data to help describe the 88 Ohio counties and share it (the visualization and <strong>all of</strong> the R code you used to build it) with us.</p></li>
+<li><p>{5 points} Use R code to demonstrate concisely that there are no missing values in the 88 Ohio counties for any of the 30 variables in the <code>ohio24</code> data.</p></li>
+<li><p>{15} Then create a visualization (using R and Quarto) based on your <code>ohio24</code> data to help describe the 88 Ohio counties and share it (the visualization and <strong>all of</strong> the R code you used to build it) with us.</p></li>
 </ol>
 <p>The visualization should:</p>
 <ul>
@@ -352,9 +371,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Question 2 (30 points)</h1>
 <p>Create a linear regression model using the data for the state of Ohio that you developed in Question 1 to predict <code>obesity</code> as a function of <code>food_env</code> adjusting for <code>unemployment</code>, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model <code>model1</code>.</p>
 <ol type="a">
-<li>(10 points) Provide R code which specifies the estimated coefficient of <code>food_env</code> and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences.</li>
-<li>(10 points) Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using <code>check_model()</code>. Describe any problems you see with the residual plots in complete sentences.</li>
-<li>(10 points) Create an attractive table which compares <code>model1</code> to a simple linear model (called <code>model2</code>) for the same outcome (<code>obesity</code>) which uses only the <code>food_env</code> variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio <code>obesity</code> data for 2021 (that were reported in CHR 2024) more effectively, and why?</li>
+<li>{10 points} Provide R code which specifies the estimated coefficient of <code>food_env</code> and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences.</li>
+<li>{10} Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using <code>check_model()</code>. Describe any problems you see with the residual plots in complete sentences.</li>
+<li>{10} Create an attractive table which compares <code>model1</code> to a simple linear model (called <code>model2</code>) for the same outcome (<code>obesity</code>) which uses only the <code>food_env</code> variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio <code>obesity</code> data for 2021 (that were reported in CHR 2024) more effectively, and why?</li>
 </ol>
 </section>
 <section id="use-of-ai" class="level1">

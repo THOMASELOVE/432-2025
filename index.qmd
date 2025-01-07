@@ -5,9 +5,13 @@ date: last-modified
 
 ## Welcome! 
 
-PQHS/CRSP/MPHP 432 is the second half ([431 is the first half](https://thomaselove.github.io/431-2024/)) of a two-semester course taught by Professor Thomas Love in the Department of Population and Quantitative Health Sciences at Case Western Reserve University. 
+PQHS/CRSP/MPHP 432 is the second half ([431 is the first half](https://thomaselove.github.io/431-2024/)) of a two-semester course taught by Professor Thomas Love in the Department of Population and Quantitative Health Sciences at Case Western Reserve University.
 
 If you have any questions before class begins, contact Dr. Love at `Thomas dot Love at case dot edu`. Once the class starts, visit the [Contact Us](contact.qmd) page to learn more about how to get help from us.
+
+## This year’s class will be unusual.
+
+Thanks to Dr. Love’s recovery from a broken leg and ankle surgery, this year’s 432 class will be held remotely (via Zoom) before Spring Break, and then (mostly) in person starting March 18. See the [Course Calendar](calendar.qmd) for more details.
 
 ## Getting Started
 
@@ -15,24 +19,24 @@ Your first six steps in this course are to:
 
 1. Register and enroll via the [CWRU Student Information System (SIS)](https://sis.case.edu/).
     - Section 1 of PQHS 432, CRSP 432 and MPHP 432 are identical.
-2. Review this [course website](https://thomaselove.github.io/432-2024/), and be sure to visit the [Course Calendar](calendar.qmd), and skim through the [Course Syllabus](https://thomaselove.github.io/432-syllabus-2024/).
+2. Review this [course website](https://thomaselove.github.io/432-2025/), and be sure to visit the [Course Calendar](calendar.qmd), and skim through the [Course Syllabus](https://thomaselove.github.io/432-syllabus-2025/).
 3. You need to buy Jeff Leek's **How to be a Modern Scientist**, available electronically through <https://leanpub.com/modernscientist>. The suggested cost is $10, but you can pay what you want.
-4. Please fill out the [Welcome to 432 Survey](https://bit.ly/432-2024-welcome-survey) at <https://bit.ly/432-2024-welcome-survey> to help us get to know you a little better. Note that you must **log into Google via your CWRU account** in order to access the survey, which should take about 10 minutes to complete.
-5. Get started [installing the software](software.qmd) you'll need for the course.
-6. Attend our first class session in E321-323 in the Robbins building within the CWRU School of Medicine, on Tuesday 2024-01-16 at 1:00 PM.
+4. Please fill out the [Welcome to 432 Survey](https://bit.ly/432-2025-welcome-survey) at <https://bit.ly/432-2025-welcome-survey> to help us get to know you a little better. Note that you must **log into Google via your CWRU account** in order to access the survey, which should take about 10 minutes to complete.
+5. Get started [installing or updating the software](software.qmd) you'll need for the course.
+6. Attend our first class session via Zoom starting at 1 PM on 2024-01-14. Zoom information will be sent to all registered students via their CWRU email.
 
 ## Everything will appear here.
 
 Everything that Professor Love will provide to help you with the course will be linked through this website. The menu bar links to just about everything you'll need this semester, and its elements will go live as they become available. Things you'll find here include...
 
 - The [Course Calendar](calendar.qmd), which includes links to class materials, assignments and other information, and which is the final word on all deadlines for the course.
-- The [Course Syllabus](https://thomaselove.github.io/432-syllabus-2024/) for 432.
+- The [Course Syllabus](https://thomaselove.github.io/432-syllabus-2025/) for 432.
 - Professor Love's [Course Notes](https://thomaselove.github.io/432-notes/) for 432.
-- Details on Assignments, including [Projects](projA.qmd), [Quizzes](quiz1.qmd), [Labs](lab1.qmd) and [Minute Papers](https://github.com/THOMASELOVE/432-minute-2024)
+- Details on Assignments, including [Projects](projA.qmd), [Quizzes](quiz1.qmd), and [Labs](lab1.qmd).
 - Information on installing R and RStudio [software](software.qmd), installing key [R packages](software.qmd#r-packages-to-install), and [downloading data, code and templates](https://github.com/THOMASELOVE/432-data) you'll need for this class
 - Key Links to other systems that will help us deliver 432, including:
     - the [Canvas system](https://canvas.case.edu/) (CWRU log-in required) we use to communicate information about class recordings, and for turning in assignments
-    - our [Shared Google Drive](https://docs.google.com/document/d/1APMyDFUan1jQJPnNxq-_edE4IDpa-djbxCU0KdNfgFk/edit?usp=sharing) (CWRU log-in required) where we provide answer sketches for class assignments, an in-semester grading roster, and feedback on Minute Papers
+    - our Shared Google Drive (CWRU log-in required) where we provide answer sketches for class assignments, an in-semester grading roster, and feedback on work
     - the [Campuswire discussion board](https://campuswire.com/) for the 432 course
 - Information on places where you can [get help and contact us](contact.qmd) once the course begins.
 - Additional [Sources and references are here](https://github.com/THOMASELOVE/432-sources), including things to read or watch to supplement our main work

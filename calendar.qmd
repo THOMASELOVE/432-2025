@@ -1,113 +1,77 @@
 ---
-title: "Calendar for 432: Spring 2024"
+title: "Calendar for 432: Spring 2025"
 date-modified: last-modified
 ---
 
+## January 2025
 
-## End of Semester
+Class | Date | Location | Description
+:----: | :----: | :-----: | :---------------------------------------
+Class 1 | 01-14 | Zoom | Introduction and Logistics
+Class 2 | 01-16 | Zoom | Getting Up to Speed
+Class 3 | 01-21 | Zoom | Linear and Logistic Regression, 1
+[Lab 1](lab1.qmd) | 01-22 | Canvas | [Lab 1](lab1.qmd) due to Canvas at noon
+Class 4 | 01-23 | Zoom | Linear and Logistic Regression, 2
+Class 5 | 01-28 | Zoom | Linear and Logistic Regression, 3
+[Lab 2](lab2.qmd) | 01-29 | Canvas | [Lab 2](lab2.qmd) due to Canvas at noon
+Class 6 | 01-30 | Zoom | Linear and Logistic Regression, 4
 
-Please see [the end-of-semester page](https://github.com/THOMASELOVE/432-classes-2024/blob/main/end.md) for more details.
+## February 2025
 
-Link | Date | Details
-:----: | :----: | :---------------------------------
-[Proj B](projB.qmd) | WED <br /> 05-01 | 6 Project B presentations between [11:55 AM and 3:20 PM](https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md#wednesday-2024-05-01-afternoon) via Zoom <br /> 4 Project B presentations between [5:05 and 6:50 PM](https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md#wednesday-2024-05-01-evening) via Zoom.
-[Proj B](projB.qmd) | THU <br /> 05-02 | 6 Project B presentations between [1:00 PM and 3:45 PM](https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md#thursday-2024-05-02-early-afternoon-before-4-pm) via Zoom <br /> 5 Project B presentations between [5:05 and 6:10 PM](https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md#thursday-2024-05-02-final-five-presentations-4-pm-and-later) via Zoom.
-[Proj B](projB.qmd) | TUE <br /> 05-07 | Project B Portfolio and Data [due to Canvas](https://thomaselove.github.io/432-2024/projB.html#submitting-your-data) at noon <br /> (optional) Lab 1-7 [Regrade Request Form](https://bit.ly/432-2024-lab-regrades) due at noon <br /> Late Deadline for [Lab 8](lab8.qmd)
+Class | Date | Location | Description
+:----: | :----: | :-----: | :---------------------------------------
+Class 7 | 02-04 | Zoom | Linear and Logistic Regression, 5
+[Project A](projA.qmd) | 02-05 | Canvas | [Project A](projA.qmd) Plan due to Canvas at noon
+Class 8 | 02-06 | Zoom | Linear and Logistic Regression, 6
+Class 9 | 02-11 | Zoom | Linear and Logistic Regression, 7
+[Lab 3](lab3.qmd) | 02-12 | Canvas | [Lab 3](lab3.qmd) due to Canvas at noon
+Class 10 | 02-13 | Zoom | Linear and Logistic Regression, 8
+Class 11 | 02-18 | Zoom | Building Table 1
+[Lab 4](lab4.qmd) | 02-19 | Canvas | [Lab 4](lab4.qmd) due to Canvas at noon
+Class 12 | 02-20 | Zoom | Statistical Significance and its problems 
+Class 13 | 02-25 | Zoom | Power and Sample Size
+[Lab 5](lab5.qmd) | 02-26 | Canvas | [Lab 5](lab5.qmd) due to Canvas at noon
+Class 14 | 02-27 | Zoom | Power and Sample Size, Retrospective Design
+[Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at noon to all students
 
-**Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close on 2024-05-09. Thanks.
+## March 2025
 
+Class | Date | Location | Description
+:----: | :----: | :-----: | :---------------------------------------
+15 | 03-04 | Zoom | Catch Up, Ask Me Questions about [Quiz 1](quiz1.qmd)
+[Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at noon (covers classes 1-14)
+16 | 03-06 | Zoom | [Project A](projA.qmd): Ask Me Anything
+-- | 03-11 | -- | Spring Break
+-- | 03-13 | -- | Spring Break
+17 | 03-18 | In Person | Count and Multi-Categorical Outcomes, 1
+[Project A](projA.qmd) | 03-19 | Canvas | [Project A](projA.qmd) Portfolio due to Canvas at noon
+18 | 03-20 | In Person | Count and Multi-Categorical Outcomes, 2
+19 | 03-25 | In Person | Count and Multi-Categorical Outcomes, 3
+[Lab 6](lab6.qmd) | 03-26 | Canvas | [Lab 6](lab6.qmd) due to Canvas at noon
+20 | 03-27 | In Person | Count and Multi-Categorical Outcomes, 4
+
+## April 2025
+
+Class | Date | Location | Description
+:----: | :----: | :-----: | :---------------------------------------
+21 | 04-01 | In Person | Time to Event (Survival) Outcomes, 1
+[Project B](projB.qmd) | 04-02 | Google | [Project B](projB.qmd) Form due at noon
+22 | 04-03 | In Person | Time to Event (Survival) Outcomes, 2
+23 | 04-08 | In Person | Catch Up
+[Lab 7](lab7.qmd) | 04-09 | Canvas | [Lab 7](lab7.qmd) due to Canvas at noon
+24 | 04-10 | Zoom | [Project B](projB.qmd): Ask Me Anything
+25 | 04-15 | In Person | [Project B](projB.qmd) Presentations, 1
+26 | 04-17 | Zoom | [Project B](projB.qmd) Presentations, 2
+[Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students
+27 | 04-22 | Zoom | [Project B](projB.qmd) Presentations, 3
+[Quiz 2](quiz2.qmd) | 04-23 | Google | [Quiz 2](quiz2.qmd) due at noon (covers classes 1-24)
+28 | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
+
+**Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
 
 ## TA Office Hours
 
-Attend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin on Friday 2024-01-19, and continue through Wednesday 2024-05-01 except for Spring Break (no office hours March 9-15) and April 8 (Eclipse).
+Attend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin in mid-January.
 
-The complete schedule for TA office hours follows. All times Eastern.
+Zoom information to join these sessions will be posted to our **Shared Google Drive** when available.
 
-Date | Time(s)
-:-------: | :------------------
-Sundays | 7:00 PM to 8:30 PM
-Mondays | 11:40 AM to 12:50 PM, 5:00 PM to 6:30 PM, 8:00 - 9:30 PM
-Tuesdays | 8:00 PM to 9:30 PM
-Wednesdays | 6:00 PM to 7:30 PM
-Thursdays | 6:00 PM to 7:30 PM, 8:00 PM to 9:30 PM
-Fridays | 11:40 AM to 12:50 PM and 7:00 PM to 8:30 PM
-Saturdays | 10:30 AM to Noon
-
-Zoom information to join these sessions will be posted to our **Shared Google Drive** before the first session on Friday 2024-01-19.
-
-## January 2024
-
-Link | Date | Details
-:----: | :----: | :---------------------------------
-[Class 01](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class01) | TUE <br /> 01-16 | Getting Started, Using Quarto, Validation of Prediction Models
--- | WED <br /> 01-17 | [Welcome to 432 Survey](https://bit.ly/432-2024-welcome-survey) and join the 432 course at Campuswire by Noon.
-[Class 02](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class02) | THU <br /> 01-18 | Building a Detailed Project with NHANES Data (reviewing 431 ideas)
-[Lab 1](lab1.qmd) | TUE <br /> 01-23 | [Lab 1](lab1.qmd) due at Noon.
-[Class 03](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class03) | TUE <br /> 01-23 | Developing Inferences using Survey Weights
--- | WED <br /> 01-24 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 03 due at Noon.
-[Class 04](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class04) | THU <br /> 01-25 | Linear Regression and ANOVA/ANCOVA models
-[Lab 2](lab2.qmd) | TUE <br /> 01-30 | [Lab 2](lab2.qmd) due at Noon.
-[Class 05](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class05) | TUE <br /> 01-30 | Linear Regression using Non-linear terms and `ols`
--- | WED <br /> 01-31 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 05 due at Noon.
-
-**Note**: By the end of January, you should read Jeff Leek's [How to Be a Modern Scientist](https://leanpub.com/modernscientist), which should take about 4 hours.
-
-## February 2024
-
-Link | Date | Details
-:----: | :----: | :---------------------------------
-[Class 06](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class06) | THU <br /> 02-01 | Building Linear Models Effectively, Troubleshooting
-[Lab 3](lab3.qmd) | TUE <br /> 02-06 | [Lab 3](lab3.qmd) due at Noon.
-[Class 07](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class07) | TUE <br /> 02-06 | Logistic Regression for Binary Outcomes
--- | WED <br /> 02-07 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 07 due at Noon.
-[Class 08](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class08) | THU <br /> 02-08 | Logistic Regression with More Predictors
--- | **MON** <br /> 02-12 | [Project A plan](projA.qmd) due at Noon.
-[Class 09](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class09) | TUE <br /> 02-13 | Logistic Regression using Non-linear terms and `lrm`
--- | WED <br /> 02-14 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 09 due at Noon.
-[Class 10](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class10) | THU <br /> 02-15 | Building Logistic Models Effectively, Troubleshooting
-[Lab 4](lab4.qmd) | TUE <br /> 02-20 | [Lab 4](lab4.qmd) due at Noon.
-[Class 11](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class11) | TUE <br /> 02-20 | Variable Selection for Linear and Logistic Regression with `bestglm`.
--- | WED <br /> 02-21 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 11 due at Noon.
-[Class 12](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class12) | THU <br /> 02-22 | K-fold Cross-Validation, Building Table 1 <br /> [Quiz 1](quiz1.qmd) instructions made available by 5 PM.
-[Quiz 1](quiz1.qmd) | TUE <br /> 02-27 | [Quiz 1](quiz1.qmd) due at Noon.
-[Class 13](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class13) | TUE <br /> 02-27 | Thinking About Power: Retrospective Design, Robust Linear Models.
-[Class 14](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class14) | THU <br /> 02-29 | Quiz 1 discussion, Time-to-event (survival) data and Kaplan-Meier Curves
-
-## March 2024
-
-Link | Date | Details
-:----: | :----: | :---------------------------------
-[Lab 5](lab5.qmd) | TUE <br /> 03-05 | [Lab 5](lab5.qmd) due at Noon.
-[Class 15](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class15) | TUE <br /> 03-05 | Regression on Count Outcomes
--- | WED <br /> 03-06 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 15 due at Noon.
-[Class 16](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class16) | THU <br /> 03-07 | Miscellaneous Useful Things and Loose Ends
-Break | TUE 03-12 | Spring Break (03-11 through 03-15) - No class. <br /> Now is a great time to work on [Lab 8](lab8.qmd) in addition to [Project A](projA.qmd)
-Break | THU 03-14 | Spring Break (03-11 through 03-15) - No class.
-[Project A](projA.qmd) | **TUE** <br /> 03-19 | [Project A Portfolio](projA.qmd) due at Noon. **Note this change!**
-[Class 17](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class17) | TUE <br /> 03-19 | Regression on Ordinal Multi-Categorical Outcomes, 1
--- | WED <br /> 03-20 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 17 due at Noon.
-[Class 18](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class18) | THU <br /> 03-21 | Regression on Ordinal Multi-Categorical Outcomes, 2 <br /> [Project B Proposal Form](https://bit.ly/432-2024-projectB-proposal-form) will open
-[Lab 6](lab6.qmd) | TUE <br /> 03-26 | [Lab 6](lab6.qmd) due at Noon.
-[Class 19](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class19) | TUE <br /> 03-26 | Regression on Nominal Multi-Categorical Outcomes
--- | WED <br /> 03-27 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 19 due at Noon.
-[Class 20](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class20) | THU <br /> 03-28 | Introducing Hierarchical Models
-
-## April 2024
-
-Link | Date | Details
-:----: | :----: | :---------------------------------
-[Lab 7](lab7.qmd) | TUE <br /> 04-02 | [Lab 7](lab7.qmd) due at Noon.
-[Class 21](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class21) | TUE <br /> 04-02 | Comparing Survival Curves, Fitting Cox Models
--- | WED <br /> 04-03 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 21 due at Noon.
-[Class 22](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class22) | THU <br /> 04-04 | Fitting Cox Models with `cpm` <br /> Statistical Significance and its problems
-- | TUE <br /> 04-09 | No class. (Eclipse is April 8)
-[Project B](projB.qmd) | WED <br /> 04-10 | [Project B Proposal Form](https://bit.ly/432-2024-projectB-proposal-form) due at Noon.
-[Class 23](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class23) | THU <br /> 04-11 | Bayesian linear models <br /> Using `tidymodels` approaches to build linear models
-[Class 24](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class24) | TUE <br /> 04-16 | Bayesian regression models; Using `tidymodels`.
--- | WED <br /> 04-17 | [Minute Paper](https://github.com/THOMASELOVE/432-minute-2024) after Class 24 due at Noon.
--- | THU <br /> 04-18 | Class cancelled for multiple reasons.
--- | TUE <br /> 04-23 | [Quiz 2](quiz2.qmd) due at Noon. <br /> Google Form will close at 12:15 PM
-[Class 25](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class25) | TUE <br /> 04-23 | K-Means Clustering and Principal Components Analysis
-[Class 26](https://github.com/THOMASELOVE/432-classes-2024/tree/main/class26) | THU <br /> 04-25 | Discussion of Quiz 2, Maintaining and Enhancing What You've Learned <br /> Building and Assessing Statistical Work in 2024
-[Lab 8](lab8.qmd) | **MON** <br /> 04-29 | [Lab 8](lab8.qmd) due at Noon. <br /> Work is to be submitted via note on [Campuswire](https://campuswire.com/). <br /> We'll accept late work on Lab 8 through to TUE 05-07 at noon.
-[Proj B](projB.qmd) | TUE <br /> 04-30 | 6 Project B presentations between [8:30 and 11:20 AM](https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md#tuesday-2024-04-30-morning) via Zoom <br /> 6 Project B presentations between [1:10 and 3:50 PM](https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md#tuesday-2024-04-30-afternoon) in person and via Zoom.

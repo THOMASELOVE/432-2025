@@ -18,6 +18,8 @@ format:
 
 There is a [Lab 3 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data). Please use the template to prepare your response to Lab 3, as it will make things easier for you and for the people grading your work.
 
+- In the Lab 3 template, we use the `united` theme. If you'd like to use a different theme, [the available list is here](https://quarto.org/docs/output-formats/html-themes.html).
+
 ## Our Best Advice
 
 Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
@@ -39,21 +41,21 @@ In question 1, you will evaluate a linear regression fit in the `nh_1500` data t
 
 Note that the main effects model using all five of these predictors will use 7 degrees of freedom, since there are four race/ethnicity categories, and the other four variables are all either binary or quantitative.
 
-a. (10) Use a Spearman $\rho^2$ plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it `m1_main`) and the model with your non-linear term (call it `m1_add`) using both `ols()` and `lm()`.
+a. {10 points} Use a Spearman $\rho^2$ plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it `m1_main`) and the model with your non-linear term (call it `m1_add`) using both `ols()` and `lm()`.
 
-b. (10) Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using `set.seed(2025)` and 40 bootstrap replications.
+b. {10} Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using `set.seed(2025)` and 40 bootstrap replications.
 
-c. (5) Plot the effect summary (using `plot(summary)` after an `ols()` fit) for the model you preferred in part b, and explain the meaning of the `pulse` coefficient shown in the plot in a complete English sentence.
+c. {5} Plot the effect summary (using `plot(summary)` after an `ols()` fit) for the model you preferred in part b, and explain the meaning of the `pulse` coefficient shown in the plot in a complete English sentence.
 
 # Question 2 (25 points)
 
 Again using the `nh_1500` data, we will now build a set of logistic regression models to predict whether a subject is limited in the kind or amount of work they can do by a physical, mental or emotional problem. 
 
-a. (10) Build a model to predict `limited` on the basis of self-reported overall health. Call this `model2a`. Then add the main effects of white blood cell count, waist circumference and age to the model and call this new model `model2b`.
+a. {10} Build a model to predict `limited` on the basis of self-reported overall health. Call this `model2a`. Then add the main effects of white blood cell count, waist circumference and age to the model and call this new model `model2b`.
 
-b. (10) Interpret the odds ratio associated with self-reported overall health being Excellent as compared to being Good in *each* of your two models, and provide a 90% confidence interval for each such estimate.
+b. {10} Interpret the odds ratio associated with self-reported overall health being Excellent as compared to being Good in *each* of your two models, and provide a 90% confidence interval for each such estimate.
 
-c. (5) As measured by a validated C statistic using a seed of `432` and 40 bootstrap replications, which model performs better, `model2a` or `model2b`, and why?
+c. {5} As measured by a validated C statistic using a seed of `432` and 40 bootstrap replications, which model performs better, `model2a` or `model2b`, and why?
 
 # Use of AI
 

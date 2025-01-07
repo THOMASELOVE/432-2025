@@ -1,0 +1,88 @@
+---
+title: "Lab 4"
+date: last-modified
+format: 
+  html:
+    code-overflow: wrap
+---
+
+# General Instructions
+
+- Submit your work via [Canvas](https://canvas.case.edu/). 
+- The deadline for this Lab is specified on the [Course Calendar](calendar.qmd).
+  - We charge a 5 point penalty for a lab that is 1-48 hours late.
+  - We do not grade work that is more than 48 hours late.
+- Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
+
+## Template
+
+You should be able to modify the [Lab 3 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab.
+
+## Our Best Advice
+
+Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
+
+## The Data
+
+- The `hbp3024.xlsx` Excel file (first introduced in [Lab 2](lab2.qmd)) and the `nh_3143.Rds` R data set (introduced in [Lab 3](lab3.qmd)) are available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
+- A detailed description of each variable in the `hbp3024` data is [available here](hbp_codebook.qmd).
+
+# Question 1. (15 points)
+
+Begin with the `hbp3024` data, but filter to include only the 1,714 subjects with **complete data** on the `hsgrad` and `tobacco` variables, and who were seen by either the Elm, Highland, Sycamore, or Walnut practices. We will use this sample of 1,714 subjects, which I'll call the `hbp_lab4` data, for the rest of this Lab.
+
+Using the `hbp_lab4` data, build a logistic regression model to predict whether a subject has a depression diagnosis based on:
+
+- which of the four practices they receive care from, along with
+- the subject's age,
+- the subject's tobacco use status, and 
+- the estimated percentage of adults living in the subject’s home neighborhood who have graduated from high school (the `hsgrad` variable) 
+
+Fit two models: one with and one without an interaction term between the practice and the `hsgrad` value. Include the `age` variable in each model using a restricted cubic spline with three knots, but without any interaction with the other predictors. Display the coefficients of your two models.
+
+# Question 2. (10 points)
+
+For the "no interaction" model from Question 1, interpret the odds ratio associated with the `hsgrad` main effect carefully, specifying a 90% confidence interval and what we can conclude from the results.
+
+- To obtain a 90% confidence interval with a fit using one of the `rms` fitting functions rather than the default 95% interval, the appropriate code would be `summary(modelname, conf.int = 0.9)`.
+- Hint: We assume you will describe the `hsgrad` main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an `hsgrad` value equal to the 75th percentile `hsgrad` value in the data. Sally has an `hsgrad` value equal to the 25th percentile `hsgrad` value in the data. Assume Harry and Sally are the same `age` and receive care at the same `practice` and have the same `tobacco` use status. So the odds ratio of interest here compares the odds of a depression diagnosis for Harry to the odds of a depression diagnosis for Sally.
+
+# Question 3. (15 points)
+
+Now using the "interaction" model from Question 2, please interpret the effect of `hegrad` on the odds of a depression diagnosis appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.
+
+- Again, we want you to describe the `hsgrad` main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an `hsgrad` value equal to the 75th percentile `hsgrad` value in the data. Sally has an `hsgrad` value equal to the 25th percentile `hsgrad` value in the data. Assume Harry and Sally are the same `age` and receive care at the same `practice`. So the odds ratio of interest here compares the odds of `statin` prescription for Harry to the odds of `statin` prescription for Sally. But now, you need to be able to do this separately for each individual level of `practice`, since `practice` interacts with `ldl`. There are at least two ways to accomplish this.
+    - In one approach, you would create predicted odds values for Harry and Sally, assuming a common age (40 would be a reasonable choice, and it's the one used in the answer sketch), but creating four different versions of Harry and Sally (one for each practice.) Then use those predicted odds within each practice to obtain practice-specific odds ratios.
+    - In the other approach, you could convince the `rms` package to use a different practice as the choice for which adjustments are made. By default, `datadist` chooses the modal practice. To change this, you'd need to convince `datadist` instead to choose its practice based on which practice is the first one, and relevel the practice factor accordingly. So, if you'd releveled the practice data so that Elm was first and placed that into a tibble called `dataelm`, you could use the following adjustment to the `datadist` call to ensure that the adjustments made by `datadist` used Elm instead of the modal practice.
+    
+```{r}
+#| eval: false
+d_elm <- datadist(dataelm, adjto.cat = "first")
+options(datadist = "d_elm")
+```
+
+# Question 4. (10 points)
+
+Now, use bootstrap validation to compare the effectiveness of your two fitted models (the "interaction" and "no interaction" models) from Question 1 and draw a reasoned conclusion about which of those two models is more effective in describing the available set of observations (after those without `hsgrad` or `tobacco` data are removed) from these four practices. 
+
+An appropriate response will make use of at least two different validated assessments of fit quality. The natural choices for validated assessments of fit quality in Question 4 are a bootstrap-validated C statistic and a bootstrap-validated Nagelkerke $R^2$. Use `2025` as your random seed here and 40 bootstrap replications.
+
+Be sure to justify your eventual selection (between the "interaction" or "no interaction" model) with complete sentences. 
+
+# Use of AI
+
+If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI", after your answers to our questions, and just *before* your presentation of the Session Information. Thank you.
+
+## Be sure to include Session Information
+
+Please display your session information at the end of your submission, as shown below.
+
+```{r}
+xfun::session_info()
+```
+
+## After the Lab
+
+- We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.
+- We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
+- See the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you.

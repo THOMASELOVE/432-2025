@@ -3,10 +3,6 @@ title: "Project B"
 date: last-modified
 ---
 
-# The Schedule
-
-The Schedule for Project B presentations is available at <https://github.com/THOMASELOVE/432-classes-2024/blob/main/projectB/schedule.md>.
-
 # Project B Overview
 
 In project B, you will create two research questions that can be addressed with data you can conveniently obtain that can be used to address each of your questions, with models that you learned in the 431-432 sequence. 
@@ -25,7 +21,7 @@ The model for your first outcome must be either:
 
 The model for your second outcome must use a different approach than you used for Outcome 1. For this model, you can use any of the three options above, or you may use:
 
-- A linear or binary logistic model fit using a Bayesian engine via the `tidymodels` package, or
+- A linear or binary logistic model fit using a Bayesian engine, or
 - A linear model fit by selecting candidate predictors using the lasso, or
 - A linear regression model that uses survey weights, or
 - A quantile regression model fit to a quantitative outcome where a particular percentile (perhaps the median) is of interest, or
@@ -37,13 +33,13 @@ Note: Use at least 3 predictors (and still no more than 8) if you are fitting a 
 
 There are three deliverables in Project B: a Proposal Form, an in-person or Zoom Presentation, a Portfolio developed with Quarto ([along with your Data](#submitting-your-data)).
 
-1. **Proposal Form** By the deadline on the [Calendar](calendar.qmd) in early April, you will submit the Google Form found at <https://bit.ly/432-2024-projectB-proposal-form>. 
+1. **Proposal Form** By the deadline on the [Calendar](calendar.qmd) in early April, you will submit a Google Form that Dr. Love will make available later this semester. 
     - In this form, you will specify your title, your research questions, and your data source, and whether or not you are working with a partner.
     - You will also provide a brief description of each of your outcomes, and the type of models you plan to fit. 
-    - Finally, you will also specify the times that work for you (and your partner) to give your Project B presentation to Professor Love from a set of times he is available in early May.
+    - Finally, you will also specify the times that work for you (and your partner) to give your Project B presentation to Professor Love.
     - We will need to approve your Google Form before you proceed further, and this may require some revisions to your plan.
 
-2. **Presentation** After receiving our approval of your submitted form, you will prepare a portfolio of your results with Quarto ([a template is available](#template-for-the-portfolio) for this), and then give an in-person or Zoom presentation of your work to Professor Love in early May. The schedule for these presentations will be determined after completion of the Project B Proposal Form.
+2. **Presentation** After receiving our approval of your submitted form, you will prepare a portfolio of your results with Quarto ([a template is available](#template-for-the-portfolio) for this), and then present your work to Professor Love. The schedule for these presentations will be determined after completion of the Project B Proposal Form.
 
 3. **Portfolio and Data** You will then make changes (as needed) to your Quarto document (portfolio) in response to Professor Love's comments during your presentation, and submit the final version of the portfolio along with a version of your data ([as described here](#submitting-your-data)) to [Canvas](https:://canvas.case.edu) by the deadline in the [Calendar](calendar.qmd).
 
@@ -64,7 +60,7 @@ If you decide to use some sort of AI to help you with any part of the Project, w
 
 # Need Help?
 
-Questions about Project B may be directed to the TAs and to Professor Love at any time **after** your submission of the Project A portfolio in March. If you're asking a question [on Campuswire](https://campuswire.com/), please use the `Project B` label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.
+Questions about Project B may be directed to the TAs and to Professor Love at any time **after** your submission of the Project A portfolio. If you're asking a question [on Campuswire](https://campuswire.com/), please use the `Project B` label, and we encourage you to ask general questions in public rather than privately, so as to get help from other students, and provide help to them.
 
 # General Advice
 
@@ -82,7 +78,7 @@ We hope that most people will find datasets of interest to them and use those. I
 4. Your tibble will need a subject identifying code, and each model must have a separate outcome, and at least one predictor not used in the other model and each model must have 2-8 predictors, we anticipate that your clean, tidied tibble will include between 6 and 19 variables.
 5. We suggest that you collapse multiple categories as necessary to ensure that you have at least 25 observations in every category you plan to use for every predictor or outcome studied in Project B.
 
-Unlike 432 Project A, NHANES data are a completely acceptable choice for Project B, although we do require you to use the demographics file and at least two other NHANES files in developing your data set. See the [Fall 2023 431 Project B instructions on Using NHANES data](https://thomaselove.github.io/431-projectB-2023/data2.html) for more information on NHANES. If you use NHANES data or other large (weighted) survey data, you are welcome to do any or all of Project B without incorporating sampling weights.
+Unlike 432 Project A, NHANES data are a completely acceptable choice for Project B, although we do require you to use the demographics file and at least two other NHANES files in developing your data set. If you use NHANES data or other large (weighted) survey data, you are welcome to do any or all of Project B without incorporating sampling weights.
 
 **Note**: We have had some difficulty identifying data set suggestions (outside of educational repositories like the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php)) that are both messy enough to be interesting for this project and which also provide time-to-event outcomes with right censoring that are suitable for the survival analysis work we discuss in 432. If you have suggestions along these lines, we would be eager to hear them.
 
@@ -98,7 +94,7 @@ We want to powerfully discourage you from working with nested data that really r
 
 # The Proposal Form
 
-The Project B Proposal Form is a Google Form found at <https://bit.ly/432-2024-projectB-proposal-form>. The form allows you to:
+The Project B Proposal Form is a Google Form to be posted later this term. The form allows you to:
 
 - register a brief description of your project for our approval, *and* 
 - specify presentation times when you (and your partner if applicable) are available.
@@ -115,20 +111,6 @@ Before you complete the form, please **read this entire document**, settle on yo
 - You'll need to specify the title of your project.
 - You'll need to specify your research questions.
 - You'll need to specify who your partner is, if you have one.
-
-## Signing Up for Presentation Times
-
-Professor Love intends to hear projects for this course:
-
-Project B Presentations will be held on...
-
-- Tuesday 2024-04-30 (CWRU Reading Day) between 8 AM and Noon and between 1 and 6 PM, either in person or via Zoom
-- Wednesday 2024-05-01 (CWRU Reading Day) between Noon and 7 PM via Zoom
-- Thursday 2024-05-02 (Final Exams Begin) between 1 and 6 PM via Zoom
-
-You will specify at least five one-hour time slots within these windows (using at least two different days) as times when you (and your partner, if any) are available to give your project.
-
-Some people will have special circumstances that make it difficult for them to meet during some of these times. There will be an opportunity on the form for you to provide those details to Professor Love.
 
 ## How will we respond to the form?
 

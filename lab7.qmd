@@ -1,0 +1,9 @@
+---
+title: "Lab 7"
+date: last-modified
+format: 
+  html:
+    code-overflow: wrap
+---
+
+Instructions for Lab 7 will appear later this semester.

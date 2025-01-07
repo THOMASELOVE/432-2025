@@ -192,6 +192,22 @@ window.Quarto = {
     <a class="dropdown-item" href="./lab3.html">
  <span class="dropdown-text">Lab 3</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./lab4.html">
+ <span class="dropdown-text">Lab 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab5.html">
+ <span class="dropdown-text">Lab 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab6.html">
+ <span class="dropdown-text">Lab 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lab7.html">
+ <span class="dropdown-text">Lab 7</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -244,7 +260,7 @@ window.Quarto = {
  <span class="dropdown-text">Canvas (submissions &amp; recordings)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./tocome.html">
+    <a class="dropdown-item" href="https://drive.google.com/drive/u/1/folders/0AJiAzE5flLrYUk9PVA">
  <span class="dropdown-text">Shared Google Drive</span></a>
   </li>  
         <li>
@@ -335,6 +351,9 @@ window.Quarto = {
 <section id="template" class="level2">
 <h2 class="anchored" data-anchor-id="template">Template</h2>
 <p>There is a <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd">Lab 3 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a>. Please use the template to prepare your response to Lab 3, as it will make things easier for you and for the people grading your work.</p>
+<ul>
+<li>In the Lab 3 template, we use the <code>united</code> theme. If you’d like to use a different theme, <a href="https://quarto.org/docs/output-formats/html-themes.html">the available list is here</a>.</li>
+</ul>
 </section>
 <section id="our-best-advice" class="level2">
 <h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
@@ -360,30 +379,18 @@ window.Quarto = {
 </ul>
 <p>Note that the main effects model using all five of these predictors will use 7 degrees of freedom, since there are four race/ethnicity categories, and the other four variables are all either binary or quantitative.</p>
 <ol type="a">
-<li><ol start="10" type="1">
-<li>Use a Spearman <span class="math inline">\(\rho^2\)</span> plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it <code>m1_main</code>) and the model with your non-linear term (call it <code>m1_add</code>) using both <code>ols()</code> and <code>lm()</code>.</li>
-</ol></li>
-<li><ol start="10" type="1">
-<li>Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using <code>set.seed(2025)</code> and 40 bootstrap replications.</li>
-</ol></li>
-<li><ol start="5" type="1">
-<li>Plot the effect summary (using <code>plot(summary)</code> after an <code>ols()</code> fit) for the model you preferred in part b, and explain the meaning of the <code>pulse</code> coefficient shown in the plot in a complete English sentence.</li>
-</ol></li>
+<li><p>{10 points} Use a Spearman <span class="math inline">\(\rho^2\)</span> plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it <code>m1_main</code>) and the model with your non-linear term (call it <code>m1_add</code>) using both <code>ols()</code> and <code>lm()</code>.</p></li>
+<li><p>{10} Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using <code>set.seed(2025)</code> and 40 bootstrap replications.</p></li>
+<li><p>{5} Plot the effect summary (using <code>plot(summary)</code> after an <code>ols()</code> fit) for the model you preferred in part b, and explain the meaning of the <code>pulse</code> coefficient shown in the plot in a complete English sentence.</p></li>
 </ol>
 </section>
 <section id="question-2-25-points" class="level1">
 <h1>Question 2 (25 points)</h1>
 <p>Again using the <code>nh_1500</code> data, we will now build a set of logistic regression models to predict whether a subject is limited in the kind or amount of work they can do by a physical, mental or emotional problem.</p>
 <ol type="a">
-<li><ol start="10" type="1">
-<li>Build a model to predict <code>limited</code> on the basis of self-reported overall health. Call this <code>model2a</code>. Then add the main effects of white blood cell count, waist circumference and age to the model and call this new model <code>model2b</code>.</li>
-</ol></li>
-<li><ol start="10" type="1">
-<li>Interpret the odds ratio associated with self-reported overall health being Excellent as compared to being Good in <em>each</em> of your two models, and provide a 90% confidence interval for each such estimate.</li>
-</ol></li>
-<li><ol start="5" type="1">
-<li>As measured by a validated C statistic using a seed of <code>432</code> and 40 bootstrap replications, which model performs better, <code>model2a</code> or <code>model2b</code>, and why?</li>
-</ol></li>
+<li><p>{10} Build a model to predict <code>limited</code> on the basis of self-reported overall health. Call this <code>model2a</code>. Then add the main effects of white blood cell count, waist circumference and age to the model and call this new model <code>model2b</code>.</p></li>
+<li><p>{10} Interpret the odds ratio associated with self-reported overall health being Excellent as compared to being Good in <em>each</em> of your two models, and provide a 90% confidence interval for each such estimate.</p></li>
+<li><p>{5} As measured by a validated C statistic using a seed of <code>432</code> and 40 bootstrap replications, which model performs better, <code>model2a</code> or <code>model2b</code>, and why?</p></li>
 </ol>
 </section>
 <section id="use-of-ai" class="level1">

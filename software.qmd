@@ -74,20 +74,7 @@ install.packages(pkgs)
 - Eventually, you'll get a message that "The downloaded source packages are in ..." with a directory name. That's the sign that the updating is done.
 - Updating packages is something you'll do occasionally throughout the semester, mostly when a problem happens.
 
-5. There are some additional packages we will load outside of CRAN, using the following approach:
-
-```{r}
-#| eval: false
-
-## Non-CRAN package installation
-
-install.packages("countreg", repos="http://R-Forge.R-project.org")
-install.packages("topmodels", repos="http://R-Forge.R-project.org")
-```
-
-Execute those lines of code, as well. If you are asked to respond to questions, follow the recommendations provided in the request.
-
-6. Finally, choose **File** ... **Quit Session** from the top menu.
+5. Finally, choose **File** ... **Quit Session** from the top menu.
 
 ## Updating Your R Packages
 
@@ -96,6 +83,7 @@ About twice a month, it's a good idea to update your R packages. To do so, follo
 ## The Meta-Packages
 
 - Installing the tidyverse meta-package installs the packages listed at <https://www.tidyverse.org/>.
+- Installing the easystats meta-package installs the packages in the [easystats framework](https://easystats.github.io/easystats/).
 - Installing the tidymodels meta-package installs the packages listed at <https://www.tidymodels.org/packages/>.
 
 ## Note: A Windows Issue with RTools

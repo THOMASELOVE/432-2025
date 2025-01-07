@@ -1,0 +1,57 @@
+---
+title: "Lab 6"
+date: last-modified
+format: 
+  html:
+    code-overflow: wrap
+---
+
+# General Instructions
+
+- If you already have a professional website (for instance, if you built one in 431) you'll choose option B below. 
+- If you don't already have a website, then you'll choose option A.
+
+## Option A
+
+If you do not already have a professional website describing your work life to the world, then build one, ideally using Quarto. For help, refer to the instructions from this past fall's 431 at <https://github.com/THOMASELOVE/431-labs-2024/tree/main/lab7>.
+
+We want you to build a professional looking website that will be useful to you. The content is up to you, and what you’d like to share but it’s worth considering using this opportunity to craft your online presence. This is also an opportunity to learn how to use Quarto for the purpose.
+
+- The most common tool people who've completed this have mentioned to me is the tutorial by Marvin Schmitt at <https://www.marvinschmitt.com/blog/website-tutorial-quarto/>, but numerous additional resources for doing this are available [here](https://github.com/THOMASELOVE/431-labs-2024/blob/main/lab7/README.md).
+
+The key thing is to commit to making this a part of your life going forward, however you most effectively do that.
+
+Sample websites built by [students in last fall's 431 class](https://github.com/THOMASELOVE/431-labs-2024/tree/main/lab7#new-completed-websites-by-students-in-this-years-class) in this class are available to help you get an idea of what you can do.
+
+Once you’ve built a site you’re proud of, post a Public Note to the **Lab 6 folder in Campuswire** celebrating your achievement and containing a link to your page for your fellow students to be inspired by.
+
+## Option B
+
+If you already have a personal website that you built for 431 or for some other reason, then improve it by adding a blog post dated in 2025 that discusses in a meaningful way something important that you learned, either from reading *How To Be A Modern Scientist* by Jeff Leek, or from reading some part of the supplement entitled [Statistical Inference in the 21st Century: A World Beyond *p* < 0.05](https://amstat.tandfonline.com/toc/utas20/73/sup1) from 2019 in *The American Statistician*. A substantial discussion of something useful or meaningful to you is what we're looking for.
+
+Then post a Public Note to the **Lab 6** folder in Campuswire celebrating your achievement and containing a link to your page for your fellow students to be inspired by, and a link to the specific blog post you've built now, and also adding a short description of anything else (besides adding the blog post) that you have improved about your site in 2025.
+
+## Deadline
+
+To receive full credit, you must complete the lab (by making your post to Campuswire as described above) no later than the deadline on the [Course Calendar](calendar.qmd) 
+
+- You can complete Lab 6 at any time prior to that date. 
+
+## Why do this?
+
+Timely completion of Lab 6 will improve your course grade and will earn you some of Dr. Love's respect. Also, no one under the age of 50 exists these days in a professional capacity without a website. 
+
+- If you're looking for Dr. Love to write a letter of recommendation for you in the fullness of time, he's going to want to see your website.
+
+## Impact of Lab 6 on your grade
+
+Lab 6 is due when the [Calendar](calendar.qmd) says it is, and is worth up to 30 points. Late submissions can receive up to 15 points, if they are between 1 hour and 7 days late. We will not grade work received more than 7 days after the deadline.
+
+Your homework (labs) grade is made up of the top 5 scores you had on Labs 1, 2, 3, 4, 5 and 7, which is out of a total possible score of 250 points (each lab is worth 50), PLUS your score on Lab 6, all divided by 2.65. There are slight adjustments for people who were excused from Labs during the term.
+
+- This means that the best possible score you can get on the labs is 250 (for Labs 1-5 and 7 combined) + 30 (for Lab 6) = 280, which will then be divided by 2.65 to yield a score of 105.7.
+- If you don't do Lab 6, then your maximum Lab score would be 250 / 2.65, which is 94.3.
+
+## Spring 2025 Lab 6 Submissions
+
+that Dr. Love has approved will be posted to our web site as the semester moves on.
