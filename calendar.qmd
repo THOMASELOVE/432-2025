@@ -7,14 +7,15 @@ date-modified: last-modified
 
 Class | Date | Location | Description
 :----: | :----: | :-----: | :---------------------------------------
-Class 1 | 01-14 | Zoom | Introduction and Logistics
-Class 2 | 01-16 | Zoom | Getting Up to Speed
-Class 3 | 01-21 | Zoom | Linear and Logistic Regression, 1
+[Class 1](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class01/README.md) | 01-14 | Zoom | Introduction and Logistics
+Survey | 01-15 | Google | Complete [Welcome to 432 Survey](https://bit.ly/432-2025-welcome-survey) by noon
+[Class 2](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class02/README.md) | 01-16 | Zoom | Getting Up to Speed
+[Class 3](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class03/README.md) | 01-21 | Zoom | Linear and Logistic Regression, 1
 [Lab 1](lab1.qmd) | 01-22 | Canvas | [Lab 1](lab1.qmd) due to Canvas at noon
-Class 4 | 01-23 | Zoom | Linear and Logistic Regression, 2
-Class 5 | 01-28 | Zoom | Linear and Logistic Regression, 3
+[Class 4](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class04/README.md) | 01-23 | Zoom | Linear and Logistic Regression, 2
+[Class 5](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class05/README.md) | 01-28 | Zoom | Linear and Logistic Regression, 3
 [Lab 2](lab2.qmd) | 01-29 | Canvas | [Lab 2](lab2.qmd) due to Canvas at noon
-Class 6 | 01-30 | Zoom | Linear and Logistic Regression, 4
+[Class 6](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class06/README.md) | 01-30 | Zoom | Linear and Logistic Regression, 4
 
 ## February 2025
 
@@ -71,7 +72,8 @@ Class | Date | Location | Description
 
 ## TA Office Hours
 
-Attend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin in mid-January.
+Attend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin in mid-January, and continue through the end of the semester, except for Spring Break.
+
+A complete schedule for TA office hours will appear here when available.
 
 Zoom information to join these sessions will be posted to our **Shared Google Drive** when available.
-

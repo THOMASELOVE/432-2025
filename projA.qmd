@@ -40,7 +40,7 @@ Sanity checks are an important part of your programming, but they don't belong i
 
 ## Demonstration Project
 
-Dr. Love will post .qmd and .html files for a demonstration project to our **Shared Google Drive** when he can.
+Dr. Love will post .qmd and .html files for a demonstration project to our **Shared Google Drive** as soon as he can.
 
 # Need Help?
 

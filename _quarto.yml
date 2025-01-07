@@ -13,7 +13,7 @@ website:
       - text: "Calendar"
         href: calendar.qmd
       - text: "Syllabus"
-        href: tocome.qmd
+        href: https://thomaselove.github.io/432-syllabus-2025/
       - text: "Notes"
         href: https://thomaselove.github.io/432-notes/
       - text: "Software"
@@ -48,10 +48,8 @@ website:
           href: https://canvas.case.edu/
         - text: "Shared Google Drive"
           href: https://drive.google.com/drive/u/1/folders/0AJiAzE5flLrYUk9PVA
-        - text: "Minute Papers (Github)"
-          href: tocome.qmd
         - text: "Class READMEs (Github)"
-          href: tocome.qmd
+          href: https://github.com/THOMASELOVE/432-classes-2025
       - text: "Contact Us"
         href: contact.qmd
 
