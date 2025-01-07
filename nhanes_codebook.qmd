@@ -1,0 +1,85 @@
+---
+title: "NHANES Codebook"
+subtitle: "In support of Labs for 432"
+author: "Thomas E. Love, Ph.D."
+date: last-modified
+format: 
+  html:
+    embed-resources: true
+    toc: true
+    date-format: iso
+    code-overflow: wrap
+    code-tools: true
+---
+
+## R Packages and Setup 
+
+```{r}
+#| message: false
+library(janitor)
+library(naniar)
+library(easystats)
+library(tidyverse)
+```
+
+```{r}
+nh_1500 <- read_rds("https://github.com/THOMASELOVE/432-data/raw/refs/heads/master/data/nh_1500.Rds")
+nh_3143 <- read_rds("https://github.com/THOMASELOVE/432-data/raw/refs/heads/master/data/nh_3143.Rds")
+```
+
+
+
+## The `nh_1500` and `nh_3143` data
+
+These data are drawn from [NHANES](https://wwwn.cdc.gov/nchs/nhanes/default.aspx) in the 2013-14, 2015-16 and 2017-18 cycles. I've removed observations with missing data, and adjusted the names and some details for the selected variables listed below.
+
+The data set I generated from this work yielded 1500 + 3143 = 4643 observations, which I have partitioned into one sample called `nh_1500` and another called `nh_3143`. Each of the 4643 observations appears in exactly one of the two files. Each file contains the following set of 30 variables.
+
+## Variable Descriptions
+
+My Variable | NHANES Name | Description | Source
+:-------: | :---------: | :------------------------------- | :-------
+`SEQN` | SEQN | Subject ID code | all files
+`sex` | RIAGENDR | sex (Male or Female) | DEMO
+`age` | RIDAGEYR | age in years | DEMO
+`race_eth` | RIDRETH1 | race/ethnicity (4 levels) | DEMO
+`educ` | DMDEDUC2 | educational attainment (4 levels)  | DEMO
+`marital` | DMDMARTL | marital status (4 levels)  | DEMO
+`hh_size` | DMDHHSIZ | household size (1-6 people) | DEMO
+`inc_pov` | INDFMPIR | income divided by poverty level (capped at 5) | DEMO
+`wtint2yr` | WTINT2YR | sampling weight for interview questions | DEMO
+`wtmec2yr` | WTMEC2YR | sampling weight for medical examination | DEMO
+`weight` | BMXWT | weight in kilograms | Exam: BMX
+`height` | BMXHT | standing height in centimeters | Exam: BMX
+`waist` | BMXWAIST | waist circumference in centimeters | Exam: BMX
+`pulse` | BPXPLS | 60-second heart rate (30-sec rate * 2) | Exam: BPX
+`sbp1` | BPXSY1 | (First) Systolic BP, in mm Hg | Exam: BPX
+`dbp1` | BPXDI1 | (First) Diastolic BP, in mm Hg | Exam: BPX
+`sbp3` | BPXSY3 | (Third) Systolic BP, in mm Hg | Exam: BPX
+`dbp3` | BPXDI3 | (Third) Diastolic BP, in mm Hg | Exam: BPX
+`bun` | LBXSBU | Serum Blood Urea Nitrogen (mg/dl) | Lab: BIOPRO
+`scr` | LBXSCR | Serum Creatinine (mg/dl) | Lab: BIOPRO
+`glucose` | LBXSGL | Serum Glucose (mg/dl) | Lab: BIOPRO
+`iron` | LBXSIR | Serum Iron (ug/dl) | Lab: BIOPRO
+`bili` | LBXSTB | Serum Bilirubin (mg/dl) | Lab: BIOPRO
+`uric` | LBXSUA | Uric acid (mg/dl) | Lab: BIOPRO
+`wbc` | LBXWBCSI | White blood cell count (1000 cells/uL) | Lab: CBC_J
+`rbc` | LBXRBCSI | Red blood cell count (1000 cells/uL) | Lab: CBC_J
+`platelet` | LBXPLTSI | Platelet count (1000 cells/uL) | Lab: CBC_J
+`health` | HSD010 | Self-reported overall health (E, VG, G, F, P) | Ques.: HSQ
+`smk100` | SMQ020 | Smoked at least 100 cigarettes in your life? (Yes/No) | Ques.: SMQ
+`limited` | PFQ051 | Limited in the kind or amount of work you can do by a physical/mental/emotional problem? (Yes/No) | Ques.: PFQ
+    
+## Numerical Summaries for `nh_1500`    
+    
+```{r}
+dim(nh_1500)
+data_codebook(nh_1500)
+```
+
+## Numerical Summaries for `nh_3143`    
+    
+```{r}
+dim(nh_3143)
+data_codebook(nh_3143)
+```

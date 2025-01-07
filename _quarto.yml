@@ -24,12 +24,7 @@ website:
         menu: 
           - lab1.qmd
           - lab2.qmd
-          #- lab3.qmd
-          #- lab4.qmd
-          #- lab5.qmd
-          #- lab6.qmd
-          #- lab7.qmd
-          #- lab8.qmd
+          - lab3.qmd
       - text: "Projects"
         menu: 
           - projA.qmd

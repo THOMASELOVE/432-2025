@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-06">
+<meta name="dcterms.date" content="2025-01-07">
 
-<title>432 Main Page for Spring 2025 – 432-2025</title>
+<title>Lab 3 – 432-2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,6 +102,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -89,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -214,10 +277,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#everything-will-appear-here." id="toc-everything-will-appear-here." class="nav-link" data-scroll-target="#everything-will-appear-here.">Everything will appear here.</a></li>
-  <li><a href="#accessing-the-431-materials" id="toc-accessing-the-431-materials" class="nav-link" data-scroll-target="#accessing-the-431-materials">Accessing the 431 Materials</a></li>
+  <li><a href="#general-instructions" id="toc-general-instructions" class="nav-link active" data-scroll-target="#general-instructions">General Instructions</a>
+  <ul class="collapse">
+  <li><a href="#template" id="toc-template" class="nav-link" data-scroll-target="#template">Template</a></li>
+  <li><a href="#our-best-advice" id="toc-our-best-advice" class="nav-link" data-scroll-target="#our-best-advice">Our Best Advice</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  </ul></li>
+  <li><a href="#question-1-25-points" id="toc-question-1-25-points" class="nav-link" data-scroll-target="#question-1-25-points">Question 1 (25 points)</a></li>
+  <li><a href="#question-2-25-points" id="toc-question-2-25-points" class="nav-link" data-scroll-target="#question-2-25-points">Question 2 (25 points)</a></li>
+  <li><a href="#use-of-ai" id="toc-use-of-ai" class="nav-link" data-scroll-target="#use-of-ai">Use of AI</a>
+  <ul class="collapse">
+  <li><a href="#be-sure-to-include-session-information" id="toc-be-sure-to-include-session-information" class="nav-link" data-scroll-target="#be-sure-to-include-session-information">Be sure to include Session Information</a></li>
+  <li><a href="#after-the-lab" id="toc-after-the-lab" class="nav-link" data-scroll-target="#after-the-lab">After the Lab</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -226,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">432 Main Page for Spring 2025</h1>
+<h1 class="title">Lab 3</h1>
 </div>
 
 
@@ -237,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-06</p>
+      <p class="date">2025-01-07</p>
     </div>
   </div>
   
@@ -249,50 +321,114 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
-<p>PQHS/CRSP/MPHP 432 is the second half (<a href="https://thomaselove.github.io/431-2024/">431 is the first half</a>) of a two-semester course taught by Professor Thomas Love in the Department of Population and Quantitative Health Sciences at Case Western Reserve University.</p>
-<p>If you have any questions before class begins, contact Dr.&nbsp;Love at <code>Thomas dot Love at case dot edu</code>. Once the class starts, visit the <a href="./contact.html">Contact Us</a> page to learn more about how to get help from us.</p>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>Your first six steps in this course are to:</p>
-<ol type="1">
-<li>Register and enroll via the <a href="https://sis.case.edu/">CWRU Student Information System (SIS)</a>.
+<section id="general-instructions" class="level1">
+<h1>General Instructions</h1>
 <ul>
-<li>Section 1 of PQHS 432, CRSP 432 and MPHP 432 are identical.</li>
+<li>Submit your work via <a href="https://canvas.case.edu/">Canvas</a>.</li>
+<li>The deadline for this Lab is specified on the <a href="./calendar.html">Course Calendar</a>.
+<ul>
+<li>We charge a 5 point penalty for a lab that is 1-48 hours late.</li>
+<li>We do not grade work that is more than 48 hours late.</li>
 </ul></li>
-<li>Review this <a href="https://thomaselove.github.io/432-2024/">course website</a>, and be sure to visit the <a href="./calendar.html">Course Calendar</a>, and skim through the <a href="https://thomaselove.github.io/432-syllabus-2024/">Course Syllabus</a>.</li>
-<li>You need to buy Jeff Leek’s <strong>How to be a Modern Scientist</strong>, available electronically through <a href="https://leanpub.com/modernscientist" class="uri">https://leanpub.com/modernscientist</a>. The suggested cost is $10, but you can pay what you want.</li>
-<li>Please fill out the <a href="https://bit.ly/432-2024-welcome-survey">Welcome to 432 Survey</a> at <a href="https://bit.ly/432-2024-welcome-survey" class="uri">https://bit.ly/432-2024-welcome-survey</a> to help us get to know you a little better. Note that you must <strong>log into Google via your CWRU account</strong> in order to access the survey, which should take about 10 minutes to complete.</li>
-<li>Get started <a href="./software.html">installing the software</a> you’ll need for the course.</li>
-<li>Attend our first class session in E321-323 in the Robbins building within the CWRU School of Medicine, on Tuesday 2024-01-16 at 1:00 PM.</li>
-</ol>
+<li>Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided.</li>
+</ul>
+<section id="template" class="level2">
+<h2 class="anchored" data-anchor-id="template">Template</h2>
+<p>There is a <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd">Lab 3 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a>. Please use the template to prepare your response to Lab 3, as it will make things easier for you and for the people grading your work.</p>
 </section>
-<section id="everything-will-appear-here." class="level2">
-<h2 class="anchored" data-anchor-id="everything-will-appear-here.">Everything will appear here.</h2>
-<p>Everything that Professor Love will provide to help you with the course will be linked through this website. The menu bar links to just about everything you’ll need this semester, and its elements will go live as they become available. Things you’ll find here include…</p>
+<section id="our-best-advice" class="level2">
+<h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
+<p>Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.</p>
+</section>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
 <ul>
-<li>The <a href="./calendar.html">Course Calendar</a>, which includes links to class materials, assignments and other information, and which is the final word on all deadlines for the course.</li>
-<li>The <a href="https://thomaselove.github.io/432-syllabus-2024/">Course Syllabus</a> for 432.</li>
-<li>Professor Love’s <a href="https://thomaselove.github.io/432-notes/">Course Notes</a> for 432.</li>
-<li>Details on Assignments, including <a href="./projA.html">Projects</a>, <a href="./quiz1.html">Quizzes</a>, <a href="./lab1.html">Labs</a> and <a href="https://github.com/THOMASELOVE/432-minute-2024">Minute Papers</a></li>
-<li>Information on installing R and RStudio <a href="./software.html">software</a>, installing key <a href="./software.html#r-packages-to-install">R packages</a>, and <a href="https://github.com/THOMASELOVE/432-data">downloading data, code and templates</a> you’ll need for this class</li>
-<li>Key Links to other systems that will help us deliver 432, including:
-<ul>
-<li>the <a href="https://canvas.case.edu/">Canvas system</a> (CWRU log-in required) we use to communicate information about class recordings, and for turning in assignments</li>
-<li>our <a href="https://docs.google.com/document/d/1APMyDFUan1jQJPnNxq-_edE4IDpa-djbxCU0KdNfgFk/edit?usp=sharing">Shared Google Drive</a> (CWRU log-in required) where we provide answer sketches for class assignments, an in-semester grading roster, and feedback on Minute Papers</li>
-<li>the <a href="https://campuswire.com/">Campuswire discussion board</a> for the 432 course</li>
-</ul></li>
-<li>Information on places where you can <a href="./contact.html">get help and contact us</a> once the course begins.</li>
-<li>Additional <a href="https://github.com/THOMASELOVE/432-sources">Sources and references are here</a>, including things to read or watch to supplement our main work</li>
+<li>The <code>nh_1500</code> R data set is available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>.</li>
+<li>A detailed description of each variable in the <code>nh_1500</code> (and also the <code>nh_3143</code>) data is <a href="./nhanes_codebook.html">available here</a>.</li>
 </ul>
 </section>
-<section id="accessing-the-431-materials" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-the-431-materials">Accessing the 431 Materials</h2>
-<p>Note that the <a href="https://thomaselove.github.io/431-2024/">431 class materials from Fall 2024 are here</a>, and will remain there until 2025-06-01.</p>
+</section>
+<section id="question-1-25-points" class="level1">
+<h1>Question 1 (25 points)</h1>
+<p>In question 1, you will evaluate a linear regression fit in the <code>nh_1500</code> data to predict a subject’s red blood cell count using these five predictors:</p>
+<ul>
+<li>the subject’s sex,</li>
+<li>the subject’s race/ethnicity,</li>
+<li>the subject’s waist circumference,</li>
+<li>the subject’s pulse rate, and</li>
+<li>whether or not the subject has smoked 100 cigarettes in their life</li>
+</ul>
+<p>Note that the main effects model using all five of these predictors will use 7 degrees of freedom, since there are four race/ethnicity categories, and the other four variables are all either binary or quantitative.</p>
+<ol type="a">
+<li><ol start="10" type="1">
+<li>Use a Spearman <span class="math inline">\(\rho^2\)</span> plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it <code>m1_main</code>) and the model with your non-linear term (call it <code>m1_add</code>) using both <code>ols()</code> and <code>lm()</code>.</li>
+</ol></li>
+<li><ol start="10" type="1">
+<li>Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using <code>set.seed(2025)</code> and 40 bootstrap replications.</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>Plot the effect summary (using <code>plot(summary)</code> after an <code>ols()</code> fit) for the model you preferred in part b, and explain the meaning of the <code>pulse</code> coefficient shown in the plot in a complete English sentence.</li>
+</ol></li>
+</ol>
+</section>
+<section id="question-2-25-points" class="level1">
+<h1>Question 2 (25 points)</h1>
+<p>Again using the <code>nh_1500</code> data, we will now build a set of logistic regression models to predict whether a subject is limited in the kind or amount of work they can do by a physical, mental or emotional problem.</p>
+<ol type="a">
+<li><ol start="10" type="1">
+<li>Build a model to predict <code>limited</code> on the basis of self-reported overall health. Call this <code>model2a</code>. Then add the main effects of white blood cell count, waist circumference and age to the model and call this new model <code>model2b</code>.</li>
+</ol></li>
+<li><ol start="10" type="1">
+<li>Interpret the odds ratio associated with self-reported overall health being Excellent as compared to being Good in <em>each</em> of your two models, and provide a 90% confidence interval for each such estimate.</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>As measured by a validated C statistic using a seed of <code>432</code> and 40 bootstrap replications, which model performs better, <code>model2a</code> or <code>model2b</code>, and why?</li>
+</ol></li>
+</ol>
+</section>
+<section id="use-of-ai" class="level1">
+<h1>Use of AI</h1>
+<p>If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called “Use of AI”, after your answers to our questions, and just <em>before</em> your presentation of the Session Information. Thank you.</p>
+<section id="be-sure-to-include-session-information" class="level2">
+<h2 class="anchored" data-anchor-id="be-sure-to-include-session-information">Be sure to include Session Information</h2>
+<p>Please display your session information at the end of your submission, as shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.4.2 (2024-10-31 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 22631)
+
+Locale:
+  LC_COLLATE=English_United States.utf8 
+  LC_CTYPE=English_United States.utf8   
+  LC_MONETARY=English_United States.utf8
+  LC_NUMERIC=C                          
+  LC_TIME=English_United States.utf8    
+
+Package version:
+  base64enc_0.1.3   bslib_0.8.0       cachem_1.1.0      cli_3.6.3        
+  compiler_4.4.2    digest_0.6.37     evaluate_1.0.1    fastmap_1.2.0    
+  fontawesome_0.5.3 fs_1.6.5          glue_1.8.0        graphics_4.4.2   
+  grDevices_4.4.2   highr_0.11        htmltools_0.5.8.1 htmlwidgets_1.6.4
+  jquerylib_0.1.4   jsonlite_1.8.9    knitr_1.49        lifecycle_1.0.4  
+  memoise_2.0.1     methods_4.4.2     mime_0.12         R6_2.5.1         
+  rappdirs_0.3.3    rlang_1.1.4       rmarkdown_2.29    rstudioapi_0.17.1
+  sass_0.4.9        stats_4.4.2       tinytex_0.54      tools_4.4.2      
+  utils_4.4.2       xfun_0.49         yaml_2.3.10      </code></pre>
+</div>
+</div>
+</section>
+<section id="after-the-lab" class="level2">
+<h2 class="anchored" data-anchor-id="after-the-lab">After the Lab</h2>
+<ul>
+<li>We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.</li>
+<li>We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.</li>
+<li>See the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

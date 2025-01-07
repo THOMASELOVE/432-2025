@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Thomas E. Love, Ph.D.">
-<meta name="dcterms.date" content="2025-01-06">
+<meta name="dcterms.date" content="2025-01-07">
 
-<title>HBP 3024 Codebook – 432-2025</title>
+<title>NHANES Codebook – 432-2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4887,12 +4887,11 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-hbp3024-data" id="toc-the-hbp3024-data" class="nav-link active" data-scroll-target="#the-hbp3024-data">The <code>hbp3024</code> data</a>
-  <ul class="collapse">
-  <li><a href="#eligibility-criteria" id="toc-eligibility-criteria" class="nav-link" data-scroll-target="#eligibility-criteria">Eligibility Criteria</a></li>
-  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook">Codebook</a></li>
-  <li><a href="#notes-on-specific-variables" id="toc-notes-on-specific-variables" class="nav-link" data-scroll-target="#notes-on-specific-variables">Notes on Specific Variables</a></li>
-  </ul></li>
+  <li><a href="#r-packages-and-setup" id="toc-r-packages-and-setup" class="nav-link active" data-scroll-target="#r-packages-and-setup">R Packages and Setup</a></li>
+  <li><a href="#the-nh_1500-and-nh_3143-data" id="toc-the-nh_1500-and-nh_3143-data" class="nav-link" data-scroll-target="#the-nh_1500-and-nh_3143-data">The <code>nh_1500</code> and <code>nh_3143</code> data</a></li>
+  <li><a href="#variable-descriptions" id="toc-variable-descriptions" class="nav-link" data-scroll-target="#variable-descriptions">Variable Descriptions</a></li>
+  <li><a href="#numerical-summaries-for-nh_1500" id="toc-numerical-summaries-for-nh_1500" class="nav-link" data-scroll-target="#numerical-summaries-for-nh_1500">Numerical Summaries for <code>nh_1500</code></a></li>
+  <li><a href="#numerical-summaries-for-nh_3143" id="toc-numerical-summaries-for-nh_3143" class="nav-link" data-scroll-target="#numerical-summaries-for-nh_3143">Numerical Summaries for <code>nh_3143</code></a></li>
   </ul>
 </nav>
     </div>
@@ -4901,7 +4900,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">HBP 3024 Codebook</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">NHANES Codebook</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">In support of Labs for 432</p>
 </div>
 
@@ -4919,7 +4918,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-06</p>
+      <p class="date">2025-01-07</p>
     </div>
   </div>
   
@@ -4931,159 +4930,432 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="the-hbp3024-data" class="level2">
-<h2 class="anchored" data-anchor-id="the-hbp3024-data">The <code>hbp3024</code> data</h2>
-<p>The <code>hbp3024.xlsx</code> file is available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>.</p>
-<p>The (simulated) data in the <code>hbp3024.xlsx</code> file describe 3024 adults living with hypertension (high blood pressure) diagnoses who receive primary care in one of seven practices.</p>
-<ul>
-<li>In each of the seven practices, 432 (different) individuals (who I’ll call subjects in what follows) were sampled at random from all eligible subjects.</li>
-<li>The data are based on real electronic health record (EHR) data, but with some noise added.
-<ul>
-<li>The practices are named after streets that appear in <em>The Simpsons</em>.</li>
-</ul></li>
-</ul>
-<section id="eligibility-criteria" class="level3">
-<h3 class="anchored" data-anchor-id="eligibility-criteria">Eligibility Criteria</h3>
-<p>The data are cross-sectional and describe results from a one-year reporting window. To be eligible for the study, a subject had to meet all of the following criteria:</p>
-<ul>
-<li>have an EHR-documented hypertension diagnosis which applied during the one-year reporting window,</li>
-<li>cared for at one of the seven practices in this study, and by one of the 55 participating providers in this study</li>
-<li>age 25 or older at the start of the one-year reporting period (note that all subjects with ages 80 and higher are listed as age 80 in the data)</li>
-<li>between 1 and 12 primary care office visits in the one-year reporting period</li>
-<li>between 2 and 24 primary care office visits combined across the reporting period and the previous year</li>
-<li>fall into one of two biological sex categories (female or male)</li>
-<li>fall into one of four primary insurance categories, specifically Medicare, Commercial, Medicaid or Uninsured.</li>
-<li>have a most recent systolic BP between 80 and 220 mm Hg and most recent diastolic BP between 40 and 140 mm Hg, where the systolic BP is at least 15 and no more than 130 mm Hg larger than the diastolic BP.</li>
-</ul>
+<section id="r-packages-and-setup" class="level2">
+<h2 class="anchored" data-anchor-id="r-packages-and-setup">R Packages and Setup</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nh_1500 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">&quot;https://github.com/THOMASELOVE/432-data/raw/refs/heads/master/data/nh_1500.Rds&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nh_3143 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">&quot;https://github.com/THOMASELOVE/432-data/raw/refs/heads/master/data/nh_3143.Rds&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="codebook" class="level3">
-<h3 class="anchored" data-anchor-id="codebook">Codebook</h3>
+<section id="the-nh_1500-and-nh_3143-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-nh_1500-and-nh_3143-data">The <code>nh_1500</code> and <code>nh_3143</code> data</h2>
+<p>These data are drawn from <a href="https://wwwn.cdc.gov/nchs/nhanes/default.aspx">NHANES</a> in the 2013-14, 2015-16 and 2017-18 cycles. I’ve removed observations with missing data, and adjusted the names and some details for the selected variables listed below.</p>
+<p>The data set I generated from this work yielded 1500 + 3143 = 4643 observations, which I have partitioned into one sample called <code>nh_1500</code> and another called <code>nh_3143</code>. Each of the 4643 observations appears in exactly one of the two files. Each file contains the following set of 30 variables.</p>
+</section>
+<section id="variable-descriptions" class="level2">
+<h2 class="anchored" data-anchor-id="variable-descriptions">Variable Descriptions</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
-<col style="width: 90%">
+<col style="width: 15%">
+<col style="width: 18%">
+<col style="width: 53%">
+<col style="width: 13%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">Variable</th>
-<th>Description</th>
+<th style="text-align: center;">My Variable</th>
+<th style="text-align: center;">NHANES Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Source</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;"><code>record</code></td>
-<td>unique code for each subject (six digits, first digit is 9, last indicates practice)</td>
+<td style="text-align: center;"><code>SEQN</code></td>
+<td style="text-align: center;">SEQN</td>
+<td style="text-align: left;">Subject ID code</td>
+<td style="text-align: left;">all files</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>practice</code></td>
-<td>primary care practice, of which there are seven in the data</td>
+<td style="text-align: center;"><code>sex</code></td>
+<td style="text-align: center;">RIAGENDR</td>
+<td style="text-align: left;">sex (Male or Female)</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>provider</code></td>
-<td>primary care provider (each practice has multiple providers)</td>
+<td style="text-align: center;"><code>age</code></td>
+<td style="text-align: center;">RIDAGEYR</td>
+<td style="text-align: left;">age in years</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>age</code></td>
-<td>subject’s age as of the start of the reporting period</td>
+<td style="text-align: center;"><code>race_eth</code></td>
+<td style="text-align: center;">RIDRETH1</td>
+<td style="text-align: left;">race/ethnicity (4 levels)</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>race</code></td>
-<td>subject’s race (4 levels: Asian, AA_Black, White, Other)</td>
+<td style="text-align: center;"><code>educ</code></td>
+<td style="text-align: center;">DMDEDUC2</td>
+<td style="text-align: left;">educational attainment (4 levels)</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>eth_hisp</code></td>
-<td>is subject of Hispanic/Latino ethnicity? Yes or No</td>
+<td style="text-align: center;"><code>marital</code></td>
+<td style="text-align: center;">DMDMARTL</td>
+<td style="text-align: left;">marital status (4 levels)</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>sex</code></td>
-<td>subject’s sex (F or M)</td>
+<td style="text-align: center;"><code>hh_size</code></td>
+<td style="text-align: center;">DMDHHSIZ</td>
+<td style="text-align: left;">household size (1-6 people)</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>insurance</code></td>
-<td>subject’s primary insurance (Medicare, Commercial, Medicaid, Uninsured)</td>
+<td style="text-align: center;"><code>inc_pov</code></td>
+<td style="text-align: center;">INDFMPIR</td>
+<td style="text-align: left;">income divided by poverty level (capped at 5)</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>income</code></td>
-<td>estimated median income of subject’s home neighborhood (via American Community Survey, to nearest $100)</td>
+<td style="text-align: center;"><code>wtint2yr</code></td>
+<td style="text-align: center;">WTINT2YR</td>
+<td style="text-align: left;">sampling weight for interview questions</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>hsgrad</code></td>
-<td>estimated percentage of adults living in the subject’s home neighborhood who have graduated from high school (via American Community Survey, to the nearest tenth of a percent)</td>
+<td style="text-align: center;"><code>wtmec2yr</code></td>
+<td style="text-align: center;">WTMEC2YR</td>
+<td style="text-align: left;">sampling weight for medical examination</td>
+<td style="text-align: left;">DEMO</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>tobacco</code></td>
-<td>tobacco use status (Current, Former, or Never)</td>
+<td style="text-align: center;"><code>weight</code></td>
+<td style="text-align: center;">BMXWT</td>
+<td style="text-align: left;">weight in kilograms</td>
+<td style="text-align: left;">Exam: BMX</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>depr_diag</code></td>
-<td>does subject have depression diagnosis? Yes or No</td>
+<td style="text-align: center;"><code>height</code></td>
+<td style="text-align: center;">BMXHT</td>
+<td style="text-align: left;">standing height in centimeters</td>
+<td style="text-align: left;">Exam: BMX</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>height</code></td>
-<td>subject’s height in meters, rounded to two decimal places</td>
+<td style="text-align: center;"><code>waist</code></td>
+<td style="text-align: center;">BMXWAIST</td>
+<td style="text-align: left;">waist circumference in centimeters</td>
+<td style="text-align: left;">Exam: BMX</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>weight</code></td>
-<td>subject’s weight in kilograms, rounded to one decimal place</td>
+<td style="text-align: center;"><code>pulse</code></td>
+<td style="text-align: center;">BPXPLS</td>
+<td style="text-align: left;">60-second heart rate (30-sec rate * 2)</td>
+<td style="text-align: left;">Exam: BPX</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>ldl</code></td>
-<td>subject’s LDL cholesterol level, in mg/dl</td>
+<td style="text-align: center;"><code>sbp1</code></td>
+<td style="text-align: center;">BPXSY1</td>
+<td style="text-align: left;">(First) Systolic BP, in mm Hg</td>
+<td style="text-align: left;">Exam: BPX</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>statin</code></td>
-<td>does subject have a current prescription for a statin medication? Yes or No</td>
+<td style="text-align: center;"><code>dbp1</code></td>
+<td style="text-align: center;">BPXDI1</td>
+<td style="text-align: left;">(First) Diastolic BP, in mm Hg</td>
+<td style="text-align: left;">Exam: BPX</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>bp_med</code></td>
-<td>does subject have a current prescription for a blood pressure control medication? Yes or No</td>
+<td style="text-align: center;"><code>sbp3</code></td>
+<td style="text-align: center;">BPXSY3</td>
+<td style="text-align: left;">(Third) Systolic BP, in mm Hg</td>
+<td style="text-align: left;">Exam: BPX</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>sbp</code></td>
-<td>subject’s most recently obtained systolic blood pressure, in mm Hg</td>
+<td style="text-align: center;"><code>dbp3</code></td>
+<td style="text-align: center;">BPXDI3</td>
+<td style="text-align: left;">(Third) Diastolic BP, in mm Hg</td>
+<td style="text-align: left;">Exam: BPX</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>dbp</code></td>
-<td>subject’s most recently obtained diastolic blood pressure, in mm Hg</td>
+<td style="text-align: center;"><code>bun</code></td>
+<td style="text-align: center;">LBXSBU</td>
+<td style="text-align: left;">Serum Blood Urea Nitrogen (mg/dl)</td>
+<td style="text-align: left;">Lab: BIOPRO</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>visits_1</code></td>
-<td>subject’s number of visits for primary care in reporting period (one year)</td>
+<td style="text-align: center;"><code>scr</code></td>
+<td style="text-align: center;">LBXSCR</td>
+<td style="text-align: left;">Serum Creatinine (mg/dl)</td>
+<td style="text-align: left;">Lab: BIOPRO</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>visits_2</code></td>
-<td>subject’s visits for primary care in the past two years</td>
+<td style="text-align: center;"><code>glucose</code></td>
+<td style="text-align: center;">LBXSGL</td>
+<td style="text-align: left;">Serum Glucose (mg/dl)</td>
+<td style="text-align: left;">Lab: BIOPRO</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><code>acearb</code></td>
-<td>does subject have a current prescription for an ACE-inhibitor or ARB? Yes or No</td>
+<td style="text-align: center;"><code>iron</code></td>
+<td style="text-align: center;">LBXSIR</td>
+<td style="text-align: left;">Serum Iron (ug/dl)</td>
+<td style="text-align: left;">Lab: BIOPRO</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><code>betab</code></td>
-<td>does subject have a current prescription for a beta-blocker? Yes or No</td>
+<td style="text-align: center;"><code>bili</code></td>
+<td style="text-align: center;">LBXSTB</td>
+<td style="text-align: left;">Serum Bilirubin (mg/dl)</td>
+<td style="text-align: left;">Lab: BIOPRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>uric</code></td>
+<td style="text-align: center;">LBXSUA</td>
+<td style="text-align: left;">Uric acid (mg/dl)</td>
+<td style="text-align: left;">Lab: BIOPRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>wbc</code></td>
+<td style="text-align: center;">LBXWBCSI</td>
+<td style="text-align: left;">White blood cell count (1000 cells/uL)</td>
+<td style="text-align: left;">Lab: CBC_J</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>rbc</code></td>
+<td style="text-align: center;">LBXRBCSI</td>
+<td style="text-align: left;">Red blood cell count (1000 cells/uL)</td>
+<td style="text-align: left;">Lab: CBC_J</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>platelet</code></td>
+<td style="text-align: center;">LBXPLTSI</td>
+<td style="text-align: left;">Platelet count (1000 cells/uL)</td>
+<td style="text-align: left;">Lab: CBC_J</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>health</code></td>
+<td style="text-align: center;">HSD010</td>
+<td style="text-align: left;">Self-reported overall health (E, VG, G, F, P)</td>
+<td style="text-align: left;">Ques.: HSQ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>smk100</code></td>
+<td style="text-align: center;">SMQ020</td>
+<td style="text-align: left;">Smoked at least 100 cigarettes in your life? (Yes/No)</td>
+<td style="text-align: left;">Ques.: SMQ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>limited</code></td>
+<td style="text-align: center;">PFQ051</td>
+<td style="text-align: left;">Limited in the kind or amount of work you can do by a physical/mental/emotional problem? (Yes/No)</td>
+<td style="text-align: left;">Ques.: PFQ</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="notes-on-specific-variables" class="level3">
-<h3 class="anchored" data-anchor-id="notes-on-specific-variables">Notes on Specific Variables</h3>
-<ul>
-<li>The list of medications included in <code>bp_med</code> is: ACE-inhibitor, ARB, Diuretic, Calcium-Channel Blocker, Beta-Blocker, Alpha-1 Blocker, Centrally acting Alpha-2 Agonist, Vasodilator or other antihypertensive agents. A subject with a current prescription for any of these will have a Yes in <code>bp_med</code>.</li>
-<li>For the <code>acearb</code>, <code>betab</code>, <code>bpmed</code>, <code>statin</code> and <code>depr_diag</code> variables, a No response includes all subjects where there’s no evidence in the EHR of meeting the Yes criterion, so that there are no missing values (a missing value is interpreted there as No.)</li>
-<li>For the <code>height</code>, <code>weight</code> and <code>ldl</code> results, implausible values were treated as missing in preparing the data for you.</li>
-<li>The <code>race</code> and <code>eth_hisp</code> values are self-reported, and some subjects refused to answer one or both of the relevant questions.</li>
-<li>The <code>income</code> and <code>hsgrad</code> values are imputed from the subject’s home address, usually at the census block level, but occasionally at the level of the zip code.
-<ul>
-<li>When a subject’s home address could not be geocoded, these values are noted as missing.</li>
-<li>Geocoded estimates of <code>income</code> below 6500 are reported as 6500, and estimates above 130000 are reported as 130000.</li>
-<li>For <code>hsgrad</code>, geocoded estimates below 40 are reported as 40, and estimates above 99.9 are reported as 99.9.</li>
-</ul></li>
-</ul>
+<section id="numerical-summaries-for-nh_1500" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-summaries-for-nh_1500">Numerical Summaries for <code>nh_1500</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(nh_1500)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1500   30</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data_codebook</span>(nh_1500)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>nh_1500 (1500 rows and 30 variables, 30 shown)
+
+ID | Name     | Type        | Missings |            Values |            N
+---+----------+-------------+----------+-------------------+-------------
+1  | SEQN     | character   | 0 (0.0%) |            100055 |    1 ( 0.1%)
+   |          |             |          |            100056 |    1 ( 0.1%)
+   |          |             |          |            100105 |    1 ( 0.1%)
+   |          |             |          |            100115 |    1 ( 0.1%)
+   |          |             |          |            100123 |    1 ( 0.1%)
+   |          |             |          |            100137 |    1 ( 0.1%)
+   |          |             |          |            100172 |    1 ( 0.1%)
+   |          |             |          |            100180 |    1 ( 0.1%)
+   |          |             |          |            100190 |    1 ( 0.1%)
+   |          |             |          |            100212 |    1 ( 0.1%)
+   |          |             |          |             (...) |             
+---+----------+-------------+----------+-------------------+-------------
+2  | sex      | categorical | 0 (0.0%) |              Male |  732 (48.8%)
+   |          |             |          |            Female |  768 (51.2%)
+---+----------+-------------+----------+-------------------+-------------
+3  | age      | numeric     | 0 (0.0%) |          [30, 59] |         1500
+---+----------+-------------+----------+-------------------+-------------
+4  | race_eth | categorical | 0 (0.0%) |          NH_White |  645 (43.0%)
+   |          |             |          |          NH_Black |  334 (22.3%)
+   |          |             |          |          NH_Other |  296 (19.7%)
+   |          |             |          |          Hispanic |  225 (15.0%)
+---+----------+-------------+----------+-------------------+-------------
+5  | educ     | categorical | 0 (0.0%) |          Non_Grad |  167 (11.1%)
+   |          |             |          |           HS_Grad |  302 (20.1%)
+   |          |             |          |         Some_Coll |  545 (36.3%)
+   |          |             |          |         Coll_Grad |  486 (32.4%)
+---+----------+-------------+----------+-------------------+-------------
+6  | marital  | categorical | 0 (0.0%) |           Married |  885 (59.0%)
+   |          |             |          |            Former |  274 (18.3%)
+   |          |             |          |             Never |  236 (15.7%)
+   |          |             |          |           Partner |  105 ( 7.0%)
+---+----------+-------------+----------+-------------------+-------------
+7  | hh_size  | numeric     | 0 (0.0%) |            [1, 6] |         1500
+---+----------+-------------+----------+-------------------+-------------
+8  | inc_pov  | numeric     | 0 (0.0%) |         [0.13, 5] |         1500
+---+----------+-------------+----------+-------------------+-------------
+9  | wtint2yr | numeric     | 0 (0.0%) | [5019.48, 407301] |         1500
+---+----------+-------------+----------+-------------------+-------------
+10 | wtmec2yr | numeric     | 0 (0.0%) | [5374.38, 407801] |         1500
+---+----------+-------------+----------+-------------------+-------------
+11 | weight   | numeric     | 0 (0.0%) |       [32.8, 185] |         1500
+---+----------+-------------+----------+-------------------+-------------
+12 | height   | numeric     | 0 (0.0%) |    [141.9, 199.4] |         1500
+---+----------+-------------+----------+-------------------+-------------
+13 | waist    | numeric     | 0 (0.0%) |       [55.5, 165] |         1500
+---+----------+-------------+----------+-------------------+-------------
+14 | pulse    | numeric     | 0 (0.0%) |         [40, 140] |         1500
+---+----------+-------------+----------+-------------------+-------------
+15 | sbp1     | numeric     | 0 (0.0%) |         [86, 218] |         1500
+---+----------+-------------+----------+-------------------+-------------
+16 | dbp1     | numeric     | 0 (0.0%) |         [44, 120] |         1500
+---+----------+-------------+----------+-------------------+-------------
+17 | sbp3     | numeric     | 0 (0.0%) |         [82, 214] |         1500
+---+----------+-------------+----------+-------------------+-------------
+18 | dbp3     | numeric     | 0 (0.0%) |         [26, 114] |         1500
+---+----------+-------------+----------+-------------------+-------------
+19 | bun      | numeric     | 0 (0.0%) |           [3, 73] |         1500
+---+----------+-------------+----------+-------------------+-------------
+20 | scr      | numeric     | 0 (0.0%) |     [0.35, 12.74] |         1500
+---+----------+-------------+----------+-------------------+-------------
+21 | glucose  | numeric     | 0 (0.0%) |         [55, 501] |         1500
+---+----------+-------------+----------+-------------------+-------------
+22 | iron     | numeric     | 0 (0.0%) |          [9, 325] |         1500
+---+----------+-------------+----------+-------------------+-------------
+23 | bili     | numeric     | 0 (0.0%) |          [0, 7.1] |         1500
+---+----------+-------------+----------+-------------------+-------------
+24 | uric     | numeric     | 0 (0.0%) |       [0.8, 12.4] |         1500
+---+----------+-------------+----------+-------------------+-------------
+25 | wbc      | numeric     | 0 (0.0%) |       [2.5, 22.8] |         1500
+---+----------+-------------+----------+-------------------+-------------
+26 | rbc      | numeric     | 0 (0.0%) |      [2.89, 6.75] |         1500
+---+----------+-------------+----------+-------------------+-------------
+27 | platelet | numeric     | 0 (0.0%) |         [54, 583] |         1500
+---+----------+-------------+----------+-------------------+-------------
+28 | health   | categorical | 0 (0.0%) |         Excellent |  138 ( 9.2%)
+   |          |             |          |            V_Good |  404 (26.9%)
+   |          |             |          |              Good |  646 (43.1%)
+   |          |             |          |              Fair |  264 (17.6%)
+   |          |             |          |              Poor |   48 ( 3.2%)
+---+----------+-------------+----------+-------------------+-------------
+29 | smk100   | categorical | 0 (0.0%) |               Yes |  671 (44.7%)
+   |          |             |          |                No |  829 (55.3%)
+---+----------+-------------+----------+-------------------+-------------
+30 | limited  | categorical | 0 (0.0%) |               Yes |  286 (19.1%)
+   |          |             |          |                No | 1214 (80.9%)
+-------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+<section id="numerical-summaries-for-nh_3143" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-summaries-for-nh_3143">Numerical Summaries for <code>nh_3143</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(nh_3143)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3143   30</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data_codebook</span>(nh_3143)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>nh_3143 (3143 rows and 30 variables, 30 shown)
+
+ID | Name     | Type        | Missings |            Values |            N
+---+----------+-------------+----------+-------------------+-------------
+1  | SEQN     | character   | 0 (0.0%) |            100001 |    1 ( 0.0%)
+   |          |             |          |            100016 |    1 ( 0.0%)
+   |          |             |          |            100024 |    1 ( 0.0%)
+   |          |             |          |            100025 |    1 ( 0.0%)
+   |          |             |          |            100037 |    1 ( 0.0%)
+   |          |             |          |            100046 |    1 ( 0.0%)
+   |          |             |          |            100072 |    1 ( 0.0%)
+   |          |             |          |            100087 |    1 ( 0.0%)
+   |          |             |          |            100099 |    1 ( 0.0%)
+   |          |             |          |            100100 |    1 ( 0.0%)
+   |          |             |          |             (...) |             
+---+----------+-------------+----------+-------------------+-------------
+2  | sex      | categorical | 0 (0.0%) |              Male | 1504 (47.9%)
+   |          |             |          |            Female | 1639 (52.1%)
+---+----------+-------------+----------+-------------------+-------------
+3  | age      | numeric     | 0 (0.0%) |          [30, 59] |         3143
+---+----------+-------------+----------+-------------------+-------------
+4  | race_eth | categorical | 0 (0.0%) |          NH_White | 1367 (43.5%)
+   |          |             |          |          NH_Black |  685 (21.8%)
+   |          |             |          |          NH_Other |  627 (19.9%)
+   |          |             |          |          Hispanic |  464 (14.8%)
+---+----------+-------------+----------+-------------------+-------------
+5  | educ     | categorical | 0 (0.0%) |          Non_Grad |  366 (11.6%)
+   |          |             |          |           HS_Grad |  658 (20.9%)
+   |          |             |          |         Some_Coll | 1078 (34.3%)
+   |          |             |          |         Coll_Grad | 1041 (33.1%)
+---+----------+-------------+----------+-------------------+-------------
+6  | marital  | categorical | 0 (0.0%) |           Married | 1825 (58.1%)
+   |          |             |          |            Former |  580 (18.5%)
+   |          |             |          |             Never |  460 (14.6%)
+   |          |             |          |           Partner |  278 ( 8.8%)
+---+----------+-------------+----------+-------------------+-------------
+7  | hh_size  | numeric     | 0 (0.0%) |            [1, 6] |         3143
+---+----------+-------------+----------+-------------------+-------------
+8  | inc_pov  | numeric     | 0 (0.0%) |         [0.11, 5] |         3143
+---+----------+-------------+----------+-------------------+-------------
+9  | wtint2yr | numeric     | 0 (0.0%) | [5356.64, 433085] |         3143
+---+----------+-------------+----------+-------------------+-------------
+10 | wtmec2yr | numeric     | 0 (0.0%) | [5454.01, 419057] |         3143
+---+----------+-------------+----------+-------------------+-------------
+11 | weight   | numeric     | 0 (0.0%) |     [40.3, 207.2] |         3143
+---+----------+-------------+----------+-------------------+-------------
+12 | height   | numeric     | 0 (0.0%) |    [140.1, 202.7] |         3143
+---+----------+-------------+----------+-------------------+-------------
+13 | waist    | numeric     | 0 (0.0%) |     [63.2, 177.9] |         3143
+---+----------+-------------+----------+-------------------+-------------
+14 | pulse    | numeric     | 0 (0.0%) |         [42, 120] |         3143
+---+----------+-------------+----------+-------------------+-------------
+15 | sbp1     | numeric     | 0 (0.0%) |         [74, 236] |         3143
+---+----------+-------------+----------+-------------------+-------------
+16 | dbp1     | numeric     | 0 (0.0%) |         [34, 124] |         3143
+---+----------+-------------+----------+-------------------+-------------
+17 | sbp3     | numeric     | 0 (0.0%) |         [74, 218] |         3143
+---+----------+-------------+----------+-------------------+-------------
+18 | dbp3     | numeric     | 0 (0.0%) |         [30, 126] |         3143
+---+----------+-------------+----------+-------------------+-------------
+19 | bun      | numeric     | 0 (0.0%) |           [2, 73] |         3143
+---+----------+-------------+----------+-------------------+-------------
+20 | scr      | numeric     | 0 (0.0%) |      [0.3, 16.64] |         3143
+---+----------+-------------+----------+-------------------+-------------
+21 | glucose  | numeric     | 0 (0.0%) |         [19, 521] |         3143
+---+----------+-------------+----------+-------------------+-------------
+22 | iron     | numeric     | 0 (0.0%) |          [7, 476] |         3143
+---+----------+-------------+----------+-------------------+-------------
+23 | bili     | numeric     | 0 (0.0%) |          [0, 3.3] |         3143
+---+----------+-------------+----------+-------------------+-------------
+24 | uric     | numeric     | 0 (0.0%) |         [0.7, 18] |         3143
+---+----------+-------------+----------+-------------------+-------------
+25 | wbc      | numeric     | 0 (0.0%) |       [2.3, 31.4] |         3143
+---+----------+-------------+----------+-------------------+-------------
+26 | rbc      | numeric     | 0 (0.0%) |      [2.79, 7.14] |         3143
+---+----------+-------------+----------+-------------------+-------------
+27 | platelet | numeric     | 0 (0.0%) |         [36, 777] |         3143
+---+----------+-------------+----------+-------------------+-------------
+28 | health   | categorical | 0 (0.0%) |         Excellent |  337 (10.7%)
+   |          |             |          |            V_Good |  886 (28.2%)
+   |          |             |          |              Good | 1299 (41.3%)
+   |          |             |          |              Fair |  529 (16.8%)
+   |          |             |          |              Poor |   92 ( 2.9%)
+---+----------+-------------+----------+-------------------+-------------
+29 | smk100   | categorical | 0 (0.0%) |               Yes | 1351 (43.0%)
+   |          |             |          |                No | 1792 (57.0%)
+---+----------+-------------+----------+-------------------+-------------
+30 | limited  | categorical | 0 (0.0%) |               Yes |  563 (17.9%)
+   |          |             |          |                No | 2580 (82.1%)
+-------------------------------------------------------------------------</code></pre>
+</div>
+</div>
 
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -5565,82 +5837,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;HBP 3024 Codebook&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;In support of Labs for 432&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Thomas E. Love, Ph.D.&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: iso</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## The `hbp3024` data</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The <span class="in">`hbp3024.xlsx`</span> file is available for download on the <span class="co">[</span><span class="ot">432 data page</span><span class="co">](https://github.com/THOMASELOVE/432-data)</span>.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>The (simulated) data in the <span class="in">`hbp3024.xlsx`</span> file describe 3024 adults living with hypertension (high blood pressure) diagnoses who receive primary care in one of seven practices.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In each of the seven practices, 432 (different) individuals (who I&#39;ll call subjects in what follows) were sampled at random from all eligible subjects. </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The data are based on real electronic health record (EHR) data, but with some noise added. </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>The practices are named after streets that appear in *The Simpsons*.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Eligibility Criteria</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>The data are cross-sectional and describe results from a one-year reporting window. To be eligible for the study, a subject had to meet all of the following criteria:</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>have an EHR-documented hypertension diagnosis which applied during the one-year reporting window,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>cared for at one of the seven practices in this study, and by one of the 55 participating providers in this study</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>age 25 or older at the start of the one-year reporting period (note that all subjects with ages 80 and higher are listed as age 80 in the data)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>between 1 and 12 primary care office visits in the one-year reporting period</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>between 2 and 24 primary care office visits combined across the reporting period and the previous year</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>fall into one of two biological sex categories (female or male)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>fall into one of four primary insurance categories, specifically Medicare, Commercial, Medicaid or Uninsured.</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>have a most recent systolic BP between 80 and 220 mm Hg and most recent diastolic BP between 40 and 140 mm Hg, where the systolic BP is at least 15 and no more than 130 mm Hg larger than the diastolic BP.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Codebook</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Variable    | Description</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>----------: | --------------------------------------------------------------------------------------------------------</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">`record`</span>    | unique code for each subject (six digits, first digit is 9, last indicates practice)</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">`practice`</span>  | primary care practice, of which there are seven in the data</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">`provider`</span>  | primary care provider (each practice has multiple providers)</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="in">`age`</span>       | subject&#39;s age as of the start of the reporting period</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in">`race`</span>      | subject&#39;s race (4 levels: Asian, AA_Black, White, Other)</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="in">`eth_hisp`</span>  | is subject of Hispanic/Latino ethnicity? Yes or No</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="in">`sex`</span>       | subject&#39;s sex (F or M)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="in">`insurance`</span> | subject&#39;s primary insurance (Medicare, Commercial, Medicaid, Uninsured)</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">`income`</span>    | estimated median income of subject&#39;s home neighborhood (via American Community Survey, to nearest $100)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="in">`hsgrad`</span>    | estimated percentage of adults living in the subject&#39;s home neighborhood who have graduated from high school (via American Community Survey, to the nearest tenth of a percent)</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">`tobacco`</span>   | tobacco use status (Current, Former, or Never)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="in">`depr_diag`</span>   | does subject have depression diagnosis? Yes or No</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">`height`</span>    | subject&#39;s height in meters, rounded to two decimal places</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">`weight`</span>    | subject&#39;s weight in kilograms, rounded to one decimal place</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="in">`ldl`</span>       | subject&#39;s LDL cholesterol level, in mg/dl</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="in">`statin`</span>    | does subject have a current prescription for a statin medication? Yes or No</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">`bp_med`</span>     | does subject have a current prescription for a blood pressure control medication? Yes or No</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="in">`sbp`</span>       | subject&#39;s most recently obtained systolic blood pressure, in mm Hg</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">`dbp`</span>       | subject&#39;s most recently obtained diastolic blood pressure, in mm Hg</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="in">`visits_1`</span>  | subject&#39;s number of visits for primary care in reporting period (one year)</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="in">`visits_2`</span>  | subject&#39;s visits for primary care in the past two years</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="in">`acearb`</span>    | does subject have a current prescription for an ACE-inhibitor or ARB? Yes or No</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="in">`betab`</span>     | does subject have a current prescription for a beta-blocker? Yes or No</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### Notes on Specific Variables</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The list of medications included in <span class="in">`bp_med`</span> is: ACE-inhibitor, ARB, Diuretic, Calcium-Channel Blocker, Beta-Blocker, Alpha-1 Blocker, Centrally acting Alpha-2 Agonist, Vasodilator or other antihypertensive agents. A subject with a current prescription for any of these will have a Yes in <span class="in">`bp_med`</span>. </span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For the <span class="in">`acearb`</span>, <span class="in">`betab`</span>, <span class="in">`bpmed`</span>, <span class="in">`statin`</span> and <span class="in">`depr_diag`</span> variables, a No response includes all subjects where there&#39;s no evidence in the EHR of meeting the Yes criterion, so that there are no missing values (a missing value is interpreted there as No.)</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For the <span class="in">`height`</span>, <span class="in">`weight`</span> and <span class="in">`ldl`</span> results, implausible values were treated as missing in preparing the data for you. </span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The <span class="in">`race`</span> and <span class="in">`eth_hisp`</span> values are self-reported, and some subjects refused to answer one or both of the relevant questions. </span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The <span class="in">`income`</span> and <span class="in">`hsgrad`</span> values are imputed from the subject&#39;s home address, usually at the census block level, but occasionally at the level of the zip code. </span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>When a subject&#39;s home address could not be geocoded, these values are noted as missing.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Geocoded estimates of <span class="in">`income`</span> below 6500 are reported as 6500, and estimates above 130000 are reported as 130000. </span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>For <span class="in">`hsgrad`</span>, geocoded estimates below 40 are reported as 40, and estimates above 99.9 are reported as 99.9.</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;NHANES Codebook&quot;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;In support of Labs for 432&quot;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Thomas E. Love, Ph.D.&quot;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: iso</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Packages and Setup </span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>nh_1500 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">&quot;https://github.com/THOMASELOVE/432-data/raw/refs/heads/master/data/nh_1500.Rds&quot;</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>nh_3143 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">&quot;https://github.com/THOMASELOVE/432-data/raw/refs/heads/master/data/nh_3143.Rds&quot;</span>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## The `nh_1500` and `nh_3143` data</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>These data are drawn from <span class="co">[</span><span class="ot">NHANES</span><span class="co">](https://wwwn.cdc.gov/nchs/nhanes/default.aspx)</span> in the 2013-14, 2015-16 and 2017-18 cycles. I&#39;ve removed observations with missing data, and adjusted the names and some details for the selected variables listed below.</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>The data set I generated from this work yielded 1500 + 3143 = 4643 observations, which I have partitioned into one sample called <span class="in">`nh_1500`</span> and another called <span class="in">`nh_3143`</span>. Each of the 4643 observations appears in exactly one of the two files. Each file contains the following set of 30 variables.</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Variable Descriptions</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>My Variable | NHANES Name | Description | Source</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>:-------: | :---------: | :------------------------------- | :-------</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="in">`SEQN`</span> | SEQN | Subject ID code | all files</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="in">`sex`</span> | RIAGENDR | sex (Male or Female) | DEMO</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="in">`age`</span> | RIDAGEYR | age in years | DEMO</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="in">`race_eth`</span> | RIDRETH1 | race/ethnicity (4 levels) | DEMO</span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="in">`educ`</span> | DMDEDUC2 | educational attainment (4 levels)  | DEMO</span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="in">`marital`</span> | DMDMARTL | marital status (4 levels)  | DEMO</span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a><span class="in">`hh_size`</span> | DMDHHSIZ | household size (1-6 people) | DEMO</span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a><span class="in">`inc_pov`</span> | INDFMPIR | income divided by poverty level (capped at 5) | DEMO</span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="in">`wtint2yr`</span> | WTINT2YR | sampling weight for interview questions | DEMO</span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="in">`wtmec2yr`</span> | WTMEC2YR | sampling weight for medical examination | DEMO</span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a><span class="in">`weight`</span> | BMXWT | weight in kilograms | Exam: BMX</span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="in">`height`</span> | BMXHT | standing height in centimeters | Exam: BMX</span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="in">`waist`</span> | BMXWAIST | waist circumference in centimeters | Exam: BMX</span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="in">`pulse`</span> | BPXPLS | 60-second heart rate (30-sec rate * 2) | Exam: BPX</span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="in">`sbp1`</span> | BPXSY1 | (First) Systolic BP, in mm Hg | Exam: BPX</span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="in">`dbp1`</span> | BPXDI1 | (First) Diastolic BP, in mm Hg | Exam: BPX</span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="in">`sbp3`</span> | BPXSY3 | (Third) Systolic BP, in mm Hg | Exam: BPX</span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="in">`dbp3`</span> | BPXDI3 | (Third) Diastolic BP, in mm Hg | Exam: BPX</span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a><span class="in">`bun`</span> | LBXSBU | Serum Blood Urea Nitrogen (mg/dl) | Lab: BIOPRO</span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a><span class="in">`scr`</span> | LBXSCR | Serum Creatinine (mg/dl) | Lab: BIOPRO</span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="in">`glucose`</span> | LBXSGL | Serum Glucose (mg/dl) | Lab: BIOPRO</span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a><span class="in">`iron`</span> | LBXSIR | Serum Iron (ug/dl) | Lab: BIOPRO</span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="in">`bili`</span> | LBXSTB | Serum Bilirubin (mg/dl) | Lab: BIOPRO</span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="in">`uric`</span> | LBXSUA | Uric acid (mg/dl) | Lab: BIOPRO</span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a><span class="in">`wbc`</span> | LBXWBCSI | White blood cell count (1000 cells/uL) | Lab: CBC_J</span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a><span class="in">`rbc`</span> | LBXRBCSI | Red blood cell count (1000 cells/uL) | Lab: CBC_J</span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="in">`platelet`</span> | LBXPLTSI | Platelet count (1000 cells/uL) | Lab: CBC_J</span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a><span class="in">`health`</span> | HSD010 | Self-reported overall health (E, VG, G, F, P) | Ques.: HSQ</span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a><span class="in">`smk100`</span> | SMQ020 | Smoked at least 100 cigarettes in your life? (Yes/No) | Ques.: SMQ</span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="in">`limited`</span> | PFQ051 | Limited in the kind or amount of work you can do by a physical/mental/emotional problem? (Yes/No) | Ques.: PFQ</span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numerical Summaries for `nh_1500`    </span></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(nh_1500)</span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a><span class="fu">data_codebook</span>(nh_1500)</span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numerical Summaries for `nh_3143`    </span></span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(nh_3143)</span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="fu">data_codebook</span>(nh_3143)</span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

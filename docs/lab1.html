@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-06">
+<meta name="dcterms.date" content="2025-01-07">
 
 <title>Lab 1 – 432-2025</title>
 <style>
@@ -159,6 +159,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./lab2.html">
  <span class="dropdown-text">Lab 2</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./lab3.html">
+ <span class="dropdown-text">Lab 3</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -276,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-06</p>
+      <p class="date">2025-01-07</p>
     </div>
   </div>
   
@@ -349,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Create a linear regression model using the data for the state of Ohio that you developed in Question 1 to predict <code>obesity</code> as a function of <code>food_env</code> adjusting for <code>unemployment</code>, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model <code>model1</code>.</p>
 <ol type="a">
 <li>(10 points) Provide R code which specifies the estimated coefficient of <code>food_env</code> and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences.</li>
-<li>(10 points) Evaluate the quality of the model you fit in terms of adherence to regression modeling assumptions, through the specification and written evaluation of a set of regression residual plots. Then reflect on your findings in a few complete sentences: what might be done to improve the fit of the model you’ve developed? Be sure to identify by name any outlying counties and explain why they are flagged as outliers.</li>
+<li>(10 points) Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using <code>check_model()</code>. Describe any problems you see with the residual plots in complete sentences.</li>
 <li>(10 points) Create an attractive table which compares <code>model1</code> to a simple linear model (called <code>model2</code>) for the same outcome (<code>obesity</code>) which uses only the <code>food_env</code> variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio <code>obesity</code> data for 2021 (that were reported in CHR 2024) more effectively, and why?</li>
 </ol>
 </section>
