@@ -159,7 +159,7 @@ Also, we ask that you not ask us to pick between two “options” - submit the 
 
 The Project A plan consists of:
 
-- a Quarto (`.qmd`) file containing one unnumbered, and 10 numbered sections 
+- a Quarto (`.qmd`) file containing one unnumbered, and 10 numbered sections built using the [template](#templates) we have provided.
 - an HTML result of applying the Quarto "plan" file to your data
 - a copy of your (tidied) data (see Section 4.3 of the Project A Plan) in an `.Rds` file.
 
@@ -353,12 +353,14 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 The Project A portfolio consists of:
 
-- a Quarto (`.qmd`) file containing containing one unnumbered, and 13 numbered sections (10 of which come from the Plan.)
+- a Quarto (`.qmd`) file containing containing one unnumbered, and 13 numbered sections (10 of which come from the Plan) built using [the template](#templates) for the portfolio that we have provided for you
 - an HTML result of applying the Quarto "portfolio" file to your data
-- a copy of your data and link to where Professor Love can obtain it freely
-- a video (not to exceed 5 minutes) presenting **one** of your key project results (see the Presentation materials below)
+- a copy of your tidied data (as an `.Rds` file) and link to where Professor Love can obtain the raw data you started with freely,
+- a video file (not to exceed 4 minutes) presenting **one** of your key project results (see the Presentation materials below)
 
 ### Changes from the Plan to the Portfolio
+
+**Please** use the [Quarto template](#templates) we provided for the Project A Portfolio in preparing your work.
 
 The portfolio submission for Project A consists of 13 sections, 10 of which come straight from the Project A Plan. Specifically,
 
@@ -371,7 +373,6 @@ The portfolio submission for Project A consists of 13 sections, 10 of which come
 - Sections 8-10 in the Plan become Sections 11-13 in the Portfolio, without substantial change from your accepted Project A Plan.
   - Section 11 is now the Affirmation, Section 12 becomes the References section, and Section 13 gives the Session Information. 
 
-**Please** use the [Quarto template](#templates) we provided for the Project A Portfolio in preparing your work.
 
 ### New Section 8. Linear Regression Analyses
 

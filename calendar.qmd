@@ -32,7 +32,7 @@ Class 11 | 02-18 | Zoom | Building Table 1
 [Lab 4](lab4.qmd) | 02-19 | [Canvas](https://canvas.case.edu/) | [Lab 4](lab4.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
 Class 12 | 02-20 | Zoom | Statistical Significance and its problems 
 Class 13 | 02-25 | Zoom | Power and Sample Size
-[Lab 5](lab5.qmd) | 02-26 | [Canvas](https://canvas.case.edu/) | [Lab 5](lab5.qmd) due to [Canvas](https://canvas.case.edu/) at noon
+[Lab 5](lab5.qmd) | 02-26 | [Canvas](https://canvas.case.edu/) | [Lab 5](lab5.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
 Class 14 | 02-27 | Zoom | Power and Sample Size, Retrospective Design
 [Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at **noon** to all students
 
