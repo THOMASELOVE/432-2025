@@ -23,13 +23,13 @@ The key thing is to commit to making this a part of your life going forward, how
 
 Sample websites built by [students in last fall's 431 class](https://github.com/THOMASELOVE/431-labs-2024/tree/main/lab7#new-completed-websites-by-students-in-this-years-class) in this class are available to help you get an idea of what you can do.
 
-Once you’ve built a site you’re proud of, post a Public Note to the **Lab 6 folder in Campuswire** celebrating your achievement and containing a link to your page for your fellow students to be inspired by.
+Once you’ve built a site you’re proud of, post a Public Note to the **Lab 6 folder in [Campuswire](https://campuswire.com/)** celebrating your achievement and containing a link to your page for your fellow students to be inspired by.
 
 ## Option B
 
 If you already have a personal website that you built for 431 or for some other reason, then improve it by adding a blog post dated in 2025 that discusses in a meaningful way something important that you learned, either from reading *How To Be A Modern Scientist* by Jeff Leek, or from reading some part of the supplement entitled [Statistical Inference in the 21st Century: A World Beyond *p* < 0.05](https://amstat.tandfonline.com/toc/utas20/73/sup1) from 2019 in *The American Statistician*. A substantial discussion of something useful or meaningful to you is what we're looking for.
 
-Then post a Public Note to the **Lab 6** folder in Campuswire celebrating your achievement and containing a link to your page for your fellow students to be inspired by, and a link to the specific blog post you've built now, and also adding a short description of anything else (besides adding the blog post) that you have improved about your site in 2025.
+Then post a Public Note to the **Lab 6** folder in [Campuswire](https://campuswire.com/) celebrating your achievement and containing a link to your page for your fellow students to be inspired by, and a link to the specific blog post you've built now, and also adding a short description of anything else (besides adding the blog post) that you have improved about your site in 2025.
 
 ## Deadline
 

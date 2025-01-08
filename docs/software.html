@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-01-07</p>
+      <p class="date-modified">2025-01-08</p>
     </div>
   </div>
     
@@ -311,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Installing R and RStudio</h1>
 <p>The steps you need to complete are outlined at <a href="https://posit.co/download/rstudio-desktop/#download" class="uri">https://posit.co/download/rstudio-desktop/#download</a>:</p>
 <ol type="1">
-<li><p>Download and install <strong>the latest version of R</strong> (version <strong>4.4.2 or later</strong>) from <a href="https://cran.case.edu/" class="uri">https://cran.case.edu/</a> or, if you prefer, from <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>, which automatically chooses a fast, nearby mirror for you.</p>
+<li><p>Download and install <strong>the latest version of R</strong> (version <strong>4.4.2 (“Pile of Leaves”) or later</strong>) from <a href="https://cran.case.edu/" class="uri">https://cran.case.edu/</a> or, if you prefer, from <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>, which automatically chooses a fast, nearby mirror for you.</p>
 <ul>
 <li>If you have a pre-existing installation of R and/or RStudio, we highly recommend that you re-install both to get current.</li>
 </ul></li>
@@ -330,28 +330,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## CRAN installations</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(  <span class="st">"afex"</span>, <span class="st">"aplpack"</span>, <span class="st">"aplore3"</span>, <span class="st">"arm"</span>, <span class="st">"babynames"</span>, <span class="st">"bayestestR"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"bestglm"</span>, <span class="st">"boot"</span>, <span class="st">"broom"</span>, <span class="st">"car"</span>, <span class="st">"caret"</span>, <span class="st">"cowplot"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"cutpointr"</span>, <span class="st">"DataExplorer"</span>, <span class="st">"DescTools"</span>, <span class="st">"devtools"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"distributions3"</span>, <span class="st">"Epi"</span>, <span class="st">"exact2x2"</span>, <span class="st">"ez"</span>, <span class="st">"faraway"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"fivethirtyeight"</span>, <span class="st">"foreign"</span>, <span class="st">"gapminder"</span>, <span class="st">"gee"</span>, <span class="st">"geepack"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"GGally"</span>, <span class="st">"ggdist"</span>, <span class="st">"ggforce"</span>, <span class="st">"ggrepel"</span>, <span class="st">"ggridges"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"ggstance"</span>, <span class="st">"ggthemes"</span>, <span class="st">"glmnet"</span>, <span class="st">"glue"</span>, <span class="st">"gmodels"</span>, <span class="st">"gratia"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"gridExtra"</span>, <span class="st">"gt"</span>, <span class="st">"gtExtras"</span>, <span class="st">"gtsummary"</span>, <span class="st">"here"</span>, <span class="st">"Hmisc"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"HSAUR"</span>, <span class="st">"infer"</span>, <span class="st">"insight"</span>, <span class="st">"janitor"</span>, <span class="st">"kableExtra"</span>, <span class="st">"knitr"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lars"</span>, <span class="st">"lattice"</span>, <span class="st">"leaps"</span>, <span class="st">"lmboot"</span>, <span class="st">"lme4"</span>, <span class="st">"lmerTest"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lmtest"</span>, <span class="st">"lvplot"</span>, <span class="st">"magrittr"</span>, <span class="st">"markdown"</span>, <span class="st">"MASS"</span>, <span class="st">"mdsr"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">"mgcv"</span>, <span class="st">"mice"</span>, <span class="st">"mitml"</span>, <span class="st">"MKinfer"</span>, <span class="st">"modelsummary"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">"moderndive"</span>, <span class="st">"mosaic"</span>, <span class="st">"multcomp"</span>, <span class="st">"naniar"</span>, <span class="st">"NHANES"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">"nhanesA"</span>, <span class="st">"nnet"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"party"</span>, <span class="st">"patchwork"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">"posterdown"</span>, <span class="st">"pROC"</span>, <span class="st">"PropCIs"</span>, <span class="st">"pscl"</span>, <span class="st">"psych"</span>, <span class="st">"pwr"</span>, </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="st">"qcc"</span>, <span class="st">"QuantPsyc"</span>, <span class="st">"quantreg"</span>, <span class="st">"ResourceSelection"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">"rmarkdown"</span>, <span class="st">"rmdformats"</span>, <span class="st">"rms"</span>, <span class="st">"robustbase"</span>, <span class="st">"ROCR"</span>, <span class="st">"rpart"</span>,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">"rpart.plot"</span>, <span class="st">"rstanarm"</span>, <span class="st">"rstatix"</span>, <span class="st">"sandwich"</span>, <span class="st">"sessioninfo"</span>, </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">"simputation"</span>, <span class="st">"spelling"</span>, <span class="st">"styler"</span>, <span class="st">"summarytools"</span>, <span class="st">"survival"</span>,</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">"survminer"</span>, <span class="st">"tableone"</span>, <span class="st">"tidymodels"</span>, <span class="st">"tidytext"</span>, <span class="st">"tidyverse"</span>,</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="st">"usethis"</span>, <span class="st">"vcd"</span>, <span class="st">"VGAM"</span>, <span class="st">"viridis"</span>, <span class="st">"visdat"</span>, <span class="st">"xfun"</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"bestglm"</span>, <span class="st">"boot"</span>, <span class="st">"car"</span>, <span class="st">"caret"</span>, <span class="st">"cowplot"</span>, <span class="st">"cutpointr"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"DataExplorer"</span>, <span class="st">"DescTools"</span>, <span class="st">"devtools"</span>, <span class="st">"distributions3"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"easystats"</span>, <span class="st">"Epi"</span>, <span class="st">"exact2x2"</span>, <span class="st">"ez"</span>, <span class="st">"faraway"</span>, <span class="st">"fivethirtyeight"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"flextable"</span>, <span class="st">"foreign"</span>, <span class="st">"gee"</span>, <span class="st">"geepack"</span>, <span class="st">"GGally"</span>, <span class="st">"ggdist"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"ggforce"</span>, <span class="st">"ggrepel"</span>, <span class="st">"ggridges"</span>, <span class="st">"ggstance"</span>, <span class="st">"ggthemes"</span>, <span class="st">"glmnet"</span>, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"glue"</span>, <span class="st">"gmodels"</span>, <span class="st">"gratia"</span>, <span class="st">"gridExtra"</span>, <span class="st">"gt"</span>, <span class="st">"gtExtras"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"gtsummary"</span>, <span class="st">"here"</span>, <span class="st">"Hmisc"</span>, <span class="st">"HSAUR"</span>, <span class="st">"infer"</span>, <span class="st">"insight"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"janitor"</span>, <span class="st">"kableExtra"</span>, <span class="st">"knitr"</span>, <span class="st">"lars"</span>, <span class="st">"lattice"</span>, <span class="st">"leaps"</span>, </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lmboot"</span>, <span class="st">"lme4"</span>, <span class="st">"lmerTest"</span>, <span class="st">"lmtest"</span>, <span class="st">"lvplot"</span>, <span class="st">"magrittr"</span>, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"markdown"</span>, <span class="st">"MASS"</span>, <span class="st">"mdsr"</span>, <span class="st">"mgcv"</span>, <span class="st">"mice"</span>, <span class="st">"mitml"</span>, <span class="st">"MKinfer"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">"modelsummary"</span>, <span class="st">"moderndive"</span>, <span class="st">"mosaic"</span>, <span class="st">"multcomp"</span>, <span class="st">"naniar"</span>, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">"NHANES"</span>, <span class="st">"nnet"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"party"</span>, <span class="st">"patchwork"</span>, </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">"posterdown"</span>, <span class="st">"pROC"</span>, <span class="st">"PropCIs"</span>, <span class="st">"pscl"</span>, <span class="st">"psych"</span>, <span class="st">"pwr"</span>, <span class="st">"qcc"</span>, </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">"QuantPsyc"</span>, <span class="st">"quantreg"</span>, <span class="st">"ResourceSelection"</span>, <span class="st">"rmarkdown"</span>, </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="st">"rmdformats"</span>, <span class="st">"rms"</span>, <span class="st">"robustbase"</span>, <span class="st">"ROCR"</span>, <span class="st">"rpart"</span>, <span class="st">"rpart.plot"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">"rstanarm"</span>, <span class="st">"rstatix"</span>, <span class="st">"sandwich"</span>, <span class="st">"simputation"</span>, <span class="st">"spelling"</span>, </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">"styler"</span>, <span class="st">"summarytools"</span>, <span class="st">"survival"</span>, <span class="st">"survminer"</span>, <span class="st">"tableone"</span>, </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">"tidymodels"</span>, <span class="st">"tidytext"</span>, <span class="st">"tidyverse"</span>, <span class="st">"usethis"</span>, <span class="st">"vcd"</span>, <span class="st">"VGAM"</span>, </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">"viridis"</span>, <span class="st">"visdat"</span>, <span class="st">"xfun"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li><p>Execute those commands by hitting Enter.</p></li>
@@ -402,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If you need more help installing R or R Studio, you might look at <a href="https://stat545.com/install.html">this terrific resource for Installing R and RStudio</a> from Jenny Bryan and the STAT 545 project. These are the people responsible for the great <a href="http://happygitwithr.com/">Happy Git with R</a> project, which will also be worth your time when we are using Git and GitHub.</p>
 <ul>
 <li>If you’re having trouble with installation before our first class, don’t worry too much. The TAs and Professor Love will be available to help once the class gets going.</li>
-<li>Once 432 begins, if you’re having installation problems or problems getting started in R, please consider visiting TA office hours or perhaps asking a question on Campuswire. We want to hear from you!</li>
+<li>Once 432 begins, if you’re having installation problems or problems getting started in R, please consider visiting TA office hours or perhaps asking a question on <a href="https://campuswire.com/">Campuswire</a>. We want to hear from you!</li>
 </ul>
 
 

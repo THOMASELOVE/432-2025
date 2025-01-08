@@ -3,6 +3,12 @@ title: "Project B"
 date: last-modified
 ---
 
+:::{.callout-important}
+
+Dr. Love reserves the right to change these Project B instructions substantially at any time before the middle of March 2025. Do not treat these Project B instructions as complete or trustworthy until this note disappears (probably in early March), **and** Dr. Love announces that the Project B instructions are final in class.
+
+:::
+
 # Project B Overview
 
 In project B, you will create two research questions that can be addressed with data you can conveniently obtain that can be used to address each of your questions, with models that you learned in the 431-432 sequence. 
@@ -335,7 +341,7 @@ The use of `echo = FALSE` is prohibited in Project B. Use the template.
 
 All of this should appear in an extremely well-organized presentation and portfolio that work together well. Evidence of strong organization includes the use of effective labels, useful annotations for your code, and (in particular) meaningful headings and a helpful table of contents which make good use of the available technology. 
 
-# **NEW!!** Eight Questions
+# Eight Questions
 
 What 8 Questions would Dr. Love be likely to ask (either himself or you) during your Presentation, and as he reviews your Final Portfolio ...
 
@@ -399,7 +405,7 @@ and four additional questions, depending on whether you have an ordinal or nomin
 
 ## 8 questions about a model for a quantitative outcome
 
-1. Have you made a reasonable choice of strategy here? (Bayesian model, Bayesian model with tidymodels, Selecting Candidates via the LASSO, using survey weights, quantile regression or robust linear model?) Why did you select this approach - how does it tie in with your research question?
+1. Have you made a reasonable choice of strategy here? (Bayesian model, Selecting Candidates via the LASSO, using survey weights, quantile regression or robust linear model?) Why did you select this approach - how does it tie in with your research question?
 2. Can you demonstrate that you have selected a transformation (or not) for the outcome wisely?
 3. Can you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class?
 4. Can you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you're developing?
@@ -410,7 +416,7 @@ and four additional questions, depending on whether you have an ordinal or nomin
 
 ## 8 questions about a model for a binary outcome
 
-1. Have you made a reasonable choice of strategy here? (Bayesian model or Bayesian model with tidymodels?) Why did you select this approach, and how does it tie in with your research question?
+1. Have you made a reasonable choice of strategy here? Why did you select this approach, and how does it tie in with your research question?
 2. How did you make certain that your binary outcome was being modeled in the direction you intend it to be modeled (i.e. the Probability of A happening, rather than the Probability of A not happening?)
 3. Can you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class? 
 4. Can you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you're developing?

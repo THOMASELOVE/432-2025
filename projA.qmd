@@ -391,7 +391,7 @@ labeled subsections of section 8, using the labels in bold below.
     - be sure to evaluate collinearity between predictors, either through perusing and discussing the correlations in the scatterplot matrix, or with variance inflation factors
 4.  **Model A**: your initial “main effects” model
     - remember that your model must include at least four predictors, of which at least one must be quantitative and one must be multi-categorical
-    - we discourage the use of stepwise or other model selection strategies, instead please use your problem-based understanding to select variables and use them all.
+    - we discourage the use of stepwise, best subsets, or other semi-automated model selection strategies, instead please use your problem-based understanding to select variables and use them all.
     - in presenting your main effects model you should show: 
         - a tidied table of regression coefficients
         - key fit summary statistics like R-square, AIC and BIC, and 

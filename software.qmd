@@ -17,7 +17,7 @@ You will need access to a computer to do your work for this class, not just an i
 
 The steps you need to complete are outlined at <https://posit.co/download/rstudio-desktop/#download>:
 
-1. Download and install **the latest version of R** (version **4.4.2 or later**) from <https://cran.case.edu/> or, if you prefer, from <https://cloud.r-project.org/>, which automatically chooses a fast, nearby mirror for you.
+1. Download and install **the latest version of R** (version **4.4.2 ("Pile of Leaves") or later**) from <https://cran.case.edu/> or, if you prefer, from <https://cloud.r-project.org/>, which automatically chooses a fast, nearby mirror for you.
     - If you have a pre-existing installation of R and/or RStudio, we highly recommend that you re-install both to get current.
 
 2. Download and install **RStudio Desktop** (Open Source Edition - the free version **RStudio 2024.12.0+467 or later**) by visiting <https://posit.co/download/rstudio-desktop/#download>. This will also load everything you need for Quarto.
@@ -38,29 +38,27 @@ An R "package" is a collection of functions, data, and documentation that extend
 ## CRAN installations
 
 pkgs <- c(  "afex", "aplpack", "aplore3", "arm", "babynames", "bayestestR",
-            "bestglm", "boot", "broom", "car", "caret", "cowplot",
-            "cutpointr", "DataExplorer", "DescTools", "devtools",
-            "distributions3", "Epi", "exact2x2", "ez", "faraway",
-            "fivethirtyeight", "foreign", "gapminder", "gee", "geepack",
-            "GGally", "ggdist", "ggforce", "ggrepel", "ggridges",
-            "ggstance", "ggthemes", "glmnet", "glue", "gmodels", "gratia",
-            "gridExtra", "gt", "gtExtras", "gtsummary", "here", "Hmisc",
-            "HSAUR", "infer", "insight", "janitor", "kableExtra", "knitr",
-            "lars", "lattice", "leaps", "lmboot", "lme4", "lmerTest",
-            "lmtest", "lvplot", "magrittr", "markdown", "MASS", "mdsr",
-            "mgcv", "mice", "mitml", "MKinfer", "modelsummary",
-            "moderndive", "mosaic", "multcomp", "naniar", "NHANES",
-            "nhanesA", "nnet", "palmerpenguins", "party", "patchwork",
-            "posterdown", "pROC", "PropCIs", "pscl", "psych", "pwr", 
-            "qcc", "QuantPsyc", "quantreg", "ResourceSelection",
-            "rmarkdown", "rmdformats", "rms", "robustbase", "ROCR", "rpart",
-            "rpart.plot", "rstanarm", "rstatix", "sandwich", "sessioninfo", 
-            "simputation", "spelling", "styler", "summarytools", "survival",
-            "survminer", "tableone", "tidymodels", "tidytext", "tidyverse",
-            "usethis", "vcd", "VGAM", "viridis", "visdat", "xfun")
+            "bestglm", "boot", "car", "caret", "cowplot", "cutpointr",
+            "DataExplorer", "DescTools", "devtools", "distributions3", 
+            "easystats", "Epi", "exact2x2", "ez", "faraway", "fivethirtyeight",
+            "flextable", "foreign", "gee", "geepack", "GGally", "ggdist", 
+            "ggforce", "ggrepel", "ggridges", "ggstance", "ggthemes", "glmnet", 
+            "glue", "gmodels", "gratia", "gridExtra", "gt", "gtExtras", 
+            "gtsummary", "here", "Hmisc", "HSAUR", "infer", "insight", 
+            "janitor", "kableExtra", "knitr", "lars", "lattice", "leaps", 
+            "lmboot", "lme4", "lmerTest", "lmtest", "lvplot", "magrittr", 
+            "markdown", "MASS", "mdsr", "mgcv", "mice", "mitml", "MKinfer",
+            "modelsummary", "moderndive", "mosaic", "multcomp", "naniar", 
+            "NHANES", "nnet", "palmerpenguins", "party", "patchwork", 
+            "posterdown", "pROC", "PropCIs", "pscl", "psych", "pwr", "qcc", 
+            "QuantPsyc", "quantreg", "ResourceSelection", "rmarkdown", 
+            "rmdformats", "rms", "robustbase", "ROCR", "rpart", "rpart.plot",
+            "rstanarm", "rstatix", "sandwich", "simputation", "spelling", 
+            "styler", "summarytools", "survival", "survminer", "tableone", 
+            "tidymodels", "tidytext", "tidyverse", "usethis", "vcd", "VGAM", 
+            "viridis", "visdat", "xfun")
                 
 install.packages(pkgs)
-
 ```
 
 2. Execute those commands by hitting Enter.
@@ -106,5 +104,5 @@ If you want to install a single package, you can do so by finding the word **Pac
 If you need more help installing R or R Studio, you might look at [this terrific resource for Installing R and RStudio](https://stat545.com/install.html) from Jenny Bryan and the STAT 545 project. These are the people responsible for the great [Happy Git with R](http://happygitwithr.com/) project, which will also be worth your time when we are using Git and GitHub.
 
 - If you're having trouble with installation before our first class, don't worry too much. The TAs and Professor Love will be available to help once the class gets going.
-- Once 432 begins, if you're having installation problems or problems getting started in R, please consider visiting TA office hours or perhaps asking a question on Campuswire. We want to hear from you!
+- Once 432 begins, if you're having installation problems or problems getting started in R, please consider visiting TA office hours or perhaps asking a question on [Campuswire](https://campuswire.com/). We want to hear from you!
 
