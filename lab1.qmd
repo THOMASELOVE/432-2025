@@ -16,7 +16,7 @@ format:
 
 :::{.callout-important}
 
-You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.
+You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7. If you decide to skip a lab, please submit a note to Canvas by the deadline saying that you are skipping the lab.
 
 :::
 
