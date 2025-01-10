@@ -10,6 +10,8 @@ Class | Date | Location | Description
 [Class 1](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class01/README.md) | 01-14 | Zoom | Introduction and Logistics
 [Survey](https://bit.ly/432-2025-welcome-survey) | 01-15 | Google | Complete [Welcome to 432 Survey](https://bit.ly/432-2025-welcome-survey) by **noon**
 [Class 2](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class02/README.md) | 01-16 | Zoom | Getting Up to Speed
+-- | 01-17 | Zoom | TA office hours begin
+-- | 01-20 | Zoom | Martin Luther King Jr Holiday - no office hours
 [Class 3](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class03/README.md) | 01-21 | Zoom | Linear and Logistic Regression, 1
 [Lab 1](lab1.qmd) | 01-22 | [Canvas](https://canvas.case.edu/) | [Lab 1](lab1.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
 [Class 4](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class04/README.md) | 01-23 | Zoom | Linear and Logistic Regression, 2
@@ -43,8 +45,7 @@ Class | Date | Location | Description
 Class 15 | 03-04 | Zoom | Catch Up, Ask Me Questions about [Quiz 1](quiz1.qmd)
 [Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at **noon** (covers classes 1-14)
 Class 16 | 03-06 | Zoom | [Project A](projA.qmd): Ask Me Anything
--- | 03-11 | -- | Spring Break
--- | 03-13 | -- | Spring Break
+-- | -- | -- | Spring Break - no 432 class or office hours 03-08 through 03-14
 Class 17 | 03-18 | In Person | Count and Multi-Categorical Outcomes, 1
 [Project A](projA.qmd) | 03-19 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
 Class 18 | 03-20 | In Person | Count and Multi-Categorical Outcomes, 2
@@ -68,14 +69,14 @@ Class 26 | 04-17 | Zoom | [Project B](projB.qmd) Presentations, 2
 Class 27 | 04-22 | Zoom | [Project B](projB.qmd) Presentations, 3
 [Quiz 2](quiz2.qmd) | 04-23 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24)
 Class 28 | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
-[Project B](projB.qmd) | 04-29 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
-
+-- | 04-24 | -- | Last Day of TA office hours
+[Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
 
 **Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
 
 ## TA Office Hours
 
-Attend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin in mid-January, and continue through the end of the semester, except for Spring Break.
+Attend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin on Friday 2025-01-17, and continue through Thursday 2025-04-24, except for Martin Luther King Day (Monday 2025-01-20) and Spring Break (hours are cancelled from 2025-03-08 through 2025-03-14.)
 
 A complete schedule for TA office hours will appear here when available.
 
