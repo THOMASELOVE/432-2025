@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-08">
+<meta name="dcterms.date" content="2025-01-09">
 
 <title>Lab 4 – 432-2025</title>
 <style>
@@ -323,7 +323,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-08</p>
+      <p class="date">2025-01-09</p>
     </div>
   </div>
   
@@ -346,6 +346,19 @@ window.Quarto = {
 </ul></li>
 <li>Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we’ve provided.</li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.</p>
+</div>
+</div>
 <section id="template" class="level2">
 <h2 class="anchored" data-anchor-id="template">Template</h2>
 <p>You should be able to modify the <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd">Lab 3 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a> to help you do this Lab.</p>
@@ -357,7 +370,7 @@ window.Quarto = {
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
 <ul>
-<li>The <code>hbp3024.xlsx</code> Excel file (first introduced in <a href="./lab2.html">Lab 2</a>) and the <code>nh_3143.Rds</code> R data set (introduced in <a href="./lab3.html">Lab 3</a>) are available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>.</li>
+<li>The <code>hbp3024.xlsx</code> Excel file (first introduced in <a href="./lab2.html">Lab 2</a>) is available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>.</li>
 <li>A detailed description of each variable in the <code>hbp3024</code> data is <a href="./hbp_codebook.html">available here</a>.</li>
 </ul>
 </section>
@@ -384,7 +397,7 @@ window.Quarto = {
 </section>
 <section id="question-3.-15-points" class="level1">
 <h1>Question 3. (15 points)</h1>
-<p>Now using the “interaction” model from Question 2, please interpret the effect of <code>hegrad</code> on the odds of a depression diagnosis appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.</p>
+<p>Now using the “interaction” model from Question 2, please interpret the effect of <code>hsgrad</code> on the odds of a depression diagnosis appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.</p>
 <ul>
 <li>Again, we want you to describe the <code>hsgrad</code> main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an <code>hsgrad</code> value equal to the 75th percentile <code>hsgrad</code> value in the data. Sally has an <code>hsgrad</code> value equal to the 25th percentile <code>hsgrad</code> value in the data. Assume Harry and Sally are the same <code>age</code> and receive care at the same <code>practice</code>. So the odds ratio of interest here compares the odds of <code>statin</code> prescription for Harry to the odds of <code>statin</code> prescription for Sally. But now, you need to be able to do this separately for each individual level of <code>practice</code>, since <code>practice</code> interacts with <code>ldl</code>. There are at least two ways to accomplish this.
 <ul>

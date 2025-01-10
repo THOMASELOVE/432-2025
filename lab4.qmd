@@ -14,6 +14,12 @@ format:
   - We do not grade work that is more than 48 hours late.
 - Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
 
+:::{.callout-important}
+
+You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.
+
+:::
+
 ## Template
 
 You should be able to modify the [Lab 3 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab.
@@ -24,7 +30,7 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 ## The Data
 
-- The `hbp3024.xlsx` Excel file (first introduced in [Lab 2](lab2.qmd)) and the `nh_3143.Rds` R data set (introduced in [Lab 3](lab3.qmd)) are available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
+- The `hbp3024.xlsx` Excel file (first introduced in [Lab 2](lab2.qmd)) is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
 - A detailed description of each variable in the `hbp3024` data is [available here](hbp_codebook.qmd).
 
 # Question 1. (15 points)
@@ -49,7 +55,7 @@ For the "no interaction" model from Question 1, interpret the odds ratio associa
 
 # Question 3. (15 points)
 
-Now using the "interaction" model from Question 2, please interpret the effect of `hegrad` on the odds of a depression diagnosis appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.
+Now using the "interaction" model from Question 2, please interpret the effect of `hsgrad` on the odds of a depression diagnosis appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.
 
 - Again, we want you to describe the `hsgrad` main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an `hsgrad` value equal to the 75th percentile `hsgrad` value in the data. Sally has an `hsgrad` value equal to the 25th percentile `hsgrad` value in the data. Assume Harry and Sally are the same `age` and receive care at the same `practice`. So the odds ratio of interest here compares the odds of `statin` prescription for Harry to the odds of `statin` prescription for Sally. But now, you need to be able to do this separately for each individual level of `practice`, since `practice` interacts with `ldl`. There are at least two ways to accomplish this.
     - In one approach, you would create predicted odds values for Harry and Sally, assuming a common age (40 would be a reasonable choice, and it's the one used in the answer sketch), but creating four different versions of Harry and Sally (one for each practice.) Then use those predicted odds within each practice to obtain practice-specific odds ratios.

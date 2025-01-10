@@ -6,6 +6,12 @@ format:
     code-overflow: wrap
 ---
 
+:::{.callout-important}
+
+You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.
+
+:::
+
 # General Instructions
 
 - If you already have a professional website (for instance, if you built one in 431) you'll choose option B below. 
@@ -47,7 +53,7 @@ Timely completion of Lab 6 will improve your course grade and will earn you some
 
 Lab 6 is due when the [Calendar](calendar.qmd) says it is, and is worth up to 30 points. Late submissions can receive up to 15 points, if they are between 1 hour and 7 days late. We will not grade work received more than 7 days after the deadline.
 
-Your homework (labs) grade is made up of the top 5 scores you had on Labs 1, 2, 3, 4, 5 and 7, which is out of a total possible score of 250 points (each lab is worth 50), PLUS your score on Lab 6, all divided by 2.65. There are slight adjustments for people who were excused from Labs during the term.
+Your homework (labs) grade is made up of the top 4 scores you had on Labs 1-5 plus your score on Lab 7, which is out of a total possible score of 250 points (each lab is worth 50), PLUS your score on Lab 6, all divided by 2.65. There are slight adjustments for people who were excused from Labs during the term.
 
 - This means that the best possible score you can get on the labs is 250 (for Labs 1-5 and 7 combined) + 30 (for Lab 6) = 280, which will then be divided by 2.65 to yield a score of 105.7.
 - If you don't do Lab 6, then your maximum Lab score would be 250 / 2.65, which is 94.3.

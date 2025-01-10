@@ -6,4 +6,100 @@ format:
     code-overflow: wrap
 ---
 
-Instructions for Lab 7 will appear later this semester.
+# General Instructions
+
+- Submit your work via [Canvas](https://canvas.case.edu/). 
+- The deadline for this Lab is specified on the [Course Calendar](calendar.qmd).
+  - We charge a 5 point penalty for a lab that is 1-48 hours late.
+  - We do not grade work that is more than 48 hours late.
+- Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
+
+:::{.callout-important}
+
+You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.
+
+:::
+
+
+## Template
+
+You should be able to modify the [Lab 3 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab.
+
+## Our Best Advice
+
+Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
+
+## The Data
+
+- The `chr_2015.csv` csv file (from [Lab 1](lab1.qmd)), `hbp3024.xlsx` Excel file (from [Lab 2](lab2.qmd)), `nh_1500.Rds` R data set (from [Lab 3](lab3.qmd)) and the `remit48.sav` SPSS file all appear on the [432 data page](https://github.com/THOMASELOVE/432-data).
+- A detailed codebook for all of the data in the `chr_2024` file [is available here](chr_codebook.qmd).
+- A detailed description of each variable in the `hbp3024` data is [available here](hbp_codebook.qmd).
+- A detailed description of each variable in the `nh_1500` data is [available here](nhanes_codebook.qmd).
+- The variables included in the `remit48` data are described in Question 4, below.
+
+# Question 1. (14 points)
+
+Use the `chr_2015` data to build a model to predict each county's percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the `unemp` values as if they were counts in Question 1. Use two quantitative predictors in your model: the county's food environment index and the county's adult obesity rate. You will produce two models for `unemp` using the two predictors, a Poisson regression model, and a quasi-Poisson regression model.
+
+a. {5} Produce the Poisson regression model, which I'll call `mod1`, then interpret the coefficient (the point estimate is sufficient) for the `food_env` variable.
+
+b. {5} Produce and interpret the meaning of a rootogram for `mod1`, and specify the model's $R^2$ value.
+
+c. {4} Use `mod1` to make a prediction for Cuyahoga County, in Ohio, based on Cuyahoga's values for `food_env` (6.7) and for `obesity` (28) and compare the prediction to the observed `unemp` for Cuyahoga County as reported in 2013 as part of CHR 2015.
+
+# Question 2. (12 points)
+
+Import the data from the `hbp_3024.xlsx` file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with NA. Next, create a data set I'll call `q2dat`, which:
+
+- restricts the `hbp_3024` data to only the 1296 subjects who were seen in one of three practices, specifically: **Center**, **King** or **Plympton**, and
+- includes only those 1284 subjects from those three practices with complete data on the three variables we will study in Question 2, specifically `income`, `insurance` and `practice`.
+
+a. {6} Using your `q2dat` data set, build a multinomial logistic regression model to predict `practice` (a nominal categorical outcome) for each of the 1284 subjects on the basis of main effects of the subject's `insurance` and `income`.
+
+b. {6} Then produce a classification table for the 1284 subjects which compares their actual `practice` to their predicted `practice` so that you can specify (in a complete sentence) how well the model classifies the data.
+
+# Question 3. (12 points)
+
+Use the `nh_1500` data to predict self-reported overall health (which is a five-category ordinal categorical outcome) on the basis of the subject's age, waist circumference, and whether or not they have smoked 100 cigarettes in their lifetime. The R data for `health` are ordered to produce the following order:
+
+```
+nh_1500 |> tabyl(health)
+
+    health   n   percent
+ Excellent 138 0.0920000
+    V_Good 404 0.2693333
+      Good 646 0.4306667
+      Fair 264 0.1760000
+      Poor  48 0.0320000
+```
+
+a. {6} Produce two proportional odds logistic regression models. The first, which I'll call `mod3a`, should use all three predictors to predict `health`, while the second model, called `mod3b`, should use only two predictors, leaving out age. In each case, interpret the meaning of the point estimate for waist circumference.
+
+b. {6} Validate the C statistic and Nagelkerke $R^2$ for each of your models using a bootstrap procedure with the default number of iterations and a seed set to `2025`. Specify your conclusion about which model looks better on the basis of this work.
+
+# Question 4. (12 points)
+
+The `remit48.sav` gathers initial remission times, in days (the variable is called `days`,) for 48 adult subjects with a leukemia diagnosis who randomly allocated to one of two different `treatment`s, labeled Old and New. Some patients were right-censored before their remission times could be fully determined, as indicated by values of `censored` = "Yes" in the data set. Note that remission is a good thing, so long times before remission are bad.
+
+a. {6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments. 
+
+b. {6} Then write (at least two) complete sentences explaining and providing context to accompany your estimates and plots. Do not use a regression model.
+
+
+# Use of AI
+
+If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI", after your answers to our questions, and just *before* your presentation of the Session Information. Thank you.
+
+## Be sure to include Session Information
+
+Please display your session information at the end of your submission, as shown below.
+
+```{r}
+xfun::session_info()
+```
+
+## After the Lab
+
+- We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.
+- We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
+- See the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you.

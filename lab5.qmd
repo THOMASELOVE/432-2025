@@ -14,6 +14,12 @@ format:
   - We do not grade work that is more than 48 hours late.
 - Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
 
+:::{.callout-important}
+
+You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.
+
+:::
+
 ## Template
 
 You should be able to modify the [Lab 3 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab.
