@@ -40,7 +40,9 @@ Sanity checks are an important part of your programming, but they don't belong i
 
 ## Demonstration Project
 
-Dr. Love will post .qmd and .html files for a demonstration project to our **Shared Google Drive** as soon as he can.
+A demonstration Project A, built by Professor Love, is [available here](432_projectA_demo.qmd), where you can view the HTML and download the Quarto code. 
+
+- Professor Love has posted the .qmd, .html and data files for the Project A demonstration project to our **Shared Google Drive**.
 
 # Need Help?
 
@@ -506,11 +508,7 @@ labels in bold below.
             what the plot is telling you.
         -   We prefer you discuss a meaningful effect, should one exist.
             Pick an effect to describe that is interesting to you.
-    -   Next, we want you to provide a plot of the ROC curve for the
-        “final model” in the entire data set.
-    -   You should display an appropriate (corrected through validation)
-        estimate of Nagelkerke R-square and the C statistic for your
-        final model, using the entire data set.
+    -   Next, you should display an appropriate (corrected through validation) estimate of Nagelkerke R-square and the C statistic for your final model, using the entire data set.
     -   The final part of your summary of the final model should be a
         nomogram with a demonstration of a predicted probability
         associated with two new subjects of interest that differ in

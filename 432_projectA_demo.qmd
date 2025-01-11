@@ -1,0 +1,1290 @@
+---
+title: "Predicting High-Density Lipoprotein Cholesterol Levels"
+subtitle: "432 Project A: A Partial Demonstration"
+author: "Thomas E. Love, Ph.D."
+date: last-modified
+format: 
+  html:
+    toc: true
+    number-sections: true
+    code-fold: show
+    code-tools: true
+    code-overflow: wrap
+    embed-resources: true
+    date-format: iso
+---
+
+## What is This? {.unnumbered}
+
+This is a demonstration Project A for 432. It includes everything you **must** include in sections 1, 2, 4-9, and 11-13, although there are numerous places where a better project would say more about the results shown here than I have. I also have only performed single imputation, rather than multiple imputation, in this demonstration project, and I've only given some guidance regarding the discussion, leaving it up to you.
+
+I decided to share this with students in the class in an effort to ensure that students could meet the minimum standards for the project (to obtain a solid B) more easily.
+
+## R Packages and Setup {.unnumbered}
+
+```{r}
+#| message: false
+#| warning: false
+
+knitr::opts_chunk$set(comment = NA) 
+
+library(janitor) 
+library(naniar)
+
+library(broom)
+library(car)
+library(caret)
+library(GGally)
+library(gt)
+library(gtsummary)
+library(knitr)
+library(mice)
+library(patchwork)
+library(ROCR)
+library(rsample)
+library(rms)
+
+library(easystats)
+library(tidyverse) 
+
+theme_set(theme_bw()) 
+```
+
+# Data Source
+
+These data come from the 2015-16 and 2017-18 administrations of the [National Health and Nutrition Examination Survey](https://www.cdc.gov/nchs/nhanes/index.htm) from the Centers for Disease Control and Prevention.
+
+- The 2015-16 data are described in detail and accessed [here](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2015)
+- The 2017-18 data are described in detail and accessed [here](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017)
+
+In each year, we gathered data from the Demographics (DEMO) files (DEMO_I and DEMO_J, respectively), the Body Measures (BMX) files, the Cholesterol - High Density Lipoprotein (HDL) files, and the Current Health Status (HSQ) files.
+
+# The Subjects
+
+The NHANES files contain complete data on our linear regression outcome (HDL cholesterol level) and our logistic regression outcome (sex-dependent cutoff for "at risk" HDL cholesterol: < 40 mg/dl for men and < 50 mg/dl for women) for a total of 6203 subjects between the ages of 40 and 79. Our tidied tibble (for analyses) consists of a random sample of 999 of those subjects.
+
+# Loading and Tidying the Data {#sec-load}
+
+:::{.callout-important}
+Here I provide only a summary of the steps I took. In your project, you'll actually have to show your data management work.
+:::
+
+In building this document, I used the `nhanesA` package for R, which is not currently available on CRAN. In addition, the repository of NHANES materials at the CDC website has changed in some ways that don't allow me to use my original code. So, I have created a file called `nh_demo.Rds` which contains the tidied version of my data.
+
+## How the `nh_demo` file was built {#sec-orig}
+
+I included the following items, from both 2017-18 and 2015-16 NHANES.
+
+From the DEMO files: [`DEMO_J` for 2017-18](https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm) and [`DEMO_I` for 2015-16](https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/DEMO_I.htm)
+
+- SEQN = Subject identifying code 
+- RIDSTATR = Interview/Examination Status (categorical)
+    - 1 = Interview only
+    - 2 = Interview and MEC examination (MEC = mobile examination center)
+- RIDAGEYR = Age in years (quantitative, topcoded at 80)
+    - All subjects ages 80 and over are coded as 80
+- RIAGENDR = Sex (categorical)
+    - 1 = Male, 2 = Female
+- RIDRETH3 = Race/Ethnicity (categorical)
+    - 1 = Mexican-American, 
+    - 2 = Other Hispanic (1 and 2 are often combined)
+    - 3 = Non-Hispanic White
+    - 4 = Non-Hispanic Black
+    - 6 = Non-Hispanic Asian
+    - 7 = Other Race including Multi-Racial
+    - Note that categories 1 and 2 are often combined, and sometimes we leave out category 7, or combine it with 6.
+
+From the Body Measures (BMX) files: [`BMX_J` for 2017-18](https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BMX_J.htm) and [`BMX_I` for 2015-16](https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/BMX_I.htm) (BMX is part of the Examination data)
+
+- BMXWAIST = Waist Circumference in cm (quantitative)
+
+From the Cholesterol - High-Density Lipoprotein (HDL) files: [`HDL_J` for 2017-18](https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/HDL_J.htm) and [`HDL_I` for 2015-16](https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/HDL_I.htm) (HDL is part of the Lab data)
+
+- LBDHDD = Direct HDL cholesterol in mg/dl (quantitative)
+
+From the Current Health Status (HSQ) file [`HSQ_J` for 2017-18](https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/HSQ_J.htm) and [`HSQ_I` for 2015-16](https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/HSQ_I.htm) (HSQ is part of the Questionnaire data)
+
+- HSD010 = Self-reported general health (categorical)
+    - 1 = Excellent
+    - 2 = Very good
+    - 3 = Good
+    - 4 = Fair
+    - 5 = Poor
+    - 7 = Refused
+    - 9 = Don't Know
+
+## Ingesting and Cleaning the NHANES data
+
+I used functions from the `nhanesA` package to pull in the data from each necessary database using `nhanes()` and `translated = FALSE`, then used `zap_label()` to delete the labels, and converted to tibbles. Next, I used `inner_join()` to merge data within each NHANES cycle.
+
+Next, I selected the 8 variables we need from the merged cycle-specific files, and converted each of the categorical variables to factors except the SEQN (subject code.) Then I added an indicator of the CYCLE (2015-16 or 2017-18) in which the data were drawn, and combined it all into one big tibble with `full_join()`.
+
+Then I decided to restrict our work here to adult subjects between the ages of 40 and 79, in part to avoid the fact that NHANES classifies everyone over age 80 as `RIDAGEYR` = 80. So that involved filtering to those with RIDAGEYR > 39 and RIDAGEYR < 80.
+
+We have three quantitative variables: age (`RIDAGEYR`), waist circumference (`BMXWAIST`) and HDL Cholesterol (`LBDHDD`), which I renamed to AGE, WAIST and HDL, respectively. The ranges (minimum and maximum) for Age, Waist Circumference and HDL Cholesterol all seem fairly plausible to me. Perhaps you know better, and please do use that knowledge. We do have several hundred missing values in the waist circumference and HDL cholesterol values that we will need to deal with after we sample the data.
+
+In terms of categorical variables, I started by checking to see that everyone has `RIDSTATR` status 2, meaning they completed both the NHANES questionnaire and the NHANES examination. Since they do, I then made sure our `CYCLE` variable works to indicate the NHANES reporting CYCLE for each subject by running `tabyl(CYCLE, RIDSTATR)`.
+
+Next, I changed RIAGENDR to `SEX` with values "M" and "F" as a factor. Another option would have been to use a 1/0 numeric variable to represent, for example FEMALE = 1 if the subject was reported as female and 0 if the subject was reported as male.
+
+Next, I created `RACE_ETH` to replace `RIDRETH3`.
+
+- I recoded the levels of the `RIDRETH3` variable to use short, understandable group names, using `mutate()` and `fct_recode()`, and
+- Collapsed the first two categories (Mexican-American and Other Hispanic) into a single category, using `fct_recode()`, and
+- Changed the variable name to `RACE_ETH` using `mutate()` and
+- Sorted the resulting factor in order of their counts using `fct_infreq()`.
+
+The most common `RACE_ETH` turns out to be Non-Hispanic White, followed by Hispanic, then Non-Hispanic Black, Non-Hispanic Asian and finally Other Race (including Multi-Racial.) We won't collapse any further for now.
+
+Next, I changed `HSD010` to `SROH`, as follows.
+
+- Again, I recoded the levels of this categorical variable with `fct_recode()`
+- I also renamed the variable SROH (which is an abbreviation for self-reported overall health) with `mutate()`. Always explain your abbreviations.
+- I also converted the values 7 (Refused) and 9 (Don't Know) to missing values with `na_if()`, then I used `droplevels()` to drop all of the now-unused levels in the factors I'm using.
+
+## Our outcomes {#sec-hdlrisk}
+
+Our outcomes are each based on HDL cholesterol level. So I filtered the data for complete cases on that variable.
+
+Next, I created a binary outcome for logistic regression, which is an indicator (taking the values 0 and 1) for an HDL cholesterol value that is "at risk" according to [these standards published on the Mayo Clinic site](https://www.mayoclinic.org/diseases-conditions/high-blood-cholesterol/in-depth/hdl-cholesterol/art-20046388), specifically, an adult male is considered to be at risk if their HDL < 40 mg/dl and an adult female is considered to be at risk if their HDL < 50 mg/dl.
+
+Since we have complete data in `nh_demo_full` on HDL and SEX, I used that data to create the new variable `HDL_RISK` as shown below, then checked to see that this had worked properly:
+
+```{r}
+#| message: false
+#| eval: false
+
+## this code chunk is not evaluated here - just showing you what I would do
+
+nh_demo_full <- nh_demo_full |>
+  mutate(HDL_RISK = case_when( 
+    SEX == "M" & HDL < 40 ~ 1,
+    SEX == "F" & HDL < 50 ~ 1,
+    .default = 0))
+
+## check to see if this worked properly
+nh_demo_full |> group_by(HDL_RISK, SEX) |> 
+  summarise(n = n(), min(HDL), max(HDL))
+```
+
+## Arranging the Tibble and Sampling the Data
+
+- We don't need `RIDSTATR` any more because we've checked and see that all its values are 2, as needed.
+- We've renamed some variables and replaced others with better versions.
+
+Finally, I selected 999 observations from our working file, called the `nh_demo_full` tibble for use in our subsequent analyses, and this sample is called `nh_demo`. I have provided you with the `nh_demo.Rds` file, which I'm loading below. 
+
+```{r}
+nh_demo <- read_rds("data/nh_demo.Rds")
+```
+
+# The Tidy Tibble
+
+## Listing the Tibble
+
+:::{.callout-note}
+
+If I ask you to print/list a tibble, part of the reason is to ensure that it actually *is* a tibble. A tibble will, as below, only print the first 10 rows.
+
+:::
+
+```{r}
+nh_demo
+```
+
+## Size and Identifiers
+
+Our analytic tibble, called `nh_demo`, has `r nrow(nh_demo)` rows (observations) on `r ncol(nh_demo)` columns (variables.) Our indicator variable is the SEQN, and we have a unique SEQN for each row in our data set, as the code below demonstrates.
+
+```{r}
+identical(nrow(nh_demo), n_distinct(nh_demo$SEQN))
+```
+
+## Save The Tibble
+
+I've already done this so I won't do it again, but this is the code I would use to save the file.
+
+:::{.callout-note}
+
+Note that I have set this code chunk to `eval: false` so that it will not actually do anything. I'm just showing you what I would do to save the Rds file to the data sub-directory of our R project. You should not use `eval: false` anywhere in your Project A.
+
+:::
+
+```{r}
+#| eval: false
+
+write_rds(nh_demo, "data/nh_demo.Rds")
+```
+
+# The Code Book
+
+I've chosen here to build a rather detailed codebook containing useful information describing the analytic sample, `nh_demo`. I've used numerous tools to help give a variety of summaries which may be helpful.
+
+## Five Key Statements
+
+I suggest you begin your Project A codebook with five statements (like the ones shown below) to fix ideas about the sample size, the missingness, the outcomes and a statement about the roles for the other variables. 
+
+:::{.callout-note}
+
+If you look at the Quarto code that generated this document, you will see that I have used in-line coding to fill in the counts of subjects in statements 1 and 2. You should, too.
+
+:::
+
+1. **Sample Size** The data in our complete `nh_demo` sample consist of `r nrow(nh_demo)` subjects from NHANES 2015-16 and NHANES 2017-18 between the ages of 40 and 79 in whom our outcome variables (`HDL` and `HDL_RISK`) were measured. 
+2. **Missingness** Of the `r nrow(nh_demo)` subjects, `r n_case_complete(nh_demo |> select(HDL, HDL_RISK, AGE, WAIST, CYCLE, SEX, RACE_ETH, SROH))` have complete data on all variables listed below.
+3. Our **outcome** variables are `HDL`, which is the subject's serum HDL cholesterol measured in mg/dl for the linear regression, and `HDL_RISK`, which indicates whether or not the subject's HDL cholesterol is at risk (too low) given their sex, for the logistic regression. There are no missing data in either of these outcomes.
+4. Candidate **predictors** for my models include `AGE`, `WAIST`, `RACE_ETH` and `SROH`, (for both models) as well as `SEX` for the linear model.
+5. The other variables contained in my tidy tibble are `SEQN` which is the subject identifying code, and `CYCLE` which identifies whether this subject was part of the 2015-16 or 2017-18 NHANES reporting cycle.
+
+## Describing the Variables (5 Tabs)
+
+Variables included in the `nh_demo` data are summarized and described in five different ways in the panel below. Click on the tab that interests you to see results.
+
+::: {.panel-tabset}
+
+### Definitions
+
+In addition to the brief descriptions (including units of measurement, where appropriate) in the table below, descriptions of the original NHANES variables which led to these are also discussed in @sec-orig.
+
+Variable | Description
+--------: | :------------------------------------------------------
+`SEQN` | NHANES subject identifying code
+`HDL` | HDL cholesterol in mg/dl (**outcome for our linear model**)
+`HDL_RISK` | Does HDL put subject at risk? 1 (yes) if HDL < 40 for males or if HDL < 50 for females, otherwise 0 (**outcome for logistic model**)
+`AGE` | Age in years, restricted to 40-79 here
+`RACE_ETH` | Race-Ethnicity: five categories (NH_white, NH_Black, NH_Asian, Hispanic, Other)
+`WAIST` | Waist circumference, in cm
+`SROH` | Self-Reported Overall Health: five categories (Excellent, Very_Good, Good, Fair, Poor)
+`SEX` | Biological Sex: either F or M
+`CYCLE` | NHANES reporting cycle: either 2015-16 or 2017-18
+
+### `data_codebook()`
+
+:::{.callout-note}
+
+The `data_codebook()` function comes from the `datawizard` package, which is part of the `easystats` ecosystem.
+
+:::
+
+```{r}
+data_codebook(nh_demo)
+```
+
+### `describe()`
+
+:::{.callout-note}
+
+The `describe()` function (and the `html()` function) used here come from the `Hmisc` package, developed by Frank Harrell and his colleagues.
+
+:::
+
+```{r}
+#| warning: false
+describe(nh_demo) |> html()
+```
+
+### `tbl_summary()`
+
+:::{.callout-note}
+
+The `tbl_summary()` function used here comes from the `gtsummary` package. Note that missing values are listed as "Unknown" by default.
+
+:::
+
+```{r}
+tbl_summary(select(nh_demo, -SEQN),
+        label = list(
+            HDL = "HDL (HDL Cholesterol in mg/dl)",
+            HDL_RISK = "HDL_RISK (HDL < 40 if Male, < 50 if Female)?",
+            AGE = "AGE (in years)",
+            WAIST = "WAIST (circumference in cm)",
+            CYCLE = "CYCLE (NHANES reporting)",
+            RACE_ETH = "RACE_ETH (Race/Ethnicity)",
+            SROH = "SROH (Self-Reported Overall Health)"),
+        stat = list( all_continuous() ~ 
+                "{median} [{min} to {max}]" ))
+```
+
+### Missingness
+
+:::{.callout-note}
+
+These summaries come from the `naniar` package.
+
+:::
+
+```{r}
+gg_miss_var(nh_demo)
+
+miss_var_summary(nh_demo)
+
+miss_case_table(nh_demo)
+```
+
+
+:::
+
+
+# Linear Regression Plans
+
+## My First Research Question
+
+How effectively can we predict HDL cholesterol levels using age, sex, race/ethnicity, waist circumference and self-reported overall health, in a sample of 999 NHANES participants ages 40-79?
+
+## My Quantitative Outcome
+
+- My quantitative outcome is `HDL`, and I am interested in predicting this value using several more easily gathered characteristics of a subject.
+- I have complete HDL data for all `r nrow(nh_demo)` subjects in my `nh_demo` tibble.
+- My HDL data includes `r n_distinct(nh_demo$HDL)` different values, all measured in mg/dl.
+- The distribution of HDL across the 999 subjects in my `nh_demo` data (shown in the Figure below) is a bit right skewed, with a median of 51, and ranging from 22 mg/dl to 149 mg/dl.
+
+```{r}
+p1 <- ggplot(nh_demo, aes(sample = HDL)) +
+  geom_qq(col = "navy") + geom_qq_line(col = "red") + 
+  labs(title = "Normal Q-Q plot of HDL", x = "",
+       y = "HDL Cholesterol Level (mg/dl)")
+
+p2 <- ggplot(nh_demo, aes(x = HDL)) +
+  geom_histogram(binwidth = 5, col = "white", fill = "navy") +
+  labs(title = "Histogram of HDL", x = "HDL Cholesterol Level (mg/dl)")
+
+p1 + p2
+```
+
+## My Planned Predictors (Linear Model)
+
+The predictors I intend to use in my linear model are `AGE` and `WAIST`, which are quantitative, `SEX`, which is a binary categorical variable, and `RACE_ETH` and `SROH`, each of which are 5-category variables treated as factors in my `nh_demo` tibble.
+
+- `AGE` has `r n_distinct(nh_demo$AGE)` distinct values, and is measured in years.
+- `WAIST` has `r n_distinct(nh_demo$WAIST)` distinct values, and is measured in centimeters.
+- `SEX` has two levels, with `nrow(nh_demo |> filter(SEX == "F"))` female and `nrow(nh_demo |> filter(SEX == "M"))` male subjects.
+- `RACE_ETH`'s five categories each have at least 30 observations in each level (actually they each have 37 or more), and 
+- `SROH`'s five categories also have at least 30 observations (actually 36 or more) in each level, as we can see in the table below. `SROH` also has 56 missing values.
+  
+```{r}
+nh_demo |> tabyl(RACE_ETH, SROH) |> adorn_totals(where = c("row", "col"))
+```
+
+These five predictors are fewer than the allowed maximum of $4 + (999 - 100)/100 = 12.999$, rounding to 12 predictors as prescribed by the Project A instructions, given our 999 observations in `nh_demo`.  
+
+### Anticipated Direction of Effects
+
+I expect Higher HDL to be associated with lower age, with lower waist circumference, with being female, with reporting better self-reported overall health, and with non-hispanic white ethnicity. 
+
+# Logistic Regression Plans
+
+## My Second Research Question
+
+How effectively can we predict whether or not a subject's HDL cholesterol level is at risk (too low) using age, race/ethnicity, waist circumference and self-reported overall health, in a sample of 999 NHANES participants ages 40-79? 
+
+## My Binary Outcome
+
+- My binary outcome is `HDL_RISK`, and I am interested in predicting this value using several more easily gathered characteristics of a subject.
+- I have complete `HDL_RISK` data for all `r nrow(nh_demo)` subjects in my `nh_demo` tibble.
+
+```{r}
+nh_demo |> tabyl(HDL_RISK)
+```
+
+## My Planned Predictors (Logistic Model)
+
+I am using four of the five predictors I used in my linear model, specifically age, waist circumference, self-reported overall health and race/ethnicity.
+
+- Note that I am not including `SEX` in this model (although I did in my linear model) because my binary outcome variable's cutoff values are stratified by `SEX`.
+
+I have 333 observations in my smaller outcome group (those at risk), and so I am permitted to have up to $4 + (333-100)/100 = 6.33$, rounded to 6 predictors, so I'm within the acceptable limit prescribed by the Project A instructions.
+
+### Anticipated Direction of Effects
+
+I expect higher rates of HDL risk to be associated with higher age, with higher waist circumference, with reporting worse self-reported overall health, and with Hispanic or non-Hispanic Black ethnicity. 
+
+# Linear Regression Analyses
+
+## Missingness
+
+I will assume missing values are missing at random (MAR) in this work, and use single imputation for my analyses.
+
+Here's a table of missingness before imputation. I have missing data on two of my predictors, SROH and WAIST.
+
+```{r}
+miss_var_summary(nh_demo) |> filter(n_miss > 0)
+```
+
+### Single Imputation Approach {#sec-singleimp}
+
+I'll use the `mice` package to do my single imputation (`m = 1`), with a seed set to `432432`.
+
+```{r}
+nh_demo_i <- 
+  mice(nh_demo, m = 1, seed = 432432, print = FALSE) |>
+  complete() |>
+  tibble()
+
+n_miss(nh_demo_i)
+```
+
+We needn't fear logged events in this context.
+
+## Outcome Transformation
+
+Let's look at the Box-Cox results from the `car` package.
+
+```{r}
+mod_temp <- lm(HDL ~ AGE + SEX + RACE_ETH + WAIST + SROH, data = nh_demo_i)
+
+boxCox(mod_temp)
+```
+
+The Box-Cox plot suggests that we take the logarithm of HDL before fitting our model, and so we shall. Here's a plot of the distribution of the natural logarithm of HDL.
+
+```{r}
+nh_demo_i <- nh_demo_i |>
+  mutate(logHDL = log(HDL))
+
+p1 <- ggplot(nh_demo_i, aes(sample = logHDL)) +
+  geom_qq(col = "navy") + geom_qq_line(col = "red") + 
+  labs(title = "Normal Q-Q plot of log(HDL)", x = "",
+       y = "Log of HDL Cholesterol Level (mg/dl)")
+
+p2 <- ggplot(nh_demo_i, aes(x = logHDL)) +
+  geom_histogram(bins = 20, col = "white", fill = "navy") +
+  labs(title = "Histogram of log(HDL)", x = "Log of HDL Cholesterol Level (mg/dl)")
+
+p1 + p2
+```
+
+It does seem that this transformed outcome follows something closer to a Normal distribution.
+
+## Scatterplot Matrix and Collinearity
+
+Here's a scatterplot matrix of our outcome and predictors after transformation and imputation.
+
+```{r}
+#| message: false
+ggpairs(nh_demo_i, columns = c("AGE", "WAIST", "SEX", 
+                               "RACE_ETH", "SROH", "logHDL"))
+```
+
+To check collinearity in more detail, we can estimate variance inflation factors for our predictors.
+
+```{r}
+mod_A <- lm(logHDL ~ AGE + SEX + RACE_ETH + WAIST + SROH, data = nh_demo_i)
+
+car::vif(mod_A)
+```
+
+We don't have any large generalized VIF results here, so we have no meaningful concerns regarding collinearity.
+
+## Model A
+
+### Fitting Model A
+
+Here is the fit using the `lm()` function.
+
+```{r}
+mod_A <- lm(logHDL ~ AGE + SEX + RACE_ETH + WAIST + SROH, data = nh_demo_i)
+```
+
+We'll also fit model A with the `ols()` function from the `rms` package, even though we won't actually use this fit for a while.
+
+```{r}
+dd <- datadist(nh_demo_i)
+options(datadist = "dd")
+
+mod_A_ols <- ols(logHDL ~ AGE + SEX + RACE_ETH + WAIST + SROH,
+                 data = nh_demo_i, x = TRUE, y = TRUE)
+```
+
+### Coefficient Estimates
+
+:::{.callout-note}
+
+I'll show two different approaches (`model_parameters()` from the `easystats` ecosystem, and `tidy()` from the `broom` package) to summarize the coefficient estimates from `mod_A`. Either is sufficient for Project A, and there's no need to show both approaches.
+:::
+
+::: {.panel-tabset}
+
+#### Model Parameters (Model A)
+
+```{r}
+model_parameters(mod_A, ci = 0.90) |> print_md(digits = 3)
+```
+
+#### Tidied Coefficient Estimates (Model A)
+
+```{r}
+tidy(mod_A, conf.int = TRUE, conf.level = 0.90) |>
+  select(term, estimate, se = std.error, low90 = conf.low, 
+         high90 = conf.high, p = p.value) |>
+  kable(digits = 3)
+```
+
+:::
+
+### Model A Effects
+
+Since we've built the `mod_A_ols` model using the `rms` package, it can be helpful to look at the effects using its plot and associated table, as shown below.
+
+:::{.callout-note}
+
+If you look at the Quarto code, you'll see that I've used `warning: false` in this code chunk to suppress some un-interesting warnings here, and in several other code chunks in this document. I encourage you to do the same in your Project A, for the code chunks that I've used `warning: false` in this demo. 
+
+- **Don't** use `warning: false` otherwise in Project A, though. 
+
+:::
+
+```{r}
+#| warning: false
+
+plot(summary(mod_A_ols, conf.int = 0.90))
+
+summary(mod_A_ols, conf.int = 0.90) |> kable(digits = 3)
+```
+
+### Quality of Fit Summaries
+
+:::{.callout-note}
+
+I'll show two different approaches (`model_performance()` from the `easystats` ecosystem, and `glance()` from the `broom` package) to summarize the quality of fit measures describing `mod_A`. I actually like being able to see both of these approaches, since each provides some unique information, so I would encourage you, too, to include both in your Project A.
+
+:::
+
+::: {.panel-tabset}
+
+#### Model A Performance
+
+```{r}
+model_performance(mod_A) |> print_md(digits = 3)
+```
+
+#### Model A at a `glance()`
+
+In our Model A, we use `r glance(mod_A)$df` degrees of freedom, and obtain an $R^2$ value of `r round_half_up(glance(mod_A)$r.squared,3)`.
+
+```{r}
+glance(mod_A) |>
+  select(r2 = r.squared, adjr2 = adj.r.squared, sigma, 
+         AIC, BIC, nobs, df, df.residual) |>
+  kable(digits = c(3, 3, 2, 1, 1, 0, 0, 0))
+```
+
+:::
+
+### Regression Diagnostics for Model A
+
+:::{.callout-note}
+
+Note in the Quarto code for the next chunk that I have set the fig-height to 9, so that the plots are easier to read. Please do that, too, whenever you use `check_model()` from the `easystats` ecosystem.
+
+- I also prefer that you run `check_model()` with `detrend = FALSE` for the Normal Q-Q plot of residuals, as done here.
+
+:::
+
+```{r}
+#| fig-height: 9
+
+check_model(mod_A, detrend = FALSE)
+```
+
+For the most part, these plots look very reasonable. I see no clear problems with the assumptions of linearity, normality or constant variance evident in any of these results. 
+
+The main issue is the posterior predictive check, where our predictions are missing near the center of the distribution a bit, with more predicted values of `log(HDL)` in the 3.75 to 4.25 range than we see in the original data.
+
+## Non-Linearity and Spearman $\rho^2$
+
+Here's the relevant Spearman $\rho^2$ plot, as a place to look for sensible places to consider a non-linear term or terms.
+
+```{r}
+plot(spearman2(logHDL ~ AGE + WAIST + SEX + RACE_ETH + SROH, 
+               data = nh_demo_i))
+```
+
+Our Spearman $\rho^2$ plot first suggests the use of a non-linear term in WAIST, so we'll add a restricted cubic spline in WAIST using 5 knots, which should add 3 degrees of freedom to our initial model. 
+
+Next, the SEX variable also seems to be a good choice, so we'll add an interaction between SEX and the main effect of WAIST, which will add one more degree of freedom to our model A.
+
+## Model B
+
+Our Model B will add two non-linear terms, summing up to 4 additional degrees of freedom, to our Model A.
+
+### Fitting Model B
+
+```{r}
+mod_B <- lm(logHDL ~ AGE + rcs(WAIST, 5) + SEX + 
+              WAIST %ia% SEX + RACE_ETH + SROH,
+            data = nh_demo_i)
+```
+
+We'll also fit model B with the `ols()` function from the **rms** package.
+
+```{r}
+dd <- datadist(nh_demo_i)
+options(datadist = "dd")
+
+mod_B_ols <- ols(logHDL ~ AGE + rcs(WAIST, 5) + SEX + 
+              WAIST %ia% SEX + RACE_ETH + SROH,
+            data = nh_demo_i, x = TRUE, y = TRUE)
+```
+
+### Coefficient Estimates
+
+:::{.callout-note}
+
+I'll show two different approaches (`model_parameters()` from the `easystats` ecosystem, and `tidy()` from the `broom` package) to summarize the coefficient estimates from `mod_B`. Either is sufficient for Project A, and there's no need to show both approaches. The `tidy()` approach handles the non-linear terms a bit better in my view, so I'd probably go with that.
+:::
+
+::: {.panel-tabset}
+
+#### Model Parameters (Model B)
+
+```{r}
+model_parameters(mod_B, ci = 0.90) |> print_md(digits = 3)
+```
+
+#### Tidied Coefficient Estimates (Model B)
+
+```{r}
+tidy(mod_B, conf.int = TRUE, conf.level = 0.90) |>
+  select(term, estimate, se = std.error, 
+         low90 = conf.low, high90 = conf.high, 
+         p = p.value) |>
+  kable(digits = 3)
+```
+
+:::
+
+### Model B Effects
+
+Here, we use the `mod_B_ols` model to look at the effects using its plot and associated table, which may be especially helpful when we include non-linear terms.
+
+:::{.callout-note}
+
+I've used `warning: false` in this code chunk to suppress some un-interesting warnings. You can (for this type of plot) too, if you need to, in your Project A. 
+
+:::
+
+```{r}
+#| warning: false
+
+plot(summary(mod_B_ols, conf.int = 0.90))
+
+summary(mod_B_ols, conf.int = 0.90) |> kable(digits = 3)
+```
+
+### Quality of Fit Summaries
+
+::: {.panel-tabset}
+
+#### Model B Performance
+
+```{r}
+model_performance(mod_B) |> print_md(digits = 3)
+```
+
+#### Model B at a `glance()`
+
+In our Model B, we use `r glance(mod_B)$df` degrees of freedom, and obtain an $R^2$ value of `r round_half_up(glance(mod_B)$r.squared,3)`.
+
+```{r}
+glance(mod_B) |>
+  select(r2 = r.squared, adjr2 = adj.r.squared, sigma, 
+         AIC, BIC, nobs, df, df.residual) |>
+  kable(digits = c(3, 3, 2, 1, 1, 0, 0, 0))
+```
+
+:::
+
+### Regression Diagnostics for Model B
+
+```{r}
+#| fig-height: 9
+
+check_model(mod_B, detrend = FALSE)
+```
+
+These residual plots also look pretty reasonable, too. Again, I see no clear problems with the assumptions of linearity, normality or constant variance evident in these results. The posterior predictive check is a little better than Model A, but not much. The collinearity we've introduced here is due to the interaction terms, so that's not a concern for us.
+
+## Validating Models A and B
+
+We will use the `validate()` function from the **rms** package to validate our `ols` fits.
+
+```{r}
+set.seed(4321); (valA <- validate(mod_A_ols))
+set.seed(4322); (valB <- validate(mod_B_ols))
+```
+
+
+### Validated $R^2$, and MSE as well as IC statistics {#sec-vallin}
+
+:::{.callout-note}
+
+If you inspect the Quarto code for the table below, you'll see that I have used in-line coding to specify the values of each element. That's definitely worth considering in building your work, although it takes some care.
+
+:::
+
+Model | Validated $R^2$ | Validated MSE | AIC | BIC | df
+-----: | :--------: | :--------: | :-----: | :-----: | :--:
+A | `r round_half_up(valA[1,5],3)` | `r round_half_up(valA[2,5],4)` | `r round_half_up(AIC(mod_A),1)` | `r round_half_up(BIC(mod_A),1)` | `r glance(mod_A)$df`
+B | `r round_half_up(valB[1,5],3)` | `r round_half_up(valB[2,5],4)` | `r round_half_up(AIC(mod_B),1)` | `r round_half_up(BIC(mod_B),1)` | `r glance(mod_B)$df`
+
+## Final Linear Regression Model
+
+We'll choose Model B here.
+
+We see a small improvement for Model B in terms of validated $R^2$ and AIC. We also note that BIC is a little lower (thus better) for Model A, and there's no material difference in validated mean squared error. Each of the models matches the assumptions of linear regression well, so there's not much to choose from in that regard. Really, we could pick either model here, but I wanted to pick a model with non-linear terms so that I could display and discuss them in what follows.
+
+### Winning Model's OLS summary
+
+```{r}
+mod_B_ols
+```
+
+As a reminder, we displayed the validated $R^2$ value ( = `r round_half_up(valB[1,5],3)`) for our Model B back in @sec-vallin.
+
+### Effects Plot for Winning Model
+
+```{r}
+#| warning: false
+plot(summary(mod_B_ols, conf.int = 0.90))
+```
+
+### Numerical Description of Effect Sizes
+
+```{r}
+#| warning: false
+summary(mod_B_ols, conf.int = 0.90) |> kable(digits = 3)
+```
+
+### Effect Size Description(s)
+
+In your work, we would only need to see one of the following effect size descriptions.
+
+**WAIST** description: If we have two female subjects of the same age, race/ethnicity and self-reported overall health, then if subject 1 has a waist circumference of 92 cm and subject 2 has a waist circumference of 112.6 cm, then our model estimates that subject 1 will have a log(`HDL`) that is 0.133 higher than subject 2. The 90% confidence interval around that estimated effect on log(HDL) ranges from (0.091, 0.175).
+
+**SEX** description: If we have two subjects, each with the same age, race/ethnicity and self-reported overall health and with a waist circumference of 101.7 cm, then if subject 1 is male and subject 2 is female, our model estimates that the female subject will have a log(`HDL`) that is 0.158 higher (with 90% CI: (0.131, 0.186)) than the male subject.
+
+**AGE** description: If we have two subjects of the same sex, waist circumference, race/ethnicity and self-reported overall health, then if subject 1 is age 50 and subject 2 is age 66, our model predicts that subject 1's log(`HDL`) will be 0.052 larger than subject 2's log(HDL), with 90% confidence interval (0.031, 0.073).
+
+**SROH** description: If we have two subjects of the same age, sex, waist circumference and race/ethnicity. then if subject 1 reports Excellent overall health while subject 2 reports only Good overall health, our model predicts that subject 1's log(HDL) will be 0.063 higher than subject 2's log(HDL), with 90% CI (0.013, 0.114).
+
+### Prediction Plot for Winning Model
+
+Here's the set of prediction plots to describe the impact of the coefficients on `log(HDL)`.
+
+```{r}
+#| warning: false
+
+ggplot(Predict(mod_B_ols))
+```
+
+### Nomogram of Winning Model
+
+```{r}
+#| warning: false
+#| fig-height: 9
+
+plot(nomogram(mod_B_ols, fun = exp, funlabel = "HDL"))
+```
+
+### Prediction for a New Subject
+
+I will create a predicted HDL for a new female Non-Hispanic White subject who is 60 years old, has an 85 cm waist circumference, and rates their overall health as Fair. 
+
+:::{.callout-note}
+
+I can do this using either the `ols()` or the `lm()` fit to our model. Either is sufficient for Project A, and there's no need to show both approaches.
+
+:::
+
+::: {.panel-tabset}
+
+#### Using the `lm()` fit
+
+Here, I'll actually run two predictions, one for a Male and one for a Female subject with the same values of AGE, WAIST, RACE_ETH and SROH. 
+
+```{r}
+new_subjects <- 
+  data.frame(AGE = c(60,60), WAIST = c(85, 85), SEX = c("M", "F"),
+             RACE_ETH = c("NH_White", "NH_White"), SROH = c("Fair", "Fair"))
+
+preds1 <- predict.lm(mod_B, newdata = new_subjects, 
+                     interval = "prediction", level = 0.90)
+
+exp(preds1)
+```
+
+We then exponentiate these results to obtain the estimate and 90% prediction interval on the original scale of HDL cholesterol, as shown in the table below. 
+
+Predictor Values | Predicted HDL | 90% Prediction Interval
+:-------------: | :-------------: | :-------------:
+AGE = 60, WAIST = 85, SEX = M, RACE_ETH = NH_White, SROH = FAIR | `r round_half_up(exp(preds1[1,])[1],2)` mg/dl | (`r round_half_up(exp(preds1[1,])[2],2)`, `r round_half_up(exp(preds1[1,])[3],2)`) mg/dl
+AGE = 60, WAIST = 85, SEX = F, RACE_ETH = NH_White, SROH = FAIR | `r round_half_up(exp(preds1[2,])[1],2)` mg/dl | (`r round_half_up(exp(preds1[2,])[2],2)`, `r round_half_up(exp(preds1[2,])[3],2)`) mg/dl
+
+
+#### Using the `ols()` fit
+
+Alternatively, I could have used our `ols()` fit. Here, I'll just fit the results for the female subject.
+
+```{r}
+#| warning: false
+new_subject <- tibble(  AGE = 60, WAIST = 85, SEX = "F", 
+                       RACE_ETH = "NH_White", SROH = "Fair" ) 
+
+preds2 <- predict(mod_B_ols, newdata = new_subject, 
+                 conf.int = 0.90, conf.type = "individual")
+
+preds2
+```
+
+We then exponentiate these results to obtain the estimate and 90% prediction interval on the original scale of HDL cholesterol, as shown in the table below. 
+
+Predictor Values | Predicted HDL | 90% Prediction Interval
+:-------------: | :-------------: | :-------------:
+AGE = 60, WAIST = 85, SEX = F, RACE_ETH = NH_White, SROH = FAIR | `r round_half_up(exp(preds2$linear.predictors),2)` mg/dl | (`r round_half_up(exp(preds2$lower),2)`, `r round_half_up(exp(preds2$upper),2)`) mg/dl
+
+Naturally, the two fitting approaches (`lm()` and `ols()`) produce the same model, so they produce the same predictions.
+
+:::
+
+# Logistic Regression Analyses
+
+## Missingness
+
+Again, we'll assume missing values are MAR, and use the single imputation approach developed previously in @sec-singleimp.
+
+## Model Y
+
+We'll predict Pr(`HDL_RISK` = 1), the probably of having a low enough `HDL` to put the subject at risk, as a function of `AGE`, `WAIST`, `RACE_ETH` and `SROH`.
+
+### Fitting Model Y
+
+We'll fit our logistic regression model using both `glm()` and `lrm()`.
+
+```{r}
+mod_Y <- glm(HDL_RISK ~ AGE + WAIST + RACE_ETH + SROH,
+            data = nh_demo_i, family = binomial())
+
+ddd <- datadist(nh_demo_i)
+options(datadist = "ddd")
+
+mod_Y_lrm <- lrm(HDL_RISK ~ AGE + WAIST + RACE_ETH + SROH,
+                data = nh_demo_i, x = TRUE, y = TRUE)
+```
+
+### Coefficient Estimates
+
+:::{.callout-note}
+
+I'll show two different approaches (`model_parameters()` from the `easystats` ecosystem, and `tidy()` from the `broom` package) to summarize the coefficient estimates from `mod_Y`. Either is sufficient for Project A, and there's no need to show both approaches.
+:::
+
+::: {.panel-tabset}
+
+#### Tidied Odds Ratio Estimates (Model Y)
+
+```{r}
+tidy(mod_Y, exponentiate = TRUE, conf.int = TRUE, conf.level = 0.90) |>
+  select(term, estimate, se = std.error, 
+         low90 = conf.low, high90 = conf.high, p = p.value) |>
+  kable(digits = 3)
+```
+
+#### Model Y Parameters
+
+```{r}
+model_parameters(mod_Y, ci = 0.90, exponentiate = TRUE) |>
+  print_md(digits = 3)
+```
+:::
+
+### Model Y Effects
+
+```{r}
+#| warning: false
+
+plot(summary(mod_Y_lrm, conf.int = 0.90))
+
+summary(mod_Y_lrm, conf.int = 0.90) |> kable(digits = 3)
+```
+
+### Quality of Fit Summaries
+
+:::{.callout-note}
+
+Here, we have three available approaches to summarize the fit of Model Y, thanks to our `glm()` and `lrm()` fits of the same model. I'll show all three, but in practice (and in your Project A) I wouldn't include the `model_performance()` results.
+
+:::
+
+::: {.panel-tabset}
+
+#### `lrm()` for Model Y
+
+Our Nagelkerke $R^2$ estimate for Model Y is `r round_half_up(mod_Y_lrm$stats["R2"], 3)`, and our C statistic is estimated to be `r round_half_up(mod_Y_lrm$stats["C"], 3)`.
+
+```{r}
+mod_Y_lrm
+```
+
+#### `glance` at Model Y
+
+The `glance()` results below give us our AIC and BIC values, as well as the degrees of freedom used by Model Y.
+
+```{r}
+glance(mod_Y) |>
+  mutate(df = nobs - df.residual - 1) |>
+  select(AIC, BIC, df, df.residual, nobs) |>
+  kable(digits = 1)
+```
+
+#### Model Y Performance
+
+:::{.callout-note}
+
+These summaries aren't as appealing to me as those in the other two tabs here.
+:::
+
+```{r}
+model_performance(mod_Y) |> print_md(digits = 2)
+```
+
+:::
+
+
+
+
+### Confusion Matrix (Model Y)
+
+First, we augment our `nh_demo_i` data to include predicted probabilities of (HDL_RISK = 1) from Model Y.
+
+```{r}
+resY_aug <- augment(mod_Y, type.predict = "response")
+```
+
+My prediction rule for this confusion matrix is that the fitted value of Pr(HDL_RISK = 1) needs to be greater than or equal to 0.5 for me to predict HDL_RISK is 1, and otherwise I predict 0.
+
+```{r}
+cm_Y <- caret::confusionMatrix(
+  data = factor(resY_aug$.fitted >= 0.5),
+  reference = factor(resY_aug$HDL_RISK == 1),
+  positive = "TRUE")
+
+cm_Y
+```
+
+Here are our results, tabulated nicely.
+
+Model | Classification Rule | Sensitivity | Specificity | Pos. Pred. Value
+----: | :--------------: | :--------: | :--------: | :----------:
+Y | Predicted Pr(HDL_RISK = 1) >= 0.5 | `r round_half_up(cm_Y$byClass["Sensitivity"], 3)` | `r round_half_up(cm_Y$byClass["Specificity"], 3)` | `r round_half_up(cm_Y$byClass["Pos Pred Value"], 3)`
+
+## Non-Linearity and Spearman $\rho^2$ plot
+
+Here's the relevant Spearman $\rho^2$ plot.
+
+```{r}
+plot(spearman2(HDL_RISK ~ AGE + WAIST + SEX + RACE_ETH + SROH, 
+               data = nh_demo_i))
+```
+
+Our Spearman $\rho^2$ plot first suggests the use of a non-linear term in `WAIST`, so we'll add a restricted cubic spline in `WAIST` using 4 knots, which should add 2 degrees of freedom to our initial model. 
+
+Next, the `SROH` variable seems to be a good choice, so we'll add an interaction between `SROH` and the main effect of `WAIST`, which will add four more degrees of freedom to our model Y.
+
+## Model Z
+
+As mentioned, our model Z will add 6 degrees of freedom through two non-linear terms, to model Y.
+
+### Fitting Model Z
+
+We'll fit Model Z with both `glm()` and `lrm()`.
+
+```{r}
+mod_Z <- glm(HDL_RISK ~ AGE + rcs(WAIST, 4) + RACE_ETH + 
+               SROH + WAIST %ia% SROH,
+            data = nh_demo_i, family = binomial())
+
+ddd <- datadist(nh_demo_i)
+options(datadist = "ddd")
+
+mod_Z_lrm <- lrm(HDL_RISK ~ AGE + rcs(WAIST, 4) + RACE_ETH + 
+                   SROH + WAIST %ia% SROH,
+                 data = nh_demo_i, x = TRUE, y = TRUE)
+```
+
+### Coefficient Estimates
+
+:::{.callout-note}
+
+I'll show two different approaches (`model_parameters()` from the `easystats` ecosystem, and `tidy()` from the `broom` package) to summarize the coefficient estimates from `mod_Y`. Either is sufficient for Project A, and there's no need to show both approaches. The `tidy()` approach handles the non-linear terms a bit better in my view, so I'd probably go with that.
+:::
+
+::: {.panel-tabset}
+
+#### Tidied Odds Ratio Estimates (Model Z)
+
+```{r}
+tidy(mod_Z, exponentiate = TRUE, conf.int = TRUE, conf.level = 0.90) |>
+  select(term, estimate, se = std.error, 
+         low90 = conf.low, high90 = conf.high, p = p.value) |>
+  kable(digits = 3)
+```
+
+#### Model Z Parameters
+
+```{r}
+model_parameters(mod_Z, ci = 0.90, exponentiate = TRUE) |>
+  print_md(digits = 3)
+```
+
+:::
+
+### Model Z Effects
+
+```{r}
+#| warning: false
+plot(summary(mod_Z_lrm, conf.int = 0.90))
+
+summary(mod_Z_lrm, conf.int = 0.90) |> kable(digits = 3)
+```
+
+### Quality of Fit Summaries
+
+:::{.callout-note}
+
+Again, we have three available approaches to summarize the fit of Model Z, thanks to our `glm()` and `lrm()` fits of the same model. I'll show all three, but in practice (and in your Project A) I wouldn't include the `model_performance()` results.
+
+:::
+
+::: {.panel-tabset}
+
+#### `lrm()` for Model Z
+
+Our Nagelkerke $R^2$ estimate for Model Z is `r round_half_up(mod_Z_lrm$stats["R2"], 3)`, and our C statistic is estimated to be `r round_half_up(mod_Z_lrm$stats["C"], 3)`.
+
+```{r}
+mod_Z_lrm
+```
+
+#### `glance` at Model Z
+
+The `glance()` results below give us our AIC and BIC values, as well as the degrees of freedom used by Model Z.
+
+```{r}
+glance(mod_Z) |>
+  mutate(df = nobs - df.residual - 1) |>
+  select(AIC, BIC, df, df.residual, nobs) |>
+  kable(digits = 1)
+```
+
+#### Model Z Performance
+
+:::{.callout-note}
+
+As mentioned previously, these summaries aren't as appealing to me as those in the other two tabs here.
+
+:::
+
+```{r}
+model_performance(mod_Z) |> print_md(digits = 2)
+```
+
+:::
+
+### Confusion Matrix (Model Z)
+
+As in Model Y, my prediction rule for my Model Z confusion matrix is that the fitted value of Pr(HDL_RISK = 1) needs to be greater than or equal to 0.5 for me to predict HDL_RISK is 1, and otherwise I predict 0.
+
+Again, we augment our `nh_demo_i` data to include predicted probabilities of (HDL_RISK = 1) from Model Z.
+
+```{r}
+resZ_aug <- augment(mod_Z, type.predict = "response")
+```
+
+Applying my prediction rule, we obtain:
+
+```{r}
+cm_Z <- caret::confusionMatrix(
+  data = factor(resZ_aug$.fitted >= 0.5),
+  reference = factor(resZ_aug$HDL_RISK == 1),
+  positive = "TRUE")
+
+cm_Z
+```
+
+Here are our results comparing classification performance by models Y and Z.
+
+Model | Classification Rule | Sensitivity | Specificity | Pos. Pred. Value
+----: | :--------------: | :--------: | :--------: | :----------:
+Y | Predicted Pr(HDL_RISK = 1) >= 0.5 | `r round_half_up(cm_Y$byClass["Sensitivity"], 3)` | `r round_half_up(cm_Y$byClass["Specificity"], 3)` | `r round_half_up(cm_Y$byClass["Pos Pred Value"], 3)`
+Z | Predicted Pr(HDL_RISK = 1) >= 0.5 | `r round_half_up(cm_Z$byClass["Sensitivity"], 3)` | `r round_half_up(cm_Z$byClass["Specificity"], 3)` | `r round_half_up(cm_Z$byClass["Pos Pred Value"], 3)`
+
+## Validating Models Y and Z
+
+We will use the `validate()` function from the **rms** package to validate our `lrm` fits.
+
+```{r}
+set.seed(4323); (valY <- validate(mod_Y_lrm))
+set.seed(4324); (valZ <- validate(mod_Z_lrm))
+```
+
+### Validated Nagelkerke $R^2$, and C, as well as IC statistics {#sec-vallog}
+
+Model | Validated $R^2$ | Validated C | AIC | BIC | df
+-----: | :--------: | :--------: | :-----: | :-----: | :--:
+Y | `r round_half_up(valY[2,5],4)` | `r round_half_up(0.5 + (0.5*valY[1,5]), 4)` | `r round_half_up(AIC(mod_Y),1)` | `r round_half_up(BIC(mod_Y),1)` | `r glance(mod_Y)$nobs - glance(mod_Y)$df.residual - 1`
+Z | `r round_half_up(valZ[2,5],4)` | `r round_half_up(0.5 + (0.5*valZ[1,5]), 4)` | `r round_half_up(AIC(mod_Z),1)` | `r round_half_up(BIC(mod_Z),1)` | `r glance(mod_Z)$nobs - glance(mod_Z)$df.residual - 1`
+
+## Final Logistic Regression Model
+
+I prefer Model Y, because of its slightly better AIC, BIC and validated C statistic, despite the fact that Model Z has a slightly higher validated $R^2$ and that Model Z also has a slightly higher positive predictive value. It's pretty close, though.
+
+### Winning Model's Parameter Estimates
+
+```{r}
+mod_Y_lrm
+```
+
+### Winning Model Effect Sizes
+
+```{r}
+plot(summary(mod_Y_lrm, conf.int = 0.90))
+```
+
+### Numerical Description of Effect Sizes
+
+```{r}
+summary(mod_Y_lrm, conf.int = 0.90) |> kable(digits = 3)
+```
+
+### Effect Size Description(s)
+
+In your work, we would only need to see one of the following effect size descriptions.
+
+**WAIST** description: If we have two subjects of the same age, race/ethnicity and self-reported overall health, then if subject 1 has a waist circumference of 92 cm and subject 2 has a waist circumference of 112.6 cm, then our model estimates that subject 2 will have 2.295 times the odds (90% CI: 1.93, 2.74) that subject 1 has of having a HDL that is at risk. 
+
+**AGE** description: If we have two subjects of the same waist circumference, race/ethnicity and self-reported overall health, then if subject 1 is age 50 and subject 2 is age 66, our model predicts that subject 2 has 80.2% of the odds of an at-risk HDL that subject 1 has. The 90% CI for the odds ratio comparing subject 1 to subject 2 is (0.667, 0.963).
+
+**SROH** description: If we have two subjects of the same age, waist circumference and race/ethnicity. then if subject 1 reports Excellent overall health while subject 2 reports only Good overall health, our model predicts that the odds ratio comparing subject 1's odds of an at-risk HDL to those of subject 2 will be 0.596, with a 90% CI of (0.364, 0.977).
+
+### Validated $R^2$ and $C$ statistic for Winning Model
+
+As we saw in @sec-vallog,
+
+- the validated $R^2$ statistic for Model Y is `r round_half_up(valY[2,5],4)`, and
+- the validated $C$ statistic for Model Y is `r round_half_up(0.5 + (0.5*valY[1,5]), 4)`.
+
+### Nomogram of Winning Model
+
+```{r}
+#| fig-height: 8
+
+plot(nomogram(mod_Y_lrm, fun = plogis, 
+              funlabel = "Pr(HDL_RISK = 1)"))
+```
+
+### Predictions for Two New Subjects
+
+I will create a predicted Pr(`HDL_RISK` = 1) for two new Non-Hispanic White subjects who are 60 years old, and who rate their overall health as Fair. The first will have a waist circumference of 80 cm, and the second will have a waist circumference of 100 cm. 
+
+:::{.callout-note}
+
+I can do this using either the `glm()` or the `lrm()` fit to our model. Either is sufficient for Project A, and there's no need to show both approaches.
+
+:::
+
+::: {.panel-tabset}
+
+#### Using the `glm()` fit
+
+```{r}
+new_subj <- 
+  data.frame(AGE = c(60,60), WAIST = c(80, 100), 
+             RACE_ETH = c("NH_White", "NH_White"), SROH = c("Fair", "Fair"))
+
+preds3 <- predict(mod_Y, newdata = new_subj, type = "response")
+
+preds3
+```
+
+- Our prediction for subject 1's Pr(HDL_RISK = 1) is `r round_half_up(preds3[1], 3)`.
+- Our prediction for subject 2's Pr(HDL_RISK = 1) is `r round_half_up(preds3[2], 3)`.
+
+#### Using the `lrm()` fit
+
+Alternatively, I could have used our `lrm()` fit. 
+
+```{r}
+new_subj <- 
+  data.frame(AGE = c(60,60), WAIST = c(80, 100), 
+             RACE_ETH = c("NH_White", "NH_White"), SROH = c("Fair", "Fair"))
+
+preds4 <- predict(mod_Y_lrm, newdata = new_subj, type = "fitted")
+
+preds4
+```
+
+As before, the two fitting approaches (`glm()` and `lrm()`) produce the same model, so they produce the same predictions.
+
+:::
+
+# Discussion
+
+:::{.callout-note}
+
+I am leaving the discussion up to you, but I have provided an outline of what you need to address below.
+
+:::
+
+## Answering My Research Questions 
+
+### Question 1 (with Answer)
+
+I'll leave the job of restating and drawing conclusions about the research question under study in our linear regression analyses for you to answer.
+
+### Question 2 (with Answer)
+
+I'll leave the job of restating and drawing conclusions about the research question under study in our logistic regression analyses for you to answer.
+
+## Thoughts on Project A
+
+Note that we expect you to answer exactly two of the following four questions in your discussion.
+
+### Question 1
+
+> What was substantially harder or easier than you expected, and why?
+
+If you chose to answer Question 1, your answer would go here.
+
+### Question 2 
+
+> What do you wish you’d known at the start of this process that you know now, and why?
+
+If you chose to answer Question 2, your answer would go here.
+
+### Question 3
+
+> What was the most confusing part of doing the project, and how did you get past it?
+
+If you chose to answer Question 3, your answer would go here.
+
+### Question 4
+
+> What was the most useful thing you learned while doing the project, and why?
+
+If you chose to answer Question 4, your answer would go here.
+
+# Affirmation
+
+I am certain that it is completely appropriate for these NHANES data to be shared with anyone, without any conditions. There are no concerns about privacy or security.
+
+# References
+
+1. NHANES 2015-16 data are found at <https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2015>.
+2. NHANES 2017-18 data are found at <https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017>.
+3. Descriptions/definitions of "at risk" levels of HDL cholesterol are provided by the Mayo Clinic at <https://www.mayoclinic.org/diseases-conditions/high-blood-cholesterol/in-depth/hdl-cholesterol/art-20046388>.
+
+# Session Information
+
+```{r}
+xfun::session_info()
+```
