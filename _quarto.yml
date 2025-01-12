@@ -55,7 +55,7 @@ website:
 
 format:
   html:
-    theme: litera
+    theme: pulse
     toc: true
     date-format: iso
     code-overflow: wrap
