@@ -65,13 +65,36 @@ Although you may fit a model to help show patterns if you like, your primary tas
 
 We will evaluate Question 1 based on the quality of the visualization, its title and caption, in terms of being attractive, well-labeled and useful for representing the data reported in County Health Rankings 2024 for Ohio, and how well it adheres to general principles for good visualizations we’ve seen in 431 and 432.
 
+:::{.callout-tip}
+
+The code below could be used to create four groups of 22 counties from the `smoking` data, using [the `categorize()` function](https://easystats.github.io/datawizard/reference/categorize.html) from the `datawizard` package in the `easystats` ecosystem.
+
+```{r}
+#| eval: false
+ohio24 <- ohio24 |> 
+  mutate(smoke_group = categorize(smoking, split = "quantile", 
+                                  n_groups = 4, labels = "range"))
+```
+
+:::
+
 # Question 2 (30 points)
 
 Create a linear regression model using the data for the state of Ohio that you developed in Question 1 to predict `obesity` as a function of `food_env` adjusting for `unemployment`, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model `model1`.
 
 a. {10 points} Provide R code which specifies the estimated coefficient of `food_env` and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences. 
+
 b. {10} Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using `check_model()`. Describe any problems you see with the residual plots in complete sentences.
-c. {10} Create an attractive table which compares `model1` to a simple linear model (called `model2`) for the same outcome (`obesity`) which uses only the `food_env` variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio `obesity` data for 2021 (that were reported in CHR 2024) more effectively, and why?
+
+:::{.callout-tip}
+
+In question 2b, I suggest you use `check_model(model1, detrend = FALSE)` so that the Normal Q-Q plot looks like it usually does in our other work.
+
+:::
+
+c. {10} Create an attractive table which compares `model1` to a simple linear model (called `model2`) for the same outcome (`obesity`) which uses only the `food_env` variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in at least two complete sentences: based on these metrics, which model looks like it fits the Ohio `obesity` data for 2021 (that were reported in CHR 2024) more effectively, and why?
+
+
 
 # Use of AI
 

@@ -375,14 +375,47 @@ Important
 <p>You are welcome to find useful tools for visualizing data in R that we have seen in either 431 or 432 or elsewhere.</p>
 <p>Although you may fit a model to help show patterns if you like, your primary task is to show the data in a meaningful way, rather than to simply highlight the results of a model.</p>
 <p>We will evaluate Question 1 based on the quality of the visualization, its title and caption, in terms of being attractive, well-labeled and useful for representing the data reported in County Health Rankings 2024 for Ohio, and how well it adheres to general principles for good visualizations we’ve seen in 431 and 432.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The code below could be used to create four groups of 22 counties from the <code>smoking</code> data, using <a href="https://easystats.github.io/datawizard/reference/categorize.html">the <code>categorize()</code> function</a> from the <code>datawizard</code> package in the <code>easystats</code> ecosystem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ohio24 <span class="ot">&lt;-</span> ohio24 <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">smoke_group =</span> <span class="fu">categorize</span>(smoking, <span class="at">split =</span> <span class="st">"quantile"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">n_groups =</span> <span class="dv">4</span>, <span class="at">labels =</span> <span class="st">"range"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="question-2-30-points" class="level1">
 <h1>Question 2 (30 points)</h1>
 <p>Create a linear regression model using the data for the state of Ohio that you developed in Question 1 to predict <code>obesity</code> as a function of <code>food_env</code> adjusting for <code>unemployment</code>, and treating all three variables as quantitative. Please build your model using main effects only, entered as linear predictors without transformation, and call this model <code>model1</code>.</p>
 <ol type="a">
-<li>{10 points} Provide R code which specifies the estimated coefficient of <code>food_env</code> and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences.</li>
-<li>{10} Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using <code>check_model()</code>. Describe any problems you see with the residual plots in complete sentences.</li>
-<li>{10} Create an attractive table which compares <code>model1</code> to a simple linear model (called <code>model2</code>) for the same outcome (<code>obesity</code>) which uses only the <code>food_env</code> variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in a few complete sentences: based on these metrics, which model looks like it fits the Ohio <code>obesity</code> data for 2021 (that were reported in CHR 2024) more effectively, and why?</li>
+<li><p>{10 points} Provide R code which specifies the estimated coefficient of <code>food_env</code> and a 90% confidence interval around that estimate. Then write a concise but sufficient explanation of the meaning of these results in context using complete English sentences.</p></li>
+<li><p>{10} Evaluate the quality of the model you fit in part a, in terms of adherence to regression modeling assumptions, through a set of regression residual plots using <code>check_model()</code>. Describe any problems you see with the residual plots in complete sentences.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In question 2b, I suggest you use <code>check_model(model1, detrend = FALSE)</code> so that the Normal Q-Q plot looks like it usually does in our other work.</p>
+</div>
+</div>
+<ol start="3" type="a">
+<li>{10} Create an attractive table which compares <code>model1</code> to a simple linear model (called <code>model2</code>) for the same outcome (<code>obesity</code>) which uses only the <code>food_env</code> variable as a predictor. Your comparisons should include assessments of raw and adjusted R-squared, AIC, BIC and the residual standard error in your sample of all 88 Ohio counties. Then reflect on your findings in at least two complete sentences: based on these metrics, which model looks like it fits the Ohio <code>obesity</code> data for 2021 (that were reported in CHR 2024) more effectively, and why?</li>
 </ol>
 </section>
 <section id="use-of-ai" class="level1">
@@ -392,7 +425,7 @@ Important
 <h2 class="anchored" data-anchor-id="be-sure-to-include-session-information">Be sure to include Session Information</h2>
 <p>Please display your session information at the end of your submission, as shown below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.2 (2024-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64
