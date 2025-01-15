@@ -52,7 +52,7 @@ The visualization should:
 - describe information from **three** different variables from this list of 15 below:
   - `prem_death`, `pf_health`, `poor_phys`, `poor_ment`, `low_bwt`
   - `smoking`, `drinking`, `sti_rate`, `unins`, `pcp_rate`
-  - `unins`, `hs_grad`, `sev_hous`, `commute`, `non_eng`
+  - `unemp`, `hs_grad`, `sev_hous`, `commute`, `non_eng`
 - you are welcome to transform or re-express the variables if that is of interest to you
   - the main option we have in mind is an attractive faceted scatterplot showing the association of two of the variables divided into categories by a third variable
 - include proper labels and a meaningful title,
