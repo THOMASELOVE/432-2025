@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-09">
+<meta name="dcterms.date" content="2025-01-17">
 
 <title>Lab 2 – 432-2025</title>
 <style>
@@ -321,7 +321,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-09</p>
+      <p class="date">2025-01-17</p>
     </div>
   </div>
   
@@ -378,29 +378,80 @@ Important
 </section>
 <section id="question-1-25-points" class="level1">
 <h1>Question 1 (25 points)</h1>
-<p>Import the data from the <code>hbp_3024.xlsx</code> file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with <code>NA</code>. You should find 8 variables which have at least 1 missing value.</p>
+<p>Import the data from the <code>hbp_3024.xlsx</code> file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with <code>NA</code>. You should find 8 variables which have at least 1 missing value. For Question 1, begin by restricting the <code>hbp_3024</code> data to include only those subjects with complete data on the entire set of 23 variables included in <code>hbp_3024</code>.</p>
 <p>Please explicitly state in your response that you assume that the missingness you observe in these data are MCAR, and that a complete case analysis is thus appropriate for this Question.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your data set for Question 1 should include meaningfully fewer than 3024 observations.</p>
+</div>
+</div>
 <ol type="a">
-<li>{10 points} Describe the impact of <strong>insurance</strong> status on a subject’s <strong>systolic blood pressure</strong>, adjusting for whether or not they have a prescription for an <strong>ACE inhibitor</strong>. To do this, build a linear model using the <code>lm</code> function, after first deciding whether your model should include an interaction term in a sensible way (providing a graph to help us understand your reasoning.) Display your resulting model’s coefficients (along with 90% confidence intervals for the estimates) in an attractive way. Be sure to specify the number of observations your model uses.</li>
+<li>{10 points} Shortly, you will build a model (which we’ll call <code>fit1</code>) to describe the impact of insurance status (<code>insurance</code>) to predict <strong>100 times the natural logarithm</strong> of a subject’s systolic blood pressure (<code>sbp</code>), adjusting for whether or not they have a prescription for an ACE inhibitor or angiotensin receptor blocker (<code>acearb</code>). As a first step, decide whether your model should include an interaction term (between the two predictors) in a sensible way, providing an appropriate plot of means and a complete sentence or two describing your conclusion from that plot to help us understand your reasoning.</li>
 </ol>
-<ul>
-<li>One graph you might use would be one to assess the need for an interaction term, probably via a plot of means.</li>
-<li>Another graph (or perhaps table) to consider for insight would look at the relationship between <strong>insurance</strong> and <strong>ace inhibitor</strong> status in these subjects.</li>
-</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The outcome you’re using in model <code>fit1</code> should be <span class="math inline">\(100 \times log(sbp)\)</span>, where <code>sbp</code> is measured in millimeters of mercury.</p>
+</div>
+</div>
 <ol start="2" type="a">
-<li>{15} Provide a written explanation of your findings, in complete sentences. Your explanation should address all of the following:</li>
+<li>{5 points} Build model <code>fit1</code> (including an interaction if you chose to include it in part 1a) with the <code>lm()</code> function, and display the resulting coefficient estimates (along with 90% confidence intervals) in an attractive way. Rounding to two decimal places should be fine here.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’re hoping you will use the <code>gt()</code> function from the <code>gt</code> package in parts b and c in question 1.</p>
+</div>
+</div>
+<ol start="3" type="a">
+<li><p>{5 points} For the <code>fit1</code> model, use R code to specify the number of observations your model uses, the (raw) <span class="math inline">\(R^2\)</span> value (rounded to four decimal places) and the residual standard error (rounded to two decimal places.)</p></li>
+<li><p>{5 points} Use your <code>fit1</code> model to predict the systolic blood pressure (in mm Hg, rounded to zero decimal places) for each of the following two subjects:</p></li>
 </ol>
 <ul>
-<li>the overall quality of fit (at minimum, the <span class="math inline">\(R^2\)</span> and residual standard error, interpreted in context),</li>
-<li>a careful interpretation of the meaning of each of the coefficients of your chosen model</li>
-<li>a detailed description as to how you used the output you generated in part a to decide whether or not to include an interaction term.</li>
+<li>Charlie, who has Medicaid insurance and has not been prescribed an ACE or ARB, and</li>
+<li>Delta, who has Commercial insurance and has been prescribed an ACE inhibitor.</li>
 </ul>
 </section>
 <section id="question-2-25-points" class="level1">
 <h1>Question 2 (25 points)</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your work on Question 2a should use all 3024 observations from the original <code>hbp_3024</code> data. Questions 2b and 2c will use data from a single practice, with 432 subjects.</p>
+</div>
+</div>
 <ol type="a">
-<li><p>{5} Again using the data in <code>hbp_3024.xlsx</code>, which of the seven practices has the largest mean number of visits for primary care in the past two years? Show how you figured this out using R.</p></li>
-<li><p>{10} For the 432 subjects associated with the practice you identified in part a, predict the probability of a depression diagnosis on the basis of the subject’s number of visits for primary care in the past two years using a logistic regression model. Obtain and then interpret the coefficient of your predictor as an odds ratio, with a 90% confidence interval.</p></li>
+<li><p>{5} Returning to the original data stored in <code>hbp_3024.xlsx</code>, which of the seven practices has the largest mean number of visits for primary care in the past two years? Show how you figured this out using R.</p></li>
+<li><p>{10} For the 432 subjects associated with the practice you identified in part a, predict the probability of a depression diagnosis on the basis of the subject’s number of visits for primary care in the past two years using a logistic regression model. Obtain and then interpret the coefficient of your predictor as an odds ratio, and display its 90% confidence interval. Feel encouraged to round your response to two decimal places.</p></li>
 <li><p>{10} Use your model from part b. to make a prediction for the probability of a depression diagnosis for a “new” patient at the practice who had 4 primary care visits in the past two years, and state that prediction clearly. How does this prediction compare to the actual fraction of patients at this practice with 4 primary care visits in the past two years who have a depression diagnosis?</p></li>
 </ol>
 </section>
@@ -431,7 +482,7 @@ Package version:
   grDevices_4.4.2   highr_0.11        htmltools_0.5.8.1 htmlwidgets_1.6.4
   jquerylib_0.1.4   jsonlite_1.8.9    knitr_1.49        lifecycle_1.0.4  
   memoise_2.0.1     methods_4.4.2     mime_0.12         R6_2.5.1         
-  rappdirs_0.3.3    rlang_1.1.4       rmarkdown_2.29    rstudioapi_0.17.1
+  rappdirs_0.3.3    rlang_1.1.5       rmarkdown_2.29    rstudioapi_0.17.1
   sass_0.4.9        stats_4.4.2       tinytex_0.54      tools_4.4.2      
   utils_4.4.2       xfun_0.50         yaml_2.3.10      </code></pre>
 </div>

@@ -37,26 +37,42 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 # Question 1 (25 points)
 
-Import the data from the `hbp_3024.xlsx` file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with `NA`. You should find 8 variables which have at least 1 missing value.
+Import the data from the `hbp_3024.xlsx` file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with `NA`. You should find 8 variables which have at least 1 missing value. For Question 1, begin by restricting the `hbp_3024` data to include only those subjects with complete data on the entire set of 23 variables included in `hbp_3024`.
 
 Please explicitly state in your response that you assume that the missingness you observe in these data are MCAR, and that a complete case analysis is thus appropriate for this Question.
 
-a. {10 points} Describe the impact of **insurance** status on a subject's **systolic blood pressure**, adjusting for whether or not they have a prescription for an  **ACE inhibitor**. To do this, build a linear model using the `lm` function, after first deciding whether your model should include an interaction term in a sensible way (providing a graph to help us understand your reasoning.) Display your resulting model's coefficients (along with 90% confidence intervals for the estimates) in an attractive way. Be sure to specify the number of observations your model uses.
+:::{.callout-tip}
+Your data set for Question 1 should include meaningfully fewer than 3024 observations.
+:::
 
-- One graph you might use would be one to assess the need for an interaction term, probably via a plot of means. 
-- Another graph (or perhaps table) to consider for insight would look at the relationship between **insurance** and **ace inhibitor** status in these subjects.
+a. {10 points} Shortly, you will build a model (which we'll call `fit1`) to describe the impact of insurance status (`insurance`) to predict **100 times the natural logarithm** of a subject’s systolic blood pressure (`sbp`), adjusting for whether or not they have a prescription for an ACE inhibitor or angiotensin receptor blocker (`acearb`). As a first step, decide whether your model should include an interaction term (between the two predictors) in a sensible way, providing an appropriate plot of means and a complete sentence or two describing your conclusion from that plot to help us understand your reasoning.
 
-b. {15} Provide a written explanation of your findings, in complete sentences. Your explanation should address all of the following:
+:::{.callout-tip}
+The outcome you're using in model `fit1` should be $100 \times log(sbp)$, where `sbp` is measured in millimeters of mercury.
+:::
 
-- the overall quality of fit (at minimum, the $R^2$ and residual standard error, interpreted in context),
-- a careful interpretation of the meaning of each of the coefficients of your chosen model 
-- a detailed description as to how you used the output you generated in part a to decide whether or not to include an interaction term.
+b. {5 points} Build model `fit1` (including an interaction if you chose to include it in part 1a) with the `lm()` function, and display the resulting coefficient estimates (along with 90% confidence intervals) in an attractive way. Rounding to two decimal places should be fine here. 
+
+:::{.callout-tip}
+We're hoping you will use the `gt()` function from the `gt` package in parts b and c in question 1.
+:::
+
+c. {5 points} For the `fit1` model, use R code to specify the number of observations your model uses, the (raw) $R^2$ value (rounded to four decimal places) and the residual standard error (rounded to two decimal places.)
+
+d. {5 points} Use your `fit1` model to predict the systolic blood pressure (in mm Hg, rounded to zero decimal places) for each of the following two subjects: 
+
+- Charlie, who has Medicaid insurance and has not been prescribed an ACE or ARB, and
+- Delta, who has Commercial insurance and has been prescribed an ACE inhibitor.
 
 # Question 2 (25 points)
 
-a. {5} Again using the data in `hbp_3024.xlsx`, which of the seven practices has the largest mean number of visits for primary care in the past two years? Show how you figured this out using R.
+:::{.callout-tip}
+Your work on Question 2a should use all 3024 observations from the original `hbp_3024` data. Questions 2b and 2c will use data from a single practice, with 432 subjects.
+:::
 
-b. {10} For the 432 subjects associated with the practice you identified in part a, predict the probability of a depression diagnosis on the basis of the subject's number of visits for primary care in the past two years using a logistic regression model. Obtain and then interpret the coefficient of your predictor as an odds ratio, with a 90% confidence interval.
+a. {5} Returning to the original data stored in `hbp_3024.xlsx`, which of the seven practices has the largest mean number of visits for primary care in the past two years? Show how you figured this out using R.
+
+b. {10} For the 432 subjects associated with the practice you identified in part a, predict the probability of a depression diagnosis on the basis of the subject's number of visits for primary care in the past two years using a logistic regression model. Obtain and then interpret the coefficient of your predictor as an odds ratio, and display its 90% confidence interval. Feel encouraged to round your response to two decimal places.
 
 c. {10} Use your model from part b. to make a prediction for the probability of a depression diagnosis for a "new" patient at the practice who had 4 primary care visits in the past two years, and state that prediction clearly. How does this prediction compare to the actual fraction of patients at this practice with 4 primary care visits in the past two years who have a depression diagnosis?
 
