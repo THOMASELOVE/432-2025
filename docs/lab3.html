@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-09">
+<meta name="dcterms.date" content="2025-01-20">
 
 <title>Lab 3 – 432-2025</title>
 <style>
@@ -321,7 +321,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-09</p>
+      <p class="date">2025-01-20</p>
     </div>
   </div>
   
@@ -388,9 +388,9 @@ Important
 </ul>
 <p>Note that the main effects model using all five of these predictors will use 7 degrees of freedom, since there are four race/ethnicity categories, and the other four variables are all either binary or quantitative.</p>
 <ol type="a">
-<li><p>{10 points} Use a Spearman <span class="math inline">\(\rho^2\)</span> plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it <code>m1_main</code>) and the model with your non-linear term (call it <code>m1_add</code>) using both <code>ols()</code> and <code>lm()</code>.</p></li>
-<li><p>{10} Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using <code>set.seed(2025)</code> and 40 bootstrap replications.</p></li>
-<li><p>{5} Plot the effect summary (using <code>plot(summary)</code> after an <code>ols()</code> fit) for the model you preferred in part b, and explain the meaning of the <code>pulse</code> coefficient shown in the plot in a complete English sentence.</p></li>
+<li><p>{9 points} Use a Spearman <span class="math inline">\(\rho^2\)</span> plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it <code>m1_main</code>) and the model with your non-linear term (call it <code>m1_add</code>) using both <code>ols()</code> and <code>lm()</code>.</p></li>
+<li><p>{8} Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using <code>set.seed(2025)</code> and 40 bootstrap replications.</p></li>
+<li><p>{8} Using a 90% confidence level, plot the effect summary (using <code>plot(summary(modelname, conf.int = 0.90))</code> after an <code>ols()</code> fit) for the model you preferred in part b, and then show the corresponding tabular summary of effect size estimates. State and fully explain the meaning of the <code>pulse</code> coefficient shown in your output in a complete English sentence or two.</p></li>
 </ol>
 </section>
 <section id="question-2-25-points" class="level1">
