@@ -57,9 +57,9 @@ c. {8} Using a 90% confidence level, plot the effect summary (using `plot(summar
 
 Again using the `nh_1500` data, we will now build a set of logistic regression models to predict whether a subject is limited in the kind or amount of work they can do by a physical, mental or emotional problem. 
 
-a. {10} Build a model to predict `limited` on the basis of self-reported overall health. Call this `model2a`. Then add the main effects of white blood cell count, waist circumference and age to the model and call this new model `model2b`.
+a. {10} Build a model to predict `limited` on the basis of self-reported overall health. Call this `model2a`. Then add the main effects of white blood cell count, waist circumference and age to the model and call this new model `model2b`. In a sentence, specify the estimated value of Tjur's $R^2$ for each model and indicate which of these two models shows the better fit by that measure.
 
-b. {10} Interpret the odds ratio associated with self-reported overall health being Excellent as compared to being Good in *each* of your two models, and provide a 90% confidence interval for each such estimate.
+b. {10} Interpret the odds ratio associated with self-reported overall health being Good as compared to being Excellent in *each* of your two models, and provide a 90% confidence interval for each such estimate.
 
 c. {5} As measured by a validated C statistic using a seed of `4321` for `model2a` and `4322` for `model2b` and 40 bootstrap replications in each case, which model performs better, `model2a` or `model2b`, and why? Be sure to specify your validated C statistics for each model. 
 
