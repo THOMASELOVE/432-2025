@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-09">
+<meta name="dcterms.date" content="2025-01-20">
 
 <title>Lab 4 – 432-2025</title>
 <style>
@@ -295,10 +295,9 @@ window.Quarto = {
   <li><a href="#our-best-advice" id="toc-our-best-advice" class="nav-link" data-scroll-target="#our-best-advice">Our Best Advice</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
   </ul></li>
-  <li><a href="#question-1.-15-points" id="toc-question-1.-15-points" class="nav-link" data-scroll-target="#question-1.-15-points">Question 1. (15 points)</a></li>
-  <li><a href="#question-2.-10-points" id="toc-question-2.-10-points" class="nav-link" data-scroll-target="#question-2.-10-points">Question 2. (10 points)</a></li>
-  <li><a href="#question-3.-15-points" id="toc-question-3.-15-points" class="nav-link" data-scroll-target="#question-3.-15-points">Question 3. (15 points)</a></li>
-  <li><a href="#question-4.-10-points" id="toc-question-4.-10-points" class="nav-link" data-scroll-target="#question-4.-10-points">Question 4. (10 points)</a></li>
+  <li><a href="#question-1-5-points" id="toc-question-1-5-points" class="nav-link" data-scroll-target="#question-1-5-points">Question 1 (5 points)</a></li>
+  <li><a href="#question-2-20-points" id="toc-question-2-20-points" class="nav-link" data-scroll-target="#question-2-20-points">Question 2 (20 points)</a></li>
+  <li><a href="#question-3-25-points" id="toc-question-3-25-points" class="nav-link" data-scroll-target="#question-3-25-points">Question 3 (25 points)</a></li>
   <li><a href="#use-of-ai" id="toc-use-of-ai" class="nav-link" data-scroll-target="#use-of-ai">Use of AI</a>
   <ul class="collapse">
   <li><a href="#be-sure-to-include-session-information" id="toc-be-sure-to-include-session-information" class="nav-link" data-scroll-target="#be-sure-to-include-session-information">Be sure to include Session Information</a></li>
@@ -323,7 +322,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-09</p>
+      <p class="date">2025-01-20</p>
     </div>
   </div>
   
@@ -361,7 +360,7 @@ Important
 </div>
 <section id="template" class="level2">
 <h2 class="anchored" data-anchor-id="template">Template</h2>
-<p>You should be able to modify the <a href="https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd">Lab 3 Quarto template</a> available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a> to help you do this Lab.</p>
+<p>You should be able to modify any of the first three Lab templates available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a> to help you do this Lab. Feel encouraged to try a <a href="https://quarto.org/docs/output-formats/html-themes.html">different HTML theme</a> if you like, maybe <a href="https://bootswatch.com/yeti/">yeti</a> or <a href="https://bootswatch.com/spacelab/">spacelab</a> or <a href="https://bootswatch.com/materia/">materia</a>.</p>
 </section>
 <section id="our-best-advice" class="level2">
 <h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
@@ -370,51 +369,67 @@ Important
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
 <ul>
-<li>The <code>hbp3024.xlsx</code> Excel file (first introduced in <a href="./lab2.html">Lab 2</a>) is available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>.</li>
-<li>A detailed description of each variable in the <code>hbp3024</code> data is <a href="./hbp_codebook.html">available here</a>.</li>
+<li>The <code>hbp_3024.xlsx</code> Excel file (first introduced in <a href="./lab2.html">Lab 2</a>) is available for download on the <a href="https://github.com/THOMASELOVE/432-data">432 data page</a>. Be sure that you see 8 variables with missing values when you impute the data.</li>
+<li>A detailed description of each variable in the <code>hbp_3024</code> data is <a href="./hbp_codebook.html">available here</a>.</li>
 </ul>
 </section>
 </section>
-<section id="question-1.-15-points" class="level1">
-<h1>Question 1. (15 points)</h1>
-<p>Begin with the <code>hbp3024</code> data, but filter to include only the 1,714 subjects with <strong>complete data</strong> on the <code>hsgrad</code> and <code>tobacco</code> variables, and who were seen by either the Elm, Highland, Sycamore, or Walnut practices. We will use this sample of 1,714 subjects, which I’ll call the <code>hbp_lab4</code> data, for the rest of this Lab.</p>
-<p>Using the <code>hbp_lab4</code> data, build a logistic regression model to predict whether a subject has a depression diagnosis based on:</p>
+<section id="question-1-5-points" class="level1">
+<h1>Question 1 (5 points)</h1>
+<p>Begin with the <code>hbp_3024</code> data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices. Next, develop a single imputation strategy using the <code>mice</code> package and a seed of <code>2025</code> to account for missing values. Call the resulting imputed data set <code>hbp_lab4</code>. Show your R code, and demonstrate that the following three things are true…</p>
+<ul>
+<li>your <code>hbp_1</code> data has no missing values,</li>
+<li>within <code>hbp_1</code>, the practices have 88, 121 and 156 subjects with a depression diagnosis, respectively, and</li>
+<li>both the mean and standard deviation of <code>income</code> is lower in the subjects with a depression diagnosis than in the subjects without.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll use the <code>hbp_1</code> data in Questions 1 and 2 of this Lab.</p>
+</div>
+</div>
+</section>
+<section id="question-2-20-points" class="level1">
+<h1>Question 2 (20 points)</h1>
+<p>Using the <code>hbp_1</code> data, build a logistic regression model, called <code>fit1</code>, to predict whether a subject has a depression diagnosis based on the main effects of four variables:</p>
 <ul>
 <li>which of the four practices they receive care from, along with</li>
 <li>the subject’s age,</li>
 <li>the subject’s tobacco use status, and</li>
 <li>the estimated percentage of adults living in the subject’s home neighborhood who have graduated from high school (the <code>hsgrad</code> variable)</li>
 </ul>
-<p>Fit two models: one with and one without an interaction term between the practice and the <code>hsgrad</code> value. Include the <code>age</code> variable in each model using a restricted cubic spline with three knots, but without any interaction with the other predictors. Display the coefficients of your two models.</p>
+<ol type="a">
+<li><p>{5} What is the area under the ROC curve for <code>fit1</code>? Interpret the meaning of that C statistic in a complete English sentence.</p></li>
+<li><p>{5} Specify the best one choice of non-linear term to add to the <code>fit1</code> model, according to a Spearman <span class="math inline">\(\rho^2\)</span> plot. Specify and justify your choice of non-linear term, and specify how many degrees of freedom your term add to <code>fit1</code>?</p></li>
+<li><p>{5} Fit the model including the term you added in part b, and call that model <code>fit2</code>. What do the AIC and BIC statistics for <code>fit2</code> suggest to you as compared to those values in <code>fit1</code>?</p></li>
+<li><p>{5} For the model which looks better to you according to part c, use a decision rule that you will predict a depression diagnosis if the predicted probability of such a diagnosis according to your model exceeds 0.4. Now, across the <code>hbp_1</code> sample, specify the sensitivity, specificity and accuracy of this prediction rule.</p></li>
+</ol>
 </section>
-<section id="question-2.-10-points" class="level1">
-<h1>Question 2. (10 points)</h1>
-<p>For the “no interaction” model from Question 1, interpret the odds ratio associated with the <code>hsgrad</code> main effect carefully, specifying a 90% confidence interval and what we can conclude from the results.</p>
+<section id="question-3-25-points" class="level1">
+<h1>Question 3 (25 points)</h1>
+<p>Starting again from the <code>hbp_3024</code> data, partition the data into:</p>
 <ul>
-<li>To obtain a 90% confidence interval with a fit using one of the <code>rms</code> fitting functions rather than the default 95% interval, the appropriate code would be <code>summary(modelname, conf.int = 0.9)</code>.</li>
-<li>Hint: We assume you will describe the <code>hsgrad</code> main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an <code>hsgrad</code> value equal to the 75th percentile <code>hsgrad</code> value in the data. Sally has an <code>hsgrad</code> value equal to the 25th percentile <code>hsgrad</code> value in the data. Assume Harry and Sally are the same <code>age</code> and receive care at the same <code>practice</code> and have the same <code>tobacco</code> use status. So the odds ratio of interest here compares the odds of a depression diagnosis for Harry to the odds of a depression diagnosis for Sally.</li>
+<li>a training sample, which I would call <code>hbp_train</code>, including the subjects seen in the Highland, King, Plympton or Sycamore practices, and</li>
+<li>a test sample, which I would call <code>hbp_test</code>, consisting of the remaining three practices (Center, Elm, or Walnut practices.)</li>
 </ul>
-</section>
-<section id="question-3.-15-points" class="level1">
-<h1>Question 3. (15 points)</h1>
-<p>Now using the “interaction” model from Question 2, please interpret the effect of <code>hsgrad</code> on the odds of a depression diagnosis appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.</p>
+<p>You will build two models to predict diastolic blood pressure (potentially using an outcome transformation) on the basis of:</p>
 <ul>
-<li>Again, we want you to describe the <code>hsgrad</code> main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an <code>hsgrad</code> value equal to the 75th percentile <code>hsgrad</code> value in the data. Sally has an <code>hsgrad</code> value equal to the 25th percentile <code>hsgrad</code> value in the data. Assume Harry and Sally are the same <code>age</code> and receive care at the same <code>practice</code>. So the odds ratio of interest here compares the odds of <code>statin</code> prescription for Harry to the odds of <code>statin</code> prescription for Sally. But now, you need to be able to do this separately for each individual level of <code>practice</code>, since <code>practice</code> interacts with <code>ldl</code>. There are at least two ways to accomplish this.
-<ul>
-<li>In one approach, you would create predicted odds values for Harry and Sally, assuming a common age (40 would be a reasonable choice, and it’s the one used in the answer sketch), but creating four different versions of Harry and Sally (one for each practice.) Then use those predicted odds within each practice to obtain practice-specific odds ratios.</li>
-<li>In the other approach, you could convince the <code>rms</code> package to use a different practice as the choice for which adjustments are made. By default, <code>datadist</code> chooses the modal practice. To change this, you’d need to convince <code>datadist</code> instead to choose its practice based on which practice is the first one, and re-level the practice factor accordingly. So, if you’d re leveled the practice data so that Elm was first and placed that into a tibble called <code>dataelm</code>, you could use the following adjustment to the <code>datadist</code> call to ensure that the adjustments made by <code>datadist</code> used Elm instead of the modal practice.</li>
-</ul></li>
+<li>in model <code>fit3</code>: the subject’s age, LDL cholesterol level, tobacco status, insurance status, and whether or not they had a beta-blocker prescription.</li>
+<li>in model <code>fit4</code>: the subject’s age and LDL cholesterol level alone.</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>d_elm <span class="ot">&lt;-</span> <span class="fu">datadist</span>(dataelm, <span class="at">adjto.cat =</span> <span class="st">"first"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">datadist =</span> <span class="st">"d_elm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="question-4.-10-points" class="level1">
-<h1>Question 4. (10 points)</h1>
-<p>Now, use bootstrap validation to compare the effectiveness of your two fitted models (the “interaction” and “no interaction” models) from Question 1 and draw a reasoned conclusion about which of those two models is more effective in describing the available set of observations (after those without <code>hsgrad</code> or <code>tobacco</code> data are removed) from these four practices.</p>
-<p>An appropriate response will make use of at least two different validated assessments of fit quality. The natural choices for validated assessments of fit quality in Question 4 are a bootstrap-validated C statistic and a bootstrap-validated Nagelkerke <span class="math inline">\(R^2\)</span>. Use <code>2025</code> as your random seed here and 40 bootstrap replications.</p>
-<p>Be sure to justify your eventual selection (between the “interaction” or “no interaction” model) with complete sentences.</p>
+<ol type="a">
+<li><p>{5} Use an appropriate tool to make a decision about a transformation of your outcome and describe your conclusions from that tool.</p></li>
+<li><p>{5} Using the transformed outcome you identified in part a., fit models <code>fit3</code> and <code>fit4</code> in your training sample, and compare the two models in terms of AIC, BIC, adjusted <span class="math inline">\(R^2\)</span> and sigma. Use these four summaries to help you decide which of the two models (<code>fit3</code> or <code>fit4</code>) shows better training sample performance.</p></li>
+<li><p>{5} Compare the performance of your two models (<code>fit3</code> and <code>fit4</code>) in the test sample, using the following four summaries of prediction error: MAPE, Maximum absolute prediction error, RMSPE and validated <span class="math inline">\(R^2\)</span>. According to these measures, which model looks better in terms of fit in the test sample?</p></li>
+<li><p>{10} Select a winning model based on your results in parts b and c, and refit that model now using the whole sample from <code>hbp_3024</code> and 20 multiple imputations developed using the <code>mice</code> package, with the seed <code>202543204</code>. Specify the point estimate of the <code>LDL</code> effect, as well as its 90% confidence interval, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.</p></li>
+</ol>
 </section>
 <section id="use-of-ai" class="level1">
 <h1>Use of AI</h1>
@@ -423,7 +438,7 @@ Important
 <h2 class="anchored" data-anchor-id="be-sure-to-include-session-information">Be sure to include Session Information</h2>
 <p>Please display your session information at the end of your submission, as shown below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.2 (2024-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64

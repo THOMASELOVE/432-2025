@@ -22,7 +22,7 @@ You can skip exactly one of Labs 1-5 without penalty, but all students must comp
 
 ## Template
 
-You should be able to modify the [Lab 3 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab.
+You should be able to modify any of the first three Lab templates available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab. Feel encouraged to try a [different HTML theme](https://quarto.org/docs/output-formats/html-themes.html) if you like, maybe [yeti](https://bootswatch.com/yeti/) or [spacelab](https://bootswatch.com/spacelab/) or [materia](https://bootswatch.com/materia/). 
 
 ## Our Best Advice
 
@@ -30,50 +30,57 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 ## The Data
 
-- The `hbp3024.xlsx` Excel file (first introduced in [Lab 2](lab2.qmd)) is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data).
-- A detailed description of each variable in the `hbp3024` data is [available here](hbp_codebook.qmd).
+- The `hbp_3024.xlsx` Excel file (first introduced in [Lab 2](lab2.qmd)) is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data). Be sure that you see 8 variables with missing values when you impute the data.
+- A detailed description of each variable in the `hbp_3024` data is [available here](hbp_codebook.qmd).
 
-# Question 1. (15 points)
+# Question 1 (5 points)
 
-Begin with the `hbp3024` data, but filter to include only the 1,714 subjects with **complete data** on the `hsgrad` and `tobacco` variables, and who were seen by either the Elm, Highland, Sycamore, or Walnut practices. We will use this sample of 1,714 subjects, which I'll call the `hbp_lab4` data, for the rest of this Lab.
+Begin with the `hbp_3024` data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices. Next, develop a single imputation strategy using the `mice` package and a seed of `2025` to account for missing values. Call the resulting imputed data set `hbp_lab4`. Show your R code, and demonstrate that the following three things are true...
 
-Using the `hbp_lab4` data, build a logistic regression model to predict whether a subject has a depression diagnosis based on:
+- your `hbp_1` data has no missing values, 
+- within `hbp_1`, the practices have 88, 121 and 156 subjects with a depression diagnosis, respectively, and
+- both the mean and standard deviation of `income` is lower in the subjects with a depression diagnosis than in the subjects without.
+
+:::{.callout-note}
+You'll use the `hbp_1` data in Questions 1 and 2 of this Lab.
+:::
+
+# Question 2 (20 points)
+
+Using the `hbp_1` data, build a logistic regression model, called `fit1`, to predict whether a subject has a depression diagnosis based on the main effects of four variables:
 
 - which of the four practices they receive care from, along with
-- the subject's age,
-- the subject's tobacco use status, and 
-- the estimated percentage of adults living in the subject’s home neighborhood who have graduated from high school (the `hsgrad` variable) 
+- the subject’s age,
+- the subject’s tobacco use status, and
+- the estimated percentage of adults living in the subject’s home neighborhood who have graduated from high school (the `hsgrad` variable)
 
-Fit two models: one with and one without an interaction term between the practice and the `hsgrad` value. Include the `age` variable in each model using a restricted cubic spline with three knots, but without any interaction with the other predictors. Display the coefficients of your two models.
+a. {5} What is the area under the ROC curve for `fit1`? Interpret the meaning of that C statistic in a complete English sentence.
 
-# Question 2. (10 points)
+b. {5} Specify the best one choice of non-linear term to add to the `fit1` model, according to a Spearman $\rho^2$ plot. Specify and justify your choice of non-linear term, and specify how many degrees of freedom your term add to `fit1`?
 
-For the "no interaction" model from Question 1, interpret the odds ratio associated with the `hsgrad` main effect carefully, specifying a 90% confidence interval and what we can conclude from the results.
+c. {5} Fit the model including the term you added in part b, and call that model `fit2`. What do the AIC and BIC statistics for `fit2` suggest to you as compared to those values in `fit1`?
 
-- To obtain a 90% confidence interval with a fit using one of the `rms` fitting functions rather than the default 95% interval, the appropriate code would be `summary(modelname, conf.int = 0.9)`.
-- Hint: We assume you will describe the `hsgrad` main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an `hsgrad` value equal to the 75th percentile `hsgrad` value in the data. Sally has an `hsgrad` value equal to the 25th percentile `hsgrad` value in the data. Assume Harry and Sally are the same `age` and receive care at the same `practice` and have the same `tobacco` use status. So the odds ratio of interest here compares the odds of a depression diagnosis for Harry to the odds of a depression diagnosis for Sally.
+d. {5} For the model which looks better to you according to part c, use a decision rule that you will predict a depression diagnosis if the predicted probability of such a diagnosis according to your model exceeds 0.4. Now, across the `hbp_1` sample, specify the sensitivity, specificity and accuracy of this prediction rule.
 
-# Question 3. (15 points)
+# Question 3 (25 points)
 
-Now using the "interaction" model from Question 2, please interpret the effect of `hsgrad` on the odds of a depression diagnosis appropriately, specifying again what we can conclude from the results. A detailed description of the point estimate(s) will be sufficient here.
+Starting again from the `hbp_3024` data, partition the data into:
 
-- Again, we want you to describe the `hsgrad` main effect by considering the case of Harry and Sally. Harry lives in a neighborhood with an `hsgrad` value equal to the 75th percentile `hsgrad` value in the data. Sally has an `hsgrad` value equal to the 25th percentile `hsgrad` value in the data. Assume Harry and Sally are the same `age` and receive care at the same `practice`. So the odds ratio of interest here compares the odds of `statin` prescription for Harry to the odds of `statin` prescription for Sally. But now, you need to be able to do this separately for each individual level of `practice`, since `practice` interacts with `ldl`. There are at least two ways to accomplish this.
-    - In one approach, you would create predicted odds values for Harry and Sally, assuming a common age (40 would be a reasonable choice, and it's the one used in the answer sketch), but creating four different versions of Harry and Sally (one for each practice.) Then use those predicted odds within each practice to obtain practice-specific odds ratios.
-    - In the other approach, you could convince the `rms` package to use a different practice as the choice for which adjustments are made. By default, `datadist` chooses the modal practice. To change this, you'd need to convince `datadist` instead to choose its practice based on which practice is the first one, and re-level the practice factor accordingly. So, if you'd re leveled the practice data so that Elm was first and placed that into a tibble called `dataelm`, you could use the following adjustment to the `datadist` call to ensure that the adjustments made by `datadist` used Elm instead of the modal practice.
-    
-```{r}
-#| eval: false
-d_elm <- datadist(dataelm, adjto.cat = "first")
-options(datadist = "d_elm")
-```
+- a training sample, which I would call `hbp_train`, including the subjects seen in the Highland, King, Plympton or Sycamore practices, and 
+- a test sample, which I would call `hbp_test`, consisting of the remaining three practices (Center, Elm, or Walnut practices.)
 
-# Question 4. (10 points)
+You will build two models to predict diastolic blood pressure (potentially using an outcome transformation) on the basis of:
 
-Now, use bootstrap validation to compare the effectiveness of your two fitted models (the "interaction" and "no interaction" models) from Question 1 and draw a reasoned conclusion about which of those two models is more effective in describing the available set of observations (after those without `hsgrad` or `tobacco` data are removed) from these four practices. 
+- in model `fit3`: the subject's age, LDL cholesterol level, tobacco status, insurance status, and whether or not they had a beta-blocker prescription. 
+- in model `fit4`: the subject's age and LDL cholesterol level alone.
 
-An appropriate response will make use of at least two different validated assessments of fit quality. The natural choices for validated assessments of fit quality in Question 4 are a bootstrap-validated C statistic and a bootstrap-validated Nagelkerke $R^2$. Use `2025` as your random seed here and 40 bootstrap replications.
+a. {5} Use an appropriate tool to make a decision about a transformation of your outcome and describe your conclusions from that tool.
 
-Be sure to justify your eventual selection (between the "interaction" or "no interaction" model) with complete sentences. 
+b. {5} Using the transformed outcome you identified in part a., fit models `fit3` and `fit4` in your training sample, and compare the two models in terms of AIC, BIC, adjusted $R^2$ and sigma. Use these four summaries to help you decide which of the two models (`fit3` or `fit4`) shows better training sample performance.
+
+c. {5} Compare the performance of your two models (`fit3` and `fit4`) in the test sample, using the following four summaries of prediction error: MAPE, Maximum absolute prediction error, RMSPE and validated $R^2$. According to these measures, which model looks better in terms of fit in the test sample?
+
+d. {10} Select a winning model based on your results in parts b and c, and refit that model now using the whole sample from `hbp_3024` and 20 multiple imputations developed using the `mice` package, with the seed `202543204`. Specify the point estimate of the `LDL` effect, as well as its 90% confidence interval, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.
 
 # Use of AI
 
