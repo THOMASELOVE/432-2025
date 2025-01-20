@@ -37,7 +37,7 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 # Question 1 (25 points)
 
-In question 1, you will evaluate a linear regression fit in the `nh_1500` data to predict a subject's red blood cell count using these five predictors:
+In question 1, you will evaluate a linear regression fit in the `nh_1500` data to predict a subject's red blood cell count (please use `rbc`, untransformed, as the outcome for all of Question 1) using these five predictors:
 
 - the subject's sex,
 - the subject's race/ethnicity,
@@ -49,9 +49,9 @@ Note that the main effects model using all five of these predictors will use 7 d
 
 a. {9 points} Use a Spearman $\rho^2$ plot to identify a single non-linear term which could be added to the model. Your selected non-linear term may add at most 3 degrees of freedom to the main effects model. Specify the added term clearly, and then fit both the main effects model (call it `m1_main`) and the model with your non-linear term (call it `m1_add`) using both `ols()` and `lm()`.
 
-b. {8} Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using `set.seed(2025)` and 40 bootstrap replications.
+b. {8} Which of the two models you fit in part a. appears to do a better job, when evaluated using bootstrap validation in the development sample? Why? An appropriate response will compare the models in terms of validated R-square and MSE values using 40 bootstrap replications. Set your seed to be `set.seed(20251)` for your main effects model, and `set.seed(20252)` for your model adding a non-linear term.
 
-c. {8} Using a 90% confidence level, plot the effect summary (using `plot(summary(modelname, conf.int = 0.90))` after an `ols()` fit) for the model you preferred in part b, and then show the corresponding tabular summary of effect size estimates. State and fully explain the meaning of the `pulse` coefficient shown in your output in a complete English sentence or two.
+c. {8} Using a 90% confidence level, plot the effect summary (using `plot(summary(modelname, conf.int = 0.90))` after an `ols()` fit) for the model you preferred in part b, and then show the corresponding tabular summary of effect size estimates. State and fully explain the meaning of the `pulse` effect shown in your output in a complete English sentence or two.
 
 # Question 2 (25 points)
 
@@ -61,7 +61,7 @@ a. {10} Build a model to predict `limited` on the basis of self-reported overall
 
 b. {10} Interpret the odds ratio associated with self-reported overall health being Excellent as compared to being Good in *each* of your two models, and provide a 90% confidence interval for each such estimate.
 
-c. {5} As measured by a validated C statistic using a seed of `432` and 40 bootstrap replications, which model performs better, `model2a` or `model2b`, and why?
+c. {5} As measured by a validated C statistic using a seed of `4321` for `model2a` and `4322` for `model2b` and 40 bootstrap replications in each case, which model performs better, `model2a` or `model2b`, and why? Be sure to specify your validated C statistics for each model. 
 
 # Use of AI
 
