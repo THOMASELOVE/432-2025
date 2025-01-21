@@ -1,0 +1,32 @@
+---
+title: "432 Class Notes"
+---
+
+The 432 Class Notes were last updated on 2024-04-29 and are [posted here](https://thomaselove.github.io/432-notes/).
+
+- I am working on a supplement to the Notes, which will also be linked here when available.
+- As we find errors in the old Class Notes, they will be listed below, rather than updated in the main document. Sorry about that, but it's the best I can do this semester.
+
+## Errors in the 432 Class Notes
+
+If you find any errors in the 432 notes, please submit them to [Campuswire](https://campuswire.com/) in the "Notes edits" folder.
+
+### Chapter 1
+
+In [section 1.12.1](https://thomaselove.github.io/432-notes/nhanes.html#forming-the-phq-9-score), below the `miss_case_table()` results, there is a bullet list describing the `PHQ9_CAT` which has a problem with the quotation marks in the first bullet, which should read:
+
+> PHQ9 > 20 means `PHQ9_CAT` is "severe",
+
+### Chapter 4
+
+Under the histogram in [section 4.3.1](https://thomaselove.github.io/432-notes/431review2.html#creating-a-low-and-high-group-on-sedate), replace `SED_F` with `SED_f` in the sentence below so it reads:
+
+> Now, we want to compare the Lowest SEDATE group (`SED_f` = [2, 200)) to the Highest SEDATE group (`SED_f` = [420, 1320]).
+
+### Chapter 7
+
+In section 7.8, there is a typo (the word `mode` instead of **more**) in the opening paragraph. It should read:
+
+> Multiple imputation, where NA values are repeatedly estimated/replaced with multiple data values, for the purpose of obtaining more complete samples and capturing details of the variation inherent in the fact that the data have missingness, so as to obtain more accurate estimates than are possible with single imputation.
+
+Thank you for your patience.

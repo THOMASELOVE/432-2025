@@ -15,7 +15,7 @@ website:
       - text: "Syllabus"
         href: https://thomaselove.github.io/432-syllabus-2025/
       - text: "Notes"
-        href: https://thomaselove.github.io/432-notes/
+        href: notes.qmd
       - text: "Software"
         href: software.qmd
       - text: "Get Data"
