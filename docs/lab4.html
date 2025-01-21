@@ -361,6 +361,25 @@ Important
 <section id="template" class="level2">
 <h2 class="anchored" data-anchor-id="template">Template</h2>
 <p>You should be able to modify any of the first three Lab templates available on <a href="https://github.com/THOMASELOVE/432-data">our 432-data page</a> to help you do this Lab. Feel encouraged to try a <a href="https://quarto.org/docs/output-formats/html-themes.html">different HTML theme</a> if you like, maybe <a href="https://bootswatch.com/yeti/">yeti</a> or <a href="https://bootswatch.com/spacelab/">spacelab</a> or <a href="https://bootswatch.com/materia/">materia</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In my answer sketch for Lab 4, I used the following R packages:</p>
+<ul>
+<li><code>janitor</code>, <code>naniar</code></li>
+<li><code>broom</code>, <code>car</code>, <code>caret</code>, <code>gt</code>, <code>mice</code>, <code>readxl</code>, <code>rms</code></li>
+<li><code>easystats</code> and <code>tidyverse</code></li>
+</ul>
+<p>in case that is useful for you to know.</p>
+</div>
+</div>
 </section>
 <section id="our-best-advice" class="level2">
 <h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
@@ -419,7 +438,7 @@ Note
 </section>
 <section id="question-3-25-points" class="level1">
 <h1>Question 3 (25 points)</h1>
-<p>Starting again from the <code>hbp_3024</code> data, take the following steps:</p>
+<p>Starting again from the <code>hbp_3024</code> data, take the following steps (and <strong>note the tip below</strong>):</p>
 <ol type="1">
 <li><p>Create a <code>hbp_q3</code> data set to include only the following eight variables: <code>record</code>, <code>practice</code>, <code>dbp</code>, <code>age</code>, <code>ldl</code>, <code>tobacco</code>, <code>insurance</code> and <code>betab</code>.</p></li>
 <li><p>Within your <code>hbp_q3</code> data, ensure that <code>practice</code>, <code>tobacco</code>, <code>insurance</code> and <code>betab</code> are represented using factors, that <code>dbp</code>, <code>age</code>, and <code>ldl</code> are numeric (double-precision is fine), and <code>record</code> is a character variable. You can check this by running <code>glimpse(hbp_q3)</code> or <code>str(hbp_q3)</code>.</p></li>
@@ -436,6 +455,41 @@ Note
 <li>in model <code>fit3</code>: the subject’s age, LDL cholesterol level, tobacco status, insurance status, and whether or not they had a beta-blocker prescription.</li>
 <li>in model <code>fit4</code>: the subject’s age and LDL cholesterol level alone.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here is the code that I used to create all of the necessary samples and check the details listed above. Please feel encouraged to use this code in your response to Lab 4.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>hbp_q3 <span class="ot">&lt;-</span> hbp_3024 <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(record, practice, dbp, age, ldl, tobacco, insurance, betab) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), as_factor)) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">record =</span> <span class="fu">as.character</span>(record))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(hbp_q3)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">miss_var_summary</span>(hbp_q3) <span class="sc">|&gt;</span> <span class="fu">filter</span>(n_miss <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>hbp_q3_cc <span class="ot">&lt;-</span> hbp_q3 <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hbp_q3_cc)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">n_miss</span>(hbp_q3_cc)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>hbp_train <span class="ot">&lt;-</span> hbp_q3_cc <span class="sc">|&gt;</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(practice <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Highland"</span>, <span class="st">"King"</span>, <span class="st">"Plympton"</span>, <span class="st">"Sycamore"</span>)) </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>hbp_test <span class="ot">&lt;-</span> hbp_q3_cc <span class="sc">|&gt;</span> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(practice <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Center"</span>, <span class="st">"Elm"</span>, <span class="st">"Walnut"</span>)) </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hbp_train); <span class="fu">dim</span>(hbp_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <p>You will use the <code>hbp_train</code> data in <strong>Questions 3a and 3b</strong>, the <code>hbp_test</code> data in <strong>Question 3c</strong> and then go back to the <code>hbp_q3</code> data set in <strong>Question 3d</strong>.</p>
 <ol type="a">
 <li><p>{5} Use an appropriate tool to make a decision about a transformation of your outcome, and describe your conclusions from that tool. Use the <code>hbp_train</code> data.</p></li>
@@ -451,7 +505,7 @@ Note
 <h2 class="anchored" data-anchor-id="be-sure-to-include-session-information">Be sure to include Session Information</h2>
 <p>Please display your session information at the end of your submission, as shown below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.2 (2024-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64

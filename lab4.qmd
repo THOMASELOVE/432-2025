@@ -24,6 +24,18 @@ You can skip exactly one of Labs 1-5 without penalty, but all students must comp
 
 You should be able to modify any of the first three Lab templates available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab. Feel encouraged to try a [different HTML theme](https://quarto.org/docs/output-formats/html-themes.html) if you like, maybe [yeti](https://bootswatch.com/yeti/) or [spacelab](https://bootswatch.com/spacelab/) or [materia](https://bootswatch.com/materia/). 
 
+:::{.callout-tip}
+
+In my answer sketch for Lab 4, I used the following R packages:
+
+- `janitor`, `naniar`
+- `broom`, `car`, `caret`, `gt`, `mice`, `readxl`, `rms`
+- `easystats` and `tidyverse`
+
+in case that is useful for you to know.
+
+:::
+
 ## Our Best Advice
 
 Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
@@ -68,7 +80,7 @@ c. {5} For this question, use the model (`fit1` or `fit2`) which looks better to
 
 # Question 3 (25 points)
 
-Starting again from the `hbp_3024` data, take the following steps:
+Starting again from the `hbp_3024` data, take the following steps (and **note the tip below**):
 
 1. Create a `hbp_q3` data set to include only the following eight variables: `record`, `practice`, `dbp`, `age`, `ldl`, `tobacco`, `insurance` and `betab`.
 
@@ -87,6 +99,36 @@ You will build two models to predict diastolic blood pressure (potentially using
 
 - in model `fit3`: the subject's age, LDL cholesterol level, tobacco status, insurance status, and whether or not they had a beta-blocker prescription. 
 - in model `fit4`: the subject's age and LDL cholesterol level alone.
+
+:::{.callout-tip}
+
+Here is the code that I used to create all of the necessary samples and check the details listed above. Please feel encouraged to use this code in your response to Lab 4.
+
+```{r}
+#| eval: false
+hbp_q3 <- hbp_3024 |> 
+  select(record, practice, dbp, age, ldl, tobacco, insurance, betab) |>
+  mutate(across(where(is.character), as_factor)) |>
+  mutate(record = as.character(record))
+
+str(hbp_q3)
+miss_var_summary(hbp_q3) |> filter(n_miss > 0)
+
+hbp_q3_cc <- hbp_q3 |> drop_na()
+
+dim(hbp_q3_cc)
+n_miss(hbp_q3_cc)
+
+hbp_train <- hbp_q3_cc |> 
+  filter(practice %in% c("Highland", "King", "Plympton", "Sycamore")) 
+
+hbp_test <- hbp_q3_cc |> 
+  filter(practice %in% c("Center", "Elm", "Walnut")) 
+
+dim(hbp_train); dim(hbp_test)
+```
+
+:::
 
 You will use the `hbp_train` data in **Questions 3a and 3b**, the `hbp_test` data in **Question 3c** and then go back to the `hbp_q3` data set in **Question 3d**.
 
