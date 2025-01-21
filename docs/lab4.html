@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-20">
+<meta name="dcterms.date" content="2025-01-21">
 
 <title>Lab 4 – 432-2025</title>
 <style>
@@ -295,8 +295,8 @@ window.Quarto = {
   <li><a href="#our-best-advice" id="toc-our-best-advice" class="nav-link" data-scroll-target="#our-best-advice">Our Best Advice</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
   </ul></li>
-  <li><a href="#question-1-5-points" id="toc-question-1-5-points" class="nav-link" data-scroll-target="#question-1-5-points">Question 1 (5 points)</a></li>
-  <li><a href="#question-2-20-points" id="toc-question-2-20-points" class="nav-link" data-scroll-target="#question-2-20-points">Question 2 (20 points)</a></li>
+  <li><a href="#question-1-10-points" id="toc-question-1-10-points" class="nav-link" data-scroll-target="#question-1-10-points">Question 1 (10 points)</a></li>
+  <li><a href="#question-2-15-points" id="toc-question-2-15-points" class="nav-link" data-scroll-target="#question-2-15-points">Question 2 (15 points)</a></li>
   <li><a href="#question-3-25-points" id="toc-question-3-25-points" class="nav-link" data-scroll-target="#question-3-25-points">Question 3 (25 points)</a></li>
   <li><a href="#use-of-ai" id="toc-use-of-ai" class="nav-link" data-scroll-target="#use-of-ai">Use of AI</a>
   <ul class="collapse">
@@ -322,7 +322,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-20</p>
+      <p class="date">2025-01-21</p>
     </div>
   </div>
   
@@ -374,9 +374,15 @@ Important
 </ul>
 </section>
 </section>
-<section id="question-1-5-points" class="level1">
-<h1>Question 1 (5 points)</h1>
-<p>Begin with the <code>hbp_3024</code> data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices. Next, develop a single imputation strategy using the <code>mice</code> package and a seed of <code>2025</code> to account for missing values. Call the resulting imputed data set <code>hbp_lab4</code>. Show your R code, and demonstrate that the following three things are true…</p>
+<section id="question-1-10-points" class="level1">
+<h1>Question 1 (10 points)</h1>
+<p>Begin with the <code>hbp_3024</code> data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices, and only the following six variables: <code>record</code>, <code>practice</code>, <code>age</code>, <code>tobacco</code>, <code>hsgrad</code>, <code>income</code> and <code>depr_diag</code>.</p>
+<ul>
+<li>Be sure at this point that <code>depr_diag</code>, <code>tobacco</code> and <code>practice</code> are <em>factor</em> variables.</li>
+<li>Be sure that <code>age</code> and <code>hsgrad</code> and <code>income</code> are <em>numeric</em> variables (they should be.)</li>
+<li>Be sure that <code>record</code> is a <em>character</em> variable.</li>
+</ul>
+<p>Next, develop a single imputation strategy using the <code>mice</code> package and a seed of <code>2025</code> to account for missing values. Call the resulting imputed data set <code>hbp_lab4</code>. Show your R code, and demonstrate that the following three things are true…</p>
 <ul>
 <li>your <code>hbp_1</code> data has no missing values,</li>
 <li>within <code>hbp_1</code>, the practices have 88, 121 and 156 subjects with a depression diagnosis, respectively, and</li>
@@ -396,8 +402,8 @@ Note
 </div>
 </div>
 </section>
-<section id="question-2-20-points" class="level1">
-<h1>Question 2 (20 points)</h1>
+<section id="question-2-15-points" class="level1">
+<h1>Question 2 (15 points)</h1>
 <p>Using the <code>hbp_1</code> data, build a logistic regression model, called <code>fit1</code>, to predict whether a subject has a depression diagnosis based on the main effects of four variables:</p>
 <ul>
 <li>which of the four practices they receive care from, along with</li>
@@ -407,28 +413,35 @@ Note
 </ul>
 <ol type="a">
 <li><p>{5} What is the area under the ROC curve for <code>fit1</code>? Interpret the meaning of that C statistic in a complete English sentence.</p></li>
-<li><p>{5} Specify the best one choice of non-linear term to add to the <code>fit1</code> model, according to a Spearman <span class="math inline">\(\rho^2\)</span> plot. Specify and justify your choice of non-linear term, and specify how many degrees of freedom your term add to <code>fit1</code>?</p></li>
-<li><p>{5} Fit the model including the term you added in part b, and call that model <code>fit2</code>. What do the AIC and BIC statistics for <code>fit2</code> suggest to you as compared to those values in <code>fit1</code>?</p></li>
-<li><p>{5} For the model which looks better to you according to part c, use a decision rule that you will predict a depression diagnosis if the predicted probability of such a diagnosis according to your model exceeds 0.4. Now, across the <code>hbp_1</code> sample, specify the sensitivity, specificity and accuracy of this prediction rule.</p></li>
+<li><p>{5} Drop <code>hsgrad</code> from <code>fit1</code> and call the resulting model <code>fit2</code>. What do the AIC and BIC statistics for <code>fit2</code> suggest to you as compared to those values in <code>fit1</code>?</p></li>
+<li><p>{5} For this question, use the model (<code>fit1</code> or <code>fit2</code>) which looks better to you according to your response to Question 2b. Use a decision rule that you will predict a depression diagnosis if the predicted probability of such a diagnosis according to your model exceeds 0.4. Now, across the <code>hbp_1</code> sample, specify the sensitivity, specificity and accuracy of this prediction rule for your chosen model.</p></li>
 </ol>
 </section>
 <section id="question-3-25-points" class="level1">
 <h1>Question 3 (25 points)</h1>
-<p>Starting again from the <code>hbp_3024</code> data, partition the data into:</p>
+<p>Starting again from the <code>hbp_3024</code> data, take the following steps:</p>
+<ol type="1">
+<li><p>Create a <code>hbp_q3</code> data set to include only the following eight variables: <code>record</code>, <code>practice</code>, <code>dbp</code>, <code>age</code>, <code>ldl</code>, <code>tobacco</code>, <code>insurance</code> and <code>betab</code>.</p></li>
+<li><p>Within your <code>hbp_q3</code> data, ensure that <code>practice</code>, <code>tobacco</code>, <code>insurance</code> and <code>betab</code> are represented using factors, that <code>dbp</code>, <code>age</code>, and <code>ldl</code> are numeric (double-precision is fine), and <code>record</code> is a character variable. You can check this by running <code>glimpse(hbp_q3)</code> or <code>str(hbp_q3)</code>.</p></li>
+<li><p>In your <code>hbp_q3</code> data, ensure that you have 403 missing <code>ldl</code> values, 4 missing <code>tobacco</code> values and no other missing data.</p></li>
+<li><p>Create a “complete case” version of <code>hbp_q3</code>, which you’ll call <code>hbp_q3_cc</code>, which contains only the 2,617 subjects who are not missing data on any of the eight variables in <code>hbp_q3</code>.</p></li>
+<li><p>Partition the <code>hbp_q3_cc</code> data into:</p></li>
+</ol>
 <ul>
-<li>a training sample, which I would call <code>hbp_train</code>, including the subjects seen in the Highland, King, Plympton or Sycamore practices, and</li>
-<li>a test sample, which I would call <code>hbp_test</code>, consisting of the remaining three practices (Center, Elm, or Walnut practices.)</li>
+<li>a training sample, which I would call <code>hbp_train</code>, including the 1,439 subjects contained in <code>hbp_q3_cc</code> who were seen in the Highland, King, Plympton or Sycamore practices, and</li>
+<li>a test sample, which I would call <code>hbp_test</code>, consisting of the remaining three practices (Center, Elm, or Walnut practices) and the 1,178 subjects from <code>hbp_q3_cc</code> seen in those practices.</li>
 </ul>
 <p>You will build two models to predict diastolic blood pressure (potentially using an outcome transformation) on the basis of:</p>
 <ul>
 <li>in model <code>fit3</code>: the subject’s age, LDL cholesterol level, tobacco status, insurance status, and whether or not they had a beta-blocker prescription.</li>
 <li>in model <code>fit4</code>: the subject’s age and LDL cholesterol level alone.</li>
 </ul>
+<p>You will use the <code>hbp_train</code> data in <strong>Questions 3a and 3b</strong>, the <code>hbp_test</code> data in <strong>Question 3c</strong> and then go back to the <code>hbp_q3</code> data set in <strong>Question 3d</strong>.</p>
 <ol type="a">
-<li><p>{5} Use an appropriate tool to make a decision about a transformation of your outcome and describe your conclusions from that tool.</p></li>
-<li><p>{5} Using the transformed outcome you identified in part a., fit models <code>fit3</code> and <code>fit4</code> in your training sample, and compare the two models in terms of AIC, BIC, adjusted <span class="math inline">\(R^2\)</span> and sigma. Use these four summaries to help you decide which of the two models (<code>fit3</code> or <code>fit4</code>) shows better training sample performance.</p></li>
-<li><p>{5} Compare the performance of your two models (<code>fit3</code> and <code>fit4</code>) in the test sample, using the following four summaries of prediction error: MAPE, Maximum absolute prediction error, RMSPE and validated <span class="math inline">\(R^2\)</span>. According to these measures, which model looks better in terms of fit in the test sample?</p></li>
-<li><p>{10} Select a winning model based on your results in parts b and c, and refit that model now using the whole sample from <code>hbp_3024</code> and 20 multiple imputations developed using the <code>mice</code> package, with the seed <code>202543204</code>. Specify the point estimate of the <code>LDL</code> effect, as well as its 90% confidence interval, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.</p></li>
+<li><p>{5} Use an appropriate tool to make a decision about a transformation of your outcome, and describe your conclusions from that tool. Use the <code>hbp_train</code> data.</p></li>
+<li><p>{5} Using the transformed outcome you identified in Question 3a, fit models <code>fit3</code> and <code>fit4</code>, and compare the two models in terms of AIC, BIC, adjusted <span class="math inline">\(R^2\)</span> and sigma. Use these four summaries to help you decide which of the two models (<code>fit3</code> or <code>fit4</code>) shows better training sample performance. Again, use the <code>hbp_train</code> data.</p></li>
+<li><p>{5} Compare the performance of your two models (<code>fit3</code> and <code>fit4</code>) in the test sample (the <code>hbp_test</code> data set), using the following four summaries of prediction error: MAPE, Maximum absolute prediction error, RMSPE and validated <span class="math inline">\(R^2\)</span>. According to these measures, which model looks better in terms of fit in the test sample?</p></li>
+<li><p>{10} Select a winning model (<code>fit3</code> or <code>fit4</code>) based on your results in parts b and c, and refit that model now using the whole sample from <code>hbp_3</code> (including missing values) and 20 multiple imputations developed using the <code>mice</code> package, with the seed <code>202543204</code>. Specify the point estimate of the <code>LDL</code> effect, as well as its 90% confidence interval, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.</p></li>
 </ol>
 </section>
 <section id="use-of-ai" class="level1">

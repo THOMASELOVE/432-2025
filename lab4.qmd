@@ -33,9 +33,15 @@ Review your HTML output file carefully before submission for copy-editing issues
 - The `hbp_3024.xlsx` Excel file (first introduced in [Lab 2](lab2.qmd)) is available for download on the [432 data page](https://github.com/THOMASELOVE/432-data). Be sure that you see 8 variables with missing values when you impute the data.
 - A detailed description of each variable in the `hbp_3024` data is [available here](hbp_codebook.qmd).
 
-# Question 1 (5 points)
+# Question 1 (10 points)
 
-Begin with the `hbp_3024` data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices. Next, develop a single imputation strategy using the `mice` package and a seed of `2025` to account for missing values. Call the resulting imputed data set `hbp_lab4`. Show your R code, and demonstrate that the following three things are true...
+Begin with the `hbp_3024` data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices, and only the following six variables: `record`, `practice`, `age`, `tobacco`, `hsgrad`, `income` and `depr_diag`. 
+
+- Be sure at this point that `depr_diag`, `tobacco` and `practice` are *factor* variables.
+- Be sure that `age` and `hsgrad` and `income` are *numeric* variables (they should be.)
+- Be sure that `record` is a *character* variable.
+
+Next, develop a single imputation strategy using the `mice` package and a seed of `2025` to account for missing values. Call the resulting imputed data set `hbp_lab4`. Show your R code, and demonstrate that the following three things are true...
 
 - your `hbp_1` data has no missing values, 
 - within `hbp_1`, the practices have 88, 121 and 156 subjects with a depression diagnosis, respectively, and
@@ -45,7 +51,7 @@ Begin with the `hbp_3024` data, but include only the 1,296 subjects with who wer
 You'll use the `hbp_1` data in Questions 1 and 2 of this Lab.
 :::
 
-# Question 2 (20 points)
+# Question 2 (15 points)
 
 Using the `hbp_1` data, build a logistic regression model, called `fit1`, to predict whether a subject has a depression diagnosis based on the main effects of four variables:
 
@@ -56,31 +62,41 @@ Using the `hbp_1` data, build a logistic regression model, called `fit1`, to pre
 
 a. {5} What is the area under the ROC curve for `fit1`? Interpret the meaning of that C statistic in a complete English sentence.
 
-b. {5} Specify the best one choice of non-linear term to add to the `fit1` model, according to a Spearman $\rho^2$ plot. Specify and justify your choice of non-linear term, and specify how many degrees of freedom your term add to `fit1`?
+b. {5} Drop `hsgrad` from `fit1` and call the resulting model `fit2`. What do the AIC and BIC statistics for `fit2` suggest to you as compared to those values in `fit1`?
 
-c. {5} Fit the model including the term you added in part b, and call that model `fit2`. What do the AIC and BIC statistics for `fit2` suggest to you as compared to those values in `fit1`?
-
-d. {5} For the model which looks better to you according to part c, use a decision rule that you will predict a depression diagnosis if the predicted probability of such a diagnosis according to your model exceeds 0.4. Now, across the `hbp_1` sample, specify the sensitivity, specificity and accuracy of this prediction rule.
+c. {5} For this question, use the model (`fit1` or `fit2`) which looks better to you according to your response to Question 2b. Use a decision rule that you will predict a depression diagnosis if the predicted probability of such a diagnosis according to your model exceeds 0.4. Now, across the `hbp_1` sample, specify the sensitivity, specificity and accuracy of this prediction rule for your chosen model.
 
 # Question 3 (25 points)
 
-Starting again from the `hbp_3024` data, partition the data into:
+Starting again from the `hbp_3024` data, take the following steps:
 
-- a training sample, which I would call `hbp_train`, including the subjects seen in the Highland, King, Plympton or Sycamore practices, and 
-- a test sample, which I would call `hbp_test`, consisting of the remaining three practices (Center, Elm, or Walnut practices.)
+1. Create a `hbp_q3` data set to include only the following eight variables: `record`, `practice`, `dbp`, `age`, `ldl`, `tobacco`, `insurance` and `betab`.
+
+2. Within your `hbp_q3` data, ensure that `practice`, `tobacco`, `insurance` and `betab` are represented using factors, that `dbp`, `age`, and `ldl` are numeric (double-precision is fine), and `record` is a character variable. You can check this by running `glimpse(hbp_q3)` or `str(hbp_q3)`.
+
+3. In your `hbp_q3` data, ensure that you have 403 missing `ldl` values, 4 missing `tobacco` values and no other missing data.
+
+4. Create a "complete case" version of `hbp_q3`, which you'll call `hbp_q3_cc`, which contains only the 2,617 subjects who are not missing data on any of the eight variables in `hbp_q3`.
+
+5. Partition the `hbp_q3_cc` data into:
+
+- a training sample, which I would call `hbp_train`, including the 1,439 subjects contained in `hbp_q3_cc` who were seen in the Highland, King, Plympton or Sycamore practices, and 
+- a test sample, which I would call `hbp_test`, consisting of the remaining three practices (Center, Elm, or Walnut practices) and the 1,178 subjects from `hbp_q3_cc` seen in those practices.
 
 You will build two models to predict diastolic blood pressure (potentially using an outcome transformation) on the basis of:
 
 - in model `fit3`: the subject's age, LDL cholesterol level, tobacco status, insurance status, and whether or not they had a beta-blocker prescription. 
 - in model `fit4`: the subject's age and LDL cholesterol level alone.
 
-a. {5} Use an appropriate tool to make a decision about a transformation of your outcome and describe your conclusions from that tool.
+You will use the `hbp_train` data in **Questions 3a and 3b**, the `hbp_test` data in **Question 3c** and then go back to the `hbp_q3` data set in **Question 3d**.
 
-b. {5} Using the transformed outcome you identified in part a., fit models `fit3` and `fit4` in your training sample, and compare the two models in terms of AIC, BIC, adjusted $R^2$ and sigma. Use these four summaries to help you decide which of the two models (`fit3` or `fit4`) shows better training sample performance.
+a. {5} Use an appropriate tool to make a decision about a transformation of your outcome, and describe your conclusions from that tool. Use the `hbp_train` data.
 
-c. {5} Compare the performance of your two models (`fit3` and `fit4`) in the test sample, using the following four summaries of prediction error: MAPE, Maximum absolute prediction error, RMSPE and validated $R^2$. According to these measures, which model looks better in terms of fit in the test sample?
+b. {5} Using the transformed outcome you identified in Question 3a, fit models `fit3` and `fit4`, and compare the two models in terms of AIC, BIC, adjusted $R^2$ and sigma. Use these four summaries to help you decide which of the two models (`fit3` or `fit4`) shows better training sample performance. Again, use the `hbp_train` data.
 
-d. {10} Select a winning model based on your results in parts b and c, and refit that model now using the whole sample from `hbp_3024` and 20 multiple imputations developed using the `mice` package, with the seed `202543204`. Specify the point estimate of the `LDL` effect, as well as its 90% confidence interval, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.
+c. {5} Compare the performance of your two models (`fit3` and `fit4`) in the test sample (the `hbp_test` data set), using the following four summaries of prediction error: MAPE, Maximum absolute prediction error, RMSPE and validated $R^2$. According to these measures, which model looks better in terms of fit in the test sample?
+
+d. {10} Select a winning model (`fit3` or `fit4`) based on your results in parts b and c, and refit that model now using the whole sample from `hbp_3` (including missing values) and 20 multiple imputations developed using the `mice` package, with the seed `202543204`. Specify the point estimate of the `LDL` effect, as well as its 90% confidence interval, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.
 
 # Use of AI
 
