@@ -22,7 +22,19 @@ You can skip exactly one of Labs 1-5 without penalty, but all students must comp
 
 ## Template
 
-You should be able to modify the [Lab 3 Quarto template](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_lab3_template.qmd) available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab.
+You should be able to modify any of the first three Lab templates available on [our 432-data page](https://github.com/THOMASELOVE/432-data) to help you do this Lab. Feel encouraged to try a [different HTML theme](https://quarto.org/docs/output-formats/html-themes.html) if you like, maybe [yeti](https://bootswatch.com/yeti/) or [spacelab](https://bootswatch.com/spacelab/) or [materia](https://bootswatch.com/materia/). 
+
+:::{.callout-tip}
+
+In my answer sketch for Lab 5, I used the following R packages:
+
+- `janitor`, `naniar`
+- `readxl`, `survey`, `tableone`
+- `easystats` and `tidyverse`
+
+in case that is useful for you to know.
+
+:::
 
 ## Our Best Advice
 
