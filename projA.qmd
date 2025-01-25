@@ -22,8 +22,8 @@ If you decide to use some sort of AI to help you with any part of the Project, w
 
 On our [432-data page](https://github.com/THOMASELOVE/432-data), you will find a pair of Quarto templates: 
 
-- [this one is for the Project A Plan](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAplan_template.qmd), and 
-- [this one is for the Project A Portfolio](https://raw.githubusercontent.com/THOMASELOVE/432-data/master/templates/projectAportfolio_template.qmd). 
+- [this one is for the Project A Plan](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_projectA_plan_template.qmd), and 
+- [this one is for the Project A Portfolio](https://raw.githubusercontent.com/THOMASELOVE/432-data/refs/heads/master/data/432_projectA_portfolio_template.qmd). 
 
 Please use these templates in preparing your work. They will make completing and grading Project A much easier.
 
