@@ -38,7 +38,7 @@ An R "package" is a collection of functions, data, and documentation that extend
 ## CRAN installations
 
 pkgs <- c(  "afex", "aplpack", "aplore3", "arm", "babynames", "bayestestR",
-            "bestglm", "boot", "car", "caret", "cowplot", "cutpointr",
+            "bestglm", "boot", "car", "caret", "cobalt", "cowplot", "cutpointr",
             "DataExplorer", "DescTools", "devtools", "distributions3", 
             "easystats", "Epi", "exact2x2", "ez", "faraway", "fivethirtyeight",
             "flextable", "foreign", "gee", "geepack", "GGally", "ggdist", 
