@@ -3,22 +3,6 @@ title: "Calendar for 432: Spring 2025"
 date-modified: last-modified
 ---
 
-## January 2025
-
-Class | Date | Location | Description
-:----: | :----: | :-----: | :---------------------------------------
-[Class 1](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class01/README.md) | 01-14 | Zoom | Introduction and Logistics
-[Survey](https://bit.ly/432-2025-welcome-survey) | 01-15 | Google | Complete [Welcome to 432 Survey](https://bit.ly/432-2025-welcome-survey) by **noon**
-[Class 2](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class02/README.md) | 01-16 | Zoom | Getting Up to Speed
--- | 01-17 | Zoom | TA office hours begin
--- | 01-20 | Zoom | Martin Luther King Jr Holiday - no office hours
-[Class 3](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class03/README.md) | 01-21 | Zoom | Linear Regression, 1
-[Lab 1](lab1.qmd) | 01-22 | [Canvas](https://canvas.case.edu/) | [Lab 1](lab1.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 4](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class04/README.md) | 01-23 | Zoom | Logistic Regression, 1
-[Class 5](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class05/README.md) | 01-28 | Zoom | Linear and Logistic Regression, 2
-[Lab 2](lab2.qmd) | 01-29 | [Canvas](https://canvas.case.edu/) | [Lab 2](lab2.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 6](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class06/README.md) | 01-30 | Zoom | Linear and Logistic Regression, 3
-
 ## February 2025
 
 Class | Date | Location | Description
@@ -26,14 +10,14 @@ Class | Date | Location | Description
 Reading | 02-03 | -- | Before Class 7, read all of [How to be a Modern Scientist](https://leanpub.com/modernscientist)
 [Class 7](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class07/README.md) | 02-04 | Zoom | Linear and Logistic Regression, 4
 [Project A](projA.qmd) | 02-05 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Plan due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 8](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class08/README.md) | 02-06 | Zoom | Linear and Logistic Regression, 5
-[Class 9](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class09/README.md) | 02-11 | Zoom | Linear and Logistic Regression, 6
+[Class 8](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class08/README.md) | 02-06 | Zoom | Logistic Regression and the movies, 1
+[Class 9](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class09/README.md) | 02-11 | Zoom | Logistic Regression and the movies, 2
 [Lab 3](lab3.qmd) | 02-12 | [Canvas](https://canvas.case.edu/) | [Lab 3](lab3.qmd) due to [Canvas](https://canvas.case.edu/) at noon
-[Class 10](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class10/README.md) | 02-13 | Zoom | Linear and Logistic Regression, 7
-[Class 11](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class11/README.md) | 02-18 | Zoom | Building Table 1
+[Class 10](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class10/README.md) | 02-13 | Zoom | Linear Regression and happiness, 1
+[Class 11](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class11/README.md) | 02-18 | Zoom | Linear Regression and happiness, 2
 [Lab 4](lab4.qmd) | 02-19 | [Canvas](https://canvas.case.edu/) | [Lab 4](lab4.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 12](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class12/README.md) | 02-20 | Zoom | Statistical Significance and its problems 
-[Class 13](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class13/README.md) | 02-25 | Zoom | Power and Sample Size
+[Class 12](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class12/README.md) | 02-20 | Zoom | Building Table 1, Using Survey Weights
+[Class 13](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class13/README.md) | 02-25 | Zoom | Power and Sample Size (The Fundamentals)
 [Lab 5](lab5.qmd) | 02-26 | [Canvas](https://canvas.case.edu/) | [Lab 5](lab5.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
 [Class 14](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class14/README.md) | 02-27 | Zoom | Power and Sample Size, Retrospective Design
 [Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at **noon** to all students
@@ -73,6 +57,23 @@ Class 28 | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
 [Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
 
 **Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
+
+## January 2025
+
+Class | Date | Location | Description
+:----: | :----: | :-----: | :---------------------------------------
+[Class 1](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class01/README.md) | 01-14 | Zoom | Introduction and Logistics
+[Survey](https://bit.ly/432-2025-welcome-survey) | 01-15 | Google | Complete [Welcome to 432 Survey](https://bit.ly/432-2025-welcome-survey) by **noon**
+[Class 2](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class02/README.md) | 01-16 | Zoom | Getting Up to Speed
+-- | 01-17 | Zoom | TA office hours begin
+-- | 01-20 | Zoom | Martin Luther King Jr Holiday - no office hours
+[Class 3](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class03/README.md) | 01-21 | Zoom | Linear Regression, 1
+[Lab 1](lab1.qmd) | 01-22 | [Canvas](https://canvas.case.edu/) | [Lab 1](lab1.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
+[Class 4](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class04/README.md) | 01-23 | Zoom | Logistic Regression, 1
+[Class 5](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class05/README.md) | 01-28 | Zoom | Linear and Logistic Regression, 2
+[Lab 2](lab2.qmd) | 01-29 | [Canvas](https://canvas.case.edu/) | [Lab 2](lab2.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
+[Class 6](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class06/README.md) | 01-30 | Zoom | Linear and Logistic Regression, 3
+
 
 ## TA Office Hours
 
