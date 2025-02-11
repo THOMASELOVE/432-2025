@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-25">
+<meta name="dcterms.date" content="2025-02-11">
 
 <title>Project A – 432-2025</title>
 <style>
@@ -367,7 +367,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-25</p>
+      <p class="date">2025-02-11</p>
     </div>
   </div>
   
@@ -453,6 +453,8 @@ window.Quarto = {
 <li>At least one of the four must be quantitative (a variable is <strong>not</strong> quantitative for this purpose unless it has more than 10 different, ordered, observed values), <em>and</em> at least one must be multi-categorical (with between 3 and 6 categories, each containing a minimum of <strong>30</strong> subjects) for each model.</li>
 <li>Your other inputs can represent binary, multi-categorical or quantitative data.</li>
 <li>You can examine different candidate predictors for each outcome, or use the same ones in both your linear and logistic regression models.</li>
+<li>If you are considering a predictor for either your linear or logistic regression model which has 20% or more missing values among the observations where you have complete data on the relevant outcome, then either (a) look elsewhere for a more informative predictor, or (b) change your sampling strategy to require complete cases on that variable, as well, if possible.<br>
+</li>
 <li>Depending on your sample size, you can study more than the minimum number of regression inputs. See specifications below for your <a href="#my-planned-predictors-linear-model">linear</a> and <a href="#my-planned-predictors-logistic-model">logistic</a> models.</li>
 </ul></li>
 </ol>
@@ -566,13 +568,24 @@ window.Quarto = {
 <ul>
 <li>Eliminate all variables that are not going to be used (either as identifiers, outcomes or inputs) in your planned analyses.</li>
 <li>Change variable names to more meaningful ones, although it’s helpful to keep them at 10 characters or less. Use <code>clean_names()</code> from the <code>janitor</code> package to clean up and standardize the presentation of variable names.</li>
+<li>I want to discourage you from using data set names, variable names and especially category level names that are long (more than 8-10 characters) if you can avoid it. You want to be clear, certainly, but long names are (a) harder to type and (b) harder to see in plots and tables.
+<ul>
+<li>More than 8 characters in a category level’s name will make a lot of plotting very irritating down the line, especially in something like a nomogram or prediction plot.</li>
+<li>Don’t use spaces in the names of variables or the names of categories - separate words with underscores.</li>
+</ul></li>
 <li>Sample the data as needed to ensure that you meet the data set size specifications (no more than 2000 rows, for instance.)</li>
-<li>Convert all variables to appropriate types (factors, etc.) as needed, and complete appropriate checks of the values for all variables.</li>
+<li>Convert all variables to appropriate types (factors, etc.) as needed, and complete appropriate checks of the values for all variables.
+<ul>
+<li>Never use 1 and 2 as the levels of a binary variable, like sex = 1 for M and 2 for F, or anything like that. Always use 1 and 0, or actual names like “M” and “F” as the levels.</li>
+<li>Be sure that if you have a multi-categorical variable with a natural order of levels (like Low, Medium, High, or Excellent, Very Good, Good, Fair, Poor or Strongly agree, Agree, Neither Agree nor Disagree, Disagree, Strongly Disagree) be sure that the data_codebook() results you show in Section 5 show that order. If you need to fix this, the place to fix it is here in Section 3.</li>
+</ul></li>
 <li>If you have prospective inputs (predictors) that are multi-categorical with more than 6 categories, collapse them to six or fewer categories in a rational way at this stage.</li>
 <li>Ensure that all categorical variables have at least 30 observations at each level, collapsing or removing levels as needed to accomplish this end.</li>
+<li>If you are using a cutpoint to split a quantitative measure into categories, be sure to include in the variable description part of Section 5 exactly what that cutoff (or set of cutoffs’) value was (for example, “values above the mean” isn’t sufficient, “values above 45.67 (the mean of the data)” is a sufficient response.)</li>
 <li>Your tidied data set should be arranged with a row (subject) identifier at the far left. That identifier should have a unique value for each row, and should be saved as a character variable in R.</li>
 <li>We expect your final tibble to have some missing values. Do not impute or delete these, but do be sure they are correctly identified as missing values by R.</li>
 <li>Do not list the entire tibble or print out large strands of R output (like summaries of the entire tibble) anywhere in your document, except where you are required by these instructions to do so.</li>
+<li>Zap away any variable labels in section 3 using <code>zap_label()</code> from the <strong>haven</strong> package or a similar alternative. I’m not a fan of labels in R data sets for variables, as they make the results of many plots, tables and things like <code>data_codebook()</code> much harder to read.</li>
 </ul>
 </section>
 </section>
@@ -614,6 +627,7 @@ window.Quarto = {
 <li>This should include the units of measurement if the variable is quantitative, and a list of the possible values if the variable is categorical.</li>
 </ul></li>
 </ul>
+<p>All variables in your tidy data set, and in your codebook in Section 5 should fall into one of four roles. Don’t include other things in your tidy data set. - <strong>identifiers</strong>: variables that identify the subjects in your data, and these should be labeled as <strong>Identifier</strong> in the variable descriptions part of Section 5. - <strong>outcomes</strong> for either of your models, and these should be labeled as <strong>Outcome (linear)</strong> or <strong>Outcome (logistic)</strong> in the variable descriptions part of Section 5. - <strong>predictors</strong> for either of your models, and these should be labeled as either <strong>Predictor</strong> or <strong>Input</strong> in the variable descriptions part of Section 5. - <strong>other</strong> variables that you needed to use to create something in the previous three groups. These should not be labeled as predictors or outcomes in Section 5.</p>
 <p>As an example, here’s a part of a simple table:</p>
 <table class="caption-top table">
 <colgroup>
@@ -639,7 +653,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td><code>sysbp</code></td>
-<td>outcome</td>
+<td>outcome (linear)</td>
 <td>quant</td>
 <td>Most Recent Systolic Blood Pressure, in mm Hg</td>
 </tr>
@@ -655,6 +669,7 @@ window.Quarto = {
 <section id="numerical-description" class="level4">
 <h4 class="anchored" data-anchor-id="numerical-description">5.2 Numerical Description</h4>
 <p>Here, run the <code>data_codebook()</code> command on your entire tibble. Be sure that the results match up with what you’ve described in defining the variables, and that the same variables appear, in the same order, in the codebook and in these results.</p>
+<p>You are welcome to include other summaries as well, but <code>data_codebook()</code> is required.</p>
 </section>
 </section>
 <section id="linear-regression-plans" class="level3">
@@ -679,13 +694,22 @@ window.Quarto = {
 </section>
 <section id="my-quantitative-outcome" class="level4">
 <h4 class="anchored" data-anchor-id="my-quantitative-outcome">6.2 My Quantitative Outcome</h4>
+<ul>
+<li>If necessary, this section should begin by filtering the data to the observations with complete data on the quantitative outcome (for the linear model.) This might be necessary if some of the rows in your tibble have complete data on one outcome (binary) but not the other (quantitative). Obviously, if your data are already complete on this outcome, there’s no need to re-filter.</li>
+</ul>
 <p>This subsection tells us what you will use your linear regression model to explain or predict.</p>
 <ul>
-<li>Tell us the name in the tibble of the linear regression outcome you will use (this should the quantitative outcome you identified in your Codebook) and state why you are interested in predicting this variable.</li>
-<li>Provide a count of the number of rows in your data with complete information on this outcome.</li>
-<li>Provide a nicely labeled graphical summary of the distribution of your outcome to supplement the numerical description you provided in Section 5.2.</li>
-<li>Comment briefly on the characteristics of the outcome’s distribution. Is your outcome skewed or symmetric, is it discrete or fairly continuous, is there a natural transformation to consider?</li>
-<li>Demonstrate that the variable you have selected meets the standard for a quantitative variable used in this Project, specifically that it has more than 10 different, ordered, observed values.</li>
+<li><p>Tell us the name in the tibble of the linear regression outcome you will use (this should the quantitative outcome you identified in your Codebook) and state why you are interested in predicting this variable.</p></li>
+<li><p>Provide a count of the number of rows in your data with complete information on this outcome.</p></li>
+<li><p>Provide a nicely labeled graphical summary of the distribution of your outcome to supplement the numerical description you provided in Section 5.2.</p></li>
+<li><p>Comment briefly on the characteristics of the outcome’s distribution. Is your outcome skewed or symmetric, is it discrete or fairly continuous, is there a natural transformation to consider?</p></li>
+<li><p>Demonstrate that the variable you have selected meets the standard for a quantitative variable used in this Project, specifically that it has more than 10 different, ordered, observed values.</p></li>
+<li><p>As part of section 6.2, I want to see the following three things for your linear outcome, in each case, restricting the data to the observations with complete data on that outcome.</p>
+<ol type="1">
+<li>plots - at least a histogram and Normal Q-Q plot of the linear outcome, built using <code>ggplot2</code> and <code>patchwork</code>.</li>
+<li>numerical summaries - the results of both <code>describe()</code> (from the <strong>Hmisc</strong> package) and <code>favstats()</code> (from the <strong>mosaic</strong> package) for the linear outcome.</li>
+<li>a <code>tabyl()</code> (from the <strong>janitor</strong> package) of the most common values of your outcome, along with the fraction of all cases with complete data on that outcome that have that particular value, so that you can verify that no value occurs in more than 10% of your complete observations.</li>
+</ol></li>
 </ul>
 </section>
 <section id="my-planned-predictors-linear-model" class="level4">
@@ -697,7 +721,8 @@ window.Quarto = {
 <li>Demonstrate to us that you have at least one categorical input which has between 3 and 6 categories, that will be used as a factor in your modeling, and that has at least 30 observations in each level of the factor. If necessary, you can create such a predictor from a quantitative one, but if you are doing this, remember that only the multi-categorical version of the predictor should be included in your models.</li>
 <li>Demonstrate that the total number of candidate predictors you suggest is no more than <span class="math inline">\(4 + (N_1 - 100)/100\)</span>, rounding down, where <span class="math inline">\(N_1\)</span> is the number of rows with complete outcome data in your tibble.</li>
 </ul>
-<p>You should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.</p>
+<p>In section 6.3.1, you should briefly specify your guesses as to the expected direction of relationships between your outcome and your predictors. Use the word <strong>association</strong> instead of <em>correlation</em>, basically always, unless you are referring specifically to a correlation coefficient.</p>
+<p>In section 6.3.2, I then want to see a missingness summary including <code>miss_var_summary()</code> and <code>miss_case_table()</code> (from the <strong>naniar</strong> package) across all variables in the codebook that play a role in your planned linear regression model <strong>after</strong> filtering to the cases with complete data on your linear outcome. I’m hoping that you’ll have complete data for all predictors on more than 60% of your observations, and that you won’t be missing more than 20% of any individual predictor.</p>
 </section>
 </section>
 <section id="logistic-regression-plans" class="level3">
@@ -709,10 +734,18 @@ window.Quarto = {
 </section>
 <section id="my-binary-outcome" class="level4">
 <h4 class="anchored" data-anchor-id="my-binary-outcome">7.2 My Binary Outcome</h4>
+<p>This subsection should begin by filtering the data to the observations with complete data on the binary outcome (for the logistic model.) This might be necessary if some of the rows in your tibble have complete data on one outcome (quantitative) but not the other (binary). Obviously, if your data are already complete on this outcome, there’s no need to re-filter.</p>
 <p>This subsection tells us what you will use your logistic regression model to explain or predict.</p>
 <ul>
 <li>Tell us the name in the tibble of the logistic regression outcome you will use (this should be the binary (2-category) outcome you identified in your codebook) and state why you are interested in predicting this variable.</li>
-<li>Provide a count of the number of rows in your data with each of the two possible values of this outcome. Indicate whether you have any missing values.</li>
+<li>If your logistic regression outcome cannot be expressed in the form of a yes/no question, coded as 1 = yes and 0 = no, and if the name of that variable doesn’t tell us what 1 means, then adjust your setup accordingly until this is true.
+<ul>
+<li>For example, don’t use “Active / Inactive” for a <code>status</code> variable, instead use <code>active</code> = 1 or 0 for the same information.</li>
+<li>This is because if you use a factor in R for your outcome, the logistic regression model will not necessarily choose the result (Yes instead of No, 1 instead of 0) that you’re looking for unless you actually use 0 and 1 or No and Yes for the levels, and 0 and 1 have fewer characters.</li>
+<li>If your outcome was “High / Low” it will choose Low because it is the second one alphabetically!</li>
+<li>Also, if you use 1 and 0 as your levels, the prediction process I have described in slide set 8 and in the support1000 example will work, every time. If you do something else, it might not.</li>
+</ul></li>
+<li>As part of section 7.2, I want to see a a <code>tabyl()</code> (again from the <strong>janitor</strong> package) of the values of your binary outcome, after restricting the data to the observations with complete data on your primary outcome. This will provide a count of the number of rows in your data with each of the two possible values of this outcome.</li>
 </ul>
 </section>
 <section id="my-planned-predictors-logistic-model" class="level4">
@@ -722,7 +755,8 @@ window.Quarto = {
 <li>If you are using some of the same predictors as in your linear regression model, there’s no need to repeat yourself. Simply tell us which variables you’ll use again, and then provide descriptions for any new predictors that did not appear in your plans for the linear model.</li>
 <li>Demonstrate that the total number of candidate predictors you suggest for your logistic regression model is no more than <span class="math inline">\(4 + (N_2 - 100)/100\)</span> predictors, rounded down, where <span class="math inline">\(N_2\)</span> is the number of subjects in the <strong>smaller</strong> of your two outcome groups.</li>
 </ul>
-<p>You should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.</p>
+<p>In section 7.3.1, you should briefly specify your guesses as to the expected direction of relationships between your outcome and your predictors. Use the word <strong>association</strong> instead of <em>correlation</em>, basically always, unless you are referring specifically to a correlation coefficient.</p>
+<p>In a new section 7.3.2, I want to see a missingness summary including <code>miss_var_summary()</code> and <code>miss_case_table()</code> (from the <strong>naniar</strong> package) across all variables in the codebook that play a role in your planned logistic regression model <strong>after</strong> filtering to the cases with complete data on your binary outcome. I’m hoping that you’ll have complete data for all predictors on more than 60% of your observations, and that you won’t be missing more than 20% of any individual predictor.</p>
 </section>
 </section>
 <section id="affirmation" class="level3">

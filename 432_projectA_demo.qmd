@@ -39,6 +39,7 @@ library(gt)
 library(gtsummary)
 library(knitr)
 library(mice)
+library(mosaic)
 library(patchwork)
 library(ROCR)
 library(rsample)
@@ -238,7 +239,13 @@ If you look at the Quarto code that generated this document, you will see that I
 
 ## Describing the Variables (5 Tabs)
 
-Variables included in the `nh_demo` data are summarized and described in five different ways in the panel below. Click on the tab that interests you to see results.
+Variables included in the `nh_demo` data are summarized and described in five different ways in the panel below. Click on the tab that interests you to see results. 
+
+:::{.callout-tip}
+
+Please provide, at minimum, the variable descriptions list and the data_codebook() results here. You can include the others if you like.
+
+:::
 
 ::: {.panel-tabset}
 
@@ -334,7 +341,14 @@ How effectively can we predict HDL cholesterol levels using age, sex, race/ethni
 ## My Quantitative Outcome
 
 - My quantitative outcome is `HDL`, and I am interested in predicting this value using several more easily gathered characteristics of a subject.
-- I have complete HDL data for all `r nrow(nh_demo)` subjects in my `nh_demo` tibble.
+- I have complete HDL data for all `r nrow(nh_demo)` subjects in my `nh_demo` tibble. 
+
+:::{.callout-note}
+
+Note that if for some reason I did not have complete data in my main tibble on this quantitative outcome, I would filter my data here to include only those cases with complete data on this linear model outcome, before preceding with the rest of section 6.
+
+:::
+
 - My HDL data includes `r n_distinct(nh_demo$HDL)` different values, all measured in mg/dl.
 - The distribution of HDL across the 999 subjects in my `nh_demo` data (shown in the Figure below) is a bit right skewed, with a median of 51, and ranging from 22 mg/dl to 149 mg/dl.
 
@@ -350,6 +364,36 @@ p2 <- ggplot(nh_demo, aes(x = HDL)) +
 
 p1 + p2
 ```
+
+### Numerical Summary of my linear outcome
+
+:::{.callout-note title="A new request"}
+
+This request is new. I want to see the following results for your outcome here, and if your main tibble includes some missing values of your linear outcome, again these should be filtered away in Section 6.
+
+- The `Hmisc::describe()` results provide the number of observations, missing values (which should be 0 here) and the number of distinct values.
+- The `mosaic::favstats()` results include the standard deviation, which is not in `Hmisc::describe()`.
+- The `tabyl()` results show the five most common HDL values, so that you can check that none of them occur more than 10% of the time.
+    - Dr. Love will let you use an outcome where one value exceeds 10% of your data, but only if it doesn't exceed 20% of your data, and the second most common value doesn't exceed 10% of your data.
+
+:::
+
+Here are brief numerical summaries of my outcome.
+
+```{r}
+Hmisc::describe(nh_demo$HDL)
+mosaic::favstats(nh_demo$HDL)
+nh_demo |> tabyl(HDL) |> adorn_pct_formatting() |> arrange(desc(n)) |> head(5)
+```
+
+### Summary Statements about my outcome, HDL.
+
+My outcome is HDL.
+
+- I have 999 observations and no missing values on HDL. 
+- I have 86 distinct HDL values.
+- The range is 22 to 149, with mean 53.6 and standard deviation 16.7 mg/dl.
+- The most common value for HDL is 41, which occurs in 4.8% of my subjects.
 
 ## My Planned Predictors (Linear Model)
 
@@ -371,6 +415,29 @@ These five predictors are fewer than the allowed maximum of $4 + (999 - 100)/100
 
 I expect Higher HDL to be associated with lower age, with lower waist circumference, with being female, with reporting better self-reported overall health, and with non-hispanic white ethnicity. 
 
+### Missingness Summary
+
+:::{.callout-note title="A new request"}
+
+This request is also new. I want to see the following summary of missing values in your covariates here, after filtering to complete cases on your quantitative outcome variable.
+
+I'm hoping that you'll have complete data for all predictors on more than 60% of your observations, and that you won't be missing more than 20% of any individual predictor.
+
+:::
+
+Here is a report on missing data in my predictors for the linear model.
+
+```{r}
+linear_model_predictors <- nh_demo |> select(AGE, WAIST, SEX, RACE_ETH, SROH)
+
+miss_var_summary(linear_model_predictors) |> filter(n_miss > 0)
+miss_case_table(linear_model_predictors)
+```
+
+- I have complete data for all linear model predictors in 912 (91.3%) of the 999 rows in my data.
+- I am missing 56 values (5.6%) for SROH, and 44 values (4.4%) for WAIST.
+
+
 # Logistic Regression Plans
 
 ## My Second Research Question
@@ -383,12 +450,18 @@ How effectively can we predict whether or not a subject's HDL cholesterol level 
 - I have complete `HDL_RISK` data for all `r nrow(nh_demo)` subjects in my `nh_demo` tibble.
 
 ```{r}
-nh_demo |> tabyl(HDL_RISK)
+nh_demo |> tabyl(HDL_RISK) |> adorn_pct_formatting()
 ```
+
+:::{.callout-note}
+
+Note that if for some reason I did not have complete data in my main tibble on this binary outcome, I would filter my data here to include only those cases with complete data on this logistic model outcome, before preceding with the rest of section 7. Then I would display the `tabyl()` above for my binary outcome.
+
+:::
 
 ## My Planned Predictors (Logistic Model)
 
-I am using four of the five predictors I used in my linear model, specifically age, waist circumference, self-reported overall health and race/ethnicity.
+I am again using four of the five predictors I used in my linear model, specifically age, waist circumference, self-reported overall health and race/ethnicity.
 
 - Note that I am not including `SEX` in this model (although I did in my linear model) because my binary outcome variable's cutoff values are stratified by `SEX`.
 
@@ -397,6 +470,28 @@ I have 333 observations in my smaller outcome group (those at risk), and so I am
 ### Anticipated Direction of Effects
 
 I expect higher rates of HDL risk to be associated with higher age, with higher waist circumference, with reporting worse self-reported overall health, and with Hispanic or non-Hispanic Black ethnicity. 
+
+### Missingness Summary
+
+:::{.callout-note title="A new request"}
+
+This request is also new. I want to see the following summary of missing values in your covariates here, after filtering to complete cases on your binary outcome variable.
+
+I'm hoping that you'll have complete data for all predictors on more than 60% of your observations, and that you won't be missing more than 20% of any individual predictor.
+
+:::
+
+Here is a report on missing data in my predictors for the logistic model.
+
+```{r}
+logistic_model_predictors <- nh_demo |> select(AGE, WAIST, RACE_ETH, SROH)
+
+miss_var_summary(logistic_model_predictors) |> filter(n_miss > 0)
+miss_case_table(logistic_model_predictors)
+```
+
+- I have complete data for all of the logistic model predictors in 912 (91.3%) of the 999 rows in my data.
+- I am missing 56 values (5.6%) for SROH, and 44 values (4.4%) for WAIST.
 
 # Linear Regression Analyses
 

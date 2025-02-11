@@ -94,6 +94,7 @@ Questions about Project A may be directed to the TAs and to Professor Love at an
     -   You can examine different candidate predictors for each outcome,
         or use the same ones in both your linear and logistic regression
         models.
+    -   If you are considering a predictor for either your linear or logistic regression model which has 20% or more missing values among the observations where you have complete data on the relevant outcome, then either (a) look elsewhere for a more informative predictor, or (b) change your sampling strategy to require complete cases on that variable, as well, if possible.    
     -   Depending on your sample size, you can study more than the minimum number of regression inputs. See specifications below for your [linear](#my-planned-predictors-linear-model) and [logistic](#my-planned-predictors-logistic-model) models.
 
 Your data need not be related to health, or medicine, or biology.
@@ -205,13 +206,20 @@ Tidy and clean up the data to meet all necessary requirements for your modeling 
 
 - Eliminate all variables that are not going to be used (either as identifiers, outcomes or inputs) in your planned analyses.
 - Change variable names to more meaningful ones, although it’s helpful to keep them at 10 characters or less. Use `clean_names()` from the `janitor` package to clean up and standardize the presentation of variable names.
+- I want to discourage you from using data set names, variable names and especially category level names that are long (more than 8-10 characters) if you can avoid it. You want to be clear, certainly, but long names are (a) harder to type and (b) harder to see in plots and tables.
+    - More than 8 characters in a category level's name will make a lot of plotting very irritating down the line, especially in something like a nomogram or prediction plot.
+    - Don't use spaces in the names of variables or the names of categories - separate words with underscores.
 - Sample the data as needed to ensure that you meet the data set size specifications (no more than 2000 rows, for instance.)
 - Convert all variables to appropriate types (factors, etc.) as needed, and complete appropriate checks of the values for all variables.
+    - Never use 1 and 2 as the levels of a binary variable, like sex = 1 for M and 2 for F, or anything like that. Always use 1 and 0, or actual names like "M" and "F" as the levels.
+    - Be sure that if you have a multi-categorical variable with a natural order of levels (like Low, Medium, High, or Excellent, Very Good, Good, Fair, Poor or Strongly agree, Agree, Neither Agree nor Disagree, Disagree, Strongly Disagree) be sure that the data_codebook() results you show in Section 5 show that order. If you need to fix this, the place to fix it is here in Section 3.
 - If you have prospective inputs (predictors) that are multi-categorical with more than 6 categories, collapse them to six or fewer categories in a rational way at this stage.
 - Ensure that all categorical variables have at least 30 observations at each level, collapsing or removing levels as needed to accomplish this end.
+- If you are using a cutpoint to split a quantitative measure into categories, be sure to include in the variable description part of Section 5 exactly what that cutoff (or set of cutoffs') value was (for example, "values above the mean" isn't sufficient, "values above 45.67 (the mean of the data)" is a sufficient response.)
 - Your tidied data set should be arranged with a row (subject) identifier at the far left. That identifier should have a unique value for each row, and should be saved as a character variable in R.
 - We expect your final tibble to have some missing values. Do not impute or delete these, but do be sure they are correctly identified as missing values by R.
 - Do not list the entire tibble or print out large strands of R output (like summaries of the entire tibble) anywhere in your document, except where you are required by these instructions to do so.
+- Zap away any variable labels in section 3 using `zap_label()` from the **haven** package or a similar alternative. I'm not a fan of labels in R data sets for variables, as they make the results of many plots, tables and things like `data_codebook()` much harder to read.
 
 ### 4. The Tidy Tibble
 
@@ -247,17 +255,25 @@ In this section, provide a beautiful codebook which tells us (at a minimum) the 
 - A short description of the meaning of the variable.
     - This should include the units of measurement if the variable is quantitative, and a list of the possible values if the variable is categorical.
 
+All variables in your tidy data set, and in your codebook in Section 5 should fall into one of four roles. Don't include other things in your tidy data set.
+    - **identifiers**: variables that identify the subjects in your data, and these should be labeled as **Identifier** in the variable descriptions part of Section 5.
+    - **outcomes** for either of your models, and these should be labeled as **Outcome (linear)** or **Outcome (logistic)** in the variable descriptions part of Section 5.
+    - **predictors** for either of your models, and these should be labeled as either **Predictor** or **Input** in the variable descriptions part of Section 5.
+    - **other** variables that you needed to use to create something in the previous three groups. These should not be labeled as predictors or outcomes in Section 5.
+
 As an example, here’s a part of a simple table:
 
 | Variable    | Role       | Type  | Description                                    |
 |-------------|------------|-------|------------------------------------------------|
 | `subjectID` | identifier | \-    | character code for subjects                    |
-| `sysbp`     | outcome    | quant | Most Recent Systolic Blood Pressure, in mm Hg  |
+| `sysbp`     | outcome (linear) | quant | Most Recent Systolic Blood Pressure, in mm Hg  |
 | `statin`    | input      | 2-cat | Has a current statin prescription? (Yes or No) |
 
 #### 5.2 Numerical Description
 
 Here, run the `data_codebook()` command on your entire tibble. Be sure that the results match up with what you’ve described in defining the variables, and that the same variables appear, in the same order, in the codebook and in these results.
+
+You are welcome to include other summaries as well, but `data_codebook()` is required.
 
 ### 6. Linear Regression Plans
 
@@ -282,6 +298,8 @@ The [Wikipedia entry on research questions](https://en.wikipedia.org/wiki/Resear
 
 #### 6.2 My Quantitative Outcome
 
+- If necessary, this section should begin by filtering the data to the observations with complete data on the quantitative outcome (for the linear model.) This might be necessary if some of the rows in your tibble have complete data on one outcome (binary) but not the other (quantitative). Obviously, if your data are already complete on this outcome, there's no need to re-filter.
+
 This subsection tells us what you will use your linear regression model to explain or predict.
 
 - Tell us the name in the tibble of the linear regression outcome you will use (this should the quantitative outcome you identified in your Codebook) and state why you are interested in predicting this variable.
@@ -289,6 +307,11 @@ This subsection tells us what you will use your linear regression model to expla
 - Provide a nicely labeled graphical summary of the distribution of your outcome to supplement the numerical description you provided in Section 5.2.
 - Comment briefly on the characteristics of the outcome’s distribution. Is your outcome skewed or symmetric, is it discrete or fairly continuous, is there a natural transformation to consider? 
 - Demonstrate that the variable you have selected meets the standard for a quantitative variable used in this Project, specifically that it has more than 10 different, ordered, observed values.
+
+- As part of section 6.2, I want to see the following three things for your linear outcome, in each case, restricting the data to the observations with complete data on that outcome.
+    1. plots - at least a histogram and Normal Q-Q plot of the linear outcome, built using `ggplot2` and `patchwork`.
+    2. numerical summaries - the results of both `describe()` (from the **Hmisc** package) and `favstats()` (from the **mosaic** package) for the linear outcome.
+    3. a `tabyl()` (from the **janitor** package) of the most common values of your outcome, along with the fraction of all cases with complete data on that outcome that have that particular value, so that you can verify that no value occurs in more than 10% of your complete observations.
 
 #### 6.3 My Planned Predictors (Linear Model)
 
@@ -299,7 +322,9 @@ Now, tell us precisely which four (or more) candidate predictors (inputs) you in
 - Demonstrate to us that you have at least one categorical input which has between 3 and 6 categories, that will be used as a factor in your modeling, and that has at least 30 observations in each level of the factor. If necessary, you can create such a predictor from a quantitative one, but if you are doing this, remember that only the multi-categorical version of the predictor should be included in your models.
 - Demonstrate that the total number of candidate predictors you suggest is no more than $4 + (N_1 - 100)/100$, rounding down, where $N_1$ is the number of rows with complete outcome data in your tibble.
 
-You should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.
+In section 6.3.1, you should briefly specify your guesses as to the expected direction of relationships between your outcome and your predictors. Use the word **association** instead of *correlation*, basically always, unless you are referring specifically to a correlation coefficient.
+
+In section 6.3.2, I then want to see a missingness summary including `miss_var_summary()` and `miss_case_table()` (from the **naniar** package) across all variables in the codebook that play a role in your planned linear regression model **after** filtering to the cases with complete data on your linear outcome. I'm hoping that you'll have complete data for all predictors on more than 60% of your observations, and that you won't be missing more than 20% of any individual predictor.
 
 ### 7 Logistic Regression Plans
 
@@ -311,10 +336,17 @@ See section 6.1 for some more suggestions about improving your research question
 
 #### 7.2 My Binary Outcome
 
+This subsection should begin by filtering the data to the observations with complete data on the binary outcome (for the logistic model.) This might be necessary if some of the rows in your tibble have complete data on one outcome (quantitative) but not the other (binary). Obviously, if your data are already complete on this outcome, there's no need to re-filter.
+
 This subsection tells us what you will use your logistic regression model to explain or predict.
 
 - Tell us the name in the tibble of the logistic regression outcome you will use (this should be the binary (2-category) outcome you identified in your codebook) and state why you are interested in predicting this variable.
-- Provide a count of the number of rows in your data with each of the two possible values of this outcome. Indicate whether you have any missing values.
+- If your logistic regression outcome cannot be expressed in the form of a yes/no question, coded as 1 = yes and 0 = no, and if the name of that variable doesn't tell us what 1 means, then adjust your setup accordingly until this is true.
+    - For example, don't use "Active / Inactive" for a `status` variable, instead use `active` = 1 or 0 for the same information.
+    - This is because if you use a factor in R for your outcome, the logistic regression model will not necessarily choose the result (Yes instead of No, 1 instead of 0) that you're looking for unless you actually use 0 and 1 or No and Yes for the levels, and 0 and 1 have fewer characters.
+    - If your outcome was "High / Low" it will choose Low because it is the second one alphabetically!
+    - Also, if you use 1 and 0 as your levels, the prediction process I have described in slide set 8 and in the support1000 example will work, every time. If you do something else, it might not.
+- As part of section 7.2, I want to see a a `tabyl()` (again from the **janitor** package) of the values of your binary outcome, after restricting the data to the observations with complete data on your primary outcome. This will provide a count of the number of rows in your data with each of the two possible values of this outcome.
 
 #### 7.3 My Planned Predictors (Logistic Model)
 
@@ -323,7 +355,9 @@ Now, tell us precisely which four (or more) candidate predictors you intend to u
 - If you are using some of the same predictors as in your linear regression model, there’s no need to repeat yourself. Simply tell us which variables you’ll use again, and then provide descriptions for any new predictors that did not appear in your plans for the linear model.
 - Demonstrate that the total number of candidate predictors you suggest for your logistic regression model is no more than $4 + (N_2 - 100)/100$ predictors, rounded down, where $N_2$ is the number of subjects in the **smaller** of your two outcome groups.
 
-You should close this section by briefly specifying your guesses as to the expected direction of relationships between your outcome and your predictors.
+In section 7.3.1, you should briefly specify your guesses as to the expected direction of relationships between your outcome and your predictors. Use the word **association** instead of *correlation*, basically always, unless you are referring specifically to a correlation coefficient.
+
+In a new section 7.3.2, I want to see a missingness summary including `miss_var_summary()` and `miss_case_table()` (from the **naniar** package) across all variables in the codebook that play a role in your planned logistic regression model **after** filtering to the cases with complete data on your binary outcome. I'm hoping that you'll have complete data for all predictors on more than 60% of your observations, and that you won't be missing more than 20% of any individual predictor.
 
 ### 8 Affirmation
 
