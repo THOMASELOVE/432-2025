@@ -53,7 +53,7 @@ Begin with the `hbp_3024` data, but include only the 1,296 subjects with who wer
 - Be sure that `age` and `hsgrad` and `income` are *numeric* variables (they should be.)
 - Be sure that `record` is a *character* variable.
 
-Next, develop a single imputation strategy using the `mice` package and a seed of `2025` to account for missing values. Call the resulting imputed data set `hbp_lab4`. Show your R code, and demonstrate that the following three things are true...
+Next, develop a single imputation strategy using the `mice` package and a seed of `2025` to account for missing values. Call the resulting imputed data set `hbp_1`. Show your R code, and demonstrate that the following three things are true...
 
 - your `hbp_1` data has no missing values, 
 - within `hbp_1`, the practices have 88, 121 and 156 subjects with a depression diagnosis, respectively, and
