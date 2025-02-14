@@ -47,7 +47,7 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 # Question 1 (10 points)
 
-Begin with the `hbp_3024` data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices, and only the following six variables: `record`, `practice`, `age`, `tobacco`, `hsgrad`, `income` and `depr_diag`. 
+Begin with the `hbp_3024` data, but include only the 1,296 subjects with who were seen by either the Center, Elm, or Walnut practices, and only the following seven variables: `record`, `practice`, `age`, `tobacco`, `hsgrad`, `income` and `depr_diag`. 
 
 - Be sure at this point that `depr_diag`, `tobacco` and `practice` are *factor* variables.
 - Be sure that `age` and `hsgrad` and `income` are *numeric* variables (they should be.)
