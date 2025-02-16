@@ -138,7 +138,7 @@ b. {5} Using the transformed outcome you identified in Question 3a, fit models `
 
 c. {5} Compare the performance of your two models (`fit3` and `fit4`) in the test sample (the `hbp_test` data set), using the following four summaries of prediction error: MAPE, Maximum absolute prediction error, RMSPE and validated $R^2$. According to these measures, which model looks better in terms of fit in the test sample?
 
-d. {10} Select a winning model (`fit3` or `fit4`) based on your results in parts b and c, and refit that model now using the whole sample from `hbp_3` (including missing values) and 20 multiple imputations developed using the `mice` package, with the seed `20254323`. Specify the point estimate of the `LDL` effect, as well as its 90% confidence interval, with each rounded to **four decimal places**, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.
+d. {10} Select a winning model (`fit3` or `fit4`) based on your results in parts b and c, and refit that model now using the whole sample from `hbp_q3` (including missing values) and 20 multiple imputations developed using the `mice` package, with the seed `20254323`. Specify the point estimate of the `LDL` effect, as well as its 90% confidence interval, with each rounded to **four decimal places**, after this imputation process, and interpret the meaning of the point estimate in a complete sentence or two.
 
 # Use of AI
 
