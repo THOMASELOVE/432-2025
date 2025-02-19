@@ -67,7 +67,7 @@ You'll use the `hbp_1` data in Questions 1 and 2 of this Lab.
 
 Using the `hbp_1` data, build a logistic regression model, called `fit1`, to predict whether a subject has a depression diagnosis based on the main effects of four variables:
 
-- which of the four practices they receive care from, along with
+- which of the practices they receive care from, along with
 - the subject’s age,
 - the subject’s tobacco use status, and
 - the estimated percentage of adults living in the subject’s home neighborhood who have graduated from high school (the `hsgrad` variable)
