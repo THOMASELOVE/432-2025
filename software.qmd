@@ -47,16 +47,16 @@ pkgs <- c(  "afex", "aplpack", "aplore3", "arm", "babynames", "bayestestR",
             "gtsummary", "here", "Hmisc", "HSAUR", "infer", "insight", 
             "janitor", "kableExtra", "knitr", "lars", "lattice", "leaps", 
             "lmboot", "lme4", "lmerTest", "lmtest", "lvplot", "magrittr", 
-            "markdown", "MASS", "mdsr", "mgcv", "mice", "mitml", "MKinfer",
-            "modelsummary", "moderndive", "mosaic", "multcomp", "naniar", 
-            "NHANES", "nnet", "palmerpenguins", "party", "patchwork", 
-            "posterdown", "pROC", "PropCIs", "pscl", "psych", "pwr", "qcc", 
-            "QuantPsyc", "quantreg", "ResourceSelection", "rmarkdown", 
-            "rmdformats", "rms", "robustbase", "ROCR", "rpart", "rpart.plot",
-            "rstanarm", "rstatix", "sandwich", "simputation", "spelling", 
-            "styler", "summarytools", "survival", "survminer", "tableone", 
-            "tidymodels", "tidytext", "tidyverse", "usethis", "vcd", "VGAM", 
-            "viridis", "visdat", "xfun")
+            "markdown", "MASS", "mdsr", "mgcv", "mice", "miceafter", "mitml", 
+            "MKinfer", "modelsummary", "moderndive", "mosaic", "multcomp", 
+            "naniar", "NHANES", "nhanesA", "nnet", "palmerpenguins", "party", 
+            "patchwork", "posterdown", "pROC", "PropCIs", "pscl", "psych", 
+            "pwr", "qcc", "QuantPsyc", "quantreg", "ResourceSelection", 
+            "rmarkdown", "rmdformats", "rms", "robustbase", "ROCR", "rpart", 
+            "rpart.plot", "rstanarm", "rstatix", "sandwich", "simputation", 
+            "spelling", "styler", "summarytools", "survival", "survminer", 
+            "tableone", "tidymodels", "tidytext", "tidyverse", "usethis", 
+            "vcd", "VGAM", "viridis", "visdat", "xfun")
                 
 install.packages(pkgs)
 ```
