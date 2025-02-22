@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-02-11">
+<meta name="dcterms.date" content="2025-02-22">
 
 <title>Project A – 432-2025</title>
 <style>
@@ -331,7 +331,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#changes-from-the-plan-to-the-portfolio" id="toc-changes-from-the-plan-to-the-portfolio" class="nav-link" data-scroll-target="#changes-from-the-plan-to-the-portfolio">Changes from the Plan to the Portfolio</a></li>
   <li><a href="#new-section-8.-linear-regression-analyses" id="toc-new-section-8.-linear-regression-analyses" class="nav-link" data-scroll-target="#new-section-8.-linear-regression-analyses">New Section 8. Linear Regression Analyses</a></li>
+  <li><a href="#extra-potential-section-8.9" id="toc-extra-potential-section-8.9" class="nav-link" data-scroll-target="#extra-potential-section-8.9">EXTRA (potential section 8.9)</a></li>
   <li><a href="#new-section-9.-logistic-regression-analyses" id="toc-new-section-9.-logistic-regression-analyses" class="nav-link" data-scroll-target="#new-section-9.-logistic-regression-analyses">New Section 9. Logistic Regression Analyses</a></li>
+  <li><a href="#extra-potential-section-9.9" id="toc-extra-potential-section-9.9" class="nav-link" data-scroll-target="#extra-potential-section-9.9">EXTRA (potential section 9.9)</a></li>
   <li><a href="#new-section-10.-discussion" id="toc-new-section-10.-discussion" class="nav-link" data-scroll-target="#new-section-10.-discussion">New Section 10. Discussion</a></li>
   <li><a href="#most-important-piece-of-advice" id="toc-most-important-piece-of-advice" class="nav-link" data-scroll-target="#most-important-piece-of-advice">Most Important Piece of Advice</a></li>
   </ul></li>
@@ -367,7 +369,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-02-11</p>
+      <p class="date">2025-02-22</p>
     </div>
   </div>
   
@@ -895,6 +897,32 @@ Package version:
 </ul></li>
 </ol>
 </section>
+<section id="extra-potential-section-8.9" class="level3">
+<h3 class="anchored" data-anchor-id="extra-potential-section-8.9">EXTRA (potential section 8.9)</h3>
+<p>Completing all of what is listed above for Section 8 appropriately is the best way to receive an excellent grade on Project A. The <a href="https://thomaselove.github.io/432-2025/projA.html#demonstration-project">Project A demonstration project</a> provides R code to help illustrate how you can accomplish those tasks.</p>
+<p>Some of you may be eager to show some <em>additional</em> analytic facility. If you have successfully done <strong>all</strong> of the things provided in Section 8 (specifically subsections 8.1 - 8.8) of the <a href="https://thomaselove.github.io/432-2025/projA.html#demonstration-project">Project A demonstration project</a>, and still want to do more, choose between the following two options and create a new section 8.9, as indicated.</p>
+<p>Three key points to make at the start about this extra work…</p>
+<ul>
+<li>If you have meaningful problems in sections 8.1 - 8.8, I won’t even look at your section 8.9.</li>
+<li>Although section 8.9 can only help your grade, this is completely optional, and is not required to get an A grade on the Project.</li>
+<li>You may choose <strong>exactly one</strong> of the two options below. Do not present both, or I will ignore both.</li>
+</ul>
+<p>Your choices (1 and 2) for section 8.9 of your portfolio are as follows…</p>
+<ol type="1">
+<li><strong>If</strong> in your linear regression you have <strong>more than 5% of cases</strong> with missing data in your predictors, create a new section 8.9 called “Comparing Imputation Strategies”, where you show the simple imputation model, and then either:
+<ul>
+<li>fit an appropriate model using multiple imputation (with an appropriate number of imputations) and the <strong>mice</strong> package, then compare the coefficients and R-square values between the single imputation fit and the multiple imputation fit, <strong>or</strong></li>
+<li>use the <code>aregImpute()</code> function to fit an appropriate multiply imputed set of results, then compare the coefficients and R-square values between the single imputation fit and the multiple imputation fit.</li>
+</ul></li>
+<li>After your linear regression modeling, create a new section 8.9 called “A New Model C” where you do the following:
+<ul>
+<li>use the best subsets approach to identify another possible model (besides Model A and Model B) using a subset of your predictors, which you’ll call Model C, then</li>
+<li>show a plot of the posterior predictive check for your new model C, and compare it to your previous models A and B, then</li>
+<li>compare all three of those models using a plot which compares performance on common metrics (root mean squared error, AIC, BIC, multiple R-square and adjusted R-square) across your sample, and interpret the results, then finally</li>
+<li>perform 5-fold cross-validation for each of your models to compare R-square and the square root of the mean squared error, and interpret those results.</li>
+</ul></li>
+</ol>
+</section>
 <section id="new-section-9.-logistic-regression-analyses" class="level3">
 <h3 class="anchored" data-anchor-id="new-section-9.-logistic-regression-analyses">New Section 9. Logistic Regression Analyses</h3>
 <p>In Section 9, we expect you to present all relevant code used to produce your final results. As in Section 8, no output should be presented in this section without commentary. Also as in Section 8, this section will describe the fitting and evaluation of two models: a “main effects” model (model Y), and an “augmented” model (model Z). We’re primarily interested in a clear presentation. The following 6 elements should be presented, in properly labeled subsections of section 9, using the labels in bold below.</p>
@@ -949,6 +977,32 @@ Package version:
 <ul>
 <li>Your predictions in Section 9 should describe two different subjects. You don’t have to call them Harry and Sally, but it is helpful to give them actual names.</li>
 </ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="extra-potential-section-9.9" class="level3">
+<h3 class="anchored" data-anchor-id="extra-potential-section-9.9">EXTRA (potential section 9.9)</h3>
+<p>Completing all of what is listed above for Section 9 appropriately is the best way to receive an excellent grade on Project A. The <a href="https://thomaselove.github.io/432-2025/projA.html#demonstration-project">Project A demonstration project</a> provides R code to help illustrate how you can accomplish those tasks.</p>
+<p>Some of you may be eager to show some <em>additional</em> analytic facility. If you have successfully done <strong>all</strong> of the things provided in Section 9 (specifically subsections 9.1 - 9.8) of the <a href="https://thomaselove.github.io/432-2025/projA.html#demonstration-project">Project A demonstration project</a>, and still want to do more, choose between the following two options and create a new section 9.9, as indicated. You are permitted to include both a section 8.9 and 9.9 in your Project Portfolio.</p>
+<p>Three key points to make at the start about this extra work…</p>
+<ul>
+<li>If you have meaningful problems in sections 9.1 - 9.8, I won’t even look at your section 9.9.</li>
+<li>Although section 9.9 can only help your grade, this is completely optional, and is not required to get an A grade on the Project.</li>
+<li>You may choose <strong>exactly one</strong> of the two options below. Do not present both, or I will ignore both.</li>
+</ul>
+<p>Your choices (1 and 2) for section 9.9 of your portfolio are as follows…</p>
+<ol type="1">
+<li><strong>If</strong> in your logistic regression you have <strong>more than 5% of cases</strong> with missing data in your predictors, create a new section 9.9 called “Comparing Imputation Strategies”, where you show the simple imputation model, and then either:
+<ul>
+<li>fit an appropriate model using multiple imputation (with an appropriate number of imputations) and the <strong>mice</strong> package, and compare the coefficients (expressed as odds ratios) and the C statistic values between the single imputation fit and the multiple imputation fit, <strong>or</strong></li>
+<li>use the <code>aregImpute()</code> function to fit an appropriate multiply imputed set of results, then compare the coefficients and C statistic values between the single imputation fit and the multiple imputation fit.</li>
+</ul></li>
+<li>After your logistic regression modeling, create a new section 9.9 called “A New Model X” where you do the following:
+<ul>
+<li>use the best subsets approach to identify another possible model (besides Model Y and Model Z) using a subset of your predictors, which you’ll call Model X, then</li>
+<li>show a plot of the posterior predictive check for your new model X, and compare it to your previous models Y and Z, then</li>
+<li>compare all three of those models using a plot which compares performance on common metrics (root mean squared error, AIC, BIC and Tjur’s R-squared) across your sample, and interpret the result, then finally</li>
+<li>perform 5-fold cross-validation for each of your models to compare C statistics, and interpret the results.</li>
 </ul></li>
 </ol>
 </section>

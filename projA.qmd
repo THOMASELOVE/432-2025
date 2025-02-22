@@ -456,6 +456,29 @@ labeled subsections of section 8, using the labels in bold below.
     - The final part of your summary of the final model should be a nomogram with a demonstration of a prediction (and appropriate prediction interval) for a new subject of interest.
     - Your prediction (and its prediction interval) should be back transformed to the original scale of your outcome, if you transformed your outcome before building your model.
 
+### EXTRA (potential section 8.9)
+
+Completing all of what is listed above for Section 8 appropriately is the best way to receive an excellent grade on Project A. The [Project A demonstration project](https://thomaselove.github.io/432-2025/projA.html#demonstration-project) provides R code to help illustrate how you can accomplish those tasks.
+
+Some of you may be eager to show some *additional* analytic facility. If you have successfully done **all** of the things provided in Section 8 (specifically subsections 8.1 - 8.8) of the [Project A demonstration project](https://thomaselove.github.io/432-2025/projA.html#demonstration-project), and still want to do more, choose between the following two options and create a new section 8.9, as indicated. 
+
+Three key points to make at the start about this extra work...
+
+- If you have meaningful problems in sections 8.1 - 8.8, I won't even look at your section 8.9.
+- Although section 8.9 can only help your grade, this is completely optional, and is not required to get an A grade on the Project. 
+- You may choose **exactly one** of the two options below. Do not present both, or I will ignore both.
+
+Your choices (1 and 2) for section 8.9 of your portfolio are as follows...
+
+1. **If** in your linear regression you have **more than 5% of cases** with missing data in your predictors, create a new section 8.9 called "Comparing Imputation Strategies", where you show the simple imputation model, and then either:
+    - fit an appropriate model using multiple imputation (with an appropriate number of imputations) and the **mice** package, then compare the coefficients and R-square values between the single imputation fit and the multiple imputation fit, **or**
+    - use the `aregImpute()` function to fit an appropriate multiply imputed set of results, then compare the coefficients and R-square values between the single imputation fit and the multiple imputation fit.
+2. After your linear regression modeling, create a new section 8.9 called "A New Model C" where you do the following:
+    - use the best subsets approach to identify another possible model (besides Model A and Model B) using a subset of your predictors, which you'll call Model C, then
+    - show a plot of the posterior predictive check for your new model C, and compare it to your previous models A and B, then
+    - compare all three of those models using a plot which compares performance on common metrics (root mean squared error, AIC, BIC, multiple R-square and adjusted R-square) across your sample, and interpret the results, then finally
+    - perform 5-fold cross-validation for each of your models to compare R-square and the square root of the mean squared error, and interpret those results.
+
 ### New Section 9. Logistic Regression Analyses
 
 In Section 9, we expect you to present all relevant code used to produce your final results. As in Section 8, no output should be presented in this section without commentary. Also as in Section 8, this section will describe the fitting and evaluation of two models: a "main effects" model (model Y), and an “augmented” model (model Z). We’re primarily interested in a clear presentation. The following 6 elements should be presented, in properly labeled subsections of section 9, using the
@@ -550,6 +573,29 @@ labels in bold below.
         -   Your predictions in Section 9 should describe two different
             subjects. You don’t have to call them Harry and Sally, but
             it is helpful to give them actual names.
+
+### EXTRA (potential section 9.9)
+
+Completing all of what is listed above for Section 9 appropriately is the best way to receive an excellent grade on Project A. The [Project A demonstration project](https://thomaselove.github.io/432-2025/projA.html#demonstration-project) provides R code to help illustrate how you can accomplish those tasks.
+
+Some of you may be eager to show some *additional* analytic facility. If you have successfully done **all** of the things provided in Section 9 (specifically subsections 9.1 - 9.8) of the [Project A demonstration project](https://thomaselove.github.io/432-2025/projA.html#demonstration-project), and still want to do more, choose between the following two options and create a new section 9.9, as indicated. You are permitted to include both a section 8.9 and 9.9 in your Project Portfolio.
+
+Three key points to make at the start about this extra work...
+
+- If you have meaningful problems in sections 9.1 - 9.8, I won't even look at your section 9.9.
+- Although section 9.9 can only help your grade, this is completely optional, and is not required to get an A grade on the Project. 
+- You may choose **exactly one** of the two options below. Do not present both, or I will ignore both.
+
+Your choices (1 and 2) for section 9.9 of your portfolio are as follows...
+
+1. **If** in your logistic regression you have **more than 5% of cases** with missing data in your predictors, create a new section 9.9 called "Comparing Imputation Strategies", where you show the simple imputation model, and then either:
+    - fit an appropriate model using multiple imputation (with an appropriate number of imputations) and the **mice** package, and compare the coefficients (expressed as odds ratios) and the C statistic values between the single imputation fit and the multiple imputation fit, **or**
+    - use the `aregImpute()` function to fit an appropriate multiply imputed set of results, then compare the coefficients and C statistic values between the single imputation fit and the multiple imputation fit.
+2. After your logistic regression modeling, create a new section 9.9 called "A New Model X" where you do the following:
+    - use the best subsets approach to identify another possible model (besides Model Y and Model Z) using a subset of your predictors, which you'll call Model X, then
+    - show a plot of the posterior predictive check for your new model X, and compare it to your previous models Y and Z, then
+    - compare all three of those models using a plot which compares performance on common metrics (root mean squared error, AIC, BIC and Tjur's R-squared) across your sample, and interpret the result, then finally
+    - perform 5-fold cross-validation for each of your models to compare C statistics, and interpret the results.
 
 ### New Section 10. Discussion
 
