@@ -30,30 +30,34 @@ Class | Date | Location | Description
 [Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at **noon** (covers classes 1-14)
 [Class 16](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class16/README.md) | 03-06 | Zoom | Quiz 1 discussion, [Project A](projA.qmd): Ask Me Anything
 -- | -- | -- | Spring Break - no 432 class or office hours 03-08 through 03-14
-Class 17 | 03-18 | In Person | Count and Multi-Categorical Outcomes, 1
+Class 17 | 03-18 | In Person | Regression on Count Outcomes, 1
 [Project A](projA.qmd) | 03-19 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
-Class 18 | 03-20 | In Person | Count and Multi-Categorical Outcomes, 2
-Class 19 | 03-25 | In Person | Count and Multi-Categorical Outcomes, 3
+Class 18 | 03-20 | In Person | Regression on Count Outcomes, 2
+Class 19 | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1
 [Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon**
-Class 20 | 03-27 | In Person | Count and Multi-Categorical Outcomes, 4
+Class 20 | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2
 
 ## April 2025
 
 Class | Date | Location | Description
 :----: | :----: | :-----: | :---------------------------------------
-Class 21 | 04-01 | In Person | Time to Event (Survival) Outcomes, 1
+Class 21 | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3
 [Project B](projB.qmd) | 04-02 | Google | [Project B](projB.qmd) Form due at **noon**
-Class 22 | 04-03 | In Person | Time to Event (Survival) Outcomes, 2
-Class 23 | 04-08 | In Person | Catch Up
+Class 22 | 04-03 | In Person | Time to Event (Survival) Outcomes, 1
+Class 23 | 04-08 | In Person | Time to Event (Survival) Outcomes, 2
 [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon
-Class 24 | 04-10 | Zoom | [Project B](projB.qmd): Ask Me Anything
-Class 25 | 04-15 | In Person | [Project B](projB.qmd) Presentations, 1
-Class 26 | 04-17 | Zoom | [Project B](projB.qmd) Presentations, 2
+Class 24 | 04-10 | In Person | K-Means Clustering, PCA
+Class 25 | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything
+Class 26 | 04-17 | In Person | Introduction to Hierarchical Models
+-- | 04-15 | In Person | [Project B](projB.qmd) Presentations, day 1
 [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students
-Class 27 | 04-22 | Zoom | [Project B](projB.qmd) Presentations, 3
+-- | 04-18 | Zoom | [Project B](projB.qmd) Presentations, day 2
+-- | 04-21 | Zoom | [Project B](projB.qmd) Presentations, day 3
+-- | 04-22 | Zoom | [Project B](projB.qmd) Presentations, day 4
 -- | 04-22 | -- | Last Day of TA office hours
 [Quiz 2](quiz2.qmd) | 04-23 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24)
-Class 28 | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
+-- | 04-23 | Zoom | [Project B](projB.qmd) Presentations, day 5
+Class 27 | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
 [Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
 
 **Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
