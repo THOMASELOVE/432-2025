@@ -42,22 +42,22 @@ Class 20 | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2
 Class | Date | Location | Description
 :----: | :----: | :-----: | :---------------------------------------
 Class 21 | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3
-[Project B](projB.qmd) | 04-02 | Google | [Project B](projB.qmd) Form due at **noon**
+[Project B](projB.qmd) | 04-02 | Google | [Project B Proposal Form](https://bit.ly/432-2025-projB-proposal) due at **noon**
 Class 22 | 04-03 | In Person | Time to Event (Survival) Outcomes, 1
 Class 23 | 04-08 | In Person | Time to Event (Survival) Outcomes, 2
 [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon
 Class 24 | 04-10 | In Person | K-Means Clustering, PCA
 Class 25 | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything
 Class 26 | 04-17 | In Person | Introduction to Hierarchical Models
--- | 04-15 | In Person | [Project B](projB.qmd) Presentations, day 1
+-- | 04-17 | 3 - 6 PM | In Person [Project B](projB.qmd) Presentations
 [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students
--- | 04-18 | Zoom | [Project B](projB.qmd) Presentations, day 2
--- | 04-21 | Zoom | [Project B](projB.qmd) Presentations, day 3
--- | 04-22 | Zoom | [Project B](projB.qmd) Presentations, day 4
--- | 04-22 | -- | Last Day of TA office hours
-[Quiz 2](quiz2.qmd) | 04-23 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24)
--- | 04-23 | Zoom | [Project B](projB.qmd) Presentations, day 5
+-- | 04-18 | 10 AM - 2 PM | Zoom [Project B](projB.qmd) Presentations
+-- | 04-21 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations
+-- | 04-22 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations
+-- | 04-22 | -- | **No 432 class today**, Last Day for TA office hours
+-- | 04-23 | 8:30 - 11 AM, <br /> 12:30 - 2 PM | Zoom [Project B](projB.qmd) Presentations
 Class 27 | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
+[Quiz 2](quiz2.qmd) | 04-25 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24)
 [Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
 
 **Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.

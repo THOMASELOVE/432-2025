@@ -3,12 +3,6 @@ title: "Project B"
 date: last-modified
 ---
 
-:::{.callout-important}
-
-Dr. Love reserves the right to change these Project B instructions substantially at any time before the middle of March 2025. Do not treat these Project B instructions as complete or trustworthy until this note disappears (probably in early March), **and** Dr. Love announces that the Project B instructions are final in class.
-
-:::
-
 # Project B Overview
 
 In project B, you will create two research questions that can be addressed with data you can conveniently obtain that can be used to address each of your questions, with models that you learned in the 431-432 sequence. 
@@ -28,24 +22,22 @@ The model for your first outcome must be either:
 The model for your second outcome must use a different approach than you used for Outcome 1. For this model, you can use any of the three options above, or you may use:
 
 - A linear or binary logistic model fit using a Bayesian engine, or
-- A linear model fit by selecting candidate predictors using the lasso, or
-- A linear regression model that uses survey weights, or
-- A quantile regression model fit to a quantitative outcome where a particular percentile (perhaps the median) is of interest, or
-- A robust linear model that uses robust standard errors.
+- A linear or binary logistic model fit by selecting candidate predictors using a best subsets procedure, or
+- A linear regression model that uses survey weights.
 
-Note: Use at least 3 predictors (and still no more than 8) if you are fitting a linear, binary logistic or quantile regression model for your second outcome, please.
+Note: Use at least 3 predictors (and still no more than 8) if you are fitting a linear or binary logistic model for your second outcome, please.
 
 ## Deliverables
 
 There are three deliverables in Project B: a Proposal Form, an in-person or Zoom Presentation, a Portfolio developed with Quarto ([along with your Data](#submitting-your-data)).
 
-1. **Proposal Form** By the deadline on the [Calendar](calendar.qmd) in early April, you will submit a Google Form that Dr. Love will make available later this semester. 
+1. **Proposal Form** By the deadline on the [Calendar](calendar.qmd) in early April, you will submit a Google Form that Dr. Love will make available at <https://bit.ly/432-2025-projB-proposal>. 
     - In this form, you will specify your title, your research questions, and your data source, and whether or not you are working with a partner.
     - You will also provide a brief description of each of your outcomes, and the type of models you plan to fit. 
     - Finally, you will also specify the times that work for you (and your partner) to give your Project B presentation to Professor Love.
-    - We will need to approve your Google Form before you proceed further, and this may require some revisions to your plan.
+    - We will need to approve your Proposal Form before you proceed further, and this may require some revisions to your plan.
 
-2. **Presentation** After receiving our approval of your submitted form, you will prepare a portfolio of your results with Quarto ([a template is available](#template-for-the-portfolio) for this), and then present your work to Professor Love. The schedule for these presentations will be determined after completion of the Project B Proposal Form.
+2. **Presentation** After receiving our approval of your submitted proposal form, you will prepare a portfolio of your results with Quarto ([a template is available](#template-for-the-portfolio) for this), and then present your work to Professor Love. The schedule for these presentations will be determined after completion of the Project B Proposal Form.
 
 3. **Portfolio and Data** You will then make changes (as needed) to your Quarto document (portfolio) in response to Professor Love's comments during your presentation, and submit the final version of the portfolio along with a version of your data ([as described here](#submitting-your-data)) to [Canvas](https:://canvas.case.edu) by the deadline in the [Calendar](calendar.qmd).
 
@@ -55,7 +47,7 @@ You can choose either to work alone, or with one other person, to complete Proje
 
 If you are working with a partner...
 
-  - **exactly one** of you needs to complete the Project B Proposal Form (the other student should **send an email to Dr. Love with the subject line 432 Project B Partnership** confirming that you are working in a partnership and telling me the name of your partner), then
+  - **exactly one** of you needs to complete the [Project B Proposal Form](https://bit.ly/432-2025-projB-proposal) (the other student should **send an email to Dr. Love with the subject line 432 Project B Partnership** confirming that you are working in a partnership and telling me the name of your partner), then
   - you will each participate in the Project B Presentation and the development of the Portfolio, and
 
 Your final Portfolio and Data will be submitted by exactly one of the two partners to [Canvas](https::/canvas.case.edu) while the non-reporting partner will submit a one-page note to [Canvas](https::/canvas.case.edu) indicating the members of the partnership and that the partner will submit the work.
@@ -100,7 +92,7 @@ We want to powerfully discourage you from working with nested data that really r
 
 # The Proposal Form
 
-The Project B Proposal Form is a Google Form to be posted later this term. The form allows you to:
+The Project B Proposal Form is a Google Form found at <https://bit.ly/432-2025-projB-proposal>. The form allows you to:
 
 - register a brief description of your project for our approval, *and* 
 - specify presentation times when you (and your partner if applicable) are available.
@@ -116,11 +108,32 @@ Before you complete the form, please **read this entire document**, settle on yo
 - You'll need to specify how many cases are in your data with complete data on each of your study's two outcomes.
 - You'll need to specify the title of your project.
 - You'll need to specify your research questions.
-- You'll need to specify who your partner is, if you have one.
+- You'll need to specify who your partner is, if you have one. If you are working with a partner, exactly one of you will fill out the form. The other student should **send an email to Dr. Love with the subject line 432 Project B Partnership** confirming that you are working in a partnership and telling me the name of your partner.
+- You'll need to specify several dates and times on which you can give your presentation, from a list provided in the form. You'll have the opportunity to tell us about special circumstances, and to express a "first choice" preference as part of the form.
+
+## Scheduling Your Presentation
+
+Once Dr. Love has received and approved all Project B Proposal Forms, he will schedule the presentations, based on your requests. All presentations will be scheduled within the following time windows:
+
+- Thursday 2025-04-17 between 3 and 6 PM (in person presentations)
+- Friday 2025-04-18 between 10 AM and 2 PM (zoom presentations)
+- Monday 2025-04-21 between 8:30 AM and Noon, as well as 1 - 6:30 PM (zoom presentations)
+- Tuesday 2025-04-22 between 8:30 AM and Noon, as well as 1 - 6:30 PM (zoom presentations) *note that we don't have class on 2025-04-22*.
+- Wednesday 2025-04-23 between 8:30 AM and 11 AM, and 12:30 PM to 2 PM (zoom presentations)
+
+In making your decisions about availability, **please note** the following:
+
+- Passover is 2025-04-12 through 2025-04-20.
+- Easter Sunday is Sunday 2025-04-20. 
+- My Project B Ask Me Anything class (over Zoom) will be on Tuesday 2025-04-15.
+- 432 Quiz 2 will be made available to you on Friday 2025-04-18 and is due on Friday 2025-04-25 at Noon.
+- We won't hold 432 class on Tuesday 2025-04-22.
+- The final 432 class will be held (in person) on Thursday 2025-04-24.
+- At CWRU, classes for Spring Semester end on Monday 2025-04-28, and the University Reading Days are 2025-04-29 and 2025-04-30.
 
 ## How will we respond to the form?
 
-On the basis of your responses to the form, we will either approve or reject your Project B plan, and once it is approved, you can proceed.
+On the basis of your responses to [the Proposal Form](https://bit.ly/432-2025-projB-proposal), we will either approve or reject your Project B plan, and once it is approved, you can proceed.
 
 - If we cannot approve your project, we'll tell you why, and tell you how to try again. You'll need to iterate until we approve your project, but we hope this won't require more than two tries for anyone.
 - The main reason why we doesn't approve projects is that we don't understand the description of your data set or its outcomes, your planned modeling approaches, or how the research questions link to the available data, so focus on making those connections as clear as possible.
@@ -177,6 +190,8 @@ You can give your presentation using just your knitted HTML results from Quarto,
 As in Project A, you are welcome to include p values in your analyses in either the portfolio or the presentation, but you should demonstrate good statistical practice by not comparing them to $\alpha$ levels to declare things to be important, meaningful, or significant. 
 
 **You should not use the words "statistically significant" or any synonyms (like statistically detectable) in any of your materials or in your presentation.** 
+
+
 
 # The Project Portfolio
 
@@ -264,7 +279,7 @@ For Project B, don't worry about penalizing yourself for "peeking" at the data b
 
 ## Transformations
 
-In Project B, for outcome transformations, follow our advice [from Project A](projA.qmd#transformations).
+In Project B, for outcome transformations related to quantitative outcomes (if you are fitting such a model), follow our advice [from Project A](projA.qmd#transformations).
 
 ## Advice on Predictors
 
@@ -277,7 +292,7 @@ In Project B, for outcome transformations, follow our advice [from Project A](pr
 ## On Validation
 
 1. We expect a validation, properly executed, to be an important part of every Project B.
-2. This will most commonly include a split into training and testing samples, and an evaluation of key results in a held-out sample.
+2. This will most commonly include a split into training and testing samples, and an evaluation of key results in a held-out sample. Alternatively, you might choose an evaluation based on cross-validation, in which case we recommend 5-fold cross validation for this project.
 3. Bootstrap validation of summary statistics via the tools available in the `rms` package is also welcome, if you are fitting models that use those tools.
 
 # Questions and Answers
@@ -320,9 +335,9 @@ Sure, especially for any key predictors.
 
 No.
 
-> Can we use `echo=FALSE` in Project B?
+> Can we use `#| echo: false` in Project B?
 
-The use of `echo = FALSE` is prohibited in Project B. Use the template.
+The use of `#| echo: false` is prohibited in Project B. Use the template.
 
 # Things We Want To See in Your Work
 
@@ -400,12 +415,12 @@ and four additional questions, depending on whether you have an ordinal or nomin
 
 5. How do you know that your multinomial model converged?
 6. How many intercepts and how many coefficients (slopes) are in your model? Do these values make sense in light of your outcome and predictors?
-7. Can you display and explain the meaning of a plot of response probabilities describing the relationship between your outcome and one of your interesting categorical predictors, like the one I show in Slides Set 19, slide #23 entitled `try1` Response Probabilities? Or, if you have two interesting categorical predictors, like the plot I shod in Slides Set 19, slide #62 called `fit_LS` Response Probabilities?
+7. Can you display and explain the meaning of a plot of response probabilities describing the relationship between your outcome and one of your interesting categorical predictors?
 8. Can you compare your model (which should have at least 2 predictors) to another model for your outcome that includes only one of your predictors (it's up to you to decide what one predictor would be most interesting to study) using AIC, BIC and effective degrees of freedom, so that you can then tell us which of those two models looks best by both AIC and BIC?
 
 ## 8 questions about a model for a quantitative outcome
 
-1. Have you made a reasonable choice of strategy here? (Bayesian model, Selecting Candidates via the LASSO, using survey weights, quantile regression or robust linear model?) Why did you select this approach - how does it tie in with your research question?
+1. Have you made a reasonable choice of strategy here? (Bayesian model, Selecting Candidates via best subsets, using survey weights?) Why did you select this approach - how does it tie in with your research question?
 2. Can you demonstrate that you have selected a transformation (or not) for the outcome wisely?
 3. Can you demonstrate that you have fit the model properly, and evaluated it effectively using the tools we have developed in class?
 4. Can you demonstrate whether your model fits well, effectively using the tools available for you for the type of model you're developing?
