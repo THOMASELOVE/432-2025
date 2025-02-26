@@ -4,16 +4,29 @@ title: "Quiz 1"
 
 Quiz 1 covers materials from Classes 1-14 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-14.
 
-By noon on Friday 2025-02-28, several elements related to Quiz 1 will be provided to you.
+By noon on Friday, 2025-02-28, several elements related to Quiz 1 will be provided to you.
 
-1. The main document (pdf) for Quiz 1, which will include both instructions and all of the questions.
-2. A link to the Google Form Answer Sheet for Quiz 1, where you will submit your responses.
-3. Download information for the Data Sets we will provide for Quiz 1.
+1. The main document (pdf) for Quiz 1, which will include both instructions and all of the questions will appear in our Shared Drive in a folder called **432 Quiz 1 Materials (due 2025-03-05 at noon)**. Look for the file named `432-quiz1-2025.pdf`.
+2. The Google Form Answer Sheet for Quiz 1 is found at <https://bit.ly/432-2025-quiz1-answer-sheet>, and this is where you will submit your responses.
+3. The three Data Sets we have provided for Quiz 1 are in our Shared Drive. Look in the folder called **432 Quiz 1 Materials (due 2025-03-05 at noon)** for a **data** sub-folder, where you should find three data sets, named `dat_A.csv`, `dat_B.xlsx` and `dat_C.Rds`.
 
 Quiz 1 is due on Wednesday 2025-03-05 at Noon.
 
 ## Pre-Release Information
 
-1. A reasonably complete draft of the [Quiz 1 instructions](quiz1/432-quiz1-2025_instructionsonly.pdf) (pdf file) is now available, if you'd like to look at it. 
+1. A reasonably complete draft of the [Quiz 1 instructions](quiz1/432-quiz1-2025_instructionsonly.pdf) (pdf file) is now available, if you'd like to look at it. This draft will remain available until the full PDF is released.
 2. If you have a question prior to the release of Quiz 1 about the Quiz, send your question by email to Dr. Love at `thomas dot love at case dot edu`.
 
+## Once the Quiz is available, how do I get help?
+
+This is an open book, open notes quiz. You are welcome to consult the materials provided on the course website and that we've been reading in the class, but you are not allowed to discuss the questions on this quiz with anyone other than Professor Love and the teaching assistants. You will complete a short affirmation that you have obeyed these rules as part of submitting the Quiz.
+
+If you need clarification on a Quiz question, you have exactly two ways of getting help:
+
+- You can ask your question via email to **Thomas dot Love at case dot edu**, or
+- You can ask your question of Dr. Love directly in class 15 on 2025-03-04.
+
+During the Quiz period (2024-02-28 through 2024-03-05) we will not answer questions about Quiz 1 except through the email and class session above. 
+
+- Please check your email **and** the [Quiz 1 links page](https://thomaselove.github.io/432-2025/quiz1.html) *before* submitting the final version of your Quiz, to see if Dr. Love has posted any changes there. 
+- Dr. Love promises to respond to all questions received before 9 AM on 2024-03-06 in a timely fashion.
