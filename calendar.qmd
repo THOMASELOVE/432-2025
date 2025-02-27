@@ -3,25 +3,6 @@ title: "Calendar for 432: Spring 2025"
 date-modified: last-modified
 ---
 
-## February 2025
-
-Class | Date | Location | Description
-:----: | :----: | :-----: | :---------------------------------------
-Reading | 02-03 | -- | Before Class 7, read all of [How to be a Modern Scientist](https://leanpub.com/modernscientist)
-[Class 7](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class07/README.md) | 02-04 | Zoom | Linear and Logistic Regression, 4
-[Project A](projA.qmd) | 02-05 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Plan due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 8](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class08/README.md) | 02-06 | Zoom | Logistic Regression and the movies, 1
-[Class 9](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class09/README.md) | 02-11 | Zoom | Logistic Regression and the movies, 2
-[Lab 3](lab3.qmd) | 02-12 | [Canvas](https://canvas.case.edu/) | [Lab 3](lab3.qmd) due to [Canvas](https://canvas.case.edu/) at noon
-[Class 10](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class10/README.md) | 02-13 | Zoom | Linear Regression and happiness, 1
-[Class 11](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class11/README.md) | 02-18 | Zoom | Linear Regression and happiness, 2
-[Lab 4](lab4.qmd) | 02-19 | [Canvas](https://canvas.case.edu/) | [Lab 4](lab4.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 12](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class12/README.md) | 02-20 | Zoom | Building Table 1, Using Survey Weights
-[Class 13](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class13/README.md) | 02-25 | Zoom | Power and Sample Size (The Fundamentals)
-[Lab 5](lab5.qmd) | 02-26 | [Canvas](https://canvas.case.edu/) | [Lab 5](lab5.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 14](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class14/README.md) | 02-27 | Zoom | Power and Sample Size, Retrospective Design
-[Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at **noon** to all students
-
 ## March 2025
 
 Class | Date | Location | Description
@@ -77,6 +58,26 @@ Class | Date | Location | Description
 [Class 5](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class05/README.md) | 01-28 | Zoom | Linear and Logistic Regression, 2
 [Lab 2](lab2.qmd) | 01-29 | [Canvas](https://canvas.case.edu/) | [Lab 2](lab2.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
 [Class 6](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class06/README.md) | 01-30 | Zoom | Linear and Logistic Regression, 3
+
+## February 2025
+
+Class | Date | Location | Description
+:----: | :----: | :-----: | :---------------------------------------
+Reading | 02-03 | -- | Before Class 7, read all of [How to be a Modern Scientist](https://leanpub.com/modernscientist)
+[Class 7](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class07/README.md) | 02-04 | Zoom | Linear and Logistic Regression, 4
+[Project A](projA.qmd) | 02-05 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Plan due to [Canvas](https://canvas.case.edu/) at **noon**
+[Class 8](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class08/README.md) | 02-06 | Zoom | Logistic Regression and the movies, 1
+[Class 9](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class09/README.md) | 02-11 | Zoom | Logistic Regression and the movies, 2
+[Lab 3](lab3.qmd) | 02-12 | [Canvas](https://canvas.case.edu/) | [Lab 3](lab3.qmd) due to [Canvas](https://canvas.case.edu/) at noon
+[Class 10](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class10/README.md) | 02-13 | Zoom | Linear Regression and happiness, 1
+[Class 11](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class11/README.md) | 02-18 | Zoom | Linear Regression and happiness, 2
+[Lab 4](lab4.qmd) | 02-19 | [Canvas](https://canvas.case.edu/) | [Lab 4](lab4.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
+[Class 12](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class12/README.md) | 02-20 | Zoom | Building Table 1, Using Survey Weights
+[Class 13](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class13/README.md) | 02-25 | Zoom | Power and Sample Size (The Fundamentals)
+[Lab 5](lab5.qmd) | 02-26 | [Canvas](https://canvas.case.edu/) | [Lab 5](lab5.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
+[Class 14](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class14/README.md) | 02-27 | Zoom | Power and Sample Size, Retrospective Design
+[Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at **noon** to all students
+
 
 
 ## TA Office Hours
