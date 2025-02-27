@@ -30,12 +30,12 @@ Class | Date | Location | Description
 [Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at **noon** (covers classes 1-14)
 [Class 16](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class16/README.md) | 03-06 | Zoom | Quiz 1 results, Time-to-Event Data, part 2 <br /> Ask Me Anything: [Project A](projA.qmd)
 -- | -- | -- | Spring Break - no 432 class or office hours 03-08 through 03-14
-Class 17 | 03-18 | In Person | Regression on Count Outcomes, 1
+[Class 17](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class17)  | 03-18 | In Person | Regression on Count Outcomes, 1
 [Project A](projA.qmd) | 03-19 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
-Class 18 | 03-20 | In Person | Regression on Count Outcomes, 2
-Class 19 | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1
+[Class 18](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class18)  | 03-20 | In Person | Regression on Count Outcomes, 2
+[Class 19](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class19)  | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1
 [Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon**
-Class 20 | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2
+[Class 20](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class20)  | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2
 
 ## April 2025
 
