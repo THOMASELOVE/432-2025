@@ -43,6 +43,8 @@ Sanity checks are an important part of your programming, but they don't belong i
 A demonstration Project A, built by Professor Love, is [available here](432_projectA_demo.qmd), where you can view the HTML and download the Quarto code. 
 
 - Professor Love has posted the .qmd, .html and data files for the Project A demonstration project to our **Shared Google Drive**.
+- The [Demonstration for Project A](https://thomaselove.github.io/432-2025/432_projectA_demo.html) shows the minimum requirements for a low B grade on the project. The main things that are missing in the Demonstration are careful interpretations and explanations of some of the ideas, results and code. You need to include those pieces in order to move from a low B to some sort of A grade.
+- In addition, the Demonstration does not include the optional extra sections 8.9 and 9.7 described below.
 
 # Need Help?
 
