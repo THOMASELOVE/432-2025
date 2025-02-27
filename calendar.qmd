@@ -41,9 +41,9 @@ Class | Date | Location | Description
 
 Class | Date | Location | Description
 :----: | :----: | :-----: | :---------------------------------------
-Class 21 | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3
+[Class 21](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class21) | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3
 [Project B](projB.qmd) | 04-02 | Google | [Project B Proposal Form](https://bit.ly/432-2025-projB-proposal) due at **noon**
-Class 22 | 04-03 | In Person | Time to Event (Survival) Outcomes, 1
+[Class 22](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class22) | 04-03 | In Person | Time to Event (Survival) Outcomes, 1
 Class 23 | 04-08 | In Person | Time to Event (Survival) Outcomes, 2
 [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon
 Class 24 | 04-10 | In Person | K-Means Clustering, PCA
