@@ -445,16 +445,16 @@ Tip
 <section id="question-3.-12-points" class="level1">
 <h1>Question 3. (12 points)</h1>
 <p>Use the <code>nh_1500</code> data to predict self-reported overall health (which is a five-category ordinal categorical outcome) on the basis of the subject’s age, waist circumference, and whether or not they have smoked 100 cigarettes in their lifetime. The R data for <code>health</code> are ordered to produce the following order:</p>
-<pre><code>nh_1500 |&gt; tabyl(health)
+<pre><code>nh_1500 |&gt; tabyl(health) |&gt; adorn_pct_formatting()
 
-    health   n   percent
- Excellent 138 0.0920000
-    V_Good 404 0.2693333
-      Good 646 0.4306667
-      Fair 264 0.1760000
-      Poor  48 0.0320000</code></pre>
+    health   n percent
+ Excellent 138    9.2%
+    V_Good 404   26.9%
+      Good 646   43.1%
+      Fair 264   17.6%
+      Poor  48    3.2%</code></pre>
 <ol type="a">
-<li><p>{6} Produce two proportional odds logistic regression models. The first, which I’ll call <code>fit3a</code>, should use all three predictors to predict <code>health</code>, while the second model, called <code>fit3b</code>, should use only two predictors, leaving out age. In each case, interpret the meaning of the point estimate for waist circumference.</p></li>
+<li><p>{6} Produce two proportional odds logistic regression models. The first, which I’ll call <code>mod3a</code>, should use all three predictors to predict <code>health</code>, while the second model, called <code>mod3b</code>, should use only two predictors, leaving out age. For each model, write R code to display the exponentiated coefficient estimates, along with 90% confidence intervals. Then, for <code>mod3a</code>, write a sentence (or two) where you interpret the meaning of the point estimate (after exponentiating) for waist circumference, and also specify its 90% confidence interval.</p></li>
 <li><p>{6} Validate the C statistic and Nagelkerke <span class="math inline">\(R^2\)</span> for each of your models using a bootstrap procedure with 300 iterations and a seed set to <code>2025</code>. Specify your conclusion about which model looks better on the basis of this work.</p></li>
 </ol>
 </section>
