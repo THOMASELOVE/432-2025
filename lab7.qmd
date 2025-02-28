@@ -100,7 +100,7 @@ b. {6} Validate the C statistic and Nagelkerke $R^2$ for each of your models usi
 
 # Question 4. (12 points)
 
-The `remit48.sav` gathers initial remission times, in days (the variable is called `days`,) for 48 adult subjects with a leukemia diagnosis who randomly allocated to one of two different `treatment`s, labeled Old and New. Some patients were right-censored before their remission times could be fully determined, as indicated by values of `censored` = "Yes" in the data set. Note that remission is a good thing, so long times before remission are bad.
+The `remit48.sav` gathers initial remission times, in days (the variable is called `days`) for 48 adult subjects with a leukemia diagnosis who randomly allocated to one of two different `treatment`s, labeled Old and New. Some patients were right-censored before their remission times could be fully determined, as indicated by values of `censored` = "Yes" in the data set. Note that remission is a good thing, so long times before remission are bad.
 
 a. {6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments in a single plot. 
 
