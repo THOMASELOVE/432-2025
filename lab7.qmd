@@ -41,11 +41,23 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 Use the `chr_2015` data to build a model to predict each county's percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the `unemp` values as if they were counts in Question 1. You will produce a Poisson regression model for `unemp` using the main effects of two quantitative predictors: the county's food environment index and the county's adult obesity rate. 
 
-a. {5} Produce the Poisson regression model, which I'll call `mod1`, then interpret the coefficient (the point estimate is sufficient) for the `food_env` variable.
+a. {5} Produce the Poisson regression model, which I'll call `mod1`, then interpret the coefficient (the point estimate is sufficient) for the `food_env` variable. Finally, provide a 90% confidence interval for the point estimate you provide. Round your estimates to two decimal places.
 
-b. {5} Produce and interpret the meaning of a rootogram for `mod1`, and specify the model's $R^2$ value.
+:::{.callout-tip}
 
-c. {4} Use `mod1` to make a prediction for Cuyahoga County, in Ohio, based on Cuyahoga's values for `food_env` (6.7) and for `obesity` (28) and compare the prediction to the observed `unemp` for Cuyahoga County as reported in 2013 as part of CHR 2015.
+In stating your response to Question 1a, you can choose whether or not to exponentiate the coefficient's estimate and its confidence interval. So long as you interpret the result you present correctly, we will be happy with either, but there is no need to present both the exponentiated and unexponentiated results.
+
+:::
+
+b. {5} Produce and interpret the meaning of a rootogram for `mod1`, and specify the model's $R^2$ value, rounded to three decimal places.
+
+:::{.callout-tip}
+
+In stating your response to Question 1b, you can choose whether you want to show the Nagelkerke $R^2$, or the squared correlation of the observed and model-predicted outcome values.
+
+:::
+
+c. {4} Use `mod1` to make a prediction for Cuyahoga County, in Ohio, based on Cuyahoga's values for `food_env` (6.7) and for `obesity` (28) and then, in a complete sentence, compare the prediction to the observed `unemp` for Cuyahoga County as reported in 2013 as part of CHR 2015.
 
 # Question 2. (12 points)
 

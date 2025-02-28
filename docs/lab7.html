@@ -382,9 +382,39 @@ Important
 <h1>Question 1. (14 points)</h1>
 <p>Use the <code>chr_2015</code> data to build a model to predict each county’s percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the <code>unemp</code> values as if they were counts in Question 1. You will produce a Poisson regression model for <code>unemp</code> using the main effects of two quantitative predictors: the county’s food environment index and the county’s adult obesity rate.</p>
 <ol type="a">
-<li><p>{5} Produce the Poisson regression model, which I’ll call <code>mod1</code>, then interpret the coefficient (the point estimate is sufficient) for the <code>food_env</code> variable.</p></li>
-<li><p>{5} Produce and interpret the meaning of a rootogram for <code>mod1</code>, and specify the model’s <span class="math inline">\(R^2\)</span> value.</p></li>
-<li><p>{4} Use <code>mod1</code> to make a prediction for Cuyahoga County, in Ohio, based on Cuyahoga’s values for <code>food_env</code> (6.7) and for <code>obesity</code> (28) and compare the prediction to the observed <code>unemp</code> for Cuyahoga County as reported in 2013 as part of CHR 2015.</p></li>
+<li>{5} Produce the Poisson regression model, which I’ll call <code>mod1</code>, then interpret the coefficient (the point estimate is sufficient) for the <code>food_env</code> variable. Finally, provide a 90% confidence interval for the point estimate you provide. Round your estimates to two decimal places.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In stating your response to Question 1a, you can choose whether or not to exponentiate the coefficient’s estimate and its confidence interval. So long as you interpret the result you present correctly, we will be happy with either, but there is no need to present both the exponentiated and unexponentiated results.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li>{5} Produce and interpret the meaning of a rootogram for <code>mod1</code>, and specify the model’s <span class="math inline">\(R^2\)</span> value, rounded to three decimal places.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In stating your response to Question 1b, you can choose whether you want to show the Nagelkerke <span class="math inline">\(R^2\)</span>, or the squared correlation of the observed and model-predicted outcome values.</p>
+</div>
+</div>
+<ol start="3" type="a">
+<li>{4} Use <code>mod1</code> to make a prediction for Cuyahoga County, in Ohio, based on Cuyahoga’s values for <code>food_env</code> (6.7) and for <code>obesity</code> (28) and then, in a complete sentence, compare the prediction to the observed <code>unemp</code> for Cuyahoga County as reported in 2013 as part of CHR 2015.</li>
 </ol>
 </section>
 <section id="question-2.-12-points" class="level1">
