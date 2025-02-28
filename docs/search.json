@@ -39,7 +39,21 @@
     "href": "quiz1.html",
     "title": "Quiz 1",
     "section": "",
-    "text": "Quiz 1 covers materials from Classes 1-14 of the course, as well as Jeff Leek’s How to be a modern scientist, and other sources assigned during classes 1-14.\nAll Quiz 1 elements are now available.\nQuiz 1 is due on Wednesday 2025-03-05 at Noon."
+    "text": "Note\n\n\n\nWhatever appears on this list will also be emailed to all students on Monday 2025-03-03.\n\n\n\nA main effects model contains only main effects. Question 4 is asking you to fit a specific model with four specified main effects included, not to look around for other potential models, or consider things other than main effects. There are numerous places, including (but not limited to) the model called fit13a in Question 14, and the model in Question 20, where my instructions tell you precisely which model to fit. - posted 2025-02-28"
+  },
+  {
+    "objectID": "quiz1.html#points-of-clarification-after-the-quiz-went-out",
+    "href": "quiz1.html#points-of-clarification-after-the-quiz-went-out",
+    "title": "Quiz 1",
+    "section": "",
+    "text": "Note\n\n\n\nWhatever appears on this list will also be emailed to all students on Monday 2025-03-03.\n\n\n\nA main effects model contains only main effects. Question 4 is asking you to fit a specific model with four specified main effects included, not to look around for other potential models, or consider things other than main effects. There are numerous places, including (but not limited to) the model called fit13a in Question 14, and the model in Question 20, where my instructions tell you precisely which model to fit. - posted 2025-02-28"
+  },
+  {
+    "objectID": "quiz1.html#instructions",
+    "href": "quiz1.html#instructions",
+    "title": "Quiz 1",
+    "section": "Instructions",
+    "text": "Instructions\nQuiz 1 covers materials from Classes 1-14 of the course, as well as Jeff Leek’s How to be a modern scientist, and other sources assigned during classes 1-14.\nAll Quiz 1 elements are now available.\n\nThe main document (pdf) for Quiz 1, which includes both instructions and all of the questionsm, is in our Shared Drive in a folder called 432 Quiz 1 Materials (due 2025-03-05 at noon). Look for the file named 432-quiz1-2025.pdf.\nThe Google Form Answer Sheet for Quiz 1 is at https://bit.ly/432-2025-quiz1-answer-sheet, and this is where you will submit your responses.\nThe three Data Sets for Quiz 1 are in our Shared Drive. Look in the folder called 432 Quiz 1 Materials (due 2025-03-05 at noon) for a data sub-folder, where you should find data sets named dat_A.csv, dat_B.xlsx and dat_C.Rds.\n\nQuiz 1 is due on Wednesday 2025-03-05 at Noon."
   },
   {
     "objectID": "quiz1.html#how-do-i-get-help",

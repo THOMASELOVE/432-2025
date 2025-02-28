@@ -39,7 +39,7 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 # Question 1. (14 points)
 
-Use the `chr_2015` data to build a model to predict each county's percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the `unemp` values as if they were counts in Question 1. Use two quantitative predictors in your model: the county's food environment index and the county's adult obesity rate. You will produce two models for `unemp` using the two predictors, a Poisson regression model, and a quasi-Poisson regression model.
+Use the `chr_2015` data to build a model to predict each county's percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the `unemp` values as if they were counts in Question 1. You will produce a Poisson regression model for `unemp` using the main effects of two quantitative predictors: the county's food environment index and the county's adult obesity rate. 
 
 a. {5} Produce the Poisson regression model, which I'll call `mod1`, then interpret the coefficient (the point estimate is sufficient) for the `food_env` variable.
 

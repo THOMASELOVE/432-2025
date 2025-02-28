@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-09">
+<meta name="dcterms.date" content="2025-02-28">
 
 <title>Lab 7 – 432-2025</title>
 <style>
@@ -323,7 +323,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-01-09</p>
+      <p class="date">2025-02-28</p>
     </div>
   </div>
   
@@ -380,7 +380,7 @@ Important
 </section>
 <section id="question-1.-14-points" class="level1">
 <h1>Question 1. (14 points)</h1>
-<p>Use the <code>chr_2015</code> data to build a model to predict each county’s percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the <code>unemp</code> values as if they were counts in Question 1. Use two quantitative predictors in your model: the county’s food environment index and the county’s adult obesity rate. You will produce two models for <code>unemp</code> using the two predictors, a Poisson regression model, and a quasi-Poisson regression model.</p>
+<p>Use the <code>chr_2015</code> data to build a model to predict each county’s percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the <code>unemp</code> values as if they were counts in Question 1. You will produce a Poisson regression model for <code>unemp</code> using the main effects of two quantitative predictors: the county’s food environment index and the county’s adult obesity rate.</p>
 <ol type="a">
 <li><p>{5} Produce the Poisson regression model, which I’ll call <code>mod1</code>, then interpret the coefficient (the point estimate is sufficient) for the <code>food_env</code> variable.</p></li>
 <li><p>{5} Produce and interpret the meaning of a rootogram for <code>mod1</code>, and specify the model’s <span class="math inline">\(R^2\)</span> value.</p></li>
