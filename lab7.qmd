@@ -57,18 +57,27 @@ In stating your response to Question 1b, you can choose whether you want to show
 
 :::
 
-c. {4} Use `mod1` to make a prediction for Cuyahoga County, in Ohio, based on Cuyahoga's values for `food_env` (6.7) and for `obesity` (28) and then, in a complete sentence, compare the prediction to the observed `unemp` for Cuyahoga County as reported in 2013 as part of CHR 2015.
+c. {4} Use `mod1` to make a prediction of the `unemp` rate (rounded to two decimal places) for Cuyahoga County, in Ohio, based on Cuyahoga's values for `food_env` (6.7) and for `obesity` (28) and then, in a complete sentence, compare the `mod1` prediction to the observed `unemp` rate for Cuyahoga County as reported in 2013 as part of CHR 2015.
 
 # Question 2. (12 points)
 
-Import the data from the `hbp_3024.xlsx` file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with NA. Next, create a data set I'll call `q2dat`, which:
+Import the data from the `hbp_3024.xlsx` file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with NA. Next, create a data set I'll call `lab5q2`, which:
 
 - restricts the `hbp_3024` data to only the 1296 subjects who were seen in one of three practices, specifically: **Center**, **King** or **Plympton**, and
-- includes only those 1284 subjects from those three practices with complete data on the three variables we will study in Question 2, specifically `income`, `insurance` and `practice`.
+- includes only those 1284 subjects from those three practices with complete data on the three variables we will study in Question 2, specifically `income`, `insurance` and `practice`, and which
+- includes a new variable called `s_income`, which rescales the `income` data to have mean 0 and standard deviation 1.
 
-a. {6} Using your `q2dat` data set, build a multinomial logistic regression model to predict `practice` (a nominal categorical outcome) for each of the 1284 subjects on the basis of main effects of the subject's `insurance` and `income`.
+:::{.callout-tip}
 
-b. {6} Then produce a classification table for the 1284 subjects which compares their actual `practice` to their predicted `practice` so that you can specify (in a complete sentence) how well the model classifies the data.
+The rescaling would be facilitated by including code using the `scale()` function. My code, for instance, includes the following ...
+
+`s_income = scale(income, center = TRUE, scale = TRUE)`
+
+:::
+
+a. {6} Using your `lab5q2` data set, build a multinomial logistic regression model, called `fit2` to predict `practice` (a nominal categorical outcome) for each of the 1284 subjects on the basis of main effects of the subject's `insurance` and (re-scaled) `s_income`. Show R code which displays the coefficients of the model you fit, and their 90% confidence intervals. Then use the model you fit to estimate the log odds of a subject's practice being Plympton rather than Center for a subject with Medicare insurance whose `income` is at the mean across our sample. Round the resulting log odds estimate to two decimal places.
+
+b. {6} Now use the model `fit2` you fit in Question 2 part a to produce a classification table for the 1284 subjects in your data which compares their actual `practice` to their predicted `practice`. Then, in a complete sentence or two, specify both the percentage of correct classifications overall, and also identify the `practice` that is most often mis-classified by your model.
 
 # Question 3. (12 points)
 
@@ -85,32 +94,32 @@ nh_1500 |> tabyl(health)
       Poor  48 0.0320000
 ```
 
-a. {6} Produce two proportional odds logistic regression models. The first, which I'll call `mod3a`, should use all three predictors to predict `health`, while the second model, called `mod3b`, should use only two predictors, leaving out age. In each case, interpret the meaning of the point estimate for waist circumference.
+a. {6} Produce two proportional odds logistic regression models. The first, which I'll call `fit3a`, should use all three predictors to predict `health`, while the second model, called `fit3b`, should use only two predictors, leaving out age. In each case, interpret the meaning of the point estimate for waist circumference.
 
-b. {6} Validate the C statistic and Nagelkerke $R^2$ for each of your models using a bootstrap procedure with the default number of iterations and a seed set to `2025`. Specify your conclusion about which model looks better on the basis of this work.
+b. {6} Validate the C statistic and Nagelkerke $R^2$ for each of your models using a bootstrap procedure with 300 iterations and a seed set to `2025`. Specify your conclusion about which model looks better on the basis of this work.
 
 # Question 4. (12 points)
 
 The `remit48.sav` gathers initial remission times, in days (the variable is called `days`,) for 48 adult subjects with a leukemia diagnosis who randomly allocated to one of two different `treatment`s, labeled Old and New. Some patients were right-censored before their remission times could be fully determined, as indicated by values of `censored` = "Yes" in the data set. Note that remission is a good thing, so long times before remission are bad.
 
-a. {6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments. 
+a. {6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments in a single plot. 
 
-b. {6} Then write (at least two) complete sentences explaining and providing context to accompany your estimates and plots. Do not use a regression model.
+b. {6} Then write (at least two) complete sentences explaining and providing context to accompany your estimates and plot. Do not use a regression model.
 
 
 # Use of AI
 
 If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called "Use of AI", after your answers to our questions, and just *before* your presentation of the Session Information. Thank you.
 
-## Be sure to include Session Information
+# Session Information
 
-Please display your session information at the end of your submission, as shown below.
+Please display your session information at the end of your submission in a separate section of its own, as shown below.
 
 ```{r}
 xfun::session_info()
 ```
 
-## After the Lab
+# After the Lab
 
 - We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.
 - We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.

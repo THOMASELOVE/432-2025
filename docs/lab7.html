@@ -299,11 +299,9 @@ window.Quarto = {
   <li><a href="#question-2.-12-points" id="toc-question-2.-12-points" class="nav-link" data-scroll-target="#question-2.-12-points">Question 2. (12 points)</a></li>
   <li><a href="#question-3.-12-points" id="toc-question-3.-12-points" class="nav-link" data-scroll-target="#question-3.-12-points">Question 3. (12 points)</a></li>
   <li><a href="#question-4.-12-points" id="toc-question-4.-12-points" class="nav-link" data-scroll-target="#question-4.-12-points">Question 4. (12 points)</a></li>
-  <li><a href="#use-of-ai" id="toc-use-of-ai" class="nav-link" data-scroll-target="#use-of-ai">Use of AI</a>
-  <ul class="collapse">
-  <li><a href="#be-sure-to-include-session-information" id="toc-be-sure-to-include-session-information" class="nav-link" data-scroll-target="#be-sure-to-include-session-information">Be sure to include Session Information</a></li>
+  <li><a href="#use-of-ai" id="toc-use-of-ai" class="nav-link" data-scroll-target="#use-of-ai">Use of AI</a></li>
+  <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information">Session Information</a></li>
   <li><a href="#after-the-lab" id="toc-after-the-lab" class="nav-link" data-scroll-target="#after-the-lab">After the Lab</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -414,19 +412,34 @@ Tip
 </div>
 </div>
 <ol start="3" type="a">
-<li>{4} Use <code>mod1</code> to make a prediction for Cuyahoga County, in Ohio, based on Cuyahoga’s values for <code>food_env</code> (6.7) and for <code>obesity</code> (28) and then, in a complete sentence, compare the prediction to the observed <code>unemp</code> for Cuyahoga County as reported in 2013 as part of CHR 2015.</li>
+<li>{4} Use <code>mod1</code> to make a prediction of the <code>unemp</code> rate (rounded to two decimal places) for Cuyahoga County, in Ohio, based on Cuyahoga’s values for <code>food_env</code> (6.7) and for <code>obesity</code> (28) and then, in a complete sentence, compare the <code>mod1</code> prediction to the observed <code>unemp</code> rate for Cuyahoga County as reported in 2013 as part of CHR 2015.</li>
 </ol>
 </section>
 <section id="question-2.-12-points" class="level1">
 <h1>Question 2. (12 points)</h1>
-<p>Import the data from the <code>hbp_3024.xlsx</code> file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with NA. Next, create a data set I’ll call <code>q2dat</code>, which:</p>
+<p>Import the data from the <code>hbp_3024.xlsx</code> file into R, being sure to include NA as a potential missing value when you do, since all missing values are indicated in the Excel file with NA. Next, create a data set I’ll call <code>lab5q2</code>, which:</p>
 <ul>
 <li>restricts the <code>hbp_3024</code> data to only the 1296 subjects who were seen in one of three practices, specifically: <strong>Center</strong>, <strong>King</strong> or <strong>Plympton</strong>, and</li>
-<li>includes only those 1284 subjects from those three practices with complete data on the three variables we will study in Question 2, specifically <code>income</code>, <code>insurance</code> and <code>practice</code>.</li>
+<li>includes only those 1284 subjects from those three practices with complete data on the three variables we will study in Question 2, specifically <code>income</code>, <code>insurance</code> and <code>practice</code>, and which</li>
+<li>includes a new variable called <code>s_income</code>, which rescales the <code>income</code> data to have mean 0 and standard deviation 1.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The rescaling would be facilitated by including code using the <code>scale()</code> function. My code, for instance, includes the following …</p>
+<p><code>s_income = scale(income, center = TRUE, scale = TRUE)</code></p>
+</div>
+</div>
 <ol type="a">
-<li><p>{6} Using your <code>q2dat</code> data set, build a multinomial logistic regression model to predict <code>practice</code> (a nominal categorical outcome) for each of the 1284 subjects on the basis of main effects of the subject’s <code>insurance</code> and <code>income</code>.</p></li>
-<li><p>{6} Then produce a classification table for the 1284 subjects which compares their actual <code>practice</code> to their predicted <code>practice</code> so that you can specify (in a complete sentence) how well the model classifies the data.</p></li>
+<li><p>{6} Using your <code>lab5q2</code> data set, build a multinomial logistic regression model, called <code>fit2</code> to predict <code>practice</code> (a nominal categorical outcome) for each of the 1284 subjects on the basis of main effects of the subject’s <code>insurance</code> and (re-scaled) <code>s_income</code>. Show R code which displays the coefficients of the model you fit, and their 90% confidence intervals. Then use the model you fit to estimate the log odds of a subject’s practice being Plympton rather than Center for a subject with Medicare insurance whose <code>income</code> is at the mean across our sample. Round the resulting log odds estimate to two decimal places.</p></li>
+<li><p>{6} Now use the model <code>fit2</code> you fit in Question 2 part a to produce a classification table for the 1284 subjects in your data which compares their actual <code>practice</code> to their predicted <code>practice</code>. Then, in a complete sentence or two, specify both the percentage of correct classifications overall, and also identify the <code>practice</code> that is most often mis-classified by your model.</p></li>
 </ol>
 </section>
 <section id="question-3.-12-points" class="level1">
@@ -441,24 +454,25 @@ Tip
       Fair 264 0.1760000
       Poor  48 0.0320000</code></pre>
 <ol type="a">
-<li><p>{6} Produce two proportional odds logistic regression models. The first, which I’ll call <code>mod3a</code>, should use all three predictors to predict <code>health</code>, while the second model, called <code>mod3b</code>, should use only two predictors, leaving out age. In each case, interpret the meaning of the point estimate for waist circumference.</p></li>
-<li><p>{6} Validate the C statistic and Nagelkerke <span class="math inline">\(R^2\)</span> for each of your models using a bootstrap procedure with the default number of iterations and a seed set to <code>2025</code>. Specify your conclusion about which model looks better on the basis of this work.</p></li>
+<li><p>{6} Produce two proportional odds logistic regression models. The first, which I’ll call <code>fit3a</code>, should use all three predictors to predict <code>health</code>, while the second model, called <code>fit3b</code>, should use only two predictors, leaving out age. In each case, interpret the meaning of the point estimate for waist circumference.</p></li>
+<li><p>{6} Validate the C statistic and Nagelkerke <span class="math inline">\(R^2\)</span> for each of your models using a bootstrap procedure with 300 iterations and a seed set to <code>2025</code>. Specify your conclusion about which model looks better on the basis of this work.</p></li>
 </ol>
 </section>
 <section id="question-4.-12-points" class="level1">
 <h1>Question 4. (12 points)</h1>
 <p>The <code>remit48.sav</code> gathers initial remission times, in days (the variable is called <code>days</code>,) for 48 adult subjects with a leukemia diagnosis who randomly allocated to one of two different <code>treatment</code>s, labeled Old and New. Some patients were right-censored before their remission times could be fully determined, as indicated by values of <code>censored</code> = “Yes” in the data set. Note that remission is a good thing, so long times before remission are bad.</p>
 <ol type="a">
-<li><p>{6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments.</p></li>
-<li><p>{6} Then write (at least two) complete sentences explaining and providing context to accompany your estimates and plots. Do not use a regression model.</p></li>
+<li><p>{6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments in a single plot.</p></li>
+<li><p>{6} Then write (at least two) complete sentences explaining and providing context to accompany your estimates and plot. Do not use a regression model.</p></li>
 </ol>
 </section>
 <section id="use-of-ai" class="level1">
 <h1>Use of AI</h1>
 <p>If you decide to use some sort of AI to help you with this Lab, we ask that you place a note to that effect, describing what you used and how you used it, as a separate section called “Use of AI”, after your answers to our questions, and just <em>before</em> your presentation of the Session Information. Thank you.</p>
-<section id="be-sure-to-include-session-information" class="level2">
-<h2 class="anchored" data-anchor-id="be-sure-to-include-session-information">Be sure to include Session Information</h2>
-<p>Please display your session information at the end of your submission, as shown below.</p>
+</section>
+<section id="session-information" class="level1">
+<h1>Session Information</h1>
+<p>Please display your session information at the end of your submission in a separate section of its own, as shown below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -486,8 +500,8 @@ Package version:
 </div>
 </div>
 </section>
-<section id="after-the-lab" class="level2">
-<h2 class="anchored" data-anchor-id="after-the-lab">After the Lab</h2>
+<section id="after-the-lab" class="level1">
+<h1>After the Lab</h1>
 <ul>
 <li>We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.</li>
 <li>We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.</li>
@@ -495,7 +509,6 @@ Package version:
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
