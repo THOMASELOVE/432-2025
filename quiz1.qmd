@@ -12,6 +12,8 @@ Whatever appears on this list will also be emailed to all students on Monday 202
 
 1. A main effects model contains only main effects. **Question 4** is asking you to fit a specific model with four specified main effects included, not to look around for other potential models, or consider things other than main effects. There are numerous places, including (but not limited to) the model called `fit13a` in **Question 14**, and the model in **Question 20**, where my instructions tell you precisely which model to fit. - *posted 2025-02-28*
 
+2. The original version of the Google Form Answer Sheet had no place to respond to Question 7b. This is now fixed. - *posted 2025-02-28*
+
 ## Instructions
 
 Quiz 1 covers materials from Classes 1-14 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-14.
