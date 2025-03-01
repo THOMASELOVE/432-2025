@@ -16,7 +16,7 @@ format:
 
 :::{.callout-important}
 
-You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.
+All students must complete both Lab 6 and Lab 7. Neithert can be "skipped".
 
 :::
 
@@ -29,6 +29,46 @@ You should be able to modify the [Lab 3 Quarto template](https://raw.githubuserc
 
 Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it's hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.
 
+## R Packages used in the Answer Sketch
+
+In my answer sketch for Lab 7, I used the following setup. You are welcome to do the same.
+
+## R Packages and Setup {.unnumbered}
+
+```{r}
+#| message: false
+#| warning: false
+
+knitr::opts_chunk$set(comment = NA) 
+
+library(janitor)
+library(naniar)
+
+library(gt)
+library(here)
+library(conflicted)
+library(readxl)
+library(haven)
+
+library(broom)
+library(MASS)
+library(mosaic)
+library(nnet)
+library(rms)
+library(survival)
+library(survminer)
+library(topmodels)
+library(yardstick)
+
+library(easystats)
+library(tidyverse) 
+
+theme_set(theme_dark()) 
+
+conflicts_prefer(base::max, base::mean, stats::cor, 
+                 dplyr::filter, dplyr::select, dplyr::summarize)
+```
+
 ## The Data
 
 - The `chr_2015.csv` csv file (from [Lab 1](lab1.qmd)), `hbp3024.xlsx` Excel file (from [Lab 2](lab2.qmd)), `nh_1500.Rds` R data set (from [Lab 3](lab3.qmd)) and the `remit48.sav` SPSS file all appear on the [432 data page](https://github.com/THOMASELOVE/432-data).
@@ -39,7 +79,7 @@ Review your HTML output file carefully before submission for copy-editing issues
 
 # Question 1. (14 points)
 
-Use the `chr_2015` data to build a model to predict each county's percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the `unemp` values as if they were counts in Question 1. You will produce a Poisson regression model for `unemp` using the main effects of two quantitative predictors: the county's food environment index and the county's adult obesity rate. 
+Use the `chr_2015` data to build a model to predict each county's percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the `unemp` values as counts in Question 1. You will produce a Poisson regression model for `unemp` using the main effects of two quantitative predictors: the county's food environment index and the county's adult obesity rate. 
 
 a. {5} Produce the Poisson regression model, which I'll call `mod1`, then interpret the coefficient (the point estimate is sufficient) for the `food_env` variable. Finally, provide a 90% confidence interval for the point estimate you provide. Round your estimates to two decimal places.
 
@@ -102,7 +142,41 @@ b. {6} Validate the C statistic and Nagelkerke $R^2$ for each of your models usi
 
 The `remit48.sav` gathers initial remission times, in days (the variable is called `days`) for 48 adult subjects with a leukemia diagnosis who randomly allocated to one of two different `treatment`s, labeled Old and New. Some patients were right-censored before their remission times could be fully determined, as indicated by values of `censored` = "Yes" in the data set. Note that remission is a good thing, so long times before remission are bad.
 
-a. {6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments in a single plot. Include a p value for the log rank test of the difference between the two survival function estimates shown in your plot. What conclusions can you draw from your plot?
+:::{.callout-tip}
+
+Here is my code for creating the necessary tibble, which I called `lab5q4`.
+
+```
+lab5q4 <- read_spss(here("data/remit48.sav")) 
+
+lab5q4$treatment |> attr("label")
+lab5q4$censored |> attr("label")
+
+lab5q4 <- lab5q4 |>
+  mutate(treatment = 
+           fct_recode(factor(treatment), "New" = "1", "Old" = "2"),
+         censored = 
+           fct_recode(factor(censored), "No" = "1", "Yes" = "2"),
+         subject = as.character(subject)) |>
+  zap_labels()
+```
+
+Be sure a glimpse at your `lab5q4` produces the following:
+
+```
+> glimpse(lab5q4)
+
+Rows: 48
+Columns: 4
+$ subject   <chr> "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", …
+$ treatment <fct> New, New, Old, New, New, Old, Old, Old, New, New, …
+$ days      <dbl> 269, 139, 161, 9, 31, 199, 19, 20, 28, 29, …
+$ censored  <fct> Yes, No, Yes, No, No, Yes, No, No, No, No, …
+```
+
+:::
+
+a. {6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments in a single plot. Create a table that shows the restricted mean and median for survival time in days for the two treatment groups. In a sentence or two, what conclusions can you draw from your plot and table?
 
 b. {6} Use a Cox proportional hazards model to compare the two treatments, specifying the relevant point and 90% confidence intervals estimates of the hazard ratio, and describing the meaning of the point estimate.
 

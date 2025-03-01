@@ -293,6 +293,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#template" id="toc-template" class="nav-link" data-scroll-target="#template">Template</a></li>
   <li><a href="#our-best-advice" id="toc-our-best-advice" class="nav-link" data-scroll-target="#our-best-advice">Our Best Advice</a></li>
+  <li><a href="#r-packages-used-in-the-answer-sketch" id="toc-r-packages-used-in-the-answer-sketch" class="nav-link" data-scroll-target="#r-packages-used-in-the-answer-sketch">R Packages used in the Answer Sketch</a></li>
+  <li><a href="#r-packages-and-setup" id="toc-r-packages-and-setup" class="nav-link" data-scroll-target="#r-packages-and-setup">R Packages and Setup</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
   </ul></li>
   <li><a href="#question-1.-14-points" id="toc-question-1.-14-points" class="nav-link" data-scroll-target="#question-1.-14-points">Question 1. (14 points)</a></li>
@@ -354,7 +356,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can skip exactly one of Labs 1-5 without penalty, but all students must complete both Lab 6 and Lab 7.</p>
+<p>All students must complete both Lab 6 and Lab 7. Neithert can be “skipped”.</p>
 </div>
 </div>
 <section id="template" class="level2">
@@ -364,6 +366,43 @@ Important
 <section id="our-best-advice" class="level2">
 <h2 class="anchored" data-anchor-id="our-best-advice">Our Best Advice</h2>
 <p>Review your HTML output file carefully before submission for copy-editing issues (spelling, grammar and syntax.) Even with spell-check in RStudio (just hit F7), it’s hard to find errors with these issues in your Quarto file so long as it is running. You really need to look closely at the resulting HTML output.</p>
+</section>
+<section id="r-packages-used-in-the-answer-sketch" class="level2">
+<h2 class="anchored" data-anchor-id="r-packages-used-in-the-answer-sketch">R Packages used in the Answer Sketch</h2>
+<p>In my answer sketch for Lab 7, I used the following setup. You are welcome to do the same.</p>
+</section>
+<section id="r-packages-and-setup" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="r-packages-and-setup">R Packages and Setup</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">comment =</span> <span class="cn">NA</span>) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rms)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survminer)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(topmodels)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(yardstick)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_dark</span>()) </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">conflicts_prefer</span>(base<span class="sc">::</span>max, base<span class="sc">::</span>mean, stats<span class="sc">::</span>cor, </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                 dplyr<span class="sc">::</span>filter, dplyr<span class="sc">::</span>select, dplyr<span class="sc">::</span>summarize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
@@ -378,7 +417,7 @@ Important
 </section>
 <section id="question-1.-14-points" class="level1">
 <h1>Question 1. (14 points)</h1>
-<p>Use the <code>chr_2015</code> data to build a model to predict each county’s percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the <code>unemp</code> values as if they were counts in Question 1. You will produce a Poisson regression model for <code>unemp</code> using the main effects of two quantitative predictors: the county’s food environment index and the county’s adult obesity rate.</p>
+<p>Use the <code>chr_2015</code> data to build a model to predict each county’s percentage of the population ages 16 and older who are unemployed but seeking work, as measured in 2013 (and reported in CHR 2015). Note that each of the values in the data are integers (that fall between 1 and 28), and so we will treat the <code>unemp</code> values as counts in Question 1. You will produce a Poisson regression model for <code>unemp</code> using the main effects of two quantitative predictors: the county’s food environment index and the county’s adult obesity rate.</p>
 <ol type="a">
 <li>{5} Produce the Poisson regression model, which I’ll call <code>mod1</code>, then interpret the coefficient (the point estimate is sufficient) for the <code>food_env</code> variable. Finally, provide a 90% confidence interval for the point estimate you provide. Round your estimates to two decimal places.</li>
 </ol>
@@ -461,8 +500,42 @@ Tip
 <section id="question-4.-12-points" class="level1">
 <h1>Question 4. (12 points)</h1>
 <p>The <code>remit48.sav</code> gathers initial remission times, in days (the variable is called <code>days</code>) for 48 adult subjects with a leukemia diagnosis who randomly allocated to one of two different <code>treatment</code>s, labeled Old and New. Some patients were right-censored before their remission times could be fully determined, as indicated by values of <code>censored</code> = “Yes” in the data set. Note that remission is a good thing, so long times before remission are bad.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here is my code for creating the necessary tibble, which I called <code>lab5q4</code>.</p>
+<pre><code>lab5q4 &lt;- read_spss(here("data/remit48.sav")) 
+
+lab5q4$treatment |&gt; attr("label")
+lab5q4$censored |&gt; attr("label")
+
+lab5q4 &lt;- lab5q4 |&gt;
+  mutate(treatment = 
+           fct_recode(factor(treatment), "New" = "1", "Old" = "2"),
+         censored = 
+           fct_recode(factor(censored), "No" = "1", "Yes" = "2"),
+         subject = as.character(subject)) |&gt;
+  zap_labels()</code></pre>
+<p>Be sure a glimpse at your <code>lab5q4</code> produces the following:</p>
+<pre><code>&gt; glimpse(lab5q4)
+
+Rows: 48
+Columns: 4
+$ subject   &lt;chr&gt; "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", …
+$ treatment &lt;fct&gt; New, New, Old, New, New, Old, Old, Old, New, New, …
+$ days      &lt;dbl&gt; 269, 139, 161, 9, 31, 199, 19, 20, 28, 29, …
+$ censored  &lt;fct&gt; Yes, No, Yes, No, No, Yes, No, No, No, No, …</code></pre>
+</div>
+</div>
 <ol type="a">
-<li><p>{6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments in a single plot. Include a p value for the log rank test of the difference between the two survival function estimates shown in your plot. What conclusions can you draw from your plot?</p></li>
+<li><p>{6} Plot appropriate Kaplan-Meier estimates of the survival functions for each of the two treatments in a single plot. Create a table that shows the restricted mean and median for survival time in days for the two treatment groups. In a sentence or two, what conclusions can you draw from your plot and table?</p></li>
 <li><p>{6} Use a Cox proportional hazards model to compare the two treatments, specifying the relevant point and 90% confidence intervals estimates of the hazard ratio, and describing the meaning of the point estimate.</p></li>
 </ol>
 </section>
@@ -474,7 +547,7 @@ Tip
 <h1>Session Information</h1>
 <p>Please display your session information at the end of your submission in a separate section of its own, as shown below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.2 (2024-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64
@@ -488,15 +561,80 @@ Locale:
   LC_TIME=English_United States.utf8    
 
 Package version:
-  base64enc_0.1.3   bslib_0.9.0       cachem_1.1.0      cli_3.6.4        
-  compiler_4.4.2    digest_0.6.37     evaluate_1.0.3    fastmap_1.2.0    
-  fontawesome_0.5.3 fs_1.6.5          glue_1.8.0        graphics_4.4.2   
-  grDevices_4.4.2   highr_0.11        htmltools_0.5.8.1 htmlwidgets_1.6.4
-  jquerylib_0.1.4   jsonlite_1.9.0    knitr_1.49        lifecycle_1.0.4  
-  memoise_2.0.1     methods_4.4.2     mime_0.12         R6_2.6.1         
-  rappdirs_0.3.3    rlang_1.1.5       rmarkdown_2.29    rstudioapi_0.17.1
-  sass_0.4.9        stats_4.4.2       tinytex_0.55      tools_4.4.2      
-  utils_4.4.2       xfun_0.51         yaml_2.3.10      </code></pre>
+  abind_1.4-8           askpass_1.2.1         backports_1.5.0      
+  base64enc_0.1-3       bayestestR_0.15.2     bigD_0.3.0           
+  bit_4.5.0.1           bit64_4.6.0.1         bitops_1.0.9         
+  blob_1.2.4            boot_1.3.31           broom_1.0.7          
+  bslib_0.9.0           cachem_1.1.0          callr_3.7.6          
+  car_3.1-3             carData_3.0-5         cellranger_1.1.0     
+  checkmate_2.3.2       cli_3.6.4             clipr_0.8.0          
+  cluster_2.1.6         coda_0.19-4.1         codetools_0.2-20     
+  colorspace_2.1-1      commonmark_1.9.2      compiler_4.4.2       
+  conflicted_1.2.0      correlation_0.8.6     corrplot_0.95        
+  cowplot_1.1.3         cpp11_0.5.1           crayon_1.5.3         
+  curl_6.2.1            data.table_1.16.4     datasets_4.4.2       
+  datawizard_1.0.0      DBI_1.2.3             dbplyr_2.5.0         
+  Deriv_4.1.6           digest_0.6.37         distributions3_0.2.2 
+  doBy_4.6.25           dplyr_1.1.4           dtplyr_1.3.1         
+  easystats_0.7.4       effectsize_1.0.0      emmeans_1.10.7       
+  estimability_1.5.1    evaluate_1.0.3        exactRankTests_0.8.35
+  fansi_1.0.6           farver_2.1.2          fastmap_1.2.0        
+  fontawesome_0.5.3     forcats_1.0.0         foreign_0.8-88       
+  Formula_1.2-5         fs_1.6.5              gargle_1.5.2         
+  generics_0.1.3        ggformula_0.12.0      ggplot2_3.5.1        
+  ggpubr_0.6.0          ggrepel_0.9.6         ggridges_0.5.6       
+  ggsci_3.2.0           ggsignif_0.6.4        ggtext_0.1.2         
+  glue_1.8.0            googledrive_2.1.1     googlesheets4_1.1.1  
+  graphics_4.4.2        grDevices_4.4.2       grid_4.4.2           
+  gridExtra_2.3         gridtext_0.1.5        gt_0.11.1            
+  gtable_0.3.6          hardhat_1.4.1         haven_2.5.4          
+  here_1.0.1            highr_0.11            Hmisc_5.2-2          
+  hms_1.1.3             htmlTable_2.4.3       htmltools_0.5.8.1    
+  htmlwidgets_1.6.4     httr_1.4.7            ids_1.0.1            
+  insight_1.0.2         isoband_0.2.7         janitor_2.2.1        
+  jpeg_0.1.10           jquerylib_0.1.4       jsonlite_1.9.0       
+  juicyjuice_0.1.0      km.ci_0.5-6           KMsurv_0.1-5         
+  knitr_1.49            labeling_0.4.3        labelled_2.14.0      
+  lattice_0.22-6        lifecycle_1.0.4       lme4_1.1.36          
+  lubridate_1.9.4       magrittr_2.0.3        markdown_1.13        
+  MASS_7.3-64           Matrix_1.7-1          MatrixModels_0.5-3   
+  maxstat_0.7.25        memoise_2.0.1         methods_4.4.2        
+  mgcv_1.9.1            microbenchmark_1.5.0  mime_0.12            
+  minqa_1.2.8           modelbased_0.9.0      modelr_0.1.11        
+  mosaic_1.9.1          mosaicCore_0.9.4.0    mosaicData_0.20.4    
+  multcomp_1.4-28       munsell_0.5.1         mvtnorm_1.3-3        
+  naniar_1.1.0          nlme_3.1-166          nloptr_2.1.1         
+  nnet_7.3-20           norm_1.0.11.1         numDeriv_2016.8.1.1  
+  openssl_2.3.2         parallel_4.4.2        parameters_0.24.1    
+  patchwork_1.3.0       pbkrtest_0.5.3        performance_0.13.0   
+  pillar_1.10.1         pkgconfig_2.0.3       plyr_1.8.9           
+  png_0.1.8             polspline_1.1.25      polynom_1.4.1        
+  prettyunits_1.2.0     processx_3.8.6        progress_1.2.3       
+  ps_1.9.0              purrr_1.0.4           quantreg_6.00        
+  R6_2.6.1              ragg_1.3.3            rappdirs_0.3.3       
+  rbibutils_2.3         RColorBrewer_1.1.3    Rcpp_1.0.14          
+  RcppEigen_0.3.4.0.2   Rdpack_2.6.2          reactable_0.4.4      
+  reactR_0.6.1          readr_2.1.5           readxl_1.4.3         
+  reformulas_0.4.0      rematch_2.0.0         rematch2_2.1.2       
+  report_0.6.1          reprex_2.1.1          rlang_1.1.5          
+  rmarkdown_2.29        rms_7.0-0             rpart_4.1.24         
+  rprojroot_2.0.4       rstatix_0.7.2         rstudioapi_0.17.1    
+  rvest_1.0.4           sandwich_3.1-1        sass_0.4.9           
+  scales_1.3.0          see_0.10.0            selectr_0.4.2        
+  snakecase_0.11.1      SparseM_1.84-2        sparsevctrs_0.2.0    
+  splines_4.4.2         stats_4.4.2           stringi_1.8.4        
+  stringr_1.5.1         survival_3.8-3        survminer_0.5.0      
+  survMisc_0.5.6        sys_3.4.3             systemfonts_1.2.1    
+  textshaping_1.0.0     TH.data_1.1-3         tibble_3.2.1         
+  tidyr_1.3.1           tidyselect_1.2.1      tidyverse_2.0.0      
+  timechange_0.3.0      tinytex_0.55          tools_4.4.2          
+  topmodels_0.3-0       tzdb_0.4.0            UpSetR_1.4.0         
+  utf8_1.2.4            utils_4.4.2           uuid_1.2.1           
+  V8_6.0.1              vctrs_0.6.5           viridis_0.6.5        
+  viridisLite_0.4.2     visdat_0.6.0          vroom_1.6.5          
+  withr_3.0.2           xfun_0.51             xml2_1.3.6           
+  xtable_1.8-4          yaml_2.3.10           yardstick_1.3.2      
+  zoo_1.8-13           </code></pre>
 </div>
 </div>
 </section>
