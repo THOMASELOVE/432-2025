@@ -121,18 +121,7 @@ b. {6} Now use the model `fit2` you fit in Question 2 part a to produce a classi
 
 # Question 3. (12 points)
 
-Use the `nh_1500` data to predict self-reported overall health (which is a five-category ordinal categorical outcome) on the basis of the subject's age, waist circumference, and whether or not they have smoked 100 cigarettes in their lifetime. The R data for `health` are ordered to produce the following order:
-
-```
-nh_1500 |> tabyl(health) |> adorn_pct_formatting()
-
-    health   n percent
- Excellent 138    9.2%
-    V_Good 404   26.9%
-      Good 646   43.1%
-      Fair 264   17.6%
-      Poor  48    3.2%
-```
+Use the `nh_1500` data to predict self-reported overall health (which is a five-category ordinal categorical outcome) on the basis of the subject's age, waist circumference, and whether or not they have smoked 100 cigarettes in their lifetime. On 2025-03-01, I updated the `nh_1500` data to save the `health` variable as an *ordered* factor. You'll want to ensure that's what you see when you pull in the data. 
 
 a. {6} Produce two proportional odds logistic regression models. The first, which I'll call `mod3a`, should use all three predictors to predict `health`, while the second model, called `mod3b`, should use only two predictors, leaving out age. For each model, write R code to display the exponentiated coefficient estimates, along with 90% confidence intervals. Then, for `mod3a`, write a sentence (or two) where you interpret the meaning of the point estimate (after exponentiating) for waist circumference, and also specify its 90% confidence interval.
 
