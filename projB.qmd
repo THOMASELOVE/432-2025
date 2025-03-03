@@ -215,10 +215,11 @@ The Template begins with an unnumbered section for R Packages and Setup. The num
 2. Research Questions
 3. Data Ingest and Management
 4. Code Book and Description
-5. Analyses
-6. Conclusions and Discussion
-7. References and Acknowledgments
-8. Session Information
+5. Analysis 1
+6. Analysis 2
+7. Conclusions and Discussion
+8. References and Acknowledgments
+9. Session Information
 
 Make your portfolio gorgeous, thoughtful and incredibly easy for Professor Love to use in evaluating your work.
 
