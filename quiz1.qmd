@@ -18,6 +18,8 @@ Things that appear here will also be emailed to all students. Emails will be sen
 
 4. The original version of the [Google Form Answer Sheet](https://bit.ly/432-2025-quiz1-answer-sheet) had no place to respond to Question 7b, and forced a single choice instead of allowing multiple choices for Question 16. This is now fixed. - *posted 2025-02-28*
 
+5. The original version of the 432 Quiz 1 PDF included three references to dates in 2024, which should have indicated 2025 instead. I posted a new version of the 432 Quiz 1 PDF to our Shared Drive that fixes these dates, and also provides a footnote related to item 2 above (in Question 11) and adds a phrase in Question 17 referring to item 3 above. - *posted 2025-03-03*
+
 ## Instructions
 
 Quiz 1 covers materials from Classes 1-14 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-14.
