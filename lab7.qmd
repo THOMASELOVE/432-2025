@@ -35,6 +35,12 @@ In my answer sketch for Lab 7, I used the following setup. You are welcome to do
 
 ## R Packages and Setup {.unnumbered}
 
+:::{.callout-tip}
+
+Note that my list of R packages does not include separate loading of any of the core **tidyverse** packages, or the packages in the **easystats** framework. The core **tidyverse** packages are listed at <https://www.tidyverse.org/packages/#core-tidyverse>, and the packages in the **easystats** framework are listed at <https://easystats.github.io/easystats/>. If you separately load any of these packages, you will lose points on this Lab. Same goes for Projects A and B.
+
+:::
+
 ```{r}
 #| message: false
 #| warning: false

@@ -207,6 +207,13 @@ Professor Love built a sample template for the Project B Portfolio, and we stron
 
 Any alternate template or formatting style is acceptable if it is built using Quarto and contains all of the section headings in Professor Love's template. The list of HTML "themes" that are available in Quarto by changing the "theme" option in the start of your document [can be found here](https://quarto.org/docs/output-formats/html-themes.html) and we encourage you to pick something you think looks nice.
 
+:::{.callout-tip}
+
+Note that my list of R packages does not include separate loading of any of the core **tidyverse** packages, or the packages in the **easystats** framework. The core **tidyverse** packages are listed at <https://www.tidyverse.org/packages/#core-tidyverse>, and the packages in the **easystats** framework are listed at <https://easystats.github.io/easystats/>. If you separately load any of these packages, you will lose points on your project.
+
+:::
+
+
 ## What are the main section headings in the Portfolio?
 
 The Template begins with an unnumbered section for R Packages and Setup. The numbered sections we want you to use are:

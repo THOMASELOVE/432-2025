@@ -27,6 +27,12 @@ On our [432-data page](https://github.com/THOMASELOVE/432-data), you will find a
 
 Please use these templates in preparing your work. They will make completing and grading Project A much easier.
 
+:::{.callout-tip}
+
+Note that my list of R packages does not include separate loading of any of the core **tidyverse** packages, or the packages in the **easystats** framework. The core **tidyverse** packages are listed at <https://www.tidyverse.org/packages/#core-tidyverse>, and the packages in the **easystats** framework are listed at <https://easystats.github.io/easystats/>. If you separately load any of these packages, you will lose points on Project A (or Project B.)
+
+:::
+
 ## Working with a Partner?
 
 You can choose either to work alone, or with one other person, to complete Project A. If you work in a group for Project A, you may be asked to work alone for Project B later in the term.
