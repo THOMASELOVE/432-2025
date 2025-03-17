@@ -66,4 +66,4 @@ Your homework (labs) grade is made up of the top 4 scores you had on Labs 1-5 pl
 
 ## Spring 2025 Lab 6 Submissions
 
-that Dr. Love has approved will be posted to our web site as the semester moves on.
+that Dr. Love has approved will be posted [to this location on our web site](https://github.com/THOMASELOVE/432-classes-2025/tree/main/lab6) as the semester moves on.
