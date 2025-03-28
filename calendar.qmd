@@ -19,7 +19,7 @@ Class | Date | Location | Description
 [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon
 [Class 24](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class24) | 04-10 | In Person | K-Means Clustering, PCA
 [Class 25](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class25) | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything
--- | 04-15 | Last date when I will accept late [Lab 6](lab6.qmd) responses.
+-- | 04-15 | -- | Last date when I will accept late [Lab 6](lab6.qmd) responses.
 [Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models
 -- | 04-17 | 3 - 6 PM | In Person [Project B](projB.qmd) Presentations
 [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students
