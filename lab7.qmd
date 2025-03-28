@@ -10,7 +10,8 @@ format:
 
 - Submit your work via [Canvas](https://canvas.case.edu/). 
 - The deadline for this Lab is specified on the [Course Calendar](calendar.qmd).
-  - We charge a 5 point penalty for a lab that is 1-48 hours late.
+  - For this lab, we will charge a 5 point penalty for a lab that is 1-24 hours late.
+  - We will charge a 15 point penalty for a response that is more than 24 but less than 48 hours late.
   - We do not grade work that is more than 48 hours late.
 - Your response should include a Quarto file (.qmd) and an HTML document that is the result of applying your Quarto file to the data we've provided.
 
