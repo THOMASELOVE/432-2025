@@ -57,7 +57,7 @@ Timely completion of Lab 6 will improve your course grade and will earn you some
 
 ## Impact of Lab 6 on your grade
 
-Lab 6 is due when the [Calendar](calendar.qmd) says it is, and is worth up to 30 points. Late submissions can receive up to 15 points, if they are between 1 hour and 7 days late. We will not grade work received more than 7 days after the deadline.
+Lab 6 is due when the [Calendar](calendar.qmd) says it is, and is worth 30 points for all who complete their submission and their website/blog is available online on time. Late submissions can receive up to 25 points so long as they are submitted no later than 2025-04-15. Submissions which are not posted online will be docked 15 points out of 30 if they are not online by 2025-04-15.
 
 Your homework (labs) grade is made up of the top 4 scores you had on Labs 1-5 plus your score on Lab 7, which is out of a total possible score of 250 points (each lab is worth 50), PLUS your score on Lab 6, all divided by 2.65. There are slight adjustments for people who were excused from Labs during the term.
 

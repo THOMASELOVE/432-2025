@@ -7,20 +7,6 @@ date-modified: last-modified
 
 Starting with Class 17 (2025-03-18), our classes listed below as "In Person" will be held in Room E321-323 of the Robbins Building at CWRU. For directions to the Robbins Building, which is located at 2210 Circle Drive Cleveland OH 44106, and information on parking and on accessing the building, [visit this link](https://case.edu/medicine/cbhi/about-us/directions-and-parking/cwru-school-medicine-health-sciences-campus). Again, our classroom is on the third floor of the Robbins building, and is room E321-323.
 
-## March 2025
-
-Class | Date | Location | Description
-:----: | :----: | :-----: | :---------------------------------------
-[Class 15](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class15/README.md) | 03-04 | Zoom | Time-to-Event Data, part 1 <br /> Ask Me Anything: [Quiz 1](quiz1.qmd)
-[Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at **noon** (covers classes 1-14)
-[Class 16](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class16/README.md) | 03-06 | Zoom | Quiz 1 results, Time-to-Event Data, part 2 <br /> Ask Me Anything: [Project A](projA.qmd)
--- | -- | -- | Spring Break - no 432 class or office hours 03-08 through 03-14
-[Class 17](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class17)  | 03-18 | In Person | Regression on Count Outcomes, 1
-[Project A](projA.qmd) | 03-19 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 18](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class18)  | 03-20 | In Person | Regression on Count Outcomes, 2
-[Class 19](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class19)  | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1
-[Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon**
-[Class 20](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class20)  | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2
 
 ## April 2025
 
@@ -33,6 +19,7 @@ Class | Date | Location | Description
 [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon
 [Class 24](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class24) | 04-10 | In Person | K-Means Clustering, PCA
 [Class 25](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class25) | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything
+-- | 04-15 | Last date when I will accept late [Lab 6](lab6.qmd) responses.
 [Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models
 -- | 04-17 | 3 - 6 PM | In Person [Project B](projB.qmd) Presentations
 [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students
@@ -82,6 +69,20 @@ Reading | 02-03 | -- | Before Class 7, read all of [How to be a Modern Scientist
 [Class 14](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class14/README.md) | 02-27 | Zoom | Power and Sample Size, Retrospective Design
 [Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at **noon** to all students
 
+## March 2025
+
+Class | Date | Location | Description
+:----: | :----: | :-----: | :---------------------------------------
+[Class 15](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class15/README.md) | 03-04 | Zoom | Time-to-Event Data, part 1 <br /> Ask Me Anything: [Quiz 1](quiz1.qmd)
+[Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at **noon** (covers classes 1-14)
+[Class 16](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class16/README.md) | 03-06 | Zoom | Quiz 1 results, Time-to-Event Data, part 2 <br /> Ask Me Anything: [Project A](projA.qmd)
+-- | -- | -- | Spring Break - no 432 class or office hours 03-08 through 03-14
+[Class 17](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class17)  | 03-18 | In Person | Regression on Count Outcomes, 1
+[Project A](projA.qmd) | 03-19 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
+[Class 18](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class18)  | 03-20 | In Person | Regression on Count Outcomes, 2
+[Class 19](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class19)  | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1
+[Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon**
+[Class 20](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class20)  | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2
 
 
 ## TA Office Hours
