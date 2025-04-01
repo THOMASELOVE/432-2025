@@ -136,7 +136,7 @@ In making your decisions about availability, **please note** the following:
 On the basis of your responses to [the Proposal Form](https://bit.ly/432-2025-projB-proposal), we will either approve or reject your Project B plan, and once it is approved, you can proceed.
 
 - If we cannot approve your project, we'll tell you why, and tell you how to try again. You'll need to iterate until we approve your project, but we hope this won't require more than two tries for anyone.
-- The main reason why we doesn't approve projects is that we don't understand the description of your data set or its outcomes, your planned modeling approaches, or how the research questions link to the available data, so focus on making those connections as clear as possible.
+- The main reason why we don't approve projects is that we don't understand the description of your data set or its outcomes, your planned modeling approaches, or how the research questions link to the available data, so focus on making those connections as clear as possible.
 - TAs are available during their office hours to review your planned research questions, data set and planned variables with you to make suggestions.
 
 Once all forms are in, Professor Love will also schedule the presentations, and this information will be announced in class and posted as quickly as possible.
