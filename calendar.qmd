@@ -30,6 +30,7 @@ Class | Date | Location | Description
 -- | 04-23 | 8:30 - 11 AM, <br /> 12:30 - 2 PM | Zoom [Project B](projB.qmd) Presentations
 [Class 27](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class27) | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
 [Quiz 2](quiz2.qmd) | 04-25 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24)
+-- | 04-25 | -- | [Lab Regrade Request form](https://bit.ly/432-2025-lab-regrades) (optional) is also due at noon.
 [Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
 
 **Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.

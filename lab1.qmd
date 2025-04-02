@@ -112,5 +112,5 @@ xfun::session_info()
 
 - We will post an answer sketch to our Shared Google Drive 48 hours after the Lab is due.
 - We will post grades to our Grading Roster on our Shared Google Drive one week after the Lab is due.
-- See the Lab Appeal Policy in our Syllabus if you are interested in having your Lab grade reviewed, and use the Lab Regrade Request form specified there to complete the task. Thank you.
+- See the Lab Appeal Policy in [Section 8.5 of our Syllabus](https://thomaselove.github.io/432-syllabus-2025/08-grading.html) if you are interested in having your Lab 1, 2, 3, 4, 5 or 7 grade reviewed, and use the [Lab Regrade Request form](https://bit.ly/432-2025-lab-regrades) to complete the task. The form (which is optional) is due when the [Calendar](calendar.qmd) says it is. Thank you.
 
