@@ -79,7 +79,7 @@ conflicts_prefer(base::max, base::mean, stats::cor,
 ## The Data
 
 - The `chr_2015.csv` csv file (from [Lab 1](lab1.qmd)), `hbp3024.xlsx` Excel file (from [Lab 2](lab2.qmd)), `nh_1500.Rds` R data set (from [Lab 3](lab3.qmd)) and the `remit48.sav` SPSS file all appear on the [432 data page](https://github.com/THOMASELOVE/432-data).
-- A detailed codebook for all of the data in the `chr_2024` file [is available here](chr_codebook.qmd).
+- A detailed codebook for all of the data in the `chr_2015` file [is available here](chr_codebook.qmd).
 - A detailed description of each variable in the `hbp3024` data is [available here](hbp_codebook.qmd).
 - A detailed description of each variable in the `nh_1500` data is [available here](nhanes_codebook.qmd).
 - The variables included in the `remit48` data are described in Question 4, below.
