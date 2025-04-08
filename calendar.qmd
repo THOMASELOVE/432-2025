@@ -7,94 +7,94 @@ date-modified: last-modified
 
 Starting with Class 17 (2025-03-18), our classes listed below as "In Person" will be held in Room E321-323 of the Robbins Building at CWRU. For directions to the Robbins Building, which is located at 2210 Circle Drive Cleveland OH 44106, and information on parking and on accessing the building, [visit this link](https://case.edu/medicine/cbhi/about-us/directions-and-parking/cwru-school-medicine-health-sciences-campus). Again, our classroom is on the third floor of the Robbins building, and is room E321-323.
 
-
 ## April 2025
 
-Class | Date | Location | Description
-:----: | :----: | :-----: | :---------------------------------------
-[Class 21](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class21) | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3
-[Project B](projB.qmd) | 04-02 | Google | [Project B Proposal Form](https://bit.ly/432-2025-projB-proposal) due at **noon**
-[Class 22](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class22) | 04-03 | In Person | Time to Event (Survival) Outcomes, 1
-[Class 23](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class23) | 04-08 | In Person | Time to Event (Survival) Outcomes, 2
-[Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon
-[Class 24](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class24) | 04-10 | In Person | K-Means Clustering, PCA
-[Class 25](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class25) | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything
--- | 04-15 | -- | Last date when I will accept late [Lab 6](lab6.qmd) responses.
-[Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models
--- | 04-17 | 3 - 6 PM | In Person [Project B](projB.qmd) Presentations
-[Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students
--- | 04-18 | 10 AM - 2 PM | Zoom [Project B](projB.qmd) Presentations
--- | 04-21 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations
--- | 04-22 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations
--- | 04-22 | -- | **No 432 class today**, Last Day for TA office hours
--- | 04-23 | 8:30 - 11 AM, <br /> 12:30 - 2 PM | Zoom [Project B](projB.qmd) Presentations
-[Class 27](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class27) | 04-24 | In Person | Semester Wrap-up, Where To Go From Here
-[Quiz 2](quiz2.qmd) | 04-25 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24)
--- | 04-25 | -- | [Lab Regrade Request form](https://bit.ly/432-2025-lab-regrades) (optional) is also due at noon.
-[Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
+| Class | Date | Location | Description |
+|:----------------:|:----------------:|:----------------:|:-----------------|
+| [Class 21](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class21) | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3 |
+| [Project B](projB.qmd) | 04-02 | Google | [Project B Proposal Form](https://bit.ly/432-2025-projB-proposal) due at **noon** |
+| [Class 22](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class22) | 04-03 | In Person | Time to Event (Survival) Outcomes, 1 |
+| [Class 23](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class23) | 04-08 | In Person | Time to Event (Survival) Outcomes, 2 |
+| [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon |
+| Bonus | 04-09 | -- | [Minute Paper after Class 23](https://bit.ly/432-2025-min-23) due at noon |
+| [Class 24](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class24) | 04-10 | In Person | K-Means Clustering, PCA |
+| [Class 25](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class25) | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything |
+| -- | 04-15 | -- | Last date when I will accept late [Lab 6](lab6.qmd) responses. |
+| Bonus | 04-16 | -- | Minute Paper after Class 25 will be due at noon |
+| [Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models |
+| -- | 04-17 | 3 - 6 PM | In Person [Project B](projB.qmd) Presentations |
+| [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students |
+| -- | 04-18 | 10 AM - 2 PM | Zoom [Project B](projB.qmd) Presentations |
+| -- | 04-21 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations |
+| -- | 04-22 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations |
+| -- | 04-22 | -- | **No 432 class today**, Last Day for TA office hours |
+| -- | 04-23 | 8:30 - 11 AM, <br /> 12:30 - 2 PM | Zoom [Project B](projB.qmd) Presentations |
+| [Class 27](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class27) | 04-24 | In Person | Semester Wrap-up, Where To Go From Here |
+| [Quiz 2](quiz2.qmd) | 04-25 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24) |
+| -- | 04-25 | -- | [Lab Regrade Request form](https://bit.ly/432-2025-lab-regrades) (optional) is also due at noon. |
+| [Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon** |
 
 **Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
 
 ## January 2025
 
-Class | Date | Location | Description
-:----: | :----: | :-----: | :---------------------------------------
-[Class 1](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class01/README.md) | 01-14 | Zoom | Introduction and Logistics
-[Survey](https://bit.ly/432-2025-welcome-survey) | 01-15 | Google | Complete [Welcome to 432 Survey](https://bit.ly/432-2025-welcome-survey) by **noon**
-[Class 2](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class02/README.md) | 01-16 | Zoom | Getting Up to Speed
--- | 01-17 | Zoom | TA office hours begin
--- | 01-20 | Zoom | Martin Luther King Jr Holiday - no office hours
-[Class 3](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class03/README.md) | 01-21 | Zoom | Linear Regression, 1
-[Lab 1](lab1.qmd) | 01-22 | [Canvas](https://canvas.case.edu/) | [Lab 1](lab1.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 4](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class04/README.md) | 01-23 | Zoom | Logistic Regression, 1
-[Class 5](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class05/README.md) | 01-28 | Zoom | Linear and Logistic Regression, 2
-[Lab 2](lab2.qmd) | 01-29 | [Canvas](https://canvas.case.edu/) | [Lab 2](lab2.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 6](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class06/README.md) | 01-30 | Zoom | Linear and Logistic Regression, 3
+| Class | Date | Location | Description |
+|:----------------:|:----------------:|:----------------:|:-----------------|
+| [Class 1](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class01/README.md) | 01-14 | Zoom | Introduction and Logistics |
+| [Survey](https://bit.ly/432-2025-welcome-survey) | 01-15 | Google | Complete [Welcome to 432 Survey](https://bit.ly/432-2025-welcome-survey) by **noon** |
+| [Class 2](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class02/README.md) | 01-16 | Zoom | Getting Up to Speed |
+| -- | 01-17 | Zoom | TA office hours begin |
+| -- | 01-20 | Zoom | Martin Luther King Jr Holiday - no office hours |
+| [Class 3](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class03/README.md) | 01-21 | Zoom | Linear Regression, 1 |
+| [Lab 1](lab1.qmd) | 01-22 | [Canvas](https://canvas.case.edu/) | [Lab 1](lab1.qmd) due to [Canvas](https://canvas.case.edu/) at **noon** |
+| [Class 4](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class04/README.md) | 01-23 | Zoom | Logistic Regression, 1 |
+| [Class 5](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class05/README.md) | 01-28 | Zoom | Linear and Logistic Regression, 2 |
+| [Lab 2](lab2.qmd) | 01-29 | [Canvas](https://canvas.case.edu/) | [Lab 2](lab2.qmd) due to [Canvas](https://canvas.case.edu/) at **noon** |
+| [Class 6](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class06/README.md) | 01-30 | Zoom | Linear and Logistic Regression, 3 |
 
 ## February 2025
 
-Class | Date | Location | Description
-:----: | :----: | :-----: | :---------------------------------------
-Reading | 02-03 | -- | Before Class 7, read all of [How to be a Modern Scientist](https://leanpub.com/modernscientist)
-[Class 7](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class07/README.md) | 02-04 | Zoom | Linear and Logistic Regression, 4
-[Project A](projA.qmd) | 02-05 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Plan due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 8](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class08/README.md) | 02-06 | Zoom | Logistic Regression and the movies, 1
-[Class 9](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class09/README.md) | 02-11 | Zoom | Logistic Regression and the movies, 2
-[Lab 3](lab3.qmd) | 02-12 | [Canvas](https://canvas.case.edu/) | [Lab 3](lab3.qmd) due to [Canvas](https://canvas.case.edu/) at noon
-[Class 10](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class10/README.md) | 02-13 | Zoom | Linear Regression and happiness, 1
-[Class 11](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class11/README.md) | 02-18 | Zoom | Linear Regression and happiness, 2
-[Lab 4](lab4.qmd) | 02-19 | [Canvas](https://canvas.case.edu/) | [Lab 4](lab4.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 12](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class12/README.md) | 02-20 | Zoom | Building Table 1, Using Survey Weights
-[Class 13](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class13/README.md) | 02-25 | Zoom | Power and Sample Size (The Fundamentals)
-[Lab 5](lab5.qmd) | 02-26 | [Canvas](https://canvas.case.edu/) | [Lab 5](lab5.qmd) due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 14](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class14/README.md) | 02-27 | Zoom | Power and Sample Size, Retrospective Design
-[Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at **noon** to all students
+| Class | Date | Location | Description |
+|:----------------:|:----------------:|:----------------:|:-----------------|
+| Reading | 02-03 | -- | Before Class 7, read all of [How to be a Modern Scientist](https://leanpub.com/modernscientist) |
+| [Class 7](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class07/README.md) | 02-04 | Zoom | Linear and Logistic Regression, 4 |
+| [Project A](projA.qmd) | 02-05 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Plan due to [Canvas](https://canvas.case.edu/) at **noon** |
+| [Class 8](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class08/README.md) | 02-06 | Zoom | Logistic Regression and the movies, 1 |
+| [Class 9](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class09/README.md) | 02-11 | Zoom | Logistic Regression and the movies, 2 |
+| [Lab 3](lab3.qmd) | 02-12 | [Canvas](https://canvas.case.edu/) | [Lab 3](lab3.qmd) due to [Canvas](https://canvas.case.edu/) at noon |
+| [Class 10](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class10/README.md) | 02-13 | Zoom | Linear Regression and happiness, 1 |
+| [Class 11](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class11/README.md) | 02-18 | Zoom | Linear Regression and happiness, 2 |
+| [Lab 4](lab4.qmd) | 02-19 | [Canvas](https://canvas.case.edu/) | [Lab 4](lab4.qmd) due to [Canvas](https://canvas.case.edu/) at **noon** |
+| [Class 12](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class12/README.md) | 02-20 | Zoom | Building Table 1, Using Survey Weights |
+| [Class 13](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class13/README.md) | 02-25 | Zoom | Power and Sample Size (The Fundamentals) |
+| [Lab 5](lab5.qmd) | 02-26 | [Canvas](https://canvas.case.edu/) | [Lab 5](lab5.qmd) due to [Canvas](https://canvas.case.edu/) at **noon** |
+| [Class 14](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class14/README.md) | 02-27 | Zoom | Power and Sample Size, Retrospective Design |
+| [Quiz 1](quiz1.qmd) | 02-28 | [Quiz 1](quiz1.qmd) | [Quiz 1](quiz1.qmd) made available at **noon** to all students |
 
 ## March 2025
 
-Class | Date | Location | Description
-:----: | :----: | :-----: | :---------------------------------------
-[Class 15](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class15/README.md) | 03-04 | Zoom | Time-to-Event Data, part 1 <br /> Ask Me Anything: [Quiz 1](quiz1.qmd)
-[Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at **noon** (covers classes 1-14)
-[Class 16](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class16/README.md) | 03-06 | Zoom | Quiz 1 results, Time-to-Event Data, part 2 <br /> Ask Me Anything: [Project A](projA.qmd)
--- | -- | -- | Spring Break - no 432 class or office hours 03-08 through 03-14
-[Class 17](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class17)  | 03-18 | In Person | Regression on Count Outcomes, 1
-[Project A](projA.qmd) | 03-19 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon**
-[Class 18](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class18)  | 03-20 | In Person | Regression on Count Outcomes, 2
-[Class 19](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class19)  | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1
-[Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon**
-[Class 20](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class20)  | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2
-
+| Class | Date | Location | Description |
+|:----------------:|:----------------:|:----------------:|:-----------------|
+| [Class 15](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class15/README.md) | 03-04 | Zoom | Time-to-Event Data, part 1 <br /> Ask Me Anything: [Quiz 1](quiz1.qmd) |
+| [Quiz 1](quiz1.qmd) | 03-05 | Google | [Quiz 1](quiz1.qmd) due at **noon** (covers classes 1-14) |
+| [Class 16](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class16/README.md) | 03-06 | Zoom | Quiz 1 results, Time-to-Event Data, part 2 <br /> Ask Me Anything: [Project A](projA.qmd) |
+| -- | -- | -- | Spring Break - no 432 class or office hours 03-08 through 03-14 |
+| [Class 17](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class17) | 03-18 | In Person | Regression on Count Outcomes, 1 |
+| [Project A](projA.qmd) | 03-19 | [Canvas](https://canvas.case.edu/) | [Project A](projA.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon** |
+| [Class 18](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class18) | 03-20 | In Person | Regression on Count Outcomes, 2 |
+| [Class 19](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class19) | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1 |
+| [Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon** |
+| [Class 20](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class20) | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2 |
 
 ## TA Office Hours
 
 Attend TA office hours to get one-on-one help or share a computer problem. TA office hours are held via Zoom, and will begin on Friday 2025-01-17, and continue through Tuesday 2025-04-22, except for Martin Luther King Day (Monday 2025-01-20) and Spring Break (hours are cancelled from 2025-03-08 through 2025-03-14.) Here is the schedule...
 
-Day | Time(s)
-----------: | :----------------
-Fridays | 12:15 to 1:45 PM
-Sundays | 6 to 7:30 PM and 8:30 to 10 PM
-Mondays | 11:30 AM to 1 PM and 7:30 to 9 PM and 9 to 10:30 PM
-Tuesdays | 11:15 AM to 12:45 PM and 6 to 7:30 PM and 9 to 10:30 PM
+|      Day | Time(s)                                                 |
+|---------:|:--------------------------------------------------------|
+|  Fridays | 12:15 to 1:45 PM                                        |
+|  Sundays | 6 to 7:30 PM and 8:30 to 10 PM                          |
+|  Mondays | 11:30 AM to 1 PM and 7:30 to 9 PM and 9 to 10:30 PM     |
+| Tuesdays | 11:15 AM to 12:45 PM and 6 to 7:30 PM and 9 to 10:30 PM |
 
 Zoom information to join these sessions is posted to our **Shared Google Drive**.
