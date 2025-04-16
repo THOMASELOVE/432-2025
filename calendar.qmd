@@ -7,31 +7,22 @@ date-modified: last-modified
 
 Starting with Class 17 (2025-03-18), our classes listed below as "In Person" will be held in Room E321-323 of the Robbins Building at CWRU. For directions to the Robbins Building, which is located at 2210 Circle Drive Cleveland OH 44106, and information on parking and on accessing the building, [visit this link](https://case.edu/medicine/cbhi/about-us/directions-and-parking/cwru-school-medicine-health-sciences-campus). Again, our classroom is on the third floor of the Robbins building, and is room E321-323.
 
-## April 2025
+
+## April 17 to end of semester
 
 | Class | Date | Location | Description |
 |:----------------:|:----------------:|:----------------:|:-----------------|
-| [Class 21](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class21) | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3 |
-| [Project B](projB.qmd) | 04-02 | Google | [Project B Proposal Form](https://bit.ly/432-2025-projB-proposal) due at **noon** |
-| [Class 22](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class22) | 04-03 | In Person | Time to Event (Survival) Outcomes, 1 |
-| [Class 23](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class23) | 04-08 | In Person | Time to Event (Survival) Outcomes, 2 |
-| [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon |
-| Bonus | 04-09 | -- | [Minute Paper after Class 23](https://bit.ly/432-2025-min-23) due at noon |
-| [Class 24](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class24) | 04-10 | In Person | K-Means Clustering, PCA |
-| [Class 25](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class25) | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything |
-| -- | 04-15 | -- | Last date when I will accept late [Lab 6](lab6.qmd) responses. |
-| Bonus | 04-16 | -- | Minute Paper after Class 25 will be due at noon |
 | [Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models |
-| -- | 04-17 | 3 - 6 PM | In Person [Project B](projB.qmd) Presentations |
+| -- | 04-17 | 3:45 - 5:40 PM | In Person [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#thursday-2025-04-17) |
 | [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students |
-| -- | 04-18 | 10 AM - 2 PM | Zoom [Project B](projB.qmd) Presentations |
-| -- | 04-21 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations |
-| -- | 04-22 | 8:30AM - Noon, <br /> 1 - 6:30PM | Zoom [Project B](projB.qmd) Presentations |
+| -- | 04-18 | Noon - 1:55 PM | Zoom [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#friday-2025-04-18) |
+| -- | 04-21 | 11:30AM - 5:30 PM | Zoom [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#monday-2025-04-21) |
+| -- | 04-22 | 8:30AM - Noon, <br /> 1 - 6PM | Zoom [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#tuesday-2025-04-22) |
 | -- | 04-22 | -- | **No 432 class today**, Last Day for TA office hours |
-| -- | 04-23 | 8:30 - 11 AM, <br /> 12:30 - 2 PM | Zoom [Project B](projB.qmd) Presentations |
+| -- | 04-23 | 8:30 - 11 AM, <br /> 12:30 - 1 PM | [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#wednesday-2025-04-23) |
 | [Class 27](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class27) | 04-24 | In Person | Semester Wrap-up, Where To Go From Here |
-| [Quiz 2](quiz2.qmd) | 04-25 | Google | [Quiz 2](quiz2.qmd) due at **noon** (covers classes 1-24) |
 | -- | 04-25 | -- | [Lab Regrade Request form](https://bit.ly/432-2025-lab-regrades) (optional) is also due at noon. |
+| [Quiz 2](quiz2.qmd) | 04-28 | Google | [Quiz 2](quiz2.qmd) due at **9 AM** (covers classes 1-23) |
 | [Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon** |
 
 **Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
@@ -85,6 +76,21 @@ Starting with Class 17 (2025-03-18), our classes listed below as "In Person" wil
 | [Class 19](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class19) | 03-25 | In Person | Regression on Multi-Categorical Outcomes, 1 |
 | [Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon** |
 | [Class 20](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class20) | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2 |
+
+## April 1-16, 2025
+
+| Class | Date | Location | Description |
+|:----------------:|:----------------:|:----------------:|:-----------------|
+| [Class 21](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class21) | 04-01 | In Person | Regression on Multi-Categorical Outcomes, 3 |
+| [Project B](projB.qmd) | 04-02 | Google | [Project B Proposal Form](https://bit.ly/432-2025-projB-proposal) due at **noon** |
+| [Class 22](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class22) | 04-03 | In Person | Time to Event (Survival) Outcomes, 1 |
+| [Class 23](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class23) | 04-08 | In Person | Time to Event (Survival) Outcomes, 2 |
+| [Lab 7](lab7.qmd) | 04-09 | [Canvas](https://canvas.case.edu/) | [Lab 7](lab7.qmd) due to [Canvas](https://canvas.case.edu/) at noon |
+| Bonus | 04-09 | -- | [Minute Paper after Class 23](https://bit.ly/432-2025-min-23) due at noon |
+| [Class 24](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class24) | 04-10 | In Person | K-Means Clustering, PCA |
+| [Class 25](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class25) | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything |
+| -- | 04-15 | -- | Last date when I will accept late [Lab 6](lab6.qmd) responses. |
+| Bonus | 04-16 | -- | Minute Paper after Class 25 will be due at noon |
 
 ## TA Office Hours
 

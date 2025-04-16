@@ -2,7 +2,7 @@
 title: "Quiz 2"
 ---
 
-Quiz 2 covers materials from Classes 1-24 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-24.
+Quiz 2 covers materials from Classes 1-23 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-24.
 
 By the time specified on the [Calendar](calendar.qmd), several elements related to Quiz 2 will be provided to you.
 
