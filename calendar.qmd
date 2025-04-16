@@ -13,13 +13,13 @@ Starting with Class 17 (2025-03-18), our classes listed below as "In Person" wil
 | Class | Date | Location | Description |
 |:----------------:|:----------------:|:----------------:|:-----------------|
 | [Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models |
-| -- | 04-17 | 3:45 - 5:40 PM | In Person [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#thursday-2025-04-17) |
+| -- | 04-17 | 3:45 - 5:40 PM | In Person [Thursday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#thursday-2025-04-17) |
 | [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students |
-| -- | 04-18 | Noon - 1:55 PM | Zoom [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#friday-2025-04-18) |
-| -- | 04-21 | 11:30AM - 5:30 PM | Zoom [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#monday-2025-04-21) |
-| -- | 04-22 | 8:30AM - Noon, <br /> 1 - 6PM | Zoom [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#tuesday-2025-04-22) |
+| -- | 04-18 | Noon - 1:55 PM | Zoom: [Friday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#friday-2025-04-18) |
+| -- | 04-21 | 11:30AM - 5:30 PM | Zoom: [Monday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#monday-2025-04-21) |
+| -- | 04-22 | 8:30AM - Noon, <br /> 1 - 6PM | Zoom: [Tuesday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#tuesday-2025-04-22) |
 | -- | 04-22 | -- | **No 432 class today**, Last Day for TA office hours |
-| -- | 04-23 | 8:30 - 11 AM, <br /> 12:30 - 1 PM | [Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#wednesday-2025-04-23) |
+| -- | 04-23 | 8:30 - 11:30 AM | Zoom: [Wednesday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#wednesday-2025-04-23) |
 | [Class 27](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class27) | 04-24 | In Person | Semester Wrap-up, Where To Go From Here |
 | -- | 04-25 | -- | [Lab Regrade Request form](https://bit.ly/432-2025-lab-regrades) (optional) is also due at noon. |
 | [Quiz 2](quiz2.qmd) | 04-28 | Google | [Quiz 2](quiz2.qmd) due at **9 AM** (covers classes 1-23) |
