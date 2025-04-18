@@ -2,14 +2,37 @@
 title: "Quiz 2"
 ---
 
-Quiz 2 covers materials from Classes 1-23 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-24.
+## Corrections and Other Edits after initial posting of Quiz 2 
 
-By the time specified on the [Calendar](calendar.qmd), several elements related to Quiz 2 will be provided to you.
+will be listed here as they occur. Dr. Love will email all students if a substantial change is required.
 
-1. The main document (pdf) for Quiz 2, which will include both instructions and all of the questions.
-2. A link to the Google Form Answer Sheet for Quiz 2, where you will submit your responses.
-3. Download information for the Data Sets we will provide for Quiz 2.
+## Material needed to complete Quiz 2
 
-Quiz 2 will be due when the [Calendar](calendar.qmd) says it is.
+1. The main document (pdf) for Quiz 2, which includes instructions, descriptions of the data sets, and all 25 questions will be posted to the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive by noon on Friday 2025-04-18. The PDF document is **XXX** pages long.
 
-If you have a question prior to the release of Quiz 2 about the Quiz, send it by email to Dr. Love at `thomas dot love at case dot edu`.
+2. The link to the Google Form Answer Sheet for Quiz 2, where you will submit your responses, will be p;osted here by 3 PM on Friday 2025-04-18. Quiz 2 is due at **9 AM on Monday 2025-04-28**. The Google Form will close at 9:30 AM that day, and will not re-open.
+
+3. We have provided six data sets for Quiz 2. Descriptions of the data sets are available in the main document. To download the data, visit the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive. In the **data** subfolder, you will find:
+    - `data1.Rds`, which should include 146 observations on 11 variables.
+    - `data2.csv`, which should include 2265 observations on 15 variables.
+    - `data3.xlsx`, which should include 902 observations on 9 variables.
+    - `data4.dta`, which should include 2482 observations on 9 variables.
+    - `data5.sav`, which should include 2787 observations on 9 variables.
+    - `data6.csv`, which should include 1362 observations on 7 variables.
+
+4. To save you some typing, we have also provided Quarto and HTML versions of a document called **starting_quiz_2**. To download the files, visit the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive. This document provides the following code elements (also provided in the main document PDF):
+    - the complete setup (R packages, etc.) used by Professor Love to build the quiz and its answer sketch,
+    - all code necessary to download the six data sets to create the tibbles used in the quiz, and
+    - some of the code necessary to complete Question 9
+
+We suggest you use the **starting_quiz_2** Quarto file to get started developing answers for the Quiz questions. The HTML version is provided so that you can see what the results of using the Quarto file should look like before you answer any of the questions.
+
+## Other Details on Quiz 2
+
+Quiz 2 covers materials from Classes 1-23 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-23.
+
+Again, Quiz 2 is due at 9 AM on Monday 2025-04-28. The Google Form will close at 9:30 AM that day, and will not re-open, so you have 30 minutes leeway.
+
+If you have a question about Quiz 2, send it by email to Dr. Love at `thomas dot love at case dot edu`.
+
+Good luck!
