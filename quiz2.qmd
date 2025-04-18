@@ -10,7 +10,7 @@ will be listed here as they occur. Dr. Love will email all students if a substan
 
 1. The main document (pdf) for Quiz 2, which includes instructions, descriptions of the data sets, and all 25 questions will be posted to the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive by noon on Friday 2025-04-18. The PDF document is **XXX** pages long.
 
-2. The link to the Google Form Answer Sheet for Quiz 2, where you will submit your responses, will be p;osted here by 3 PM on Friday 2025-04-18. Quiz 2 is due at **9 AM on Monday 2025-04-28**. The Google Form will close at 9:30 AM that day, and will not re-open.
+2. The link to the Google Form Answer Sheet for Quiz 2, where you will submit your responses, will be posted here by 3 PM on Friday 2025-04-18. Quiz 2 is due at **9 AM on Monday 2025-04-28**. The Google Form will close at 9:30 AM that day, and will not re-open.
 
 3. We have provided six data sets for Quiz 2. Descriptions of the data sets are available in the main document. To download the data, visit the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive. In the **data** subfolder, you will find:
     - `data1.Rds`, which should include 146 observations on 11 variables.
