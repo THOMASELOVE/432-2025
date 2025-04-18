@@ -25,7 +25,20 @@ Starting with Class 17 (2025-03-18), our classes listed below as "In Person" wil
 | [Quiz 2](quiz2.qmd) | 04-28 | Google | [Quiz 2](quiz2.qmd) due at **9 AM** (covers classes 1-23) |
 | [Project B](projB.qmd) | 04-30 | [Canvas](https://canvas.case.edu/) | [Project B](projB.qmd) Portfolio due to [Canvas](https://canvas.case.edu/) at **noon** |
 
-**Course Evaluations** Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
+## Submitting the Project B Portfolio
+
+If you are working with a partner, your final materials (all four parts) should be submitted by exactly one of the two partners, while the non-reporting partner submits a one-page note to Canvas indicating the members of the partnership and that the partner will submit the work. 
+
+Materials you should submit to Canvas by NOON on 2025-04-30 are:
+
+1. Your Quarto file for the project
+2. An HTML file that is the result of rendering your Quarto file
+3. An .Rds data file (either the real data if publically available, or a five-row pseudo-data set if not - see Instructions for details)
+4. The Slides (assuming you made slides) for your Project B presentation
+
+## Course Evaluations
+
+Please visit <https://webapps.case.edu/courseevals/> after you present your project, and complete the course evaluations before they close in early May. Thanks.
 
 ## January 2025
 

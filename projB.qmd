@@ -39,7 +39,15 @@ There are three deliverables in Project B: a Proposal Form, an in-person or Zoom
 
 2. **Presentation** After receiving our approval of your submitted proposal form, you will prepare a portfolio of your results with Quarto ([a template is available](#template-for-the-portfolio) for this), and then present your work to Professor Love. The schedule for these presentations will be determined after completion of the Project B Proposal Form.
 
-3. **Portfolio and Data** You will then make changes (as needed) to your Quarto document (portfolio) in response to Professor Love's comments during your presentation, and submit the final version of the portfolio along with a version of your data ([as described here](#submitting-your-data)) to [Canvas](https:://canvas.case.edu) by the deadline in the [Calendar](calendar.qmd).
+3. **Portfolio and Data** You will then make changes (as needed) to your Quarto document (portfolio) in response to Professor Love's comments during your presentation, and submit the final version of the portfolio along with a version of your data ([as described here](#submitting-your-data)) to [Canvas](https:://canvas.case.edu) by the deadline in the [Calendar](calendar.qmd). At this time, **you should also submit the slides** you used in your presentation (please submit them as you presented them - without updates) through Canvas, assuming you built slides for your presentation.
+
+Materials you should submit to Canvas by NOON on 2025-04-30 are:
+
+1. Your Quarto file for the project
+2. An HTML file that is the result of rendering your Quarto file
+3. An .Rds data file (either the real data if publically available, or a five-row pseudo-data set if not - see Instructions for details)
+4. The Slides (assuming you made slides) for your Project B presentation
+
 
 ### Working with a Partner?
 
