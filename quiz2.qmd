@@ -6,11 +6,13 @@ title: "Quiz 2"
 
 will be listed here as they occur. Dr. Love will email all students if a substantial change is required.
 
+- The original version of the main document PDF was typeset `2025-04-18 at 02:55 PM`.
+
 ## Material needed to complete Quiz 2
 
-1. The main document (pdf) for Quiz 2, which includes instructions, descriptions of the data sets, and all 25 questions will be posted to the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive by 3 PM on Friday 2025-04-18. The PDF document is **XXX** pages long.
+1. The main document (pdf) for Quiz 2, which includes instructions, descriptions of the data sets, and all 25 questions is now available in the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive. The PDF file for this main document is called **432-quiz2-2025.pdf** and is **52** pages long.
 
-2. The link to the Google Form Answer Sheet for Quiz 2, where you will submit your responses, will be posted here by 3 PM on Friday 2025-04-18. Quiz 2 is due at **9 AM on Monday 2025-04-28**. The Google Form will close at 9:30 AM that day, and will not re-open.
+2. The link to the Google Form Answer Sheet for Quiz 2 is <https://bit.ly/432-2025-quiz2-form> and this is where you will submit your responses. Quiz 2 is due at **9 AM on Monday 2025-04-28**. The [Google Form](https://bit.ly/432-2025-quiz2-form) will close at 9:30 AM that day, and will not re-open.
 
 3. We have provided six data sets for Quiz 2. Descriptions of the data sets are available in the main document. To download the data, visit the **432 Quiz 2 Materials (due 2025-04-28 at 9 AM)** folder on our Shared Drive. In the **data** subfolder, you will find:
     - `data1.Rds`, which should include 146 observations on 11 variables.
@@ -31,7 +33,7 @@ We suggest you use the **starting_quiz_2** Quarto file to get started developing
 
 Quiz 2 covers materials from Classes 1-23 of the course, as well as Jeff Leek's [How to be a modern scientist](https://leanpub.com/modernscientist), and other sources assigned during classes 1-23.
 
-Again, Quiz 2 is due at 9 AM on Monday 2025-04-28. The Google Form will close at 9:30 AM that day, and will not re-open, so you have 30 minutes leeway.
+Again, Quiz 2 is due at 9 AM on Monday 2025-04-28. The [Google Form](https://bit.ly/432-2025-quiz2-form) will close at 9:30 AM that day, and will not re-open, so you have 30 minutes leeway.
 
 If you have a question about Quiz 2, send it by email to Dr. Love at `thomas dot love at case dot edu`.
 
