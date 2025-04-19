@@ -8,11 +8,11 @@ will be listed here as they occur. Dr. Love will email all students if a substan
 
 - The original version of the main document PDF was typeset `2025-04-18 at 02:55 PM`.
 
-### Update to PDF affecting Question 1: typeset `2025-04-19 1:36 PM`
+### Update to PDF affecting Question 1: typeset `2025-04-19 1:48 PM`
 
 - Option `a` in **Question 1** is now corrected in the PDF and the Answer Form to read: a. The lowest numbered **subject code** for a censored subject in data1 is 6. 
     - The original version referred to a non-existent `ptid`.
-
+- I deleted the word **different** from Question 5 option `b`.
 
 ## Material needed to complete Quiz 2
 
