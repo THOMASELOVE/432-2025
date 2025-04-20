@@ -8,11 +8,33 @@ will be listed here as they occur. Dr. Love will email all students if a substan
 
 - The original version of the main document PDF was typeset `2025-04-18 at 02:55 PM`.
 
-### Update to PDF affecting Question 1: typeset `2025-04-19 1:48 PM`
+**Most Recent Update to PDF**: typeset Sunday `2025-04-20 at 2:58 PM`
 
-- Option `a` in **Question 1** is now corrected in the PDF and the Answer Form to read: a. The lowest numbered **subject code** for a censored subject in data1 is 6. 
+### Question 1 (last change Sunday 2025-04-20)
+
+- Option `a` in **Question 1** is now corrected in the PDF and the Answer Form to read: a. The lowest numbered **subject code** for a censored subject in data1 is 6.
     - The original version referred to a non-existent `ptid`.
-- I deleted the word **different** from Question 5 option `b`.
+- Option `f` in Question 1 now is written as: "f. The legends and colors on the risk table in Display 2 **do not** match those shown to describe the main plot in Display 2." to help clarify the issue.
+
+### Question 5 (last change Saturday 2025-04-19)
+
+- I deleted the word **different** in the last part of Question 5 option `b`. It now reads: "How many subjects should be included in your `new5` tibble?"
+
+### Question 10 (last change Sunday 2025-04-20)
+
+I have changed the first paragraph of Question 10 to read:
+
+Using the `data3` tibble, build an appropriate pair of models to predict `ecig_s` for that tibble, one of which assumes proportional odds and one of which does not, using the following five predictors: `age`, `female`, `race_eth`, `educ`, and `asthma`. 
+
+### Question 12 (last change Sunday 2025-04-20)
+
+I emphasized that your response should describe, in detail, the meaning of both the point estimate **and** the 99% confidence interval, in parts a and b of Question 12, which now read:
+
+a. Write a complete sentence or two to describe the meaning of both the point estimate **and** the 99% confidence interval for the `mode` effect in model `m12`.
+
+b. Write a complete sentence or two to describe the meaning of both the point estimate **and** the 99% confidence interval for the danceability (`dance`) effect in model `m12`.
+
+Note that an excellent answer to Question 12 will show that you've reviewed the description of the variables contained in `data4`. 
 
 ## Material needed to complete Quiz 2
 
