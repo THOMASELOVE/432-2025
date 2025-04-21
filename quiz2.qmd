@@ -8,7 +8,7 @@ will be listed here as they occur. Dr. Love will email all students if a substan
 
 - The original version of the main document PDF was typeset `2025-04-18 at 02:55 PM`.
 
-**Most Recent Update to PDF**: typeset Sunday `2025-04-20 at 2:58 PM`
+**Most Recent Update to PDF**: typeset Monday `2025-04-21 at 1:49 PM`
 
 ### Question 1 (last change Sunday 2025-04-20)
 
@@ -36,7 +36,13 @@ a. Write a complete sentence or two to describe the meaning of both the point es
 
 b. Write a complete sentence or two to describe the meaning of both the point estimate **and** the 99% confidence interval for the danceability (`dance`) effect in model `m12`.
 
-Note that an excellent answer to Question 12 will show that you've reviewed the description of the variables contained in `data4`. 
+Note that an excellent answer to Question 12 will show that you've reviewed the description of the variables contained in `data4`.
+
+### Question 20 (last change Monday 2025-04-21)
+
+In the initial version, there was a reference to happiness, which is not part of the question. The new final sentence in the first paragraph is now:
+
+Use `m20` to predict the levels of financial satisfaction (`satfin`) for the `data6` tibble's subjects.
 
 ## Material needed to complete Quiz 2
 
