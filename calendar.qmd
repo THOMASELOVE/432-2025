@@ -7,15 +7,10 @@ date-modified: last-modified
 
 Starting with Class 17 (2025-03-18), our classes listed below as "In Person" will be held in Room E321-323 of the Robbins Building at CWRU. For directions to the Robbins Building, which is located at 2210 Circle Drive Cleveland OH 44106, and information on parking and on accessing the building, [visit this link](https://case.edu/medicine/cbhi/about-us/directions-and-parking/cwru-school-medicine-health-sciences-campus). Again, our classroom is on the third floor of the Robbins building, and is room E321-323.
 
-
-## April 17 to end of semester
+## April 21 to end of semester
 
 | Class | Date | Location | Description |
 |:----------------:|:----------------:|:----------------:|:-----------------|
-| [Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models |
-| -- | 04-17 | 3:45 - 5:40 PM | In Person [Thursday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#thursday-2025-04-17) |
-| [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students |
-| -- | 04-18 | Noon - 1:55 PM | Zoom: [Friday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#friday-2025-04-18) |
 | -- | 04-21 | 11:30AM - 5:30 PM | Zoom: [Monday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#monday-2025-04-21) |
 | -- | 04-22 | 8:30AM - Noon, <br /> 1 - 6PM | Zoom: [Tuesday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#tuesday-2025-04-22) |
 | -- | 04-22 | -- | **No 432 class today**, Last Day for TA office hours |
@@ -35,6 +30,10 @@ Materials you should submit to Canvas by NOON on 2025-04-30 are:
 2. An HTML file that is the result of rendering your Quarto file
 3. An .Rds data file (either the real data if publically available, or a five-row pseudo-data set if not - see Instructions for details)
 4. The Slides (assuming you made slides) for your Project B presentation
+
+## End of Semester Web Site
+
+The end-of-semester web site is found at <https://github.com/THOMASELOVE/432-classes-2025/tree/main/end>. Any updates after our last class on 2025-04-24 will be found there.
 
 ## Course Evaluations
 
@@ -90,7 +89,7 @@ Please visit <https://webapps.case.edu/courseevals/> after you present your proj
 | [Lab 6](lab6.qmd) | 03-26 | [Campuswire](https://campuswire.com/) | [Lab 6](lab6.qmd) submitted via [Campuswire](https://campuswire.com/) at **noon** |
 | [Class 20](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class20) | 03-27 | In Person | Regression on Multi-Categorical Outcomes, 2 |
 
-## April 1-16, 2025
+## April 1-18, 2025
 
 | Class | Date | Location | Description |
 |:----------------:|:----------------:|:----------------:|:-----------------|
@@ -104,6 +103,10 @@ Please visit <https://webapps.case.edu/courseevals/> after you present your proj
 | [Class 25](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class25) | 04-15 | Zoom | [Project B](projB.qmd): Ask Me Anything |
 | -- | 04-15 | -- | Last date when I will accept late [Lab 6](lab6.qmd) responses. |
 | Bonus | 04-16 | -- | Minute Paper after Class 25 will be due at noon |
+| [Class 26](https://github.com/THOMASELOVE/432-classes-2025/blob/main/class26) | 04-17 | In Person | Introduction to Hierarchical Models |
+| -- | 04-17 | 3:45 - 5:40 PM | In Person [Thursday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#thursday-2025-04-17) |
+| [Quiz 2](quiz2.qmd) | 04-18 | [Quiz 2](quiz2.qmd) | [Quiz 2](quiz2.qmd) made available at noon to all students |
+| -- | 04-18 | Noon - 1:55 PM | Zoom: [Friday Project B Presentations](https://github.com/THOMASELOVE/432-classes-2025/tree/main/projectB#friday-2025-04-18) |
 
 ## TA Office Hours
 

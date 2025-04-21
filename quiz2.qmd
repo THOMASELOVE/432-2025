@@ -26,6 +26,8 @@ I have changed the first paragraph of Question 10 to read:
 
 Using the `data3` tibble, build an appropriate pair of models to predict `ecig_s` for that tibble, one of which assumes proportional odds and one of which does not, using the following five predictors: `age`, `female`, `race_eth`, `educ`, and `asthma`. 
 
+**Hint**: A correct answer to Question 10 includes the data from subject `H012304`, who is in the 172nd row of the `data3` tibble.
+
 ### Question 12 (last change Sunday 2025-04-20)
 
 I emphasized that your response should describe, in detail, the meaning of both the point estimate **and** the 99% confidence interval, in parts a and b of Question 12, which now read:
