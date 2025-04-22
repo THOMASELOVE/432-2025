@@ -383,7 +383,7 @@ What 8 Questions would Dr. Love be likely to ask (either himself or you) during 
 3. How much data do you have, and what is the source of that data?
 4. How did you deal with missing data, and what assumptions about missingness did you make?
 5. Is your portfolio well-labeled and easy to find things in?
-6. Does your presentation focus on important issues? [See the list in the instructions](https://thomaselove.github.io/432-2024/projB.html#the-presentation).
+6. Does your presentation focus on important issues? [See the list in the instructions](https://thomaselove.github.io/432-2025/projB.html#the-presentation).
 7. Have you avoided discussing statistical significance or any synonyms for that problematic term?
 8. Can you answer questions effectively about the work you're presenting?
 
